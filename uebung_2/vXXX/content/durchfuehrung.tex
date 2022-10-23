@@ -1,0 +1,26 @@
+\section{Beispiel zu Messunsicherheiten}
+\label{sec:Durchführung}
+\subsection{Aufgabe}
+Die Standardabweichung $\sigma_u$ der Messwerte beträgt $\sigma_u = 10 \,\unit{\frac{m}{s}}$. Der Student kann nun jede beliebige Präzision erreichen, indem er genug Messungen durchführt.
+Wieviele Messungen nötig sind lässt sich berechnen:
+\begin{equation}
+    u = \frac{1}{\sqrt{n}} \cdot \sigma_u \Leftrightarrow n = \Bigl(\frac{\sigma_u}{u}\Bigr)^2
+    \label{eqn:messungen}
+\end{equation}
+Dabei ist $n$ die Anzahl der Messungen, $u$ die Unsicherheit und $\sigma_u$ die Standardabweichung der Messwerte.
+\subsection{Berechnung}
+\subsubsection{Beispiel 1}
+Nun soll die Unsicherheit $\pm 3 \,\unit{\frac{m}{s}}$ betragen. Wir nutzen nun die umgestellte Formel $\eqref{eqn:messungen}$ und setzen die Werte $u = 3 \,\unit{\frac{m}{s}}$ und $\sigma_u = 10 \,\unit{\frac{m}{s}}$ ein:
+\begin{equation}
+    n = \Bigl(\frac{\sigma_u}{u}\Bigr)^2 = \Biggl(\frac{10 \,\unit{\frac{m}{s}}}{3 \,\unit{\frac{m}{s}}}\Biggr)^2 = 11,\bar{1}
+    \label{eqn:rechnung}
+\end{equation}
+Wie in $\eqref{eqn:rechnung}$ berechnet, müssen also 12 Messungen durchgeführt werden, um eine Unsicherheit von unter $\pm 3 \,\unit{\frac{m}{s}}$ zu erreichen.
+\subsubsection{Beispiel 2}
+Die Unsicherheit soll jetzt nur noch $0,5 \,\unit{\frac{m}{s}}$ betragen.
+Analog zu $\eqref{eqn:rechnung}$ berechnen wir:
+\begin{equation}
+    n = \Bigl(\frac{\sigma_u}{u}\Bigr)^2 = \Biggl(\frac{10 \,\unit{\frac{m}{s}}}{0,5 \,\unit{\frac{m}{s}}}\Biggr)^2 = 400
+    \label{eqn:rechnung2}
+\end{equation}
+Um eine Unsicherheit von $0,5 \,\unit{\frac{m}{s}}$ zu erreichen, müssen 400 Messungen durchführt werden.

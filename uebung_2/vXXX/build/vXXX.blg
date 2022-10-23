@@ -1,0 +1,9 @@
+[0] Config.pm:306> INFO - This is Biber 2.18
+[0] Config.pm:309> INFO - Logfile is 'build/vXXX.blg'
+[82] biber:340> INFO - === Wed Oct 19, 2022, 10:41:27
+[102] Biber.pm:418> INFO - Reading 'build/vXXX.bcf'
+[166] Biber.pm:978> INFO - Found 0 citekeys in bib section 0
+[180] bbl.pm:654> INFO - Writing 'build/vXXX.bbl' with encoding 'UTF-8'
+[181] bbl.pm:757> INFO - Output to build/vXXX.bbl
+[181] Biber.pm:130> WARN - The file 'build/vXXX.bcf' does not contain any citations!
+[182] Biber.pm:132> INFO - WARNINGS: 1
