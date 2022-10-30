@@ -1,10 +1,10 @@
 # Fdb version 3
-["biber build/vXXX"] 1667162750 "build/vXXX.bcf" "build/vXXX.bbl" "build/vXXX" 1667163687
-  "build/vXXX.bcf" 1667163687 107276 1854028b8fb59a73da9009fde4abde75 "lualatex"
+["biber build/vXXX"] 1667167319 "build/vXXX.bcf" "build/vXXX.bbl" "build/vXXX" 1667167372
+  "build/vXXX.bcf" 1667167372 107276 1854028b8fb59a73da9009fde4abde75 "lualatex"
   (generated)
   "build/vXXX.bbl"
   "build/vXXX.blg"
-["lualatex"] 1667163684 "vXXX.tex" "build/vXXX.pdf" "vXXX" 1667163687
+["lualatex"] 1667167369 "vXXX.tex" "build/vXXX.pdf" "vXXX" 1667167372
   "../header.tex" 1665827372 3555 efd30c1e6d1eee9a4641f1a2e006eb3d ""
   "/home/freddy/.local/texlive/2022/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf" 1429396570 733736 0b8cd5044567d896491fd777c12d5cda ""
   "/home/freddy/.local/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf" 1255129361 111536 ae9d1b331000d544f47e5223081b7b54 ""
@@ -211,6 +211,8 @@
   "/home/freddy/.local/texlive/2022/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-regular.luc" 1664970313 127336 3f570c4a8c86655cf8ce4edb5eb04c3a ""
   "/home/freddy/.local/texlive/2022/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-bold.luc" 1665827230 128308 850a7ca7d3858ea04f03fdc81a9203d5 ""
   "/home/freddy/.local/texlive/2022/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-regular.luc" 1665827225 127679 ce196a77efc98a40777e1879cdc95c19 ""
+  "/home/freddy/.local/texlive/2022/texmf-var/luatex-cache/generic/fonts/otl/lmroman5-regular.luc" 1664971395 125976 46a9f8ab423d2cad08e74dc707e8892f ""
+  "/home/freddy/.local/texlive/2022/texmf-var/luatex-cache/generic/fonts/otl/lmroman8-regular.luc" 1664971395 128155 1d19443b83cf6d8f370d3d77879187c9 ""
   "/home/freddy/.local/texlive/2022/texmf-var/luatex-cache/generic/fonts/otl/lmsans10-bold.luc" 1664970314 128113 499554933f92dd641a3b2a0cb26da1bb ""
   "/home/freddy/.local/texlive/2022/texmf-var/luatex-cache/generic/fonts/otl/lmsans10-regular.luc" 1664970314 127655 574dbb2e56e9890c9235eb5c8b4ee7b7 ""
   "/home/freddy/.local/texlive/2022/texmf-var/luatex-cache/generic/fonts/otl/xitsmath-bold.luc" 1665827223 291912 7b91f4617adf7fe4da370ce7c5e07e8b ""
@@ -219,10 +221,10 @@
   "/home/freddy/.local/texlive/2022/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1664970313 57918 6103b076c30fda4b4f05531d9e1070b4 ""
   "/home/freddy/.local/texlive/2022/texmf-var/tex/generic/config/language.dat" 1664968847 2814 b30a7ca398f0c79dc360085176a14718 ""
   "/home/freddy/.local/texlive/2022/texmf-var/web2c/luahbtex/lualatex.fmt" 1664968851 4784842 f84ab884e45e2e713e0bb2b466544ee6 ""
-  "build/vXXX.aux" 1667163687 830 69e89530a2f47a6fd4f859aab7d9d996 "lualatex"
-  "build/vXXX.bbl" 1667162756 466 ee04f40f768daeed26442158e95aba61 "biber build/vXXX"
-  "build/vXXX.run.xml" 1667163687 2396 13f55f0f4af380a580b3504a55d8b3b1 "lualatex"
-  "content/Aufgabe1.tex" 1667163672 236 00741c9a0a322d0e32b23543a1edcd01 ""
+  "build/vXXX.aux" 1667167372 830 69e89530a2f47a6fd4f859aab7d9d996 "lualatex"
+  "build/vXXX.bbl" 1667167320 466 ee04f40f768daeed26442158e95aba61 "biber build/vXXX"
+  "build/vXXX.run.xml" 1667167372 2396 13f55f0f4af380a580b3504a55d8b3b1 "lualatex"
+  "content/Aufgabe1.tex" 1667167365 1203 23c10411817a00e72ee7428d9396686d ""
   "content/Aufgabe2.tex" 1667163680 317 b85f15e8332fd5cea6e65553e14c920f ""
   "vXXX.tex" 1667163519 269 454ffcb412d44bed60398a44bdf13e85 ""
   (generated)

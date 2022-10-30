@@ -453,6 +453,8 @@ INPUT /home/freddy/.local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symb
 INPUT /home/freddy/.local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT ./content/Aufgabe1.tex
 INPUT ./content/Aufgabe1.tex
+INPUT /home/freddy/.local/texlive/2022/texmf-var/luatex-cache/generic/fonts/otl/lmroman8-regular.luc
+INPUT /home/freddy/.local/texlive/2022/texmf-var/luatex-cache/generic/fonts/otl/lmroman5-regular.luc
 INPUT ./content/Aufgabe2.tex
 INPUT ./content/Aufgabe2.tex
 INPUT build/vXXX.aux
