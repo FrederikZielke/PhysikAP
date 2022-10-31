@@ -1,0 +1,15 @@
+[0] Config.pm:306> INFO - This is Biber 2.18
+[1] Config.pm:309> INFO - Logfile is 'build/vXXX.blg'
+[83] biber:340> INFO - === Sat Oct 15, 2022, 11:47:24
+[104] Biber.pm:418> INFO - Reading 'build/vXXX.bcf'
+[167] Biber.pm:978> INFO - Found 1 citekeys in bib section 0
+[180] Biber.pm:4401> INFO - Processing section 0
+[193] Biber.pm:4592> INFO - Looking for bibtex file 'lit.bib' for section 0
+[377] bibtex.pm:1713> INFO - LaTeX decoding ...
+[381] bibtex.pm:1518> INFO - Found BibTeX data source '../lit.bib'
+[418] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[419] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[419] Biber.pm:4221> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
+[420] Biber.pm:4227> INFO - No sort tailoring available for locale 'de-DE'
+[422] bbl.pm:654> INFO - Writing 'build/vXXX.bbl' with encoding 'UTF-8'
+[423] bbl.pm:757> INFO - Output to build/vXXX.bbl
