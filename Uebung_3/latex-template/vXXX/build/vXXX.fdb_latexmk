@@ -1,10 +1,10 @@
 # Fdb version 3
-["biber build/vXXX"] 1667218946 "build/vXXX.bcf" "build/vXXX.bbl" "build/vXXX" 1667219004
-  "build/vXXX.bcf" 1667219004 107276 1854028b8fb59a73da9009fde4abde75 "lualatex"
+["biber build/vXXX"] 1667218946 "build/vXXX.bcf" "build/vXXX.bbl" "build/vXXX" 1667219541
+  "build/vXXX.bcf" 1667219540 107276 1854028b8fb59a73da9009fde4abde75 "lualatex"
   (generated)
   "build/vXXX.bbl"
   "build/vXXX.blg"
-["lualatex"] 1667219001 "vXXX.tex" "build/vXXX.pdf" "vXXX" 1667219004
+["lualatex"] 1667219537 "vXXX.tex" "build/vXXX.pdf" "vXXX" 1667219541
   "../header.tex" 1665827372 3555 efd30c1e6d1eee9a4641f1a2e006eb3d ""
   "/home/freddy/.local/texlive/2022/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf" 1429396570 733736 0b8cd5044567d896491fd777c12d5cda ""
   "/home/freddy/.local/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf" 1255129361 111536 ae9d1b331000d544f47e5223081b7b54 ""
@@ -221,10 +221,10 @@
   "/home/freddy/.local/texlive/2022/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1664970313 57918 6103b076c30fda4b4f05531d9e1070b4 ""
   "/home/freddy/.local/texlive/2022/texmf-var/tex/generic/config/language.dat" 1664968847 2814 b30a7ca398f0c79dc360085176a14718 ""
   "/home/freddy/.local/texlive/2022/texmf-var/web2c/luahbtex/lualatex.fmt" 1664968851 4784842 f84ab884e45e2e713e0bb2b466544ee6 ""
-  "build/vXXX.aux" 1667219004 830 cd66e66049aa31969524ca24b6c64750 "lualatex"
+  "build/vXXX.aux" 1667219540 830 cd66e66049aa31969524ca24b6c64750 "lualatex"
   "build/vXXX.bbl" 1667218947 466 ee04f40f768daeed26442158e95aba61 "biber build/vXXX"
-  "build/vXXX.run.xml" 1667219004 2396 13f55f0f4af380a580b3504a55d8b3b1 "lualatex"
-  "content/Aufgabe1.tex" 1667218989 1442 3d4961513a351d19d153d8ea3fb38162 ""
+  "build/vXXX.run.xml" 1667219540 2396 13f55f0f4af380a580b3504a55d8b3b1 "lualatex"
+  "content/Aufgabe1.tex" 1667219515 1440 0d189c03c54c7d98f7cce4c63e9fc7d1 ""
   "content/Aufgabe2.tex" 1667218230 1650 d3951d7033528df308100b60281ed313 ""
   "vXXX.tex" 1667216372 278 9310b8345b7e3850f463af32efa4f911 ""
   (generated)
