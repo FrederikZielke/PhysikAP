@@ -1,7 +1,37 @@
 \section*{Aufgabe 2}
     \subsection*{Aufgabenstellung}
         Ein Projektil mit der Masse $m = (5.0 \pm 0.1)g$ fliegt mit einer Geschwindigkeit\\
-        $v = (200 \pm 10)m/s$. Welche Strecke hat es nach der Zeit $t = 6 s$ zurückgelegt?\\
+        $v = (200 \pm 10)m/s$ . Welche Strecke hat es nach der Zeit $t = 6 s$ zurückgelegt?\\
         Wie gross ist seine kinetische Energie?
 
     \subsection*{Rechnung}
+        \begin{align}
+            E &= \frac{1}{2} m v^2 & 
+            v &= \SI{200}{\frac{m}{s}} &
+            Δv &= \SI{10}{\frac{m}{s}}\\
+            & & m &= \SI{5.0}{g} &
+            Δm &= \SI{0.1}{g}
+        \end{align}
+        \begin{equation}
+            \frac{∂E}{∂v} = mv \qquad \qquad \frac{∂E}{∂m} = \frac{1}{2} v^2
+        \end{equation}
+        \begin{align}
+            E &= \frac{1}{2} \cdot \SI{5}{g} \cdot (\SI{200}{\frac{m}{s}})^2 = \SI{100}{Nm}\\
+            ΔE &= \sqrt{(\frac{∂E}{∂v} Δv)^2 + (\frac{∂E}{∂m} Δm)^2}\\
+            &= \sqrt{(\SI{5.0}{g} \cdot \SI{200}{\frac{m}{s}} \cdot \SI{10}{\frac{m}{s}})^2 + (\frac{1}{2} \cdot (\SI{200}{\frac{m}{s}})^2) \cdot \SI{0.1}{\frac{m}{s}}^2}\\
+            &= \SI{10,190}{Nm}
+        \end{align}
+        \begin{equation}
+            E = \SI{100(10)}{Nm}
+        \end{equation}
+        \\
+        \begin{align}
+            s &= v\cdot t \qquad v = \SI{200}{\frac{m}{s}} \qquad Δv = \SI{10}{\frac{m}{s}}\\
+            s &= \SI{200}{\frac{m}{s}} \cdot \SI{6}{s} = \SI{1200}{m}\\
+            Δs &= \sqrt{(\frac{∂s}{∂v} \cdot Δv)^2} = \sqrt{(t \cdot Δv)^2} = \sqrt{(\SI{6}{s} \SI{10}{\frac{m}{s}})^2}\\
+            &= \SI{60}{m}\\
+        \end{align}
+        \begin{equation}
+            s = \SI{1200(60)}{m}
+        \end{equation}
+        

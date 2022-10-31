@@ -5,19 +5,25 @@
 
     \subsection*{Rechnung}
         \begin{align}
-        f &= \pi r_a^2 h - \pi r_i^2 h &Δf &= \sqrt{\sum_{k=1}^n (\frac{∂f}{∂x_k}\cdotΔx_k)^2}\\
+        V &= \pi r_a^2 h - \pi r_i^2 h &ΔV &= \sqrt{\sum_{k=1}^n (\frac{∂V}{∂x_k}\cdotΔx_k)^2}\\
         r_{aussen} &= 15 \unit{cm} & Δr_{aussen} &= \SI{1}{cm}\\
         r_{innen} &= \SI{10}{cm} & Δr_{innen} &= \SI{1}{cm}\\
         h &= \SI{20}{cm} & Δh &= \SI{1}{cm}\\
         \end{align}
         \begin{equation}
-            \frac{∂f}{∂r_a} = 2\pi r_a h  \frac{∂f}{∂r_i} = -\pi r_i h \frac{∂f}{∂h} = \pi (r_a^2 - r_i^2)\\
+            V = \pi \cdot \SI{20}{cm} \cdot ((\SI{15}{cm})^2 - (\SI{10}{cm})^2)^2 = 2500\pi
         \end{equation}
         \begin{equation}
-            Δf = \sqrt{(\frac{∂f}{∂r_a}\cdotΔr_a)^2 + (\frac{∂f}{∂r_i}\cdotΔr_i)^2 + (\frac{∂f}{∂h}\cdotΔh)^2}\\
+            \frac{∂V}{∂r_a} = 2\pi r_a h \qquad \frac{∂V}{∂r_i} = -\pi r_i h \qquad \frac{∂V}{∂h} = \pi (r_a^2 - r_i^2)\\
+        \end{equation}
+        \begin{equation}
+            ΔV = \sqrt{(\frac{∂V}{∂r_a}\cdotΔr_a)^2 + (\frac{∂V}{∂r_i}\cdotΔr_i)^2 + (\frac{∂V}{∂h}\cdotΔh)^2}\\
         \end{equation}
             $= \sqrt{(2\pi \cdot \SI{15}{cm} \cdot \SI{20}{cm} \cdot \SI{1}{cm})^2 + (-2\pi \cdot \SI{10}{cm} \cdot \SI{20}{cm} \cdot \SI{1}{cm})^2
             + (2\pi \cdot ((\SI{15}{cm})^2 - (\SI{10}{cm})^2)\cdot 1)^2}$ 
         \begin{equation}
             = \SI{2300}{cm^3}
+        \end{equation}
+        \begin{equation}
+            V = \SI{7,9(2,3)e3}{cm^3}
         \end{equation}

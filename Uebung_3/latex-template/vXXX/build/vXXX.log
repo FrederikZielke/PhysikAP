@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2022.10.5)  30 OCT 2022 23:02
+This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2022.10.5)  31 OCT 2022 13:23
  restricted system commands enabled.
 **vXXX.tex
 (./vXXX.tex
@@ -1303,38 +1303,43 @@ Package microtype Info: Loading generic protrusion settings for font family
  [1
 
 {/home/freddy/.local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./content/Aufgabe1.tex
-Overfull \hbox (35.94373pt too wide) in paragraph at lines 18--21
+Overfull \hbox (35.94373pt too wide) in paragraph at lines 21--24
 $\TU/LatinModernMath(1)/m/n/10.95 = []$ 
  []
 
-) (./content/Aufgabe2.tex)
+) [2
 
-LaTeX Warning: Empty bibliography on input line 20.
+] (./content/Aufgabe2.tex
+Underfull \hbox (badness 10000) in paragraph at lines 26--28
 
-[2
+ []
 
-] (./build/vXXX.aux)
+)
+
+LaTeX Warning: Empty bibliography on input line 21.
+
+[3] (./build/vXXX.aux)
 Package rerunfilecheck Info: File `vXXX.aux' has not changed.
-(rerunfilecheck)             Checksum: 69E89530A2F47A6FD4F859AAB7D9D996;830.
+(rerunfilecheck)             Checksum: CD66E66049AA31969524CA24B6C64750;830.
 Package logreq Info: Writing requests to 'vXXX.run.xml'.
 
 \openout1 = vXXX.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 36897 strings out of 477352
+ 36914 strings out of 477352
  100000,1977958 words of node,token memory allocated
- 702 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 1 margin_kern, 3 glyph, 25 attribute, 73 glue_spec, 14 attribute_list, 1 write nodes
-   avail lists: 1:3,2:958,3:220,4:44,5:268,6:18,7:1988,8:80,9:738,10:4,11:42,12:1
+ 757 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 1 margin_kern, 3 glyph, 45 attribute, 72 glue_spec, 24 attribute_list, 1 write nodes
+   avail lists: 1:3,2:1227,3:214,4:41,5:376,6:16,7:1870,8:81,9:1084,10:4,11:29,12:1
  56949 multiletter control sequences out of 65536+600000
- 83 fonts using 32600471 bytes
- 113i,10n,117p,10617b,2933s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 83 fonts using 32600615 bytes
+ 113i,11n,117p,10617b,2933s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </home/freddy/.local/texlive/2022/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></home/freddy/.local/texlive/2022/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></home/freddy/.local/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></home/freddy/.local/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></home/freddy/.local/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf></home/freddy/.local/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf>
-Output written on vXXX.pdf (2 pages, 29533 bytes).
+Output written on vXXX.pdf (3 pages, 32946 bytes).
 
-PDF statistics: 76 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
- 17 named destinations out of 1000 (max. 131072)
+PDF statistics: 98 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
+ 34 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 
