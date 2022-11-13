@@ -1,12 +1,95 @@
+\newpage
 \section{Auswertung}
 \label{sec:Auswertung}
-
-\begin{figure}
+\subsection{Messwerte}
+Aus $F = D \cdot \Delta x \Leftrightarrow D = \frac{F}{\Delta x}$ folgt:
+\begin{table}[H]
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+  \input{tabelle.tex}
+  \caption{\label{tab:Messdaten}Messdaten und Federkonstante D}
+\end{table}
 
+\subsection{Bestimmung der Federkonstante aus Mittelwertbildung}
+\begin{equation}
+\begin{aligned}
+  \overline{D} {} = & \,\frac{1}{10} \sum_{i=1}^{10} D_i \\
+        =& \,\frac{1}{10} (0.03000 + 0.02900 + 0.02933 + 0.02950 + 0.02960\\
+        & \:\;+ 0.02967 + 0.02971 + 0.02975 + 0.02978 + 0.02980)\\
+        =& \,0.02961
+\end{aligned}
+\end{equation}
 
-Siehe \autoref{fig:plot}!
+\subsection{Bestimmung der Federkonstante aus linearer Ausgleichsrechnung}
+Wir benutzen zur Berechnung die Methode der kleinsten Quadrate:
+\begin{equation}
+\begin{aligned}
+  \underline{A}^T \cdot \underline{A} \cdot \vec{x} = \underline{A}^T \cdot \vec{b}
+\end{aligned}
+\end{equation}
+mit 
+  \begin{minipage}{0.48\linewidth}
+
+    \[
+    \underline{A} =
+    \left(\begin{array}{cc}
+      1 & 5\\
+      1 & 10\\
+      1 & 15\\
+      1 & 20\\
+      1 & 25\\
+      1 & 30\\
+      1 & 35\\
+      1 & 40\\
+      1 & 45\\
+      1 & 50\\
+    \end{array} \right)\\
+    \]
+    \end{minipage}
+    \begin{minipage}{0.01\linewidth}
+    \vspace{2pt}
+    ,
+    \end{minipage}
+    \begin{minipage}{0.48\linewidth}
+    
+    \[
+    \vec{b} =
+    \left(\begin{array}{c}
+      1\\
+      1\\
+      1\\
+      1\\
+      1\\
+      1\\
+      1\\
+      1\\
+      1\\
+      1\\
+    \end{array} \right) \\
+    \]
+    
+    \end{minipage}
+    Wir erhalten $\underline{A}^T \cdot \underline{A} = \begin{pmatrix}
+      10 & 275\\ 
+      275 & 9625
+    \end{pmatrix}$ 
+    und $\underline{A}^T \cdot \vec{b} =  \begin{pmatrix}
+      8.16\\ 
+      286.15
+    \end{pmatrix}$.
+
+    \noindent Daraus folgt nun das Gleichungssystem 
+    $\begin{pmatrix}
+      10 & 275\\ 
+      275 & 9625
+    \end{pmatrix}
+    \cdot \vec{x}
+    = \begin{pmatrix}
+      8.16\\ 
+      286.15
+    \end{pmatrix}$
+    mit $\vec{x} = \begin{pmatrix}
+      b\\ 
+      m
+    \end{pmatrix}$
+    wobei b der y-Achsenabschnitt und m die Steigung der linearen Ausgleichsgerade ist.\\
+    \noindent Das Gleichungssystem kann nun beispielsweise mit dem Gauß-Algorithmus gelöst werden. Wir erhalten $b = -\frac{3}{500}, m = \frac{411}{13750} \approx 0.02989$

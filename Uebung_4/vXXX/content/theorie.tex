@@ -1,4 +1,28 @@
 \section{Theorie}
 \label{sec:Theorie}
+Das Ziel des Versuchs ist es, bei einer senkrecht eingespannten Feder die Federkonstante $D$ zu bestimmen. Die Theorie	hierzu besagt, dass die Kraft $F$, die auf die Feder wirkt, proportional zu der Auslenkung $\Delta x$ ist:
+\begin{equation}
+    \begin{aligned}
+    F = D \cdot \Delta x
+\end{aligned}
+\end{equation}
+Um diesen theoretischen Zusammenhang zu prüfen, wird eine Feder senkrecht zwischen einen Seilzug und ein Kraftmessgerät eingespannt. Der Seilzug ist an einer Messskala befestigt, die die Auslenkung der Feder in $\unit{\cm}$ angibt. Oben an der Feder ist das Kraftmessgerät befestigt, welches die auf die Feder wirkende Kraft (in $\unit{\N}$) auf zwei Nachkommastellen genau digital angibt.
+Es werden 10 Messwertepaare zur Bestimmung der Federkonstante aufgenommen. Die beiden Methoden zur Bestimmung sind:
+\begin{enumerate}
+    \item Mittelwertbildung
+    \item Lineare Ausgleichsrechnung
+\end{enumerate}
+\subsection{Methode der Mittelwertbildung}
+\begin{equation}
+    \begin{aligned}
+    \overline{D} {} = \,\frac{1}{10} \sum_{i=1}^{10} D_i
+    \label{eqn:methode1}
+\end{aligned}
+\end{equation}
+\subsection{Methode der linearen Ausgleichsrechnung}
+\begin{equation}
+\begin{aligned}
+      \underline{A}^T \cdot \underline{A} \cdot \vec{x} = \underline{A}^T \cdot \vec{b}
+\end{aligned}
+\end{equation}
 
-\cite{sample}

@@ -1,15 +1,9 @@
 [0] Config.pm:306> INFO - This is Biber 2.18
 [0] Config.pm:309> INFO - Logfile is 'build/vXXX.blg'
-[66] biber:340> INFO - === Sa Okt 15, 2022, 13:45:05
-[78] Biber.pm:418> INFO - Reading 'build/vXXX.bcf'
-[150] Biber.pm:978> INFO - Found 1 citekeys in bib section 0
-[163] Biber.pm:4401> INFO - Processing section 0
-[174] Biber.pm:4592> INFO - Looking for bibtex file 'lit.bib' for section 0
-[187] bibtex.pm:1713> INFO - LaTeX decoding ...
-[189] bibtex.pm:1518> INFO - Found BibTeX data source '../lit.bib'
-[221] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[221] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[221] Biber.pm:4221> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
-[221] Biber.pm:4227> INFO - No sort tailoring available for locale 'de-DE'
-[223] bbl.pm:654> INFO - Writing 'build/vXXX.bbl' with encoding 'UTF-8'
-[224] bbl.pm:757> INFO - Output to build/vXXX.bbl
+[76] biber:340> INFO - === Sun Nov 13, 2022, 16:06:04
+[92] Biber.pm:418> INFO - Reading 'build/vXXX.bcf'
+[156] Biber.pm:978> INFO - Found 0 citekeys in bib section 0
+[170] bbl.pm:654> INFO - Writing 'build/vXXX.bbl' with encoding 'UTF-8'
+[171] bbl.pm:757> INFO - Output to build/vXXX.bbl
+[172] Biber.pm:130> WARN - The file 'build/vXXX.bcf' does not contain any citations!
+[173] Biber.pm:132> INFO - WARNINGS: 1
