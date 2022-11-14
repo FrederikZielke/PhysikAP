@@ -1,10 +1,10 @@
 # Fdb version 3
-["biber build/vXXX"] 1668450058 "build/vXXX.bcf" "build/vXXX.bbl" "build/vXXX" 1668450069
-  "build/vXXX.bcf" 1668450069 107276 1854028b8fb59a73da9009fde4abde75 "lualatex"
+["biber build/vXXX"] 1668450058 "build/vXXX.bcf" "build/vXXX.bbl" "build/vXXX" 1668450582
+  "build/vXXX.bcf" 1668450582 107276 1854028b8fb59a73da9009fde4abde75 "lualatex"
   (generated)
   "build/vXXX.bbl"
   "build/vXXX.blg"
-["lualatex"] 1668450066 "vXXX.tex" "build/vXXX.pdf" "vXXX" 1668450069
+["lualatex"] 1668450579 "vXXX.tex" "build/vXXX.pdf" "vXXX" 1668450582
   "../header.tex" 1665827372 3555 efd30c1e6d1eee9a4641f1a2e006eb3d ""
   "/home/freddy/.local/texlive/2022/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf" 1429396570 733736 0b8cd5044567d896491fd777c12d5cda ""
   "/home/freddy/.local/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf" 1255129361 111240 0af0b64d6d3df41bead3f9de314afbd4 ""
@@ -222,11 +222,11 @@
   "/home/freddy/.local/texlive/2022/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1664970313 57918 6103b076c30fda4b4f05531d9e1070b4 ""
   "/home/freddy/.local/texlive/2022/texmf-var/tex/generic/config/language.dat" 1664968847 2814 b30a7ca398f0c79dc360085176a14718 ""
   "/home/freddy/.local/texlive/2022/texmf-var/web2c/luahbtex/lualatex.fmt" 1664968851 4784842 f84ab884e45e2e713e0bb2b466544ee6 ""
-  "build/vXXX.aux" 1668450069 6015 0eb6ddd6b44bf893db7f8c40fd6e15ac "lualatex"
+  "build/vXXX.aux" 1668450582 6015 0eb6ddd6b44bf893db7f8c40fd6e15ac "lualatex"
   "build/vXXX.bbl" 1668450063 466 ee04f40f768daeed26442158e95aba61 "biber build/vXXX"
-  "build/vXXX.run.xml" 1668450069 2396 13f55f0f4af380a580b3504a55d8b3b1 "lualatex"
-  "build/vXXX.toc" 1668450069 812 554d57c842b4a252ad1f069246b65d84 "lualatex"
-  "content/auswertung.tex" 1668449887 2505 97c995563a40f602bd48a009566e16c2 ""
+  "build/vXXX.run.xml" 1668450582 2396 13f55f0f4af380a580b3504a55d8b3b1 "lualatex"
+  "build/vXXX.toc" 1668450582 812 554d57c842b4a252ad1f069246b65d84 "lualatex"
+  "content/auswertung.tex" 1668450575 2552 720632266f39c1f1feda4ee0c64792a6 ""
   "content/durchfuehrung.tex" 1668449588 500 b8b2470f2251eaf6ca9e5a60f212788c ""
   "content/theorie.tex" 1668450002 1358 5645f1b30d381b58abb1960812878e76 ""
   "tabelle.tex" 1668357057 585 c334da6bb444d1b5874d984a59cf8651 ""
