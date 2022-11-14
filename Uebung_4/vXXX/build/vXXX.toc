@@ -6,5 +6,5 @@
 \contentsline {section}{\numberline {3}Auswertung}{4}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Messwerte}{4}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Bestimmung der Federkonstante aus Mittelwertbildung}{4}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Bestimmung der Federkonstante aus linearer Ausgleichsrechnung}{4}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.3}Bestimmung der Federkonstante aus linearer Ausgleichsrechnung}{5}{subsection.3.3}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
