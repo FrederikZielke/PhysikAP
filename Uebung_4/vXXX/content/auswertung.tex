@@ -10,16 +10,26 @@ Aus $F = D \cdot \Delta x \Leftrightarrow D = \frac{F}{\Delta x}$ folgt:
 \end{table}
 
 \subsection{Bestimmung der Federkonstante aus Mittelwertbildung}
-\begin{equation}
+%\begin{equation}
+\begin{multline}
 \begin{aligned}
   \overline{D} {} = & \,\frac{1}{10} \sum_{i=1}^{10} D_i \\
         =& \,\frac{1}{10} (0.03000 + 0.02900 + 0.02933 + 0.02950 + 0.02960\\
         & \:\;+ 0.02967 + 0.02971 + 0.02975 + 0.02978 + 0.02980)\\
         =& \,0.02961
 \end{aligned}
+<<<<<<< HEAD
 \end{equation}
 
 \newpage
+||||||| a9f5461
+\end{equation}
+
+=======
+\end{multline}
+%\end{equation}
+\newpage
+>>>>>>> da538bf6271bc3fb6e468242318a120b04a406c0
 \subsection{Bestimmung der Federkonstante aus linearer Ausgleichsrechnung}
 Wir benutzen zur Berechnung die Methode der kleinsten Quadrate:
 \begin{equation}
@@ -69,8 +79,16 @@ mit
     \]
     \vspace{10pt}
     \end{minipage}
+<<<<<<< HEAD
     
     \noindent Wir erhalten $\underline{A}^T \cdot \underline{A} = \begin{pmatrix}
+||||||| a9f5461
+    Wir erhalten $\underline{A}^T \cdot \underline{A} = \begin{pmatrix}
+=======
+    \newline %funktioniert irgendwie nicht wie ich mir das vorstelle :(
+    \newline
+    Wir erhalten $\underline{A}^T \cdot \underline{A} = \begin{pmatrix}
+>>>>>>> da538bf6271bc3fb6e468242318a120b04a406c0
       10 & 275\\ 
       275 & 9625
     \end{pmatrix}$ 
@@ -78,7 +96,7 @@ mit
       8.16\\ 
       286.15
     \end{pmatrix}$.
-
+    \newline
     \noindent Daraus folgt nun das Gleichungssystem 
     $\begin{pmatrix}
       10 & 275\\ 
