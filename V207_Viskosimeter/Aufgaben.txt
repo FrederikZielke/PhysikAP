@@ -1,0 +1,24 @@
+Zielsetzung Freddy erledigt?
+Theoretische Grundlagen Freddy 
+    Kritischer Wert → Reynoldszahl 
+    zitierfähige litquelle
+    Andradsche Gleichung
+    Proportionalitätskonstante K
+    Fehlerrechnung
+Vorbereitungsaufgaben Lennart
+Durchführung Lennart
+    Versuchsaufbau + Bild
+    kleine Kugel 
+    große Kugel
+    große Kugel Temperaturabhängigkeit
+Auswertung Freddy
+    Tabelle kK
+    Tabelle gK + Apparatekonstante K berechnen
+    Tabelle gKT
+    Viskosität in Temperaturabhängigkeit ausrechnen und plotten x[1/T] , f(x) = ln(η)
+    ist die Strömung laminar
+Diskussion Lennart
+    warum sind unsere Werte Arsch?
+    mit Literatur vergleichen
+
+Literaturverzeichnis
