@@ -1,10 +1,10 @@
 # Fdb version 3
-["biber build/vXXX"] 1669125706 "build/vXXX.bcf" "build/vXXX.bbl" "build/vXXX" 1669126061
-  "build/vXXX.bcf" 1669126026 107276 1854028b8fb59a73da9009fde4abde75 "lualatex"
+["biber build/vXXX"] 1669385769 "build/vXXX.bcf" "build/vXXX.bbl" "build/vXXX" 1669385908
+  "build/vXXX.bcf" 1669385847 107276 1854028b8fb59a73da9009fde4abde75 "lualatex"
   (generated)
   "build/vXXX.bbl"
   "build/vXXX.blg"
-["lualatex"] 1669126061 "vXXX.tex" "build/vXXX.pdf" "vXXX" 1669126061
+["lualatex"] 1669385908 "vXXX.tex" "build/vXXX.pdf" "vXXX" 1669385908
   "../header.tex" 1665827372 3555 efd30c1e6d1eee9a4641f1a2e006eb3d ""
   "/home/freddy/.local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
   "/home/freddy/.local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
@@ -214,10 +214,12 @@
   "/home/freddy/.local/texlive/2022/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1664970313 57918 6103b076c30fda4b4f05531d9e1070b4 ""
   "/home/freddy/.local/texlive/2022/texmf-var/tex/generic/config/language.dat" 1664968847 2814 b30a7ca398f0c79dc360085176a14718 ""
   "/home/freddy/.local/texlive/2022/texmf-var/web2c/luahbtex/lualatex.fmt" 1664968851 4784842 f84ab884e45e2e713e0bb2b466544ee6 ""
-  "build/vXXX.aux" 1669126026 4973 c12122a4a6f498d199de172b4154f82a "lualatex"
-  "build/vXXX.bbl" 1669125707 466 ee04f40f768daeed26442158e95aba61 "biber build/vXXX"
-  "build/vXXX.toc" 1669126026 660 158c11b50ca135357e44bfb5155373fa "lualatex"
-  "content/theorie.tex" 1669126058 919 8a6105fc8bcfeb7fa48393d50880c1a7 ""
+  "build/vXXX.aux" 1669385847 5060 bea2c6d4b12ff0c1773ef537eec7015f "lualatex"
+  "build/vXXX.bbl" 1669385769 466 ee04f40f768daeed26442158e95aba61 "biber build/vXXX"
+  "build/vXXX.toc" 1669385847 660 158c11b50ca135357e44bfb5155373fa "lualatex"
+  "content/auswertung.tex" 1669385905 1074 d0e2af213c2046d870394fe6fc4c401b ""
+  "content/durchfuehrung.tex" 1621372781 50 21282d8bb0cc9b2f3316d3739203a5a9 ""
+  "content/theorie.tex" 1669378807 917 623f9cd35112eaae4020cce6b9f4fb67 ""
   "content/vorbereitung.tex" 1669125291 317 f9eca0316592617ab35634644b359737 ""
   "content/zielsetzung.tex" 1669124579 267 2f88cd6e3b1a99aef7cf1f4fe013166f ""
   "vXXX.tex" 1669125315 438 60b841180e3c62248feeb870069334ea ""

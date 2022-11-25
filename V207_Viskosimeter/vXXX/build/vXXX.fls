@@ -1,4 +1,4 @@
-PWD /media/freddy/565C94D05C94ABED/Uni/AP-Praktikum/V207_Viskosimeter/latex-template/vXXX
+PWD /media/freddy/565C94D05C94ABED/Uni/AP-Praktikum/V207_Viskosimeter/vXXX
 INPUT /home/freddy/.local/texlive/2022/texmf-var/web2c/luahbtex/lualatex.fmt
 INPUT ./vXXX.tex
 OUTPUT build/vXXX.log
@@ -461,3 +461,7 @@ INPUT ./content/vorbereitung.tex
 INPUT ./content/vorbereitung.tex
 INPUT ./content/theorie.tex
 INPUT ./content/theorie.tex
+INPUT ./content/durchfuehrung.tex
+INPUT ./content/durchfuehrung.tex
+INPUT ./content/auswertung.tex
+INPUT ./content/auswertung.tex

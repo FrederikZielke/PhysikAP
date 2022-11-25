@@ -16,7 +16,7 @@ Auswertung Freddy
     Tabelle gK + Apparatekonstante K berechnen
     Tabelle gKT
     Viskosität in Temperaturabhängigkeit ausrechnen und plotten x[1/T] , f(x) = ln(η)
-    ist die Strömung laminar
+    ist die Strömung laminar?
 Diskussion Lennart
     warum sind unsere Werte Arsch?
     mit Literatur vergleichen

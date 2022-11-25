@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2022.10.5)  22 NOV 2022 15:07
+This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2022.10.5)  25 NOV 2022 15:18
  restricted system commands enabled.
 **vXXX.tex
 (./vXXX.tex
@@ -1325,19 +1325,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--21
 
  []
 
-! Display math should end with $$.
-<to be read again> 
-e
-l.22 η(T) = A \cdot $e
-                     $^{ \left(\frac{A}{T}\right)}
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--25
+
+ []
+
+) (./content/durchfuehrung.tex) (./content/auswertung.tex
+! Incomplete \iffalse; all text was ignored after line 12.
+<inserted text> 
+\fi 
+l.12   {$t_{hoch}\left[\unit{\s}\right]$} &
+                                          {$t_{runter}\left[\unit{\s}\right]...
 
 Here is how much of LuaTeX's memory you used:
- 36937 strings out of 477352
+ 36963 strings out of 477352
  100000,1977958 words of node,token memory allocated
- 12543 words of node memory still in use:
-   74 hlist, 6 vlist, 2 rule, 76 disc, 11 local_par, 2 dir, 26 math, 219 glue, 103 kern, 65 penalty, 1 choice, 16 noad, 7 math_char, 4 sub_box, 5 sub_mlist, 14 margin_kern, 966 glyph, 293 attribute, 74 glue_spec, 148 attribute_list, 8 write, 11 pdf_dest, 10 pdf_colorstack nodes
-   avail lists: 1:4,2:43,3:25,4:37,5:31,6:13,8:6,9:57,10:5,12:1
- 56986 multiletter control sequences out of 65536+600000
- 81 fonts using 32336951 bytes
- 113i,6n,117p,10617b,2933s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 14405 words of node memory still in use:
+   112 hlist, 8 vlist, 9 rule, 78 disc, 16 local_par, 6 dir, 22 math, 281 glue, 124 kern, 90 penalty, 15 margin_kern, 1029 glyph, 2 align_record, 391 attribute, 100 glue_spec, 197 attribute_list, 13 temp, 1 align_stack, 1 if_stack, 12 write, 12 pdf_dest, 15 pdf_colorstack nodes
+   avail lists: 1:4,2:5,3:12,4:32,5:1,6:7,8:29,9:8,10:5,12:1
+ 56994 multiletter control sequences out of 65536+600000
+ 81 fonts using 32337095 bytes
+ 113i,10n,117p,10617b,2933s stack positions out of 10000i,1000n,20000p,200000b,200000s
 !  ==> Fatal error occurred, no output PDF file produced!
