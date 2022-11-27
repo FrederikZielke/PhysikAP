@@ -1,10 +1,10 @@
 # Fdb version 3
-["biber build/vXXX"] 1669416800 "build/vXXX.bcf" "build/vXXX.bbl" "build/vXXX" 1669416813
-  "build/vXXX.bcf" 1669416812 107276 1854028b8fb59a73da9009fde4abde75 "lualatex"
+["biber build/vXXX"] 1669478197 "build/vXXX.bcf" "build/vXXX.bbl" "build/vXXX" 1669480104
+  "build/vXXX.bcf" 1669480103 107276 1854028b8fb59a73da9009fde4abde75 "lualatex"
   (generated)
   "build/vXXX.bbl"
   "build/vXXX.blg"
-["lualatex"] 1669416807 "vXXX.tex" "build/vXXX.pdf" "vXXX" 1669416813
+["lualatex"] 1669480095 "vXXX.tex" "build/vXXX.pdf" "vXXX" 1669480104
   "../header.tex" 1669407908 3555 efd30c1e6d1eee9a4641f1a2e006eb3d ""
   "/home/lennart/.local/texlive/2022/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf" 1429396570 733736 0b8cd5044567d896491fd777c12d5cda ""
   "/home/lennart/.local/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf" 1255129361 111240 0af0b64d6d3df41bead3f9de314afbd4 ""
@@ -226,17 +226,16 @@
   "/home/lennart/.local/texlive/2022/texmf-var/tex/generic/config/language.dat" 1664180497 6647 f376f48ef12f7730bb05d0e2dbb9feb6 ""
   "/home/lennart/.local/texlive/2022/texmf-var/web2c/luahbtex/lualatex.fmt" 1664180571 4783940 c4308098ed57ad4c124107a2adefa3d6 ""
   "bilder/hoeppler_viskosimeter.png" 1669412557 238137 6039a974399e6388254fbce313b1e042 ""
-  "build/vXXX.aux" 1669416812 7213 fd944ca49edb41b62a4754f5904d76d4 "lualatex"
-  "build/vXXX.bbl" 1669416802 466 ee04f40f768daeed26442158e95aba61 "biber build/vXXX"
-  "build/vXXX.run.xml" 1669416812 2396 13f55f0f4af380a580b3504a55d8b3b1 "lualatex"
-  "build/vXXX.toc" 1669416812 868 ac6aa0bcb68e9433331ac52313ca939c "lualatex"
-  "content/aufbau.tex" 1669415427 516 274b06899d03a5bd0e80450da5eb5118 ""
-  "content/auswertung.tex" 1669414927 1074 08897f704c54c6686d5a82def077025a ""
-  "content/durchfuehrung.tex" 1669416400 1095 95e1ad6d2cce2fd3f6c4fbdba2201642 ""
+  "build/vXXX.aux" 1669480103 6391 32b6fcc06101c5282ba6edd473f417f6 "lualatex"
+  "build/vXXX.bbl" 1669478199 466 ee04f40f768daeed26442158e95aba61 "biber build/vXXX"
+  "build/vXXX.run.xml" 1669480103 2396 13f55f0f4af380a580b3504a55d8b3b1 "lualatex"
+  "build/vXXX.toc" 1669480103 803 1f989e909e0de49fc2bb1a952af108cf "lualatex"
+  "content/auswertungtest.tex" 1669478707 1228 f0f0dfecb36c787146bd0313ebcce2e3 ""
+  "content/durchfuehrung.tex" 1669480016 2394 48a177aa4d32ee361964304d9eeeaed4 ""
   "content/theorie.tex" 1669409621 941 3935fa4b2da625c77135139b11e953bd ""
-  "content/vorbereitung.tex" 1669412283 798 3d1cd89e6066ce02e576c72fe39e98eb ""
+  "content/vorbereitung.tex" 1669480093 809 72318967b286e8009acd812b9cfa840f ""
   "content/zielsetzung.tex" 1669407908 267 2f88cd6e3b1a99aef7cf1f4fe013166f ""
-  "vXXX.tex" 1669416785 514 c90a65caa97a35ca145a3e6be1351a8d ""
+  "vXXX.tex" 1669478779 523 0e04965c24a851aa503cec3258ef6491 ""
   (generated)
   "build/vXXX.aux"
   "build/vXXX.bcf"
