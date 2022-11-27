@@ -5,6 +5,10 @@
 \contentsline {subsection}{\numberline {2.2}Dynamische Viskosität von Wasser als Funktion der Temperatur}{3}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Die Dichte von destilliertem Wasser}{3}{subsection.2.3}%
 \contentsline {section}{\numberline {3}Theorie}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Kräfte}{3}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Viskosität}{3}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Berechnung des Arithmetischen Mittelwerts}{4}{subsubsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.3}Fehlerrechnung}{4}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Veruchsaufbau und Durchführung}{4}{section.4}%
-\contentsline {section}{\numberline {5}Auswertung}{5}{section.5}%
+\contentsline {section}{\numberline {5}Auswertung}{6}{section.5}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
