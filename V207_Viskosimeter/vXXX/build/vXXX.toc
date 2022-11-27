@@ -6,5 +6,5 @@
 \contentsline {subsection}{\numberline {2.3}Die Dichte von destilliertem Wasser}{3}{subsection.2.3}%
 \contentsline {section}{\numberline {3}Theorie}{3}{section.3}%
 \contentsline {section}{\numberline {4}Veruchsaufbau und Durchführung}{4}{section.4}%
-\contentsline {section}{\numberline {5}Auswertungtest}{5}{section.5}%
+\contentsline {section}{\numberline {5}Auswertung}{5}{section.5}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
