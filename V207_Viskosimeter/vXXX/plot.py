@@ -9,13 +9,13 @@ import uncertainties.unumpy as unumpy
 T, t= np.genfromtxt('./content/fallzeitSteigendeTemperatur.txt', unpack = True)
 T = T + 273.15
 T = 1/T
-K = 0.07
-rohK = 3.99
-rohFk = 1
+K = 1.673*(10**-8)
+rohK = 2.393
+rohFl = 0.998467
 #eta = K * (rohK - rohFk) * t
 
 def f(x):
-    return K * (rohK - rohFk) * x
+    return K * (rohK - rohFl) * x
 
 eta = f(t)
 eta = np.log(eta)

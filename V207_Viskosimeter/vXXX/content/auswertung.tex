@@ -67,12 +67,10 @@ Die Dichte der kleinen Kugel mit Gleichung \ref{eqn:4} berechnen:
 \subsection{Viskosität in Abhängigkeit der Temperatur}
 Um die Konstanten A und B zu ermitteln wird die Gleichung \eqref{eqn:AndradscheGl} umgestellt.
 Mithilfe der Python Funktion polyfit werden A und B ermittelt.
-\begin{equation}
-  \Leftrightarrow ln(η) = ln(\text{A}) + \frac{\text{B}}{\text{T}}
-\end{equation}
-\begin{equation}
-  A = 
-\end{equation}
+\begin{align}
+  \Leftrightarrow ln(η) &= ln(\text{A}) + \frac{\text{B}}{\text{T}}
+  A &= (1792.338 ± 26.764) \quad , \quad B = (-19.730 ± 0.086)\si{\kelvin}
+\end{align}
 \begin{table}[!htp]
   \centering
   \begin{tabular}{c|c|c}
@@ -102,6 +100,13 @@ Mithilfe der Python Funktion polyfit werden A und B ermittelt.
   \label{tabellegkt}
   \caption{Fallzeiten der großen Kugel bei steigender Temperatur}
 \end{table}
+
+\subsection{Berechnung der Reynoldszahl}
+Zur berechnung der Reynoldszahl setzen wir in Gleichung \eqref{eqn:5} für $v = \frac{x}{t} \text{und} d = 2r$ ein.
+Die Reynoldszahl der großen Kugel bei Raumtemperatur beträgt
+\begin{equation}
+  Re = 
+\end{equation} 
 
 %\begin{figure}
 %  \centering
