@@ -6,10 +6,7 @@
 \begin{table}[H]
   \begin{minipage}{0.5\linewidth}
     \centering
-    \begin{tabular}{
-      S[table-format=2.2]
-      S[table-format=1.2]
-    }
+    \begin{tabular}{c|c}
       \toprule
       {$t_{hoch}\left[\unit{\s}\right]$} & {$t_{runter}\left[\unit{\s}\right]$}\\
       \midrule
@@ -31,16 +28,16 @@
   \end{minipage}
   \begin{minipage}{0.5\linewidth}
     \centering
-    \begin{tabular}{|c|c|}
-      \hline
+    \begin{tabular}{c|c}
+      \toprule
       {$t_{hoch}\left[\unit{\s}\right]$} & {$t_{runter}\left[\unit{\s}\right]$}\\
-      \hline    
+      \midrule
       52.53 & 52.78\\
       53.19 & 52.38\\
       53.79 & 52.97\\
       53.69 & 53.16\\
       53.53 & 53.19\\
-      \hline
+      \bottomrule
     \end{tabular}
     \vspace{5pt}
     \caption{Fallzeiten der großen\\ Kugel bei Raumtemperatur}
@@ -71,10 +68,10 @@ Die Dichte der kleinen Kugel mit Gleichung \ref{eqn:4} berechnen:
 
 \begin{table}[!htp]
   \centering
-  \begin{tabular}{|c|c|c|}
-    \hline
+  \begin{tabular}{c|c|c}
+    \toprule
     $T [\unit{\degreeCelsius}]$ & $t_{\text{runter}} [\unit{\second}]$ & $t_{\text{hoch}} [\unit{\second}]$\\
-    \hline \hline
+    \midrule
     27.5 & 47.5 & 46\\%warum kann ich hier keine Multirow machen?????!!!!?!?!?!
     27.5 & 45 & 43.97\\
     29 & 43.47 & 42.97\\
@@ -93,6 +90,7 @@ Die Dichte der kleinen Kugel mit Gleichung \ref{eqn:4} berechnen:
     52 & 28.91 & 28.22\\
     56 & 27.03 & 26.53\\
     56 & 26.88 & 26.85\\
+    \bottomrule
   \end{tabular}
   \label{tabellegkt}
   \caption{Fallzeiten der großen Kugel bei steigender Temperatur}
