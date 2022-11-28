@@ -2,51 +2,72 @@ import matplotlib.pyplot as plt
 import numpy as np
 from uncertainties import ufloat
 import uncertainties.unumpy as unumpy
-
-def linregress(x, y):
-    assert len(x) == len(y)
-
-    x, y = np.array(x), np.array(y)
-
-    N = len(y)
-    Delta = N * np.sum(x ** 2) - (np.sum(x)) ** 2
-
-    A = (N * np.sum(x * y) - np.sum(x) * np.sum(y)) / Delta
-    B = (np.sum(x ** 2) * np.sum(y) - np.sum(x) * np.sum(x * y)) / Delta
-
-    sigma_y = np.sqrt(np.sum((y - A * x - B) ** 2) / (N - 2))
-
-    A_error = sigma_y * np.sqrt(N / Delta)
-    B_error = sigma_y * np.sqrt(np.sum(x ** 2) / Delta)
-
-    return A, A_error, B, B_error
+#plt.rc('text', usetex=True)
+#plt.rc('text.latex', preamble=r'\usepackage{siunitx}')
 
 
-m = ufloat(4.4531, 0)
-r = ufloat(15.59, 0.01)
-rho = (4 * m)/(3 * np.pi * r ** 3)
-print(rho)
-
-eta, T, T2= np.genfromtxt('./content/fallzeitSteigendeTemperatur.txt', unpack = True)
+T, t= np.genfromtxt('./content/fallzeitSteigendeTemperatur.txt', unpack = True)
+T = T + 273.15
 T = 1/T
-T2 = 1/T2
-plt.plot(T, eta, 'k.')
-plt.plot(T2, eta, 'k.')
-plt.yscale('log')
-plt.show()
+K = 0.07
+rohK = 3.99
+rohFk = 1
+#eta = K * (rohK - rohFk) * t
 
+def f(x):
+    return K * (rohK - rohFk) * x
+
+eta = f(t)
 eta = np.log(eta)
 
-linregress(T, eta)
+params, covariance_matrix = np.polyfit(T, eta, deg=1, cov=True)
+
+errors = np.sqrt(np.diag(covariance_matrix))
+
+for name, value, error in zip('ab', params, errors):
+    print(f'{name} = {value:.3f} ± {error:.3f}')
+
+
+
+x_plot = np.linspace(np.min(T), np.max(T))
+
+plt.plot(T, eta, '.', label="Messwerte")
+plt.plot(
+    x_plot,
+    params[0] * x_plot + params[1],
+    label='Lineare Regression',
+    linewidth=3,
+)
+plt.legend(loc="best")
+
+
+
+plt.plot(T, eta, 'k.')
+plt.xlabel(r'$\frac{1}{T}$ in $[K^{-1}]$')
+plt.ylabel(r'$ln\left(\frac{\eta}{Pa * s}\right)$')
+#plt.yscale('log')
+plt.show()
+
+
+
+#plt.plot(T, , 'k.')
+#plt.yscale('log')
+#plt.show()
+#
+# = np.log()
+
+#linregress(T, )
+
+
 #plt.subplot(1, 2, 1)
 #plt.plot(x, y, label='Kurve')
 #plt.xlabel(r'$\alpha \mathbin{/} \unit{\ohm}$')
 #plt.ylabel(r'$y \mathbin{/} \unit{\micro\joule}$')
 #plt.legend(loc='best')
 
-x, y = np.genfromtxt('content/fallzeitSteigendeTemperatur.txt', unpack=True)
-
-plt.plot(x, y, 'k.', label="Daten")
+#x, y = np.genfromtxt('content/fallzeitSteigendeTemperatur.txt', unpack=True)
+#
+#plt.plot(x, y, 'k.', label="Daten")
 
 # in matplotlibrc leider (noch) nicht möglich
 plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
