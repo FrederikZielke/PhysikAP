@@ -19,6 +19,30 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{reynold}{book}{}
+      \name{author}{1}{}{%
+        {{hash=1f242e7070daafcb9114285c5f0d33a9}{%
+           family={Geschke},
+           familyi={G\bibinitperiod},
+           given={Dieter},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{1f242e7070daafcb9114285c5f0d33a9}
+      \strng{fullhash}{1f242e7070daafcb9114285c5f0d33a9}
+      \strng{bibnamehash}{1f242e7070daafcb9114285c5f0d33a9}
+      \strng{authorbibnamehash}{1f242e7070daafcb9114285c5f0d33a9}
+      \strng{authornamehash}{1f242e7070daafcb9114285c5f0d33a9}
+      \strng{authorfullhash}{1f242e7070daafcb9114285c5f0d33a9}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-8351-9081-8}
+      \field{title}{Physikalisches Praktikum}
+      \true{nocite}
+      \field{pages}{S.99\bibrangessep Gleichung (10)}
+      \range{pages}{-1}
+    \endentry
     \entry{numpy}{article}{}
       \name{author}{26}{}{%
         {{hash=db2b4761cc46be347b418e68660c9554}{%
