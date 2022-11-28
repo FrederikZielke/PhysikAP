@@ -19,20 +19,21 @@ roh_gross = (3*m_gross)/(4*np.pi*(r_gross)**3)
 print(roh_klein)
 print(roh_gross)
 
-eta = k_klein * (roh_klein - roh_wasser) * t_klein * 10**(-3)
-
+eta = k_klein * (roh_klein - roh_wasser) * t_klein 
 print(eta)
+
 
 k_gross = (eta)/((roh_gross - roh_wasser) * t_gross)
 
 print(k_gross)
 
+eta2 = k_gross * (roh_gross - roh_wasser) * 26.85
+
 v_max = 0.05 / 26.85
 v_min = 0.05 / 53.79
 
 r_min = (v_min * r_gross * 2 * roh_gross) / eta
-r_max = (v_max * 2 * r_gross * roh_gross) / eta
-
+r_max = (v_max * 2 * r_gross * roh_gross) / eta2
 print(r_min)
 print(r_max)
 
