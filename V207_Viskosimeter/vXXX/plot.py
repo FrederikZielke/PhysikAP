@@ -9,7 +9,7 @@ import uncertainties.unumpy as unumpy
 T, t= np.genfromtxt('./content/fallzeitSteigendeTemperatur.txt', unpack = True)
 T = T + 273.15
 T = 1/T
-K = 1.673*(10**-8)
+K = 1.673*(10**-5)
 rohK = 2.393
 rohFl = 0.998467
 #eta = K * (rohK - rohFk) * t
@@ -19,6 +19,8 @@ def f(x):
 
 eta = f(t)
 eta = np.log(eta)
+print('viskositaet bei 56 grad:')
+print(f(26.53))
 
 params, covariance_matrix = np.polyfit(T, eta, deg=1, cov=True)
 

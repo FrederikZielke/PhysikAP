@@ -33,6 +33,7 @@ v_min = 0.05 / 53.79
 r_min = (v_min * r_gross * 2 * roh_gross) / eta
 r_max = (v_max * 2 * r_gross * roh_gross) / eta
 
+print('Reynoldszahl min/max grosse kugel')
 print(r_min)
 print(r_max)
 

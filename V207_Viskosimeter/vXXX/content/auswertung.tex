@@ -55,22 +55,34 @@ Die mittlere Fallzeit kann mit \ref{eqn:6} berechnet werden.\\
 
 Die Dichte der kleinen Kugel mit Gleichung \ref{eqn:4} berechnen:
 \begin{equation}
-  ρ_{Kl} = \frac{4 \cdot 4.4531 \unit{\gram}}{3 \cdot π \cdot (15.59 \pm 0.01 \unit{\milli\meter})^3} = 
+  ρ_{Kl} = \frac{3 \cdot 4.4531 \unit{\gram}}{4 \cdot π \cdot (7.795 \pm 0.01 \unit{\milli\meter})^3} = \SI{2.245(0.009)}{\g\per\cubic\centi\metre}
+\end{equation}\label{eqn:13}
+Nun in Gleichung \eqref{eqn:2} einsetzen um die Viskosität von Wasser bei Raumtemperatur zu erhalten.
+\begin{equation}
+  η = \SI{1.239(0.009)e-06}{\pascal\s}
 \end{equation}
-%Mit den Werten der Tabelle \ref{table:gk} rechnen wir mit Formel \ref{eqn:K}
-%die Aparatekonstante $K$ aus. Dafür muss zuerst $η$ mit den Werten aus Tabelle \ref{table:kk} berechnen.\\
-%Der Fehler wird mit \ref{eqn:8} berechnet. Der Wert für $K_{Kl}$ ist in der Aufgabenstellung gegeben.\\
-%\begin{equation}
-%  η = 0.07640\,\mathrm{mPacm^3g^{-1}} \cdot 
-%\end{equation}
+Gleichung \ref{eqn:2} nach K umstellen und das Ergebnis von \ref{eqn:13} für $η$ einsetzen
+\begin{equation}
+  K = \SI{1.673(0.017)e-5}{\pascal\centi\cubic\meter\per\gram}
+\end{equation}
+\newpage
 
 \subsection{Viskosität in Abhängigkeit der Temperatur}
 Um die Konstanten A und B zu ermitteln wird die Gleichung \eqref{eqn:AndradscheGl} umgestellt.
 Mithilfe der Python Funktion polyfit werden A und B ermittelt.
-\begin{align}
-  \Leftrightarrow ln(η) &= ln(\text{A}) + \frac{\text{B}}{\text{T}}
-  A &= (1792.338 ± 26.764) \quad , \quad B = (-19.730 ± 0.086)\si{\kelvin}
-\end{align}
+\begin{equation}
+  \Leftrightarrow ln(η) = ln(\text{A}) + \frac{\text{B}}{\text{T}}
+\end{equation}
+\begin{equation}
+  A = (1792.338 ± 26.764) \quad , \quad B = (-12.822 ± 0.086)\si{\kelvin}
+\end{equation}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{build/plot.pdf}
+  \caption{Plot der Messdaten und der Regressionskurve\protect\footnotemark}
+  \label{fig:plot}
+\end{figure}
+
 \begin{table}[!htp]
   \centering
   \begin{tabular}{c|c|c}
@@ -100,19 +112,16 @@ Mithilfe der Python Funktion polyfit werden A und B ermittelt.
   \label{tabellegkt}
   \caption{Fallzeiten der großen Kugel bei steigender Temperatur}
 \end{table}
+\newpage
 
 \subsection{Berechnung der Reynoldszahl}
-Zur berechnung der Reynoldszahl setzen wir in Gleichung \eqref{eqn:5} für $v = \frac{x}{t} \text{und} d = 2r$ ein.
-Die Reynoldszahl der großen Kugel bei Raumtemperatur beträgt
-\begin{equation}
-  Re = 
-\end{equation} 
+Zur berechnung der Reynoldszahl setzen wir in Gleichung \eqref{eqn:5} für $v = \frac{x}{t}$ \: und \: $d = 2r$ ein.
+Die Reynoldszahl der großen Kugel bei Raumtemperatur und bei $\SI{56}{\degreeCelsius}$ beträgt
+\begin{align}
+  Re_{18} &= (2.827 \pm 0.021)\\
+  Re_{56} &= (11.21 \pm 0.09)
+\end{align} und liegt damit ein gutes Stück unter dem kritischen Wert $R_{Krit} \approx 2300 ,$
+die Strömung ist also laminar.\\
 
-%\begin{figure}
-%  \centering
-%  \includegraphics{plot.pdf}
-%  \caption{Plot.}
-%  \label{fig:plot}
-%\end{figure}
-
+\newpage
 %Siehe \autoref{fig:plot}!
