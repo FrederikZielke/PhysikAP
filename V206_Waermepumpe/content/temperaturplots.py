@@ -3,6 +3,7 @@ import numpy as np
 
 t, T1, T2, pa, pb, N, = np.genfromtxt('messwerte.txt', unpack = True)
 
+
 plt.subplots(constrained_layout = True)
 
 plt.subplot(2, 2, 1)
@@ -29,24 +30,12 @@ plt.xlabel(r'$T \,[°$C$]$')
 plt.ylabel(r"$p \,[$bar$]$")
 plt.title(r'p/T')
 
-params1, covariance_matrix1 = np.polyfit(t, T1, deg=1, cov=True)
+#Plot Druck pro 1/T
+T2 = 1/T2
 
-errors1 = np.sqrt(np.diag(covariance_matrix1))
-
-for name1, value1, error1 in zip('ab', params1, errors1):
-    print(f'{name1} = {value1:.3f} ± {error1:.3f}')
-
-
-
-x_plot = np.linspace(np.min(t), np.max(t))
 
 plt.subplot(2, 2, 4)
-plt.plot(t, T1, '.', label="Messwerte")
-plt.plot(
-    x_plot,
-    params1[0] * x_plot + params1[1],
-    label='Lineare Regression',
-    linewidth=3,
-)
+plt.plot(T2, pb, '.', label=r"\frac{1}{T_{1}}(pa)")
+
 
 plt.show()
