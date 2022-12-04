@@ -38,10 +38,15 @@ plt.plot(t, T2, 'bx', label = r'Erwärmtes Becken')
 plt.xlim(np.min(t), np.max(t))
 
 plt.legend(loc="best")
-plt.show()
+plt.savefig('build/ausgleichsplot.pdf')
 
+print("parameter 1")
+print(params1)
+print("unsicherheiten 1")
 print(uncertainties1)
+print("parameter 2")
 print(params2)
+print("unsicherheiten 2")
 print(uncertainties2)
 
 #print('Parameter T1')

@@ -10,8 +10,11 @@ all: build/V206.pdf
 build/temperaturplots.pdf: temperaturplots.py | build
 	python temperaturplots.py
 
+build/ausgleichsplot.pdf: ausgleichsrechnung.py | build
+	python ausgleichsrechnung.py
+
 # hier weitere Abhängigkeiten für build/V206.pdf deklarieren:
-build/V206.pdf: build/plot.pdf build/temperaturplots.pdf
+build/V206.pdf: build/plot.pdf build/temperaturplots.pdf build/ausgleichsplot.pdf
 
 build/V206.pdf: FORCE | build
 	# to find header and bib files in the main directory
