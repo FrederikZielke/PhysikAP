@@ -7,8 +7,11 @@ build/plot.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
 	# and set the matplotlibrc
 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot.py
 
+build/temperaturplots.pdf: temperaturplots.py | build
+	python temperaturplots.py
+
 # hier weitere Abhängigkeiten für build/V206.pdf deklarieren:
-build/V206.pdf: build/plot.pdf
+build/V206.pdf: build/plot.pdf 
 
 build/V206.pdf: FORCE | build
 	# to find header and bib files in the main directory

@@ -40,7 +40,6 @@ plt.xlim(np.min(t), np.max(t))
 plt.legend(loc="best")
 plt.show()
 
-print(params1)
 print(uncertainties1)
 print(params2)
 print(uncertainties2)
@@ -92,6 +91,5 @@ N = [195, 207, 213, 205]
 for i in range (0, 3, 1):
     v_real[i] = 1/N[i] * (m_1 * c_w + mc_k) * T1[i]
     print(v_real[i])
-
 
 

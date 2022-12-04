@@ -1,0 +1,16 @@
+all: build/V206.pdf
+
+build/temperaturplots.pdf: temperaturplots.py | build
+    python temperaturplots.py
+
+build/V206.pdf: build/temperaturplots.pdf V206.tex content/theorie.tex | build
+	lualatex --output-directory=build V206.tex
+	lualatex --output-directory=build V206.tex
+
+build:
+	mkdir -p build
+
+clean:
+	rm -rf build
+
+.PHONY: all clean
