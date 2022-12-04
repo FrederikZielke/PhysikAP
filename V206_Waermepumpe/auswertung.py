@@ -4,7 +4,7 @@ from uncertainties import ufloat
 import uncertainties.unumpy as unumpy
 
 #Messdaten
-t, T1, T2, pa, pb, N, = np.genfromtxt('messwerte.txt', unpack = True)
+t, T1, T2, pa, pb, N, = np.genfromtxt('content/messwerte.txt', unpack = True)
 
 ##5c alles quatsch was ich gemacht habe
 #
