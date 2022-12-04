@@ -12,7 +12,7 @@ def g(x, A, B, C):
     return A*x**2 + B*x + C
 
 #Messdaten
-t, T1, T2, pa, pb, N, = np.genfromtxt('content/messwerte.txt', unpack = True)
+t, T2, T1, pa, pb, N, = np.genfromtxt('content/messwerte.txt', unpack = True)
 
 #Subplot und Curvefit T1
 params1, covariance_matrix1 = curve_fit(g , t, T1, p0=(10,100,10))
@@ -22,7 +22,7 @@ uncertainties1 = np.sqrt(np.diag(covariance_matrix1))
 
 #plt.subplot(1, 2, 1)
 plt.plot(t, g(t, *params1), 'g-')
-plt.plot(t, T1, 'gx', label = r'Gekühltes Becken')
+plt.plot(t, T1, 'gx', label = r'Erwärmtes Becken')
 
 #Subplot und Curvefit T2
 params2, covariance_matrix2 = curve_fit(g , t, T2, p0=(10,100,10))
@@ -33,7 +33,7 @@ uncertainties2 = np.sqrt(np.diag(covariance_matrix1))
 
 #plt.subplot(1, 2, 2)
 plt.plot(t, g(t, *params2), 'b-')
-plt.plot(t, T2, 'bx', label = r'Erwärmtes Becken')
+plt.plot(t, T2, 'bx', label = r'Gekühltes Becken')
 
 plt.xlim(np.min(t), np.max(t))
 

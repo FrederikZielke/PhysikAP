@@ -1,5 +1,5 @@
-# t T1_kalt T2_warm pa_kalt pb_warm N
-#t   T1   T2  pa  pb   N
+# t T2_kalt T1_warm pa_kalt pb_warm N
+#t   T2   T1  pa  pb   N
 0 21.1 21.2 4.2 4 0
 60 21.0 21.9 1.5 6 170
 120 20.9 22.7 1.7 6.2 180
