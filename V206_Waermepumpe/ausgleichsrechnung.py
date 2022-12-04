@@ -80,8 +80,18 @@ delT2_4 = 2*A_T2*1140 + B_T2
 delT1 = [delT1_1, delT1_2, delT1_3, delT1_4]
 delT2 = [delT2_1, delT2_2, delT2_3, delT2_4]
 
-T2 = [20.1, 10.1, 3.5, 0.7]
-T1 = [25.3, 34.2, 41.9, 48.2]
+T2 = [20.1+273.15, 10.1+273.15, 3.5+273.15, 0.7+273.15]
+T1 = [25.3+273.15, 34.2+273.15, 41.9+273.15, 48.2+273.15]
+
+print(delT1_1)
+print(delT1_2)
+print(delT1_3)
+print(delT1_4)
+
+print(delT2_1)
+print(delT2_2)
+print(delT2_3)
+print(delT2_4)
 
 v_real = [0, 0, 0, 0]
 N = [195, 207, 213, 205]
@@ -124,7 +134,7 @@ roh = [0, 0, 0, 0]
 
 print("roh")
 for i in range (0, 4, 1):
-    roh[i] = (p_b[i] * roh_0 * T_0) / (p_0 * (T1[i] + 273.15))
+    roh[i] = (p_b[i] * roh_0 * T_0) / (p_0 * T1[i])
     print(roh[i])
 
 
