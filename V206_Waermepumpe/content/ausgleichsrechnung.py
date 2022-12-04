@@ -40,10 +40,58 @@ plt.xlim(np.min(t), np.max(t))
 plt.legend(loc="best")
 plt.show()
 
-print('Parameter T1')
-for name, value, uncertainty in zip('abc', params1, uncertainties1): 
-    print(f'{name} = {value:8.3f} ± {uncertainty:.3f}')
+print(params1)
+print(uncertainties1)
+print(params2)
+print(uncertainties2)
 
-print('Parameter T2')
-for name, value, uncertainty in zip('abc', params1, uncertainties2): 
-    print(f'{name} = {value:8.3f} ± {uncertainty:.3f}')
+#print('Parameter T1')
+#for name, value, uncertainty in zip('abc', params1, uncertainties1): 
+#    print(f'{name} = {value:8.3f} ± {uncertainty:.3f}')
+#
+#print('Parameter T2')
+#for name, value, uncertainty in zip('abc', params2, uncertainties2): 
+#    print(f'{name} = {value:8.3f} ± {uncertainty:.3f}')
+
+A_T1 = ufloat(params1[0], uncertainties1[0])
+B_T1 = ufloat(params1[1], uncertainties1[1])
+C_T1 = ufloat(params1[2], uncertainties1[2])
+A_T2 = ufloat(params2[0], uncertainties2[0])
+B_T2 = ufloat(params2[1], uncertainties2[1])
+C_T2 = ufloat(params2[2], uncertainties2[2])
+m_1 = m_2 = 3
+mc_k = 750
+c_w = 4200
+
+delT1_1 = 2*A_T1*240 + B_T1
+delT1_2 = 2*A_T1*540 + B_T1
+delT1_3 = 2*A_T1*840 + B_T1
+delT1_4 = 2*A_T1*1140 + B_T1
+
+delT2_1 = 2*A_T2*240 + B_T2
+delT2_2 = 2*A_T2*540 + B_T2
+delT2_3 = 2*A_T2*840 + B_T2
+delT2_4 = 2*A_T2*1140 + B_T2
+
+T1 = [delT1_1, delT1_2, delT1_3, delT1_4]
+T2 = [delT2_1, delT2_2, delT2_3, delT2_4]
+
+print(delT1_1)
+print(delT1_2)
+print(delT1_3)
+print(delT1_4)
+
+print(delT2_1)
+print(delT2_2)
+print(delT2_3)
+print(delT2_4)
+
+v_real = [0, 0, 0, 0]
+N = [195, 207, 213, 205]
+
+for i in range (0, 3, 1):
+    v_real[i] = 1/N[i] * (m_1 * c_w + mc_k) * T1[i]
+    print(v_real[i])
+
+
+
