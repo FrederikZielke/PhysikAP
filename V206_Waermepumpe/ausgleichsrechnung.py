@@ -41,9 +41,11 @@ plt.legend(loc="best")
 plt.show()
 
 print('Parameter T1')
-for name, value, uncertainty in zip('abc', params1, uncertainties1): 
-    print(f'{name} = {value:8.3f} ± {uncertainty:.3f}')
+#for name, value, uncertainty in zip('abc', params1, uncertainties1): 
+#    print(f'{name} = {value:8.3f} ± {uncertainty:.3f}')
+print(*params1)
 
 print('Parameter T2')
-for name, value, uncertainty in zip('abc', params1, uncertainties2): 
-    print(f'{name} = {value:8.3f} ± {uncertainty:.3f}')
+#for name, value, uncertainty in zip('abc', params2, uncertainties2): 
+#   print(f'{name} = {value:8.3f} ± {uncertainty:.3f}')
+print(*params2)
