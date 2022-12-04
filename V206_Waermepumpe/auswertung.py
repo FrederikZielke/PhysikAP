@@ -30,10 +30,12 @@ plt.plot(
     label='Lineare Regression',
     linewidth=3,
 )
-plt.legend(loc="best")
-
 
 plt.plot(T1, pb, 'rx', label='Messdaten')
+
+plt.legend(loc="best")
+plt.xlabel(r'$1/T_1 \,$[1/°C]')
+plt.ylabel(r'$ln(p_b)$')
 
 plt.savefig('build/dampfdruck.pdf')
 #plt.show()
