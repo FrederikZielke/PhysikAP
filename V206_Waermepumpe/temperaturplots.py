@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-t, T1, T2, pa, pb, N, = np.genfromtxt('messwerte.txt', unpack = True)
+t, T1, T2, pa, pb, N, = np.genfromtxt('content/messwerte.txt', unpack = True)
 
 
 #plt.subplots(constrained_layout = True)
@@ -37,5 +37,5 @@ plt.title(r"Temperaturen")
 #plt.subplot(2, 2, 4)
 #plt.plot(T2, pb, '.', label=r"\frac{1}{T_{1}}(pa)")
 
-plt.savefig('build/temperaturplot.pdf')
-plt.show()
+plt.savefig('build/temperaturplots.pdf')
+#plt.show()

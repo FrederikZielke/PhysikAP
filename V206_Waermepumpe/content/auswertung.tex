@@ -1,8 +1,23 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\subsection{Temperaturverfläufe}
 
+\subsection{Temperaturverfläufe}
+In der Grafik sind die Temperaturen $T_1$ und $T_2$ gegen die Zeit aufgetragen:
+\begin{figure}
+  \centering
+  \includegraphics[width=1\textwidth]{build/temperaturplots.pdf}
+  \caption{hier könnte ihre Caption stehen}
+\end{figure}
+
+\subsection{Ausgleichsgerade}
+Die Ausgleichsrechnung wurde mit der Funktion $T(t) = A t^2 + B t + C$ approximiert. Mit Curvefit und Fehlerrechnung 
+wurden die Parameter A, B und C berechnet.\\
+Für $T_1$:
+\begin{align}
+  A_1 &= \SI{7.879 \pm 999}{\degreeCelsius\per\square\minute}\\
+  B_1 &= (\num{7.879e-06} \pm 999) \si{\degreeCelsius\per\square\minute}
+\end{align}
 
 
 Siehe \autoref{fig:plot}!

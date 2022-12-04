@@ -12,7 +12,7 @@ def g(x, A, B, C):
     return A*x**2 + B*x + C
 
 #Messdaten
-t, T1, T2, pa, pb, N, = np.genfromtxt('messwerte.txt', unpack = True)
+t, T1, T2, pa, pb, N, = np.genfromtxt('content/messwerte.txt', unpack = True)
 
 #Subplot und Curvefit T1
 params1, covariance_matrix1 = curve_fit(g , t, T1, p0=(10,100,10))
