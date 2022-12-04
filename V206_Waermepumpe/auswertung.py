@@ -6,19 +6,34 @@ import uncertainties.unumpy as unumpy
 #Messdaten
 t, T2, T1, pa, pb, N, = np.genfromtxt('content/messwerte.txt', unpack = True)
 
-##5c alles quatsch was ich gemacht habe
-#
-#dT1 = np.diff(T1) * (1/60)
-#dT2 = np.diff(T2) * (1/60)
-#
-##Temperaturdifferentialquotienten dT1/dt
-#print("dT1/dt")
-#for i in range(1, 5):
-#    print(dT1[5*i - 1])
-#
-##Temperaturdifferentialquotienten dT2/dt
-#print("dT2/dt:")
-#for j in range(1,5):
-#    print(dT2[5*j -1])
+#5e
+pb = pb + 1
+T1 = 1/T1
+pb = np.log(pb)
+T1[0] = T1[1]
+pb[0] = pb[1]
 
-#5d
+#linreg
+params, covariance_matrix = np.polyfit(T1, pb, deg=1, cov=True)
+
+errors = np.sqrt(np.diag(covariance_matrix))
+
+for name, value, error in zip('ab', params, errors):
+    print(f'{name} = {value:.3f} ± {error:.3f}')
+
+x_plot = np.linspace(np.min(T1), np.max(T1))
+
+
+plt.plot(
+    x_plot,
+    params[0] * x_plot + params[1],
+    label='Lineare Regression',
+    linewidth=3,
+)
+plt.legend(loc="best")
+
+
+plt.plot(T1, pb, 'rx', label='Messdaten')
+
+plt.savefig('build/dampfdruck.pdf')
+#plt.show()

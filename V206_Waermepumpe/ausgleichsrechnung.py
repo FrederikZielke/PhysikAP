@@ -28,7 +28,7 @@ plt.plot(t, T1, 'gx', label = r'Erwärmtes Becken')
 params2, covariance_matrix2 = curve_fit(g , t, T2, p0=(10,100,10))
 
 
-uncertainties2 = np.sqrt(np.diag(covariance_matrix1))
+uncertainties2 = np.sqrt(np.diag(covariance_matrix2))
 
 
 #plt.subplot(1, 2, 2)
