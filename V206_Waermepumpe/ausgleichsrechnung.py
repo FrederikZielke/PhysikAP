@@ -12,7 +12,7 @@ def g(x, A, B, C):
     return A*x**2 + B*x + C
 
 #Messdaten
-t, T1, T2, pa, pb, N, = np.genfromtxt('messwerte.txt', unpack = True)
+t, T1, T2, pa, pb, N, = np.genfromtxt('content/messwerte.txt', unpack = True)
 
 #Subplot und Curvefit T1
 params1, covariance_matrix1 = curve_fit(g , t, T1, p0=(10,100,10))
@@ -72,8 +72,11 @@ delT2_2 = 2*A_T2*540 + B_T2
 delT2_3 = 2*A_T2*840 + B_T2
 delT2_4 = 2*A_T2*1140 + B_T2
 
-T1 = [delT1_1, delT1_2, delT1_3, delT1_4]
-T2 = [delT2_1, delT2_2, delT2_3, delT2_4]
+delT1 = [delT1_1, delT1_2, delT1_3, delT1_4]
+delT2 = [delT2_1, delT2_2, delT2_3, delT2_4]
+
+T1 = [20.1, 10.1, 3.5, 0.7]
+T2 = [25.3, 34.2, 41.9, 48.2]
 
 print(delT1_1)
 print(delT1_2)
@@ -88,8 +91,18 @@ print(delT2_4)
 v_real = [0, 0, 0, 0]
 N = [195, 207, 213, 205]
 
+print("reale Gueteziffer")
 for i in range (0, 3, 1):
     v_real[i] = 1/N[i] * (m_1 * c_w + mc_k) * T1[i]
     print(v_real[i])
+
+v_ideal = [0, 0, 0, 0]
+
+print("ideale Gueteziffer:")
+for i in range (0, 3, 1):
+    v_ideal[i] = (T1[i])/(T1[i] - T2[i])
+    print(v_ideal[i])
+
+delQ2 = [0, 0, 0, 0]
 
 
