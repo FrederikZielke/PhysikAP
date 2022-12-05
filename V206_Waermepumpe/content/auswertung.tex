@@ -33,7 +33,7 @@ Für $T_1$:
 \begin{align*}%C muss bei beiden korrigiert
   A_2 &= \SI{-2.6781(2.0285)e-06}{\degreeCelsius\per\square\minute}\\
   B_2 &= \SI{2.8204(0.2647)e-02}{\degreeCelsius\per\minute}\\
-  C_2 &= \SI{19.6551(0.7198)}{\degreeCelsius}
+  C_2 &= \SI{19.6551(0.3657)}{\degreeCelsius}
 \end{align*}
 
 Für $T_2$:
@@ -77,16 +77,10 @@ Für den Massendurchsatz ergeben sich nach \href{} mit $m_2 = 3\,\unit{kg}$, $c_
   ν &= \frac{ΔQ_1}{ΔtN}
 \end{align*}
 
-\begin{align*}
- \frac{ΔQ_2}{Δt} &= \left(m_2c_W + m_kc_k\right)\frac{ΔT_2}{Δt}\\
- \frac{ΔQ_2}{Δt} &= L\frac{Δm}{Δt}
-\end{align*}
 
-\begin{align*}
-  A_m &= -\int_{V_a}^{V_b}p \,dV\\
-  p_aV_a^κ &= p_bV_b^κ = pV^\kappa\\
-  A_m &= -p_aV_a^κ \int_{V_a}^{V_b} V^{-κ}dV = \frac{1}{κ - 1}p_aV_a^κ\left(V_b^{-κ+1} - V_a^{-κ}\right)
-  = 
-\end{align*}
+\begin{equation}
+  N_{mech} = \frac{ΔA_m}{Δt} = \frac{1}{κ - 1}\left(p_b\sqrt[κ]{\frac{p_a}{p_b}} - p_a\right) \, \frac{ΔV_a}{Δt} 
+  = \frac{1}{κ - 1}\left(p_b\sqrt[κ]{\frac{p_a}{p_b}} - p_a\right)\,\frac{1}{ρ}\,\frac{Δm}{Δt}
+\end{equation}
 
 %Siehe \autoref{fig:plot}!
