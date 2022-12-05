@@ -49,6 +49,53 @@ Für $T_2$:
   \caption{Ausgleichsgeraden und Messdaten}
 \end{figure}
 
+\subsection{Berechnung der Differentialquotienten}
+Die Differentialquotienten $\frac{dT_i}{dt}$ ergeben sich durch differenzieren der Fitfunktion $T(t) = At^2 + Bt + C$ und anschließendes einsetzen der jeweiligen Zeit:
+\begin{table}
+  \centering
+  \begin{tabular}{
+    S[table-format=4.0]
+    S[table-format=2.3]
+    S[table-format=2.3]
+    S[table-format=3.0]
+  }
+    \toprule
+    {$t\left[\unit{s}\right]$} & {$\frac{dT_1}{dt}$} & {$\frac{dT_2}{dt}$} & {$N\,\left[\unit{W}\right]$}\\
+    \midrule
+    240 &  {$0.0269 \pm 0.0014$}  & {$-0.0260 \pm 0.0028$} & 195\\
+    540 &  {$0.0253 \pm 0.0017$}  & {$-0.0212 \pm 0.0034$} & 207\\
+    840 &  {$0.0237 \pm 0.0022$}  & {$-0.0160 \pm 0.0040$} & 213\\
+    1140 & {$0.0221 \pm 0.0027$}  & {$-0.0120 \pm 0.0050$} & 205\\
+    \bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Reale und ideale Güteziffer}
+Für die Berechnung der idealen Güteziffer wird Gleichung %\eqref{}
+verwendet.
+Die reale Güteziffer lässt sich mit Gleichung %eqref{}
+berechnen. Mit $m_1 = 3\,\unit{kg}$, $c_w = 4200 \,\unit{\frac{J}{kg \cdot K}}$ und $m_kc_k = 750\,\unit{\frac{J}{K}}$ folgt:
+\begin{table}
+  \centering
+  \begin{tabular}{
+    S[table-format=4.0]
+    S[table-format=2.3]
+    S[table-format=2.3]
+    S[table-format=2.3]
+  }
+    \toprule
+    {$t\left[\unit{s}\right]$} & {$v_{ideal}$} & {$v_{real}$} & {$\Delta v$}\\
+    \midrule
+    240 & 57.394  & {$1.84 \pm 0.10$} & 55.554\\
+    540 & 12.753  & {$1.63 \pm 0.11$} & 11.123\\
+    840 & 8.204   & {$1.49 \pm 0.14$} & 6.714\\
+    1140 & 6.765  & {$1.44 \pm 0.18$} & 5.325\\
+    \bottomrule
+\end{tabular}
+\end{table}
+
+
+
 \subsection{Verdampfungswärme L}
 Um die Verdampfungswärme L zu bestimmen wird der $ln(p_b)$ gegen $1/T_1$ aufgetragen (siehe V203 \cite{V203}). Aus der Steigung der Ausgleichsgeraden ergibt sich
 \begin{equation}
@@ -67,8 +114,50 @@ Durch die Berechnung mit der linearen Regression mit $f(T) = m \cdot T + b$ ergi
   \Rightarrow L = -m \cdot R = 210 \pm 5 \, \unit{\frac{J}{kg}}.
 \end{equation}
 
+\newpage
+
 \subsection{Massendurchsatz}
-Für den Massendurchsatz ergeben sich nach \href{} mit $m_2 = 3\,\unit{kg}$, $c_w = 4200 \, \unit{\frac{J}{kg \cdot K}}
+Für den Massendurchsatz ergeben sich nach \eqref{eqn:diffQ2} mit $m_2 = 3\,\unit{kg}$, $c_w = 4200 \, \unit{\frac{J}{kg \cdot K}}$, \\
+$m_kc_k = 750 \, \unit{\frac{J}{K}}$:
+\begin{table}
+  \centering
+  \begin{tabular}{
+    S[table-format=4.0]
+    S[table-format=2.3]
+  }
+  \toprule
+  {$\frac{\Delta m}{\Delta t}(1)$} & {$-1.65 \pm 0.18 \, \unit{\frac{kg}{s}}$} \\
+  \addlinespace
+  {$\frac{\Delta m}{\Delta t}(2)$} & {$-1.35 \pm 0.22 \, \unit{\frac{kg}{s}}$} \\
+  \addlinespace
+  {$\frac{\Delta m}{\Delta t}(3)$} & {$-1.05 \pm 0.28 \, \unit{\frac{kg}{s}}$} \\
+  \addlinespace
+  {$\frac{\Delta m}{\Delta t}(4)$} & {$-0.75 \pm 0.34 \, \unit{\frac{kg}{s}}$} \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Mechanische Kompressorleistung}
+Mit dem errechneten Massendurchsatz lässt sich nun die mechanische Kompressorleistung nach %\eqref{}
+berechnen. Mit %\eqref
+folgt mit $\rho_0 = 5.51 \,\unit{\frac{g}{L}}$, $\kappa = 1.14$, $T_0 = 273.15 \,\unit{K}$ und $p_0 = 5.1 \,\unit{Bar}$:
+\begin{table}
+  \centering
+  \begin{tabular}{
+    S[table-format=4.0]
+    S[table-format=2.3]
+    S[table-format=1.3]
+  }
+    \toprule
+    {$t\left[\unit{s}\right]$} & {$\rho$} & {$N_{mech}\left[\unit{W}\right]$}\\
+    \midrule
+    240 & 35.3 & {$-0.111 \pm 0.012$}\\
+    540 & 44.072 & {$-0.091 \pm 0.015$}\\
+    840 & 51.116 & {$-0.069 \pm 0.018$}\\
+    1140 & 56.671 &{ $-0.048 \pm 0.022$}\\
+    \bottomrule
+\end{tabular}
+\end{table}
 
 \subsection*{Formelsammlung}
 
