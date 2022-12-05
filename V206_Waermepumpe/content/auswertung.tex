@@ -2,6 +2,7 @@
 \label{sec:Auswertung}
 
 \subsection{Messwerte}
+Die aufgenommenen Messwerte sind in der folgenden Tabelle dargestellt.
 \begin{center}
 \pgfplotstabletypeset[
 columns/0/.style={column name={$t\,[\unit{s}]$}},
@@ -18,12 +19,14 @@ after row=\bottomrule}
 {content/messwerte.txt}
 \end{center}
 
+\newpage
+
 \subsection{Temperaturverfläufe}
 In der Grafik sind die Temperaturen $T_1$ und $T_2$ gegen die Zeit aufgetragen:
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\textwidth]{build/temperaturplots.pdf}
-  \caption{hier könnte ihre Caption stehen}
+  \caption{Messwerte $T_1$ und $T_2$}
 \end{figure}
 
 \subsection{Ausgleichsgerade}
@@ -49,9 +52,11 @@ Für $T_2$:
   \caption{Ausgleichsgeraden und Messdaten}
 \end{figure}
 
+\newpage
+
 \subsection{Berechnung der Differentialquotienten}
 Die Differentialquotienten $\frac{dT_i}{dt}$ ergeben sich durch differenzieren der Fitfunktion $T(t) = At^2 + Bt + C$ und anschließendes einsetzen der jeweiligen Zeit:
-\begin{table}
+\begin{table}[H]
   \centering
   \begin{tabular}{
     S[table-format=4.0]
@@ -68,14 +73,15 @@ Die Differentialquotienten $\frac{dT_i}{dt}$ ergeben sich durch differenzieren d
     1140 & {$0.0221 \pm 0.0027$}  & {$-0.0120 \pm 0.0050$} & 205\\
     \bottomrule
 \end{tabular}
+\caption{Differentialquotienten}
 \end{table}
 
 \subsection{Reale und ideale Güteziffer}
-Für die Berechnung der idealen Güteziffer wird Gleichung %\eqref{}
+Für die Berechnung der idealen Güteziffer wird Gleichung \eqref{eqn:guetezifferReal}
 verwendet.
-Die reale Güteziffer lässt sich mit Gleichung %eqref{}
+Die reale Güteziffer lässt sich mit Gleichung \eqref{vreal}
 berechnen. Mit $m_1 = 3\,\unit{kg}$, $c_w = 4200 \,\unit{\frac{J}{kg \cdot K}}$ und $m_kc_k = 750\,\unit{\frac{J}{K}}$ folgt:
-\begin{table}
+\begin{table}[H]
   \centering
   \begin{tabular}{
     S[table-format=4.0]
@@ -92,6 +98,7 @@ berechnen. Mit $m_1 = 3\,\unit{kg}$, $c_w = 4200 \,\unit{\frac{J}{kg \cdot K}}$ 
     1140 & 6.765  & {$1.44 \pm 0.18$} & 5.325\\
     \bottomrule
 \end{tabular}
+\caption{Güteziffer}
 \end{table}
 
 
@@ -117,9 +124,9 @@ Durch die Berechnung mit der linearen Regression mit $f(T) = m \cdot T + b$ ergi
 \newpage
 
 \subsection{Massendurchsatz}
-Für den Massendurchsatz ergeben sich nach \eqref{eqn:diffQ2} mit $m_2 = 3\,\unit{kg}$, $c_w = 4200 \, \unit{\frac{J}{kg \cdot K}}$, \\
+Für den Massendurchsatz ergeben sich nach \eqref{eqn:massendurchsatz} mit $m_2 = 3\,\unit{kg}$, $c_w = 4200 \, \unit{\frac{J}{kg \cdot K}}$, \\
 $m_kc_k = 750 \, \unit{\frac{J}{K}}$:
-\begin{table}
+\begin{table}[H]
   \centering
   \begin{tabular}{
     S[table-format=4.0]
@@ -135,13 +142,14 @@ $m_kc_k = 750 \, \unit{\frac{J}{K}}$:
   {$\frac{\Delta m}{\Delta t}(4)$} & {$-0.75 \pm 0.34 \, \unit{\frac{kg}{s}}$} \\
   \bottomrule
   \end{tabular}
+  \caption{Massendurchsatz}
 \end{table}
 
 \subsection{Mechanische Kompressorleistung}
-Mit dem errechneten Massendurchsatz lässt sich nun die mechanische Kompressorleistung nach %\eqref{}
-berechnen. Mit %\eqref
+Mit dem errechneten Massendurchsatz lässt sich nun die mechanische Kompressorleistung nach \eqref{mechLeistung}
+berechnen. Mit \eqref{eqn:roh}
 folgt mit $\rho_0 = 5.51 \,\unit{\frac{g}{L}}$, $\kappa = 1.14$, $T_0 = 273.15 \,\unit{K}$ und $p_0 = 5.1 \,\unit{Bar}$:
-\begin{table}
+\begin{table}[H]
   \centering
   \begin{tabular}{
     S[table-format=4.0]
@@ -157,6 +165,7 @@ folgt mit $\rho_0 = 5.51 \,\unit{\frac{g}{L}}$, $\kappa = 1.14$, $T_0 = 273.15 \
     1140 & 56.671 &{ $-0.048 \pm 0.022$}\\
     \bottomrule
 \end{tabular}
+\caption{Mechanische Kompressorleistung}
 \end{table}
 
 

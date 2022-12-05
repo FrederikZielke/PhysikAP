@@ -31,10 +31,10 @@ Da diese Annahme in der Realität nicht vollständig erfüllt wird kommen wir zu
 \begin{equation}
     \frac{Q_1}{T_1} - \frac{Q_2}{T_2} > 0
 \end{equation}
- 
-%\begin{equation}\label{eqn:guetezfferIdeal}
-%    ν_{id} = \frac{Q_1}{A} = \frac{T_1}{T_1 - T_2}
-%\end{equation}
+Mit Gleichung \eqref{eqn:gueteziffer} folgt dann für die ideale Güteziffer 
+\begin{equation}\label{eqn:guetezfferIdeal}
+    ν_{id} = \frac{Q_1}{A} = \frac{T_1}{T_1 - T_2}.
+\end{equation}
 Durch Umformung lässt sich ein anderer Ausdruck für die reale Güteziffer einer Wärmepumpe aufstellen:
 \begin{equation}\label{eqn:guetezifferReal}
     ν_{real} < \frac{T_1}{T_1 - T_2}
@@ -49,33 +49,42 @@ zur Verfügung stellen:
     Q_{1_{rev}} = A\, \frac{T_1}{T_1 - T_2}
 \end{equation}
 
+Der Differenzquotient $\frac{ΔQ_1}{Δt}$ ist gegeben durch 
+\begin{equation}
+    \label{delQ1}
+    \frac{ΔQ_1}{Δt} = \left(m_1c_W + m_kc_k\right)\frac{ΔT_1}{Δt}.
+\end{equation}
+Daraus folgt dann für die reale Güteziffer
+\begin{equation}
+    \label{vreal}
+    ν = \frac{ΔQ_1}{ΔtN}.
+\end{equation}
+wobei N die vom Wattmeter angezeigte Leistung ist.
 
+Der Differenzquotient $\frac{ΔQ_2}{Δt}$ ist gegeben durch
 \begin{equation}\label{eqn:diffQ2}
     \frac{ΔQ_2}{Δt} = \left(m_2c_W + m_kc_k\right)\frac{ΔT_2}{Δt}
 \end{equation}
-   
-\begin{equation}\label{eqn:verdampfungswaerme}
-    \frac{ΔQ_2}{Δt} = L\frac{Δm}{Δt}
+Mit dem Differenzquotienten $\frac{ΔQ_2}{Δt}$ und dem Zusammenhang
+\begin{equation}\label{eqn:massendurchsatz}
+    \frac{ΔQ_2}{Δt} = L\frac{Δm}{Δt} \Leftrightarrow \frac{Δm}{Δt} = \frac{1}{L}\frac{ΔQ_2}{Δt}
 \end{equation}
+lässt sich mit bekannter Verdampfungswärme der Massendurchsatz berechnen.
 
-\begin{align}
-    \frac{ΔQ_1}{Δt} &= \left(m_1c_W + m_kc_k\right)\frac{ΔT_1}{Δt}\\
-    ν &= \frac{ΔQ_1}{ΔtN}
-\end{align}
-  
-  
+Über das Arbeitsintegral, für die vom Kompressor geleistete Arbeit und die Poissonsche Gleichung (siehe Versuchsanleitung \cite{versuchsbeschreibung})
+ergibt sich ein Ausdruck für die mechanische Kompressorleistung. Dieser ist dann gegeben durch
 \begin{equation}
+    \label{mechLeistung}
     N_{mech} = \frac{ΔA_m}{Δt} = \frac{1}{κ - 1}\left(p_b\sqrt[κ]{\frac{p_a}{p_b}} - p_a\right) \, \frac{ΔV_a}{Δt} 
-    = \frac{1}{κ - 1}\left(p_b\sqrt[κ]{\frac{p_a}{p_b}} - p_a\right)\,\frac{1}{ρ}\,\frac{Δm}{Δt}
+    = \frac{1}{κ - 1}\left(p_b\sqrt[κ]{\frac{p_a}{p_b}} - p_a\right)\,\frac{1}{ρ}\,\frac{Δm}{Δt}.
 \end{equation}
-  
-
+Dabei ist $\rho$ die Dichte des Transportmediums bei Druck $p_a$. $\rho$ lässt sich durch die ideale Gasgleichung herleiten
 \begin{align}
     \frac{pV}{T} &= nR = const.\\
     \frac{p_0V_0}{T_0} &= \frac{p_2V_2}{T_2} \Leftrightarrow \frac{p_0m}{ρ_0T_0} = \frac{p_2m}{ρ_2T_2}\\
     \frac{p_0}{ρ_0T_0} &= \frac{p_2}{T_2ρ} 
 \end{align}
-
+Für $\rho$ ergibt sich dann
 \begin{equation}\label{eqn:roh}
-    ρ = \frac{ρ_rT_0p_2}{T_2p_0}
+    ρ = \frac{ρ_0T_0p_2}{T_2p_0}
 \end{equation}
