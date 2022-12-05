@@ -34,8 +34,8 @@ plt.plot(
 plt.plot(T1, pb, 'rx', label='Messdaten')
 
 plt.legend(loc="best")
-plt.xlabel(r'$1/T_1 \,$[1/°C]')
-plt.ylabel(r'$ln(p_b)$')
+plt.xlabel(r'$1/T_1 \,$[1/°K]')
+plt.ylabel(r'$ln\left(\frac{p_b}{bar}\right)$')
 
 plt.savefig('build/dampfdruck.pdf')
 #plt.show()
