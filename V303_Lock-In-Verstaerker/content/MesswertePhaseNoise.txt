@@ -1,0 +1,22 @@
+# Integrationsintervall = 3.0s 
+# Filter: Q = 2; Frequenzy Range = 1kHz;
+# Lock-In: Gain = 100; DC;
+# Low-Pass-Filter: Gain = 1; db 12; DC-Offset = +0.06;
+# Oszillator: Frequenzy Range = 1kHz; sine; /100;
+# Reference: Amplitude = 1;
+# Noise-Generator: Noise Amplifier = 10^-3; Signal Attentuator = 10^-4;
+# Preamp: Gain = 200; DC;
+# Phase U_out
+000 0.00
+030 2.02
+060 4.53
+090 5.00
+120 4.60
+150 2.18
+180 0.00
+210 -1.80
+240 -4.30
+270 -4.85
+300 -4.40
+330 -2.01
+360 0.00
