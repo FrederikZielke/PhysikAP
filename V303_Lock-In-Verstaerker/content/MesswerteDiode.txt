@@ -1,0 +1,32 @@
+# LED-Frequanz = 214.26Hz
+# Startposition LED = 5cm
+# Filter: Q = 2; (Frequenzy Range = 1kHz);
+# Lock-In: Gain = 20; (DC);
+# Low-Pass-Filter: Gain = 1; db 12; DC;
+# Integrationsintervall = 1.0s
+# Reference: Amplitude = 1;
+# Preamp: Gain = 10; DC;
+# Phase U_out
+# Entfernung_Sensor U_out
+#Messbereich 5 oder 10V
+010 4.490
+015 1.340
+020 0.480
+025 2.400
+#Messbereich 200 mV
+030 0.225
+040 0.125
+050 0.082
+#Messbereich 100mV
+060 0.070
+070 0.056
+080 0.045
+090 0.035
+100 0.030
+#Messbereich 20 mV
+110 0.025
+120 0.021
+#Messbereich 10 mV
+130 0.020
+140 0.019
+#(150 0.017)

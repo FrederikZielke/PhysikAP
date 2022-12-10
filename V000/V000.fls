@@ -1,6 +1,0 @@
-PWD /media/freddy/565C94D05C94ABED/Uni/AP-Praktikum/V000
-INPUT /home/freddy/.local/texlive/2022/texmf.cnf
-INPUT /home/freddy/.local/texlive/2022/texmf-dist/web2c/texmf.cnf
-INPUT /home/freddy/.local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /media/freddy/565C94D05C94ABED/Uni/AP-Praktikum/V000/V000.tex
-OUTPUT V000.log
