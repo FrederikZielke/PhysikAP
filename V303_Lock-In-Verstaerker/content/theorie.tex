@@ -14,7 +14,7 @@ durchkommen. So können mit dem Lock-In-Verstärker erheblich bessere Ergebnisse
 \\
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{img/abb1.png}
+    \includegraphics[width=0.8\textwidth]{img/abb1.png}
     \caption{Schematischer Aufbau eines Lock-In-Verstärkers\protect\footnotemark}
     \label{fig:abb1}
     \footnotetext{Entnommen aus V303: Der Lock-In-Verstärker \cite{V303}}
@@ -28,17 +28,16 @@ dargestellt werden:
 \begin{equation}\label{eqn:referenzFrequenz}
     U_{ref} = \frac{4}{\pi}\left(\sin{ωt} + \frac{1}{3}\sin{3ωt} + \frac{1}{5}\sin{5ωt} + \ldots\right).
 \end{equation}
-\newpage
 Das im Mischer entstehende Produkt aus Signal- und Referenzfrequenz ergibt sich dann zu:
 \begin{equation}\label{eqn:produkt}
     U_{sig} \times U_{ref} = \frac{2}{π}U_0\left( 1 - \frac{2}{3}\cos{2ωt} - \frac{2}{15}\cos{4ωt} - \frac{2}{35}\cos{6ωt} + \ldots\right).
 \end{equation}
 Im nachgeschalteten Tiefpassfilter werden die Signale über mehrere Perioden der Modulationsfrequenz integriert, sodass alle $\cos$ Terme wegfallen und man
-\begin{equation}
+\begin{equation}\label{eqn:U0}
     U_{out} = \frac{2}{\pi}\,U_0
 \end{equation}
 für die Ausgangsfrequenz erhält. Besteht zwischen Signal- und Referenzfrequenz einen Phasendifferenz $\Delta \phi$ so erhält man für die Ausgangsspannung
-\begin{equation}
+\begin{equation}\label{U0phi}
     U_{out} = \frac{2}{\pi}\,U_0\,\cos(\phi).
 \end{equation}
 Diese ist zwar proportional zu $U_0$, jedoch abhängig von der eingestellten Phase am Phasenschieber $\phi$.
