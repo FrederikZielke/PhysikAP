@@ -33,7 +33,7 @@ for name, value, error in zip('ab', params, errors):
 
 x_plot = np.linspace(np.min(T), np.max(T))
 
-plt.plot(T, eta, '.', label="Messwerte")
+plt.plot(T, eta, 'k.', label="Messwerte")
 plt.plot(
     x_plot,
     params[0] * x_plot + params[1],
@@ -46,7 +46,7 @@ plt.legend(loc="best")
 
 plt.plot(T, eta, 'k.')
 plt.xlabel(r'$\frac{1}{T}$ in $[K^{-1}]$')
-plt.ylabel(r'$ln\left(\frac{\eta}{Pa * s}\right)$')
+plt.ylabel(r'$ln\left(\frac{\eta}{\unit{Pa \cdot s}}\right)$')
 #plt.yscale('log')
 plt.show()
 

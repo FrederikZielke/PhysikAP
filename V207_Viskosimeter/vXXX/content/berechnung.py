@@ -32,8 +32,8 @@ eta2 = k_gross * (roh_gross - roh_wasser) * 26.85
 v_max = 0.05 / 26.85
 v_min = 0.05 / 53.79
 
-r_min = (v_min * r_gross * 2 * roh_gross) / eta
-r_max = (v_max * 2 * r_gross * roh_gross) / eta2
-print(r_min)
-print(r_max)
+reynold_min = (v_min * r_gross * 0.01 * 2 * roh_gross * 1000) / eta
+reynold_max = (v_max * 2 * r_gross * roh_gross * 1000) / (eta2*100)
+print(reynold_min)
+print(reynold_max)
 

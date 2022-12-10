@@ -2,10 +2,10 @@
 \label{sec:Theorie}
 
 \subsection{Kräfte}
-Auf Körper die sich durch eine Flüssigkeit bewegen wirkt eine Reibungskraft $\vec{F}$,
-die der Bewegungsrichtung entegengesetzt ist. Die Reibungskraft ist abhängig von der Berührungsfläche A,
+Auf Körper, die sich durch eine Flüssigkeit bewegen wirkt eine Reibungskraft $\vec{F}$,
+die der Bewegungsrichtung entgegengesetzt ist. Die Reibungskraft ist abhängig von der Berührungsfläche A,
 der Geschwindigkeit $v$ und der dynamischen Viskosität $η$.
-Die Stokessche Reibung wird durch 
+Die sogenannte Stokessche Reibung wird durch 
 \\
 \begin{equation}
     F_{R} = 6πηvr
@@ -15,7 +15,7 @@ angegeben. $\vec{F}_R$ steigt mit zunehmender Geschwindigkeit, bis sich ein Glei
 und dem Auftrieb $\vec{F}_A$ einstellt. Auftriebs- und Reibungskraft wirken der Schwerkraft entgegen.
 \\
 \subsection{Viskosität}
-Die Viskosität einer Flüßigkeit lässt sich mit der Formel
+Die Viskosität einer Flüssigkeit lässt sich mit der Formel
 \begin{equation}\label{eqn:2}
     η = K \cdot (ρ_k - ρ_{Fl}) \cdot t
 \end{equation}
@@ -32,25 +32,27 @@ oder mit der Andradschen Gleichung
 η(T) = A \cdot \symup{e}^{\left(\frac{B}{T}\right)}
 \label{eqn:AndradscheGl}
 \end{equation}
-berechnen.
+berechnen. Dabei ist in Gleichung \eqref{eqn:2} $K$ eine Apparaturkonstante, $\rho_k$ die Dichte der Kugel, $\rho_{Fl}$ die Dichte der Flüssigkeit (hier destilliertes Wasser) 
+und $t$ die Zeit für das Durchlaufen der Messstrecke.
+In Gleichung \eqref{eqn:AndradscheGl} sind $A$ und $B$ Konstanten und $T$ die jeweilige Temperatur.
 
 Die Dichte einer Kugel lässt sich mit 
 \begin{equation}\label{eqn:4}
     ρ = \frac{m}{V} = \frac{3 \cdot m}{4\cdot π \cdot r^3}
 \end{equation}
-ausrechnen.
+ausrechnen, wobei $m$ die Masse, $V$ das Volumen und $r$ der Radius der Kugel sind.
 \\
 %\begin{equation}
 %η(T) = η_o \cdot exp \left(\frac{E_A}{R\cdot T}\right)
 %\end{equation}
-\subsection{laminare Strömung}
+\subsection{Laminare Strömung}
 Die Bewegung von Flüssigkeiten mit unterschiedlichen Strömungsgeschwindigkeiten, ohne dass sich Wirbel ausbilden, wird als laminare Strömung bezeichnet.\\
 
 Die Reynolds-Zahl ermöglicht abzuschätzen, ob die Strömung um ein Objekt laminar ist. Allgemein kann sie mit
 \begin{equation}\label{eqn:5}
-    Re = \frac{v \cdot l \cdot ρ}{η} \;\text{\cite{reynold}}
+    Re = \frac{v \cdot l \cdot ρ}{η} \;\;\;\;\;\;\;\text{\cite{reynold}}
 \end{equation}
-berechnet werden. Die Reynolds-Zahl hat einen kritischen Wert ab dem die laminare Strömung instabil wird.
+berechnet werden. Die Reynolds-Zahl hat einen kritischen Wert, ab dem die laminare Strömung instabil wird.
 %ich glaube es macht keinen sinn hier die kritische Stroemung in einem Rohr aufzuschreiben
 
 \subsection{Fehlerrechnung}
@@ -60,7 +62,7 @@ Der Mittelwert kann mit
     \bar{x}_{arithm} = \frac{1}{n}  \sum_{i=1}^n x_i = \frac{x_1 + x_2 + \cdots + x_n}{n}
     \label{eqn:6}
 \end{equation}
-berechnet werden.
+berechnet werden. Dabei ist $x_i$ der einzelne Messwert und $n$ die Anzahl der Messungen.
 
 Die Standardabweichung des Mittelwerts lässt sich mit
 \begin{equation}
@@ -71,5 +73,9 @@ berechnen und die Empirische Standardabweichung mit
 \begin{equation}
     s = \sqrt{\frac{1}{n - 1} \sum_{i=1}^n (x_i - \bar{x}_{arithm})^2} .
     \label{eqn:8}
+\end{equation}
+Der Standardfehler einer Stichprobe ergibt sich aus
+\begin{equation}\label{eqn:9}
+    u_{st} = \frac{s}{\sqrt{n}}
 \end{equation}
 %\cite{sample}
