@@ -35,7 +35,6 @@ uncertainties2 = np.sqrt(np.diag(covariance_matrix2))
 x = np.linspace(0, 360, 1000)
 plt.plot(x, f(x, *data2), 'k-', label = r'Curve-Fit')
 plt.plot(phi2, U_outnoise, 'rx', label = r'Messdaten')
-plt.plot(x, (400*np.sin(np.radians(x)))/(np.pi), label = r'Theoriekurve')
 
 plt.legend(loc="best")
 plt.xlabel(r'$\phi \,$[°]')
