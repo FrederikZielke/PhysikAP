@@ -58,7 +58,7 @@ Für $T_2$ ergeben sich
 \begin{figure}
   \centering
   \includegraphics[width=1\textwidth]{build/ausgleichsplot.pdf}
-  \caption{Ausgleichsgeraden und Messdaten.}
+  \caption{Ausgleichsfit und Messdaten.}
 \end{figure}
 
 \newpage
@@ -126,7 +126,7 @@ wobei m die Steigung der Ausgleichsgeraden, $L$ die Verdampfungswärme und R die
   \caption{Ausgleichsgerade Dampfdruck.}
 \end{figure}
 
-Durch die Berechnung mit der linearen Regression mit $f(T) = m \cdot T + b$ ergibt sich $m = \SI{-2194.104(45.174)}{\kelvin}$, $b = 9.420 \pm 0.$. Mit $R = 8.314 \, \unit{\frac{J}{mol \cdot K}}$ ergibt sich
+Durch die Berechnung mit der linearen Regression mit $f(T) = m \cdot T + b$ ergibt sich $m = \SI{-2194.104(45.174)}{\kelvin}$, $b = 9.420 \pm 0.146$. Mit $R = 8.314 \, \unit{\frac{J}{mol \cdot K}}$ ergibt sich
 \begin{equation}
   \Rightarrow L = -m \cdot R = 150.9 \pm 3.1 \, \unit{\frac{J}{g}}.
 \end{equation}
@@ -167,12 +167,12 @@ folgt mit $\rho_0 = 5.51 \,\unit{\frac{g}{L}}$, $\kappa = 1.14$, $T_0 = 273.15 \
     S[table-format=1.3]
   }
     \toprule
-    {$t\left[\unit{s}\right]$} & {$\rho$} & {$N_{mech}\left[\unit{W}\right]$}\\
+    {$t\left[\unit{s}\right]$} & {$\rho$} & {$|N_{mech}|\left[\unit{W}\right]$}\\
     \midrule
-    240 & 35.3 & {$-15.5 \pm 1.7$}\\
-    540 & 44.072 & {$-12.6 \pm 2.1$}\\
-    840 & 51.116 & {$-9.6 \pm 2.5$}\\
-    1140 & 56.671 &{ $-6.7 \pm 3.0$}\\
+    240 & 35.3 & {$15.5 \pm 1.7$}\\
+    540 & 44.072 & {$12.6 \pm 2.1$}\\
+    840 & 51.116 & {$9.6 \pm 2.5$}\\
+    1140 & 56.671 &{ $6.7 \pm 3.0$}\\
     \bottomrule
 \end{tabular}
 \caption{Mechanische Kompressorleistung für vier Zeiten.}
@@ -180,5 +180,5 @@ folgt mit $\rho_0 = 5.51 \,\unit{\frac{g}{L}}$, $\kappa = 1.14$, $T_0 = 273.15 \
 
 
 
-
+\newpage
 %Siehe \autoref{fig:plot}!

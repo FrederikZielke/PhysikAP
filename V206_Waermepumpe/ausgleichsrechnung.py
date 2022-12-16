@@ -32,6 +32,7 @@ uncertainties2 = np.sqrt(np.diag(covariance_matrix2))
 
 
 #plt.subplot(1, 2, 2)
+plt.grid()
 plt.plot(t, g(t, *params2), 'b-')
 plt.plot(t, T2, 'bx', label = r'Gekühltes Becken')
 
