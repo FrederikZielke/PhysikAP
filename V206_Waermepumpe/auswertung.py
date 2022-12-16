@@ -23,7 +23,7 @@ for name, value, error in zip('ab', params, errors):
 
 x_plot = np.linspace(np.min(T1), np.max(T1))
 
-
+plt.grid()
 plt.plot(
     x_plot,
     params[0] * x_plot + params[1],

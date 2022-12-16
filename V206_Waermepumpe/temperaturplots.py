@@ -7,6 +7,7 @@ t, T2, T1, pa, pb, N, = np.genfromtxt('content/messwerte.txt', unpack = True)
 #plt.subplots(constrained_layout = True)
 
 #plt.subplot(2, 2, 1)
+plt.grid()
 plt.plot(t, T1, 'gx', label = r'Messwerte $T_1$')
 plt.plot(t, T2, 'rx', label = r'Messwerte $T_2$')
 plt.legend(loc="best")

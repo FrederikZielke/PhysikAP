@@ -109,9 +109,10 @@ for i in range (0, 4, 1):
     print(v_ideal[i])
 
 m_durchsatz = [0, 0, 0, 0]
-m = ufloat(-25.202, 0.645)
+m = ufloat(-2194.104, 45.174)
 R = 8.314
-L = -m*R
+L = -(m*R)/(120.913)
+#molare Masse 120.913 F2Cl2C
 print("L:", L)
 
 print("Massendurchsatz")
@@ -140,7 +141,7 @@ for i in range (0, 4, 1):
 
 print("mechanische Leistung")
 for i in range (0, 4, 1):
-    N_mech[i] = 1/(k-1) * (p_b[i] * (p_a[i]/p_b[i])**(1/k) - p_a[i]) * 1/roh[i] * m_durchsatz[i]
+    N_mech[i] = 1/(k-1) * (p_b[i] * (p_a[i]/p_b[i])**(1/k) - p_a[i]) * 1/roh[i] * m_durchsatz[i] * 10**2
     print(N_mech[i])
 
 

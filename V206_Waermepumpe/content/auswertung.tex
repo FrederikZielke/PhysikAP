@@ -2,14 +2,20 @@
 \label{sec:Auswertung}
 
 \subsection{Messwerte}
-Die aufgenommenen Messwerte sind in der folgenden Tabelle dargestellt.
-\begin{center}
+Die aufgenommenen Messwerte sind in \autoref{hallo} dargestellt.
+\begin{table}
+\centering
+\pgfkeys{/pgf/number format/.cd,
+fixed,
+fixed zerofill,
+precision=1,
+set thousands separator={}}
 \pgfplotstabletypeset[
 columns/0/.style={column name={$t\,[\unit{s}]$}},
 columns/1/.style={column name={$T_2\,[\unit{°C}]$}},
 columns/2/.style={column name={$T_1\,[\unit{°C}]$}},
-columns/3/.style={column name={$p_a\,[\unit{Bar}]$}},
-columns/4/.style={column name={$p_b\,[\unit{Bar}]$}},
+columns/3/.style={column name={$p_{\text{a}}\,[\unit{Bar}]$}},
+columns/4/.style={column name={$p_{\text{b}}\,[\unit{Bar}]$}},
 columns/5/.style={column name={$N\,[\unit{W}]$}},
 every head row/.style={
 before row=\toprule,after row=\midrule},
@@ -17,45 +23,49 @@ every last row/.style={
 after row=\bottomrule}
 ]
 {content/messwerte.txt}
-\end{center}
-
+\caption{Aufgenommene Messwerte $t$, $T_2$, $T_1$, $p_{\text{a}}$, $p_{\text{b}}$ und $N$.}
+\label{hallo}
+%\caption{Aufgenommene Messwerte $t$, $T_2$, $T_1$, $p_a$, $p_b$ und $N$.}
+\end{table}
 \newpage
 
 \subsection{Temperaturverfläufe}
-In der Grafik sind die Temperaturen $T_1$ und $T_2$ gegen die Zeit aufgetragen:
+In der \autoref{abb2} sind die Temperaturen $T_1$ und $T_2$ gegen die Zeit aufgetragen.
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\textwidth]{build/temperaturplots.pdf}
-  \caption{Messwerte $T_1$ und $T_2$}
+  \caption{Messwerte $T_1$ und $T_2$.}
+  \label{abb2}
 \end{figure}
 
 \subsection{Ausgleichsgerade}
 Die Ausgleichsrechnung wurde mit der Funktion $T(t) = A t^2 + B t + C$ approximiert. Mit Curvefit und Fehlerrechnung 
 wurden die Parameter A, B und C berechnet.\\
-Für $T_1$:
+Für $T_1$ ergeben sich
 \begin{align*}%C muss bei beiden korrigiert
-  A_2 &= \SI{-2.6781(2.0285)e-06}{\degreeCelsius\per\square\minute}\\
-  B_2 &= \SI{2.8204(0.2647)e-02}{\degreeCelsius\per\minute}\\
-  C_2 &= \SI{19.6551(0.3657)}{\degreeCelsius}
+  A_2 &= \SI{-2.6781(2.0285)e-06}{\degreeCelsius\per\square\second}\\
+  B_2 &= \SI{2.8204(0.2647)e-02}{\degreeCelsius\per\second}\\
+  C_2 &= \SI{19.6551(0.3657)}{\degreeCelsius}.
 \end{align*}
 
-Für $T_2$:
+Für $T_2$ ergeben sich
 \begin{align*}
-  A_1 &= \SI{7.8796(2.0285)e-6}{\degreeCelsius\per\square\minute}\\
-  B_1 &= \SI{-2.9734(0.264)e-2}{\degreeCelsius\per\minute}\\
-  C_1 &= \SI{23.9453(0.7198)}{\degreeCelsius}
+  A_1 &= \SI{7.8796(2.0285)e-6}{\degreeCelsius\per\square\second}\\
+  B_1 &= \SI{-2.9734(0.264)e-2}{\degreeCelsius\per\second}\\
+  C_1 &= \SI{23.9453(0.7198)}{\degreeCelsius}.
 \end{align*}
 
 \begin{figure}
   \centering
   \includegraphics[width=1\textwidth]{build/ausgleichsplot.pdf}
-  \caption{Ausgleichsgeraden und Messdaten}
+  \caption{Ausgleichsgeraden und Messdaten.}
 \end{figure}
 
 \newpage
 
 \subsection{Berechnung der Differentialquotienten}
-Die Differentialquotienten $\frac{dT_i}{dt}$ ergeben sich durch differenzieren der Fitfunktion $T(t) = At^2 + Bt + C$ und anschließendes einsetzen der jeweiligen Zeit:
+Die Differentialquotienten $\frac{dT_i}{dt}$ ergeben sich durch differenzieren der Fitfunktion $T(t) = At^2 + Bt + C$ und anschließendes Einsetzen der jeweiligen Zeit
+in $T(t) = 2At + B$.
 \begin{table}[H]
   \centering
   \begin{tabular}{
@@ -65,7 +75,7 @@ Die Differentialquotienten $\frac{dT_i}{dt}$ ergeben sich durch differenzieren d
     S[table-format=3.0]
   }
     \toprule
-    {$t\left[\unit{s}\right]$} & {$\frac{dT_1}{dt}$} & {$\frac{dT_2}{dt}$} & {$N\,\left[\unit{W}\right]$}\\
+    {$t\left[\unit{s}\right]$} & {$\frac{dT_1}{dt}\left[\unit{\frac{°C}{s}}\right]$} & {$\frac{dT_2}{dt}\left[\unit{\frac{°C}{s}}\right]$} & {$N\,\left[\unit{W}\right]$}\\
     \midrule
     240 &  {$0.0269 \pm 0.0014$}  & {$-0.0260 \pm 0.0028$} & 195\\
     540 &  {$0.0253 \pm 0.0017$}  & {$-0.0212 \pm 0.0034$} & 207\\
@@ -73,7 +83,7 @@ Die Differentialquotienten $\frac{dT_i}{dt}$ ergeben sich durch differenzieren d
     1140 & {$0.0221 \pm 0.0027$}  & {$-0.0120 \pm 0.0050$} & 205\\
     \bottomrule
 \end{tabular}
-\caption{Differentialquotienten}
+\caption{Differentialquotienten für vier Zeiten der zwei Messreihen.}
 \end{table}
 
 \subsection{Reale und ideale Güteziffer}
@@ -90,7 +100,7 @@ berechnen. Mit $m_1 = 3\,\unit{kg}$, $c_w = 4200 \,\unit{\frac{J}{kg \cdot K}}$ 
     S[table-format=2.3]
   }
     \toprule
-    {$t\left[\unit{s}\right]$} & {$v_{ideal}$} & {$v_{real}$} & {$\Delta v$}\\
+    {$t\left[\unit{s}\right]$} & {$v_{\text{ideal}}$} & {$v_{\text{real}}$} & {$\Delta v$}\\
     \midrule
     240 & 57.394  & {$1.84 \pm 0.10$} & 55.554\\
     540 & 12.753  & {$1.63 \pm 0.11$} & 11.123\\
@@ -104,21 +114,21 @@ berechnen. Mit $m_1 = 3\,\unit{kg}$, $c_w = 4200 \,\unit{\frac{J}{kg \cdot K}}$ 
 
 
 \subsection{Verdampfungswärme L}
-Um die Verdampfungswärme L zu bestimmen wird der $ln(p_b)$ gegen $1/T_1$ aufgetragen (siehe V203 \cite{V203}). Aus der Steigung der Ausgleichsgeraden ergibt sich
+Um die Verdampfungswärme $L$ zu bestimmen wird der $ln(p_b)$ gegen $1/T_1$ aufgetragen (siehe V203 \cite{V203}). Aus der Steigung der Ausgleichsgeraden ergibt sich
 \begin{equation}
   m = -\frac{L}{R} \;\Leftrightarrow\; L = -m \cdot R\, ,
 \end{equation}
-wobei m die Steigung der Ausgleichsgeraden, L die Verdampfungswärme und R die allgemeine Gaskonstante ist.
+wobei m die Steigung der Ausgleichsgeraden, $L$ die Verdampfungswärme und R die allgemeine Gaskonstante ist.
 
 \begin{figure}
   \centering
   \includegraphics[width=1\textwidth]{build/dampfdruck.pdf}
-  \caption{Ausgleichsgerade Dampfdruck}
+  \caption{Ausgleichsgerade Dampfdruck.}
 \end{figure}
 
 Durch die Berechnung mit der linearen Regression mit $f(T) = m \cdot T + b$ ergibt sich $m = -25.202 \pm 0.645$, $b = 3.071 \pm 0.020$. Mit $R = 8.314 \, \unit{\frac{J}{mol \cdot K}}$ ergibt sich
 \begin{equation}
-  \Rightarrow L = -m \cdot R = 210 \pm 5 \, \unit{\frac{J}{kg}}.
+  \Rightarrow L = -m \cdot R = 150.9 \pm 3.1 \, \unit{\frac{J}{g}}.
 \end{equation}
 
 \newpage
@@ -133,16 +143,16 @@ $m_kc_k = 750 \, \unit{\frac{J}{K}}$:
     S[table-format=2.3]
   }
   \toprule
-  {$\frac{\Delta m}{\Delta t}(1)$} & {$-1.65 \pm 0.18 \, \unit{\frac{kg}{s}}$} \\
+  {$\frac{\Delta m}{\Delta t}(1)$} & {$-2.30 \pm 0.25 \, \unit{\frac{kg}{s}}$} \\
   \addlinespace
-  {$\frac{\Delta m}{\Delta t}(2)$} & {$-1.35 \pm 0.22 \, \unit{\frac{kg}{s}}$} \\
+  {$\frac{\Delta m}{\Delta t}(2)$} & {$-1.88 \pm 0.31 \, \unit{\frac{kg}{s}}$} \\
   \addlinespace
-  {$\frac{\Delta m}{\Delta t}(3)$} & {$-1.05 \pm 0.28 \, \unit{\frac{kg}{s}}$} \\
+  {$\frac{\Delta m}{\Delta t}(3)$} & {$-1.50 \pm 0.40 \, \unit{\frac{kg}{s}}$} \\
   \addlinespace
-  {$\frac{\Delta m}{\Delta t}(4)$} & {$-0.75 \pm 0.34 \, \unit{\frac{kg}{s}}$} \\
+  {$\frac{\Delta m}{\Delta t}(4)$} & {$-1.00 \pm 0.50 \, \unit{\frac{kg}{s}}$} \\
   \bottomrule
   \end{tabular}
-  \caption{Massendurchsatz}
+  \caption{Massendurchsatz für vier Zeiten.}
 \end{table}
 
 \subsection{Mechanische Kompressorleistung}
@@ -159,13 +169,13 @@ folgt mit $\rho_0 = 5.51 \,\unit{\frac{g}{L}}$, $\kappa = 1.14$, $T_0 = 273.15 \
     \toprule
     {$t\left[\unit{s}\right]$} & {$\rho$} & {$N_{mech}\left[\unit{W}\right]$}\\
     \midrule
-    240 & 35.3 & {$-0.111 \pm 0.012$}\\
-    540 & 44.072 & {$-0.091 \pm 0.015$}\\
-    840 & 51.116 & {$-0.069 \pm 0.018$}\\
-    1140 & 56.671 &{ $-0.048 \pm 0.022$}\\
+    240 & 35.3 & {$-15.5 \pm 1.7$}\\
+    540 & 44.072 & {$-12.6 \pm 2.1$}\\
+    840 & 51.116 & {$-9.6 \pm 2.5$}\\
+    1140 & 56.671 &{ $-6.7 \pm 3.0$}\\
     \bottomrule
 \end{tabular}
-\caption{Mechanische Kompressorleistung}
+\caption{Mechanische Kompressorleistung für vier Zeiten.}
 \end{table}
 
 
