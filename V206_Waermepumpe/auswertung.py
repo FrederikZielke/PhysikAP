@@ -8,6 +8,8 @@ t, T2, T1, pa, pb, N, = np.genfromtxt('content/messwerte.txt', unpack = True)
 
 #5e
 pb = pb + 1
+#in Kelvin umrechnen
+T1 = T1 + 273.15
 T1 = 1/T1
 pb = np.log(pb)
 T1[0] = T1[1]
@@ -34,8 +36,8 @@ plt.plot(
 plt.plot(T1, pb, 'rx', label='Messdaten')
 
 plt.legend(loc="best")
-plt.xlabel(r'$1/T_1 \,$[1/°C]')
+plt.xlabel(r'$1/T_1 \,$[1/°K]')
 plt.ylabel(r'$ln\left(\frac{p_b}{bar}\right)$')
 
 plt.savefig('build/dampfdruck.pdf')
-#plt.show()
+plt.show()
