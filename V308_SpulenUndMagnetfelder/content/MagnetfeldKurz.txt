@@ -1,0 +1,20 @@
+#Lange Spule n = 3100, R = 62.5 Ohm, I = 0.5A, U = 32V, Range 100mT
+# Abstand x [cm] B [mT]
+# Messsonde innerhalb der Spule
+00 15.67
+01 14.56
+02 12.95
+03 11.02
+04 9.02
+# Messsonde außerhalb der Spule
+05 7.13
+06 5.56
+07 4.32
+08 3.33
+09 2.64
+10 2.06
+11 1.67
+12 1.37
+13 1.13
+14 0.94
+15 0.79
