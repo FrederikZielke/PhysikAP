@@ -1,5 +1,6 @@
 # B[mT] I[A]
 #Hier noch erste Reihe einfuegen
+016 0.0
 052 0.5
 131 1.0
 219 1.5
