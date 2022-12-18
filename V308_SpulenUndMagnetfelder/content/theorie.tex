@@ -6,6 +6,51 @@ Stromstärke, Spulenkern und Abstand zu den Spulen untersucht.\\
 
 \section{Theorie}
 \label{sec:Theorie}
+Das magnetische Feld ist eine wichtige Größe in der Elektromagnetismus-Theorie. 
+Es entsteht durch die Bewegung von elektrischen Ladungen und kann von Magneten oder elektrischen Strömen erzeugt werden.
+Das magnetische Feld ist eine Vektorgröße, die durch die magnetische Feldstärke $H$ beschrieben wird. 
+Die Feldstärke ist ein Maß für die Intensität des magnetischen Feldes und gibt an, wie stark das magnetische Feld an einem bestimmten Punkt ist. 
+Die Magnetfeldlinien sind gedachte Linien, die tangential zu den Feldstärkevektoren verlaufen und das magnetische Feld veranschaulichen. 
+Sie sind geschlossen und verlaufen von Nord- zu Südpol. Sie zeigen die Richtung des magnetischen Feldes an und geben Auskunft über die Stärke des Feldes an verschiedenen Punkten. 
+Die Dichte der Magnetfeldlinien gibt an, wie stark das magnetische Feld an einem bestimmten Punkt ist. Je dichter die Linien, desto stärker ist das magnetische Feld.
+\\
+Wenn die Wärmebewegung statistisch verteilt ist, ist
+\begin{equation*}
+    \vec{B} = \mu_r \mu_0 \vec{H} = μ \cdot \vec{H}
+\end{equation*}
+der Zusammenhang zwischen magnetischer Feldstärke $\vec{H}$ und magnetischer Flussdichte $\vec{B}$. Dabei ist $\mu_0$ die Permeabilität im Vakuum und $\mu_r$ die
+stoffspezifische relative Permeabilität.
+Mit dem Biosavart-Gesetz 
+\begin{equation}\label{Biosavart}
+    d\vec{B} = \frac{μ_0I}{4π} \frac{d\vec{s} \times \vec{r}}{r^3}
+\end{equation}
+lässt sich die magnetische Flussdichte eines stromdurchflossenen Leiters bestimmen. Hierbei ist $\vec{r}$ der Ortsvektor, $I$ die Stromstärke und $d\vec{s}$ ein 
+infinitesimales Wegstück. 
+Mit Gleichung \eqref{Biosavart} ergibt sich für eine Spule mit $n$-Windungen 
+\begin{equation*}
+    \vec{B}(x) = n \cdot \frac{μ_0I}{2} \frac{R^2}{(R^2 + x^2)^{3/2}} \cdot \hat{x},
+\end{equation*}
+wobei $n$ die Windungszahl, $R$ der Spulenradius und $x$ der Abstand zum Spulenzentrum ist.
+In einer langen Spule $(l >> D = 2R)$ ist die magnetische Feldstärke in der Mitte der Spule konstant und homogen. Außerhalb ist das Feld inhomogen, da die Feldlinien
+dort auseinander gehen. Sind Randeffekte zu vernachlässigen, ergibt sich für eine lange Spule
+\begin{equation*}
+    B = μ_{\symup{r}}μ\frac{n}{l}I.
+\end{equation*}
+Das Feld $B$ ist also proportional zu der Windungszahl $n$, der Länge der Spule $l$ und dem Spulenstrom $I$.
+\\
+Aus einer langen Spule kann eine Ringspule mit $r_{\symup{T}} << l$ erzeugt werden. Hierbei verschwinden die Randeffekte. Das besondere ist, dass bei einer Ringspule außerhalb der Spule
+kein Magnetfeld existiert. Das Magnetfeld im Inneren ist homogen und lässt sich mit $l = 2 \pi r_{\symup{T}}$ mit 
+\begin{equation}\label{toroidspule}
+    B = μ_{\symup{r}}μ_0\frac{n}{2πr_{\symup{T}}}I
+\end{equation}
+berechnen.
+
+
+
+
+
+
+
 
 \begin{equation*}
     \vec{B} = μ \cdot \vec{H}
