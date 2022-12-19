@@ -45,8 +45,8 @@ def g(x, a, b, c, d, e, f):
     return a*x**5+b*x**4+c*x**3+d*x**2+e*x+f
 def f(x, a, b, c, d, e):
     return 1/(4*np.pi*10**(-7))*(a*x**4 + b*x**3 + c*x**2 + d*x + e)*10**(-3)
-
-print(f(3800, polyfit[5], polyfit[4], polyfit[3], polyfit[2], polyfit[1]))
+print(polyfit)
+print(f(0, polyfit[5], polyfit[4], polyfit[3], polyfit[2], polyfit[1]))
 #print(g(2.5, -0.06298, 1.652, -14.62, 40.27, 109, 4.428))
 
 plt.grid()

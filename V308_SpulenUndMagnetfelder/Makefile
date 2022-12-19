@@ -7,17 +7,17 @@ all: build/V308.pdf
 #	# and set the matplotlibrc
 #	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot.py
 
-build/helmholtz.pdf: helmholtz.py ../matplotlibrc ../header-matplotlib.tex | build
-	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python helmholtz.py
-
-build/hysterese.pdf: hysterese.py ../matplotlibrc ../header-matplotlib.tex | build
-	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python hysterese.py
-
-build/spulen.pdf: spulen.py ../matplotlibrc ../header-matplotlib.tex | build
-	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python spulen.py
+#build/helmholtz.pdf: helmholtz.py ../matplotlibrc ../header-matplotlib.tex | build
+#	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python helmholtz.py
+#
+#build/hysterese.pdf: hysterese.py ../matplotlibrc ../header-matplotlib.tex | build
+#	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python hysterese.py
+#
+#build/spulen.pdf: spulen.py ../matplotlibrc ../header-matplotlib.tex | build
+#	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python spulen.py
 
 # hier weitere Abhängigkeiten für build/V000.pdf deklarieren:
-build/V308.pdf: build/hysterese.pdf build/helmholtz.pdf build/spulen.pdf
+#build/V308.pdf: build/hysterese.pdf build/helmholtz.pdf build/spulen.pdf
 
 build/V308.pdf: FORCE | build
 	# to find header and bib files in the main directory
