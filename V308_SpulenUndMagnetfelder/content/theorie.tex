@@ -15,9 +15,9 @@ Sie sind geschlossen und verlaufen von Nord- zu Südpol. Sie zeigen die Richtung
 Die Dichte der Magnetfeldlinien gibt an, wie stark das magnetische Feld an einem bestimmten Punkt ist. Je dichter die Linien, desto stärker ist das magnetische Feld.
 \\
 Wenn die Wärmebewegung statistisch verteilt ist, ist
-\begin{equation*}
+\begin{equation}\label{eq:BmuH}
     \vec{B} = \mu_r \mu_0 \vec{H} = μ \cdot \vec{H}
-\end{equation*}
+\end{equation}
 der Zusammenhang zwischen magnetischer Feldstärke $\vec{H}$ und magnetischer Flussdichte $\vec{B}$. Dabei ist $\mu_0$ die Permeabilität im Vakuum und $\mu_r$ die
 stoffspezifische relative Permeabilität.
 Mit dem Biosavart-Gesetz 
@@ -44,48 +44,65 @@ kein Magnetfeld existiert. Das Magnetfeld im Inneren ist homogen und lässt sich
     B = μ_{\symup{r}}μ_0\frac{n}{2πr_{\symup{T}}}I
 \end{equation}
 berechnen.
-
-
-
-
-
-
-
-
-\begin{equation*}
-    \vec{B} = μ \cdot \vec{H}
-\end{equation*}
-
-\begin{equation*}
-    d\vec{B} = \frac{μ_0I}{4π} \frac{d\vec{s} \times \vec{r}}{r^3}
-\end{equation*}
-
-\begin{equation*}
-    \vec{B}(x) = \frac{μ_0I}{2} \frac{R^2}{(R^2 + x^2)^{3/2}} \cdot \hat{x}
-\end{equation*}
-
-\begin{equation*}
-    B = μ_{\symup{r}}μ\frac{n}{l}I
-\end{equation*}
-
-\begin{equation*}
-    B = μ_{\symup{r}}μ_0\frac{n}{2πr_{\symup{T}}}I
-\end{equation*}
-
+\\
+Werden zwei Kreisspulen ausgerichtet, so dass die Achsen aufeinander liegen, werden sie als Helmholtzspulenpaar bezeichnet.
+Fließt durch beide ein gleichsinniger Strom bildet sich ein auf der Symmetrieachse homogenes Magnetfeld. Das entstandene Feld
+lässt sich aus dem Biot-Savart-Gesetz \eqref{Biosavart} herleiten. Allgemein lässt sich das Feld eines Helmholtzspulenpaares mit
 \begin{equation*}\label{eq:helmholz}
-    B(0) = B_1(x) + B_1(-x) = \frac{μ_0IR^2}{(R^2 + x^2)^{3/2}} + \frac{μ_0IR^2}{(R^2 + x^2)^{3/2}}
+    B(0) = B_1(x) + B_1(-x) = \frac{μ_0IR^2}{(R^2 + x^2)^{3/2}}
 \end{equation*}
-
-\begin{equation*}
-    \frac{dB}{dx} = -3μ_0IR^2\frac{x}{(R^2 + x^2)^{5/2}}
-\end{equation*}
-
-\begin{equation*}
-    μ_{\text{dif}} = \frac{1}{μ_0}\frac{dB}{dH}
-\end{equation*}
-
-\begin{equation*}
+berechnen.\\
+\\
+Ferromagnetische Materialien besitzen ein permanentes magnetisches Moment. Die relative Permeabilität dieser materialien ist sehr hoch und wird
+nicht durch die Gleichung \eqref{eq:BmuH} beschrieben. Die Magnetisierung wird durch die Hysteresekurve beschrieben. Wegen der irreversiblen Änderung
+des Magnetfeldes ist die Kurve abhängig von der Vorgeschichte und nicht eindeutig definiert.
+Zur Beschreibung der relativen Permeabilität $μ_{\symup{r}}$ ferromagnetischer Materialien wird die differentielle Permeabilität
+$μ_{\text{diff}}$ eingeführt, welche im direkten Bezug zur Neukurve steht. Die Gleichung der differentiellen Permeabilität ist gegeben mit
+\begin{equation}\label{eq:diff}
+    μ_{\text{dif}} = \frac{1}{μ_0}\frac{dB}{dH}.
+\end{equation}\\
+\\
+Der magnetische Fluß einer Spule erhöht sich wenn sie mit einem ferromagnetischem Kern versehen wird. Die Magnetisierung $M$ des Materials
+bestimmt die Erhöhung der Feldstärke $\vec{B}_{\text{FE}} = μ_0\vec{M}.$ Der Magnetische Fluß $\vec{B}$ einer Spule mit Eisenkern kann mit 
+\begin{equation}\label{eq:spuleeisenkern}
     \vec{B} = μ_0(\vec{H} + \vec{M})
-\end{equation*}
+\end{equation}
+berechnet werden.\\
+\\
+Mit $\vec{H}_{\symup{R}}$ wird die Feldstärke von Randeffekten in der gesamten magnetischen Feldstärke $\vec{H} = \vec{H}_0 + \vec{H}_{\symup{R}}$ einer Spule berücksichtigt.
+Wird ein Toroid mit der Spule geformt, gilt $\vec{H} = \vec{H}_0 = \vec{B} / μ_0.$ Die relative Permeabilität ferromagnetischer Materialien liegen in der Größenordnung von $10^2 \text{bis} 10^7$. Unter dieser Voraussetzung lässt sich die 
+Gleichung \eqref{eq:spuleeisenkern} vereinfachen zu $\vec{B} \approx  μ_0\vec{M}.$\\
 
-%\cite{sample}
+%Diese Glecihungen wurden nicht gebraucht aber ich lass sie mal stehen man weiß ja nie
+%\begin{equation*}
+%    \vec{B} = μ \cdot \vec{H}
+%\end{equation*}
+%
+%\begin{equation*}
+%    d\vec{B} = \frac{μ_0I}{4π} \frac{d\vec{s} \times \vec{r}}{r^3}
+%\end{equation*}
+%
+%\begin{equation*}
+%    \vec{B}(x) = \frac{μ_0I}{2} \frac{R^2}{(R^2 + x^2)^{3/2}} \cdot \hat{x}
+%\end{equation*}
+%
+%\begin{equation*}
+%    B = μ_{\symup{r}}μ\frac{n}{l}I
+%\end{equation*}
+%
+%\begin{equation*}
+%    B = μ_{\symup{r}}μ_0\frac{n}{2πr_{\symup{T}}}I
+%\end{equation*}
+%
+%
+%
+%\begin{equation*}
+%    \frac{dB}{dx} = -3μ_0IR^2\frac{x}{(R^2 + x^2)^{5/2}}
+%\end{equation*}
+%
+%
+%
+%
+%
+%%\cite{sample}
+%
