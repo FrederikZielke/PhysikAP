@@ -1,0 +1,64 @@
+\section{Zielsetzung}
+\label{sec:Zielsetzung}
+
+Im Versuch 353 wird das Relaxationsverhalten eines RC-Schwingkreises untersucht. 
+Die RC-Konstante des Kreises soll mithilfe des an einem Oszilloskop gemessenen Spannungsabfalls bestimmt werden.
+Außerdem soll die Frequenzabhängigkeit der Kondensatorspannungsamplitude in einem RC-Kreis untersucht werden.
+
+\section{Theorie}
+\label{sec:Theorie}
+
+\begin{equation*}
+    \frac{\symup{d}A}{\symup{d}t} = c\left[A(t) - A(\infty)\right] .
+\end{equation*}
+
+\begin{equation*}
+    \int_{A(0)}^{A(t)} \frac{\symup{d}A'}{A' - A(\infty)} = \int_{0}^{t} c\symup{d}t' .
+\end{equation*}
+
+\begin{equation*}
+    \ln\left(\frac{A(t) - A(\infty)}{A(0) - A(\infty)}\right) = c t .
+\end{equation*}
+
+\begin{equation*}
+    A(t) = A(\infty) + \left[A(0) - A(\infty)\right]\, \symup{e}^{\left(c t\right)}
+\end{equation*}
+gültig mit $c < 0$.
+
+\begin{equation*}\label{eq:U_C}
+    U_C = \frac{Q}{C}.
+\end{equation*}
+
+\begin{equation*}\label{eq:I}
+    I = \frac{U_C}{R}.
+\end{equation*}
+
+\begin{equation*}
+    \symup{d}Q = I\symup{d}t.
+\end{equation*}
+
+\begin{equation*}
+    \frac{\symup{d}Q}{\symup{d}t} = -\frac{1}{RC}Q(t).
+\end{equation*}
+mit $Q(\infty) = 0.$
+
+\begin{equation*}\label{eq:Q}%irgendwie stimmen hier die Größen von Q und e optisch nicht zueinander
+    Q(t) = Q(0)\, \symup{e}^{-\frac{t}{RC}}.
+\end{equation*}
+
+%Aufladevorgang
+Mit den Randbedinungnen $Q(0) = 0$ und $Q(\infty) = CU_0$
+wird der Aufladevorgang durch die Gleichung 
+\begin{equation*}\label{eq:Kondensatoraufladung}
+    Q(t) = CU_0\left(1 - \symup{e}^{-\frac{t}{RC}}\right)
+\end{equation*}
+beschrieben.
+
+\begin{equation*}
+    \frac{Q(t = RC)}{Q(0)} = \frac{1}{\symup{e}} \approx 0.368.
+\end{equation*}
+
+%Relaxationsphänomene bei periodischer Auslenkung
+\begin{equation*}
+    U(t) = U_0 \cos{\left(\omega t\right)}.
+\end{equation*}
