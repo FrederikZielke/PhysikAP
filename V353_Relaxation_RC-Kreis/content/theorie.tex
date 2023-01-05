@@ -62,3 +62,74 @@ beschrieben.
 \begin{equation*}
     U(t) = U_0 \cos{\left(\omega t\right)}.
 \end{equation*}
+
+\begin{equation*}
+    U_C(t) = A(ω) \cos{\left(ωt +  φ\{ω\}\right)}
+\end{equation*}
+
+\begin{equation*}\label{eq:Uges}
+    U(t) = U_R(t) + U_C(t)
+\end{equation*}
+
+\begin{equation*}
+    U_0\cos{ωt} = I(t)R + A(ω)\cos{\left(ωt +  φ\right)}
+\end{equation*}
+
+\begin{equation*}\label{eq:Strom_I}
+    I(t) = \frac{\symup{d}Q}{\symup{d}t} = C\frac{\symup{d}U_C}{\symup{d}t}
+\end{equation*}
+
+\begin{equation*}
+    U_0\cos{ωt} = -AωRC\sin{\left(ωt + φ\right)} + A(ω)\cos{\left(ωt + φ\right)}
+\end{equation*}
+
+\begin{equation*}
+    0 = -ωRC\sin{\left(\frac{π}{2} + φ\right)} + \cos{\left(\frac{π}{2} + φ\right)}
+\end{equation*}
+daraus folgt wegen $\sin{\left(φ + \frac{π}{2}\right)} = \cos{φ}$ und $\cos{\left(φ + \frac{π}{2}\right)} = -\sin{φ}$
+\begin{equation*}
+    \frac{\sin{φ}}{\cos{φ}} = \tan{φ (ω)} = -ωRC \quad \text{oder} \quad φ(ω) = \arctan{\left(-ωRC\right)}
+\end{equation*}
+
+\begin{equation*}
+    ωt + φ = \frac{π}{2}
+\end{equation*}
+
+\begin{equation*}
+    U_0\cos{\left(\frac{π}{2} - φ\right)} = -AωRC
+\end{equation*}
+
+\begin{equation*}
+    A(ω) = -\frac{\sin{φ}}{ωRC}U_0
+\end{equation*}
+
+\begin{equation*}
+    \sin{φ}^2 + \cos{φ}^2 = 1
+\end{equation*}
+
+\begin{equation*}
+    \sin{φ} = \sqrt{ωRC}{\sqrt{1 + ω^2R^2C^2}}
+\end{equation*}
+
+\begin{equation*}
+    A(ω) = \frac{U_0}{\sqrt{1 + ω^2R^2C^2}}
+\end{equation*}
+
+Mit der Gleichung \eqref{eq:Uges} ergibt sich für
+\begin{equation*}
+    U(t) = I(t) R + U_C(t).
+\end{equation*}
+Jetzt Gleichung \eqref{eq:Strom_I} einsetzen um
+\begin{equation*}\label{eq:Uges2}
+    U(t) = RC\frac{\symup{d}U_C}{\symup{d}t} + U_C(t).
+\end{equation*}
+Wird $ω >> \frac{1}{RC}$ angenommen so ist $\left\lvert U_C\right\rvert << \left\lvert U_R\right\rvert $
+und $\left\lvert U_C\right\rvert << \left\lvert U\right\rvert $.
+Dann kann \eqref{eq:Uges2} annähern als
+\begin{equation*}
+    U(t) = RC\frac{\symup{d}U_C}{\symup{d}t}
+\end{equation*}
+oder als
+\begin{equation*}
+    U_C(t) = \frac{1}{RC} \int_{0}^{t} U(\tau)\symup{d}\tau.
+\end{equation*}
