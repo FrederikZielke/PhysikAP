@@ -10,18 +10,18 @@ Außerdem soll die Frequenzabhängigkeit der Kondensatorspannungsamplitude in ei
 
 
 Wenn ein System aus seinem Ausganszustand ausgelenkt wird und es nicht-oszillatorisch wieder in diesen zurück kehrt, 
-bezeichnet man dies als Relaxation. Die Änderungsrate der betrachteten Größe $A$ ist meist proportional zur Abweichung des Endzustandes $A(\infty)$.
-\begin{equation*}
+wird dies als Relaxation bezeichnet. Die Änderungsrate der betrachteten Größe $A$ ist meist proportional zur Abweichung des Endzustandes $A(\infty)$.
+\begin{equation*}\label{eq:relaxationsrate}
     \frac{\symup{d}A}{\symup{d}t} = c\left[A(t) - A(\infty)\right] 
 \end{equation*}
-Integriert man die Gleichung vom Zeitpunkt 0 bis zum Zeitpunkt t erhält man
+Integriert vom Zeitpunkt 0 bis zum Zeitpunkt t ergibt sich 
 \begin{equation*}\label{eq:int_A}
     \int_{A(0)}^{A(t)} \frac{\symup{d}A'}{A' - A(\infty)} = \int_{0}^{t} c\symup{d}t' .
 \end{equation*}
 %\begin{equation*}
 %    \ln\left(\frac{A(t) - A(\infty)}{A(0) - A(\infty)}\right) = c t .
 %\end{equation*}
-Stellt man \eqref{eq:int_A} nach $A(t)$ um erhält man
+Die Gleichung \eqref{eq:int_A} nach $A(t)$ umgestellt ist
 \begin{equation*}
     A(t) = A(\infty) + \left[A(0) - A(\infty)\right]\, \symup{e}^{\left(c t\right)}
 \end{equation*}
@@ -39,15 +39,16 @@ und dem ohmschen Gesetz ergibt sich der Strom
     I = \frac{U_C}{R}.
 \end{equation*}
 
+Die Zeitliche Änderung der Kondensatorladung $Q$ ist durch die Gleichung
 \begin{equation*}
-    \symup{d}Q = I\symup{d}t.
+    \symup{d}Q = I\symup{d}t
 \end{equation*}
-
+gegeben. Mithilfe der Gleichungen \eqref{eq:U_C} und \eqref{eq:I} wird diese Gleichung in die Form von \eqref{eq:relaxationsrate} gebracht
 \begin{equation*}
-    \frac{\symup{d}Q}{\symup{d}t} = -\frac{1}{RC}Q(t).
+    \frac{\symup{d}Q}{\symup{d}t} = -\frac{1}{RC}Q(t)
 \end{equation*}
-mit $Q(\infty) = 0.$
-
+mit $Q(\infty) = 0.$\\
+Mit einer Integration wie in \eqref{eq:int_A} ist 
 \begin{equation*}\label{eq:Q}%irgendwie stimmen hier die Größen von Q und e optisch nicht zueinander
     Q(t) = Q(0)\, \symup{e}^{-\frac{t}{RC}}.
 \end{equation*}
@@ -60,9 +61,9 @@ wird der Aufladevorgang durch die Gleichung
 \end{equation*}
 beschrieben.
 
-\begin{equation*}
-    \frac{Q(t = RC)}{Q(0)} = \frac{1}{\symup{e}} \approx 0.368.
-\end{equation*}
+%\begin{equation*}
+%    \frac{Q(t = RC)}{Q(0)} = \frac{1}{\symup{e}} \approx 0.368.
+%\end{equation*}
 
 %Relaxationsphänomene bei periodischer Auslenkung
 \begin{equation*}
