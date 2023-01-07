@@ -15,9 +15,9 @@ wird dies als Relaxation bezeichnet. Die Änderungsrate der betrachteten Größe
     \frac{\symup{d}A}{\symup{d}t} = c\left[A(t) - A(\infty)\right] 
 \end{equation*}
 Integriert vom Zeitpunkt 0 bis zum Zeitpunkt t ergibt sich 
-\begin{equation*}\label{eq:int_A}
+\begin{equation}\label{eq:int_A}
     \int_{A(0)}^{A(t)} \frac{\symup{d}A'}{A' - A(\infty)} = \int_{0}^{t} c\symup{d}t' .
-\end{equation*}
+\end{equation}
 %\begin{equation*}
 %    \ln\left(\frac{A(t) - A(\infty)}{A(0) - A(\infty)}\right) = c t .
 %\end{equation*}
@@ -31,13 +31,13 @@ Konkret betrachtet wird der Be- und Entladungsprozess eines Kondensators über e
 
 %\subsection{Kondensator}
 Für die Spannung an einem Kondensator gilt
-\begin{equation*}\label{eq:U_C}
+\begin{equation}\label{eq:U_C}
     U_C = \frac{Q}{C}
-\end{equation*}
+\end{equation}
 und dem ohmschen Gesetz ergibt sich der Strom
-\begin{equation*}\label{eq:I}
+\begin{equation}\label{eq:I}
     I = \frac{U_C}{R}.
-\end{equation*}
+\end{equation}
 
 Die Zeitliche Änderung der Kondensatorladung $Q$ ist durch die Gleichung
 \begin{equation*}
@@ -59,77 +59,97 @@ wird der Aufladevorgang durch die Gleichung
 \begin{equation*}\label{eq:Kondensatoraufladung}
     Q(t) = CU_0\left(1 - \symup{e}^{-\frac{t}{RC}}\right)
 \end{equation*}
-beschrieben.
-
+beschrieben. Unter verwendung von \eqref{eq:U_C} kann die Gleichung umgeformt werden zu
+\begin{equation*}\label{eq:RC}
+    \ln{\left(\frac{U_C}{U_0}\right)} = -\frac{t}{RC}.
+\end{equation*}
+Der negative Kehrwert der Steigung ist also die RC-Konstante.
 %\begin{equation*}
 %    \frac{Q(t = RC)}{Q(0)} = \frac{1}{\symup{e}} \approx 0.368.
 %\end{equation*}
-
 %Relaxationsphänomene bei periodischer Auslenkung
+Unter sinusförmiger periodischer Auslenkung zeigen sich auch Relaxationsphänomene.
+Ist die Kreisfrequanz $ω$ des Auslenkungssignals 
 \begin{equation*}
-    U(t) = U_0 \cos{\left(\omega t\right)}.
+    U(t) = U_0 \cos{\left(\omega t\right)}
 \end{equation*}
+ausreichend klein, also $ω<<\frac{1}{RC}$, so ist die Kondesatorspannung $U_C(t)$ jederzeit gleich $U(t).$
+Mit steigender Frequenz verschiebt sich der Be- und Entladevorgang des Kondensators immer weiter hinter den Verlauf der Generatorspannung.
+Die Amplitude $A$ der Kondensatorspannung nimmt ab und es bildet sich eine Phasenverschiebung $φ$ zwischen den Spannungen aus.
 
-\begin{equation*}
+Um die Frequenzabhängigkeit der Phase und Amplitude von $U_C$ herauszufinden eignet sich der Ansatz
+\begin{equation*}\label{eq:U_C_phi}
     U_C(t) = A(ω) \cos{\left(ωt +  φ\{ω\}\right)}
 \end{equation*}
 
-\begin{equation*}\label{eq:Uges}
-    U(t) = U_R(t) + U_C(t)
-\end{equation*}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/kirchhoff.png}
+    \caption{Beispielhafte Schaltskizze eines RC-Schwingkreises.}
+    \label{fig:Kirchhoff}
+\end{figure}
 
-\begin{equation*}
-    U_0\cos{ωt} = I(t)R + A(ω)\cos{\left(ωt +  φ\right)}
-\end{equation*}
-
-\begin{equation*}\label{eq:Strom_I}
-    I(t) = \frac{\symup{d}Q}{\symup{d}t} = C\frac{\symup{d}U_C}{\symup{d}t}
-\end{equation*}
-
-\begin{equation*}
-    U_0\cos{ωt} = -AωRC\sin{\left(ωt + φ\right)} + A(ω)\cos{\left(ωt + φ\right)}
-\end{equation*}
-
+Aus einer Schaltung wie in \autoref{fig:Kirchhoff} lässt sich mithilfe des zweiten Kirchhoffschen Gesetzes folgender Ausdruck für die Gesamtspannung herleiten
+\begin{equation}\label{eq:Uges}
+    U(t) = U_R(t) + U_C(t),
+\end{equation}
+ausformuliert wird die Gleichung zu
+\begin{equation}\label{eq:KirchhoffAusformuliert}
+    U_0\cos{ωt} = I(t)R + A(ω)\cos{\left(ωt +  φ\right)}.
+\end{equation}
+Die Gleichung ist nur unter der Voraussetzung gültig, dass der Innenwiederstand $R_{\symup{i}} = 0$ ist,
+da sonst $U_R(t) = (R + R_{symup{i}}) I(t).$
+Der Strom $I(t)$ lässt sich mit Gleichung \eqref{eq:U_C} und \eqref{eq:I} umformulieren zu
+\begin{equation}\label{eq:Strom_I}
+    I(t) = \frac{\symup{d}Q}{\symup{d}t} = C\frac{\symup{d}U_C}{\symup{d}t}.
+\end{equation}
+Zusammen mit den Gleichungen \eqref{eq:U_C_phi}, \eqref{eq:KirchhoffAusformuliert} und \eqref{eq:Strom_I} ergibt sich
+\begin{equation}\label{eq:keinPlan}
+    U_0\cos{ωt} = -AωRC\sin{\left(ωt + φ\right)} + A(ω)\cos{\left(ωt + φ\right)}.
+\end{equation}
+Die Gleichung \eqref{eq:keinPlan} muss für jedes t gelten. Für $ωt = \frac{π}{2}$ gilt dann
 \begin{equation*}
     0 = -ωRC\sin{\left(\frac{π}{2} + φ\right)} + \cos{\left(\frac{π}{2} + φ\right)}
 \end{equation*}
 daraus folgt wegen $\sin{\left(φ + \frac{π}{2}\right)} = \cos{φ}$ und $\cos{\left(φ + \frac{π}{2}\right)} = -\sin{φ}$
-\begin{equation*}
-    \frac{\sin{φ}}{\cos{φ}} = \tan{φ (ω)} = -ωRC \quad \text{oder} \quad φ(ω) = \arctan{\left(-ωRC\right)}
-\end{equation*}
-
+\begin{equation}\label{eq:phi}
+    \frac{\sin{φ}}{\cos{φ}} = \tan{φ (ω)} = -ωRC \quad \text{oder} \quad φ(ω) = \arctan{\left(-ωRC\right)}.
+\end{equation}
+Für hohe Frequenzen geht $φ$ asymptotisch gegen $\frac{π}{2}$, für niedrige Frequenzen gegen $0$. Bei $ω = \frac{1}{RC}$ ist $φ = \frac{π}{4}.$
+Weiter folgt aus \eqref{eq:keinPlan} mit
 \begin{equation*}
     ωt + φ = \frac{π}{2}
 \end{equation*}
-
+die Gleichung
 \begin{equation*}
     U_0\cos{\left(\frac{π}{2} - φ\right)} = -AωRC
 \end{equation*}
-
-\begin{equation*}
-    A(ω) = -\frac{\sin{φ}}{ωRC}U_0
-\end{equation*}
-
+beziehungsweise 
+\begin{equation}\label{eq:A}
+    A(ω) = -\frac{\sin{φ}}{ωRC}U_0.
+\end{equation}
+Aus Gleichung \eqref{eq:phi} kann mit der Identität
 \begin{equation*}
     \sin{φ}^2 + \cos{φ}^2 = 1
 \end{equation*}
-
+die Beziehung
 \begin{equation*}
     \sin{φ} = \sqrt{ωRC}{\sqrt{1 + ω^2R^2C^2}}
 \end{equation*}
-
+hergeleitet werden. Eingesetzt in \eqref{eq:A} folgt die Gleichung
 \begin{equation*}
-    A(ω) = \frac{U_0}{\sqrt{1 + ω^2R^2C^2}}
+    A(ω) = \frac{U_0}{\sqrt{1 + ω^2R^2C^2}}.
 \end{equation*}
+
 
 Mit der Gleichung \eqref{eq:Uges} ergibt sich für
 \begin{equation*}
     U(t) = I(t) R + U_C(t).
 \end{equation*}
 Jetzt Gleichung \eqref{eq:Strom_I} einsetzen um
-\begin{equation*}\label{eq:Uges2}
+\begin{equation}\label{eq:Uges2}
     U(t) = RC\frac{\symup{d}U_C}{\symup{d}t} + U_C(t).
-\end{equation*}
+\end{equation}
 Wird $ω >> \frac{1}{RC}$ angenommen so ist $\left\lvert U_C\right\rvert << \left\lvert U_R\right\rvert $
 und $\left\lvert U_C\right\rvert << \left\lvert U\right\rvert $.
 Dann kann \eqref{eq:Uges2} annähern als
