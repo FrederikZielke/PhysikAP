@@ -8,27 +8,33 @@ Außerdem soll die Frequenzabhängigkeit der Kondensatorspannungsamplitude in ei
 \section{Theorie}
 \label{sec:Theorie}
 
-\begin{equation*}
-    \frac{\symup{d}A}{\symup{d}t} = c\left[A(t) - A(\infty)\right] .
-\end{equation*}
 
+Wenn ein System aus seinem Ausganszustand ausgelenkt wird und es nicht-oszillatorisch wieder in diesen zurück kehrt, 
+bezeichnet man dies als Relaxation. Die Änderungsrate der betrachteten Größe $A$ ist meist proportional zur Abweichung des Endzustandes $A(\infty)$.
 \begin{equation*}
+    \frac{\symup{d}A}{\symup{d}t} = c\left[A(t) - A(\infty)\right] 
+\end{equation*}
+Integriert man die Gleichung vom Zeitpunkt 0 bis zum Zeitpunkt t erhält man
+\begin{equation*}\label{eq:int_A}
     \int_{A(0)}^{A(t)} \frac{\symup{d}A'}{A' - A(\infty)} = \int_{0}^{t} c\symup{d}t' .
 \end{equation*}
-
-\begin{equation*}
-    \ln\left(\frac{A(t) - A(\infty)}{A(0) - A(\infty)}\right) = c t .
-\end{equation*}
-
+%\begin{equation*}
+%    \ln\left(\frac{A(t) - A(\infty)}{A(0) - A(\infty)}\right) = c t .
+%\end{equation*}
+Stellt man \eqref{eq:int_A} nach $A(t)$ um erhält man
 \begin{equation*}
     A(t) = A(\infty) + \left[A(0) - A(\infty)\right]\, \symup{e}^{\left(c t\right)}
 \end{equation*}
 gültig mit $c < 0$.
 
-\begin{equation*}\label{eq:U_C}
-    U_C = \frac{Q}{C}.
-\end{equation*}
+Konkret betrachtet wird der Be- und Entladungsprozess eines Kondensators über einen Widerstand.
 
+%\subsection{Kondensator}
+Für die Spannung an einem Kondensator gilt
+\begin{equation*}\label{eq:U_C}
+    U_C = \frac{Q}{C}
+\end{equation*}
+und dem ohmschen Gesetz ergibt sich der Strom
 \begin{equation*}\label{eq:I}
     I = \frac{U_C}{R}.
 \end{equation*}
