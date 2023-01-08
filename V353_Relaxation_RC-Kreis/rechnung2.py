@@ -10,7 +10,9 @@ U0 = 2.9
 tRange = np.linspace(np.min(v),np.max(v),1000)
 params, pcov = curve_fit(f, v, U_C/U0, p0 = 2)
 
+uncertainties = np.sqrt(np.diag(pcov))
 print(params)
+print(uncertainties)
 
 plt.plot(tRange,f(tRange,*params),'k-', label='Ausgleichskurve')
 plt.plot(v, U_C/U0,'rx', label='Gemessen')

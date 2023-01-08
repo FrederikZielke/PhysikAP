@@ -4,7 +4,7 @@
 Die in \autoref{sec:Auswertung} gezeigten Grafiken und Ausgleichsrechnungen sind mithilfe der Python-Bibliotheken Matplotlib \cite{matplotlib}, Scipy \cite{scipy} und Numpy \cite{numpy}
 erstellt worden.
 
-\subsection{Bestimmung der Zeitkonstante einer RC Glieds}
+\subsection{Bestimmung der Zeitkonstante eines RC Glieds mit angelegter Rechteckspannung}
 \begin{table}[H]
     \centering
     \caption{Abgelesene Kondensatorspannung in Abhängigkeit der Zeit.}
@@ -65,4 +65,88 @@ lässt sich $RC$ zu $RC = -\frac{1}{a}$ bestimmen, wobei $a$ die Steigung der Au
 \begin{equation*}
     RC = -\frac{1}{a} = \SI{2.849(0.032)}{ms}.
 \end{equation*}
-  
+
+\subsection{Bestimmung der Zeitkonstante mit angelegter Sinusspannung}
+Wie \autoref{sec:Messung} beschrieben, wird nun auf ein Sinussignal gewechselt. Die aufgenommen Messwerte sind in \autoref{tab:phase} dargestellt.
+\begin{table}[H]
+    \centering
+    \caption{Frequenz $f$ des Signals, abgelesene Kondensatorspannung $U_C$, zeitlicher Abstand der Nulldurchgänge $a$ und Intervalllänge $b$.}
+    \label{tab:phase}
+    \begin{tabular}{
+      S[table-format=4.1]
+      S[table-format=1.2]
+      S[table-format=1.1]
+      S[table-format=2.1]
+    }
+      \toprule
+      {$f\left[\unit{Hz}\right]$} & {$U_C\left[\unit{V}\right]$} & {$a\left[\unit{ms}\right]$} & {$b\left[\unit{ms}\right]$}\\
+      \midrule
+      41.1 & 1.6  & 2.4 & 24.0 \\
+      50   & 1.4  & 2.2 & 20.0\\
+      60   & 1.35 & 2.1 & 16.8\\
+      70   & 1.25 & 2.0 & 13.2\\
+      80   & 1.15 & 1.9 & 12.2\\
+      90   & 1.05 & 1.9 & 9.6\\
+      100  & 0.95 & 1.6 & 9.0\\
+      120  & 0.85 & 1.4 & 8.2\\
+      140  & 0.75 & 1.4 & 6.5\\
+      160  & 0.7  & 1.2 & 6.1\\
+      180  & 0.6  & 1.2 & 4.7\\
+      200  & 0.55 & 1.0 & 4.5\\
+      250  & 0.45 & 0.8 & 4.0\\
+      300  & 0.4  & 0.8 & 2.6\\
+      400  & 0.3  & 0.6 & 2.2\\
+      500  & 0.25 & 0.6 & 2.0\\
+      600  & 0.2  & 0.4 & 1.8\\
+      750  & 0.2  & 0.3 & 1.4\\
+      1000 & 0.2  & 0.1 & 1\\
+      \bottomrule
+  \end{tabular}
+\end{table}  
+
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{build/spannungsplot.pdf}
+    \caption{Amplitudenverhältnis $\frac{U_C}{U_0}$ gegen die Frequenz $f$ auf einer logarithmischen Skala zur Basis 10 aufgetragen.}
+    \label{phase_graph}
+\end{figure} 
+In \autoref{phase_graph} ist das Amplitudenverhältnis $\frac{U_C}{U_0}$ (mit $U_0 = \SI{2.9}{V}$) gegen die Frequenz $f$ auf einer logarithmischen Skala zur Basis 10 aufgetragen.
+Durch umstellen von \autoref{eq:A2} ergibt sich
+\begin{equation*}
+    \frac{U_C}{U_0} = \frac{1}{\sqrt{1 + (2 \pi f)^2(RC)^2}}.
+\end{equation*}
+Daraus lässt sich die Zeitkonstante $RC$ bestimmen, indem man $RC = a$ setzt und die Funktion 
+\begin{equation*}
+    A(f) = \frac{1}{\sqrt{1 + (2 \pi f)^2(a)^2}}.
+\end{equation*}
+mit Parameter $a$ an die Messwerte fittet. 
+Die Ausgleichsrechnung mit SciPy \cite{scipy} ergibt die Zeitkonstante
+\begin{equation*}
+    a = RC = \SI{0.0048(0.0001)}{s} = \SI{4.8(0.1)}{ms}.
+\end{equation*}
+
+\subsection{Bestimmung der Zeitkonstante über die Phasenverschiebung}
+Die Zeitkonstante lässt sich ebenfalls über die frequenzabhängige Phasendifferenz $\phi$ zwischen der Generatorspannung und der Kondensatorspannung berechnen.
+Dazu wird der Zusammenhang
+\begin{equation*}
+    \phi = \frac{a}{b} \cdot 2 \pi
+\end{equation*}
+mit den Werten aus \autoref{tab:phase} verwendet.
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{build/phasen.pdf}
+    \caption{$\phi$ gegen die Frequenz $f$ auf einer logarithmischen Skala zur Basis 10 aufgetragen.}
+    \label{phase_graph2}
+\end{figure} 
+Mit \autoref{eq:phi} ergibt sich die in \autoref{phase_graph2} dargestellte Fitfunktion
+\begin{equation*}
+    G(f) = -\arctan (-2 \pi f a).
+\end{equation*}
+Durch die Ausgleichsrechnung mit SciPy \cite{scipy} ergibt die Zeitkonstante
+\begin{equation*}
+    a = RC = \SI{0.0033(0.0007)}{s} = \SI{3.3(0.7)}{ms}.
+\end{equation*}
+Anschaulich lässt sich die Kondensatorspannung $U_C$ in Abhängigkeit der Phasenverschiebung $\phi$ in einem Polarplot darstellen.
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{build/plotNp.pdf}
+    \caption{Kondensatorspannung $U_C$ in Abhängigkeit der Phasenverschiebung $\phi$}
+    \label{phase_graph2}
+\end{figure} 
