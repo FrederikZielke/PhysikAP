@@ -5,3 +5,64 @@ Die in \autoref{sec:Auswertung} gezeigten Grafiken und Ausgleichsrechnungen sind
 erstellt worden.
 
 \subsection{Bestimmung der Zeitkonstante einer RC Glieds}
+\begin{table}[H]
+    \centering
+    \caption{Abgelesene Kondensatorspannung in Abhängigkeit der Zeit.}
+    \begin{tabular}{
+      S[table-format=4.0]
+      S[table-format=2.3]
+    }
+      \toprule
+      {$t\left[\unit{ms}\right]$} & {$U_C\left[\unit{V}\right]$}\\
+      \midrule
+      0.0 & 4.00 \\
+      0.4 & 3.40\\
+      0.8 & 3.00\\
+      1.2 & 2.50\\
+      1.6 & 2.20\\
+      2.0 & 1.90\\
+      2.4 & 1.70\\
+      2.8 & 1.40\\
+      3.2 & 1.30\\
+      3.6 & 1.10\\
+      4.0 & 0.90\\
+      4.4 & 0.80\\
+      4.8 & 0.70\\
+      5.2 & 0.60\\
+      5.6 & 0.50\\
+      6.0 & 0.40\\
+      6.4 & 0.40\\
+      6.8 & 0.35\\
+      7.2 & 0.30\\
+      7.6 & 0.25\\
+      8.0 & 0.23\\
+      8.4 & 0.20\\
+      8.8 & 0.20\\
+      9.2 & 0.17\\
+      9.6 & 0.15\\
+      10.0& 0.10\\
+      12.0 & 0.00\\
+      \bottomrule
+  \end{tabular}
+  \end{table}  
+
+Die gemessenen Werte können nun als Funktion von $t$ dargestellt werden. Wird der ln$(\frac{U_C}{U_0})$ gegen $t$ aufgetragen, so entsteht \autoref{rc_graph}.
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{build/entladekurve.pdf}
+    \caption{Amplitudenverhältnis $\frac{U_C}{U_0}$ logarithmisch gegen die Zeit $t$ aufgetragen.}
+    \label{rc_graph}
+\end{figure} 
+Durch eine lineare Ausgleichsrechnung wird die Funktion
+\begin{equation*}
+    f(x) = ax + b
+\end{equation*}
+an die Messwerte gefittet. Mit der Python Bibliothek SciPy \cite{scipy} ergibt sich für die Koeffizienten $a = \SI{-0.351(0.004)}{\frac{1}{s}}$ und $b = -0.04 \pm 0.02$.
+Mit dem Zusammenhang 
+\begin{equation*}
+    \ln{\frac{U_C}{U_0}} = - \frac{t}{RC}
+\end{equation*}
+lässt sich $RC$ zu $RC = -\frac{1}{a}$ bestimmen, wobei $a$ die Steigung der Ausgleichsgeraden ist. Dadurch ergibt sich für die Zeitkonstante
+\begin{equation*}
+    RC = -\frac{1}{a} = \SI{2.849(0.032)}{ms}.
+\end{equation*}
+  
