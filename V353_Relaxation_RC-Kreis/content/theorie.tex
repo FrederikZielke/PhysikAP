@@ -9,7 +9,7 @@ Außerdem soll die Frequenzabhängigkeit der Kondensatorspannungsamplitude in ei
 \label{sec:Theorie}
 
 
-Wenn ein System aus seinem Ausganszustand ausgelenkt wird und es nicht-oszillatorisch wieder in diesen zurück kehrt, 
+Wenn ein System aus seinem Ausganszustand ausgelenkt wird und es nicht-oszillatorisch wieder in diesen zurückkehrt, 
 wird dies als Relaxation bezeichnet. Die Änderungsrate der betrachteten Größe $A$ ist meist proportional zur Abweichung des Endzustandes $A(\infty)$.
 \begin{equation}\label{eq:relaxationsrate}
     \frac{\symup{d}A}{\symup{d}t} = c\left[A(t) - A(\infty)\right] 
@@ -21,27 +21,26 @@ Integriert vom Zeitpunkt 0 bis zum Zeitpunkt t ergibt sich
 %\begin{equation*}
 %    \ln\left(\frac{A(t) - A(\infty)}{A(0) - A(\infty)}\right) = c t .
 %\end{equation*}
-Die Gleichung \eqref{eq:int_A} nach $A(t)$ umgestellt ist
+Die Gleichung \eqref{eq:int_A} nach $A(t)$ aufgelöst ist
 \begin{equation*}
     A(t) = A(\infty) + \left[A(0) - A(\infty)\right]\, \symup{e}^{\left(c t\right)}
 \end{equation*}
 gültig mit $c < 0$.
-
+\\
+\subsection{Kondensator}
 Konkret betrachtet wird der Be- und Entladungsprozess eines Kondensators über einen Widerstand.
-
-%\subsection{Kondensator}
 Für die Spannung an einem Kondensator gilt
 \begin{equation}\label{eq:U_C}
     U_C = \frac{Q}{C}.
 \end{equation}
 Mit den Ohmschen Gesetzen ergibt sich der Strom
-\begin{equation*}%\label{eq:I} bin mir nicht sicher ob ich das Label brauche
+\begin{equation}\label{eq:I} 
     I = \frac{U_C}{R}.
-\end{equation*}
+\end{equation}
 
 Die Zeitliche Änderung der Kondensatorladung $Q$ ist durch die Gleichung
 \begin{equation}\label{eq:Idt}%Hier ist dQ = Idt
-    \symup{d}Q = I\symup{d}t
+    \symup{d}Q = -I\symup{d}t
 \end{equation}
 gegeben. Mithilfe der Gleichungen \eqref{eq:U_C} und \eqref{eq:I} wird diese Gleichung in die Form von \eqref{eq:relaxationsrate} gebracht
 \begin{equation*}
@@ -67,9 +66,9 @@ Der negative Kehrwert der Steigung ist also die RC-Konstante.\\
 %\begin{equation*}
 %    \frac{Q(t = RC)}{Q(0)} = \frac{1}{\symup{e}} \approx 0.368.
 %\end{equation*}
-%Relaxationsphänomene bei periodischer Auslenkung
+\subsection{Relaxationsphänomene bei periodischer Auslenkung}
 Unter sinusförmiger periodischer Auslenkung zeigen sich auch Relaxationsphänomene.
-Ist die Kreisfrequanz $ω$ des Auslenkungssignals 
+Ist die Kreisfrequenz $ω$ des Auslenkungssignals 
 \begin{equation*}
     U(t) = U_0 \cos{\left(\omega t\right)}
 \end{equation*}
@@ -77,17 +76,16 @@ ausreichend klein, also $ω<<\frac{1}{RC}$, so ist die Kondesatorspannung $U_C(t
 Mit steigender Frequenz verschiebt sich der Be- und Entladevorgang des Kondensators immer weiter hinter den Verlauf der Generatorspannung.
 Die Amplitude $A$ der Kondensatorspannung nimmt ab und es bildet sich eine Phasenverschiebung $φ$ zwischen den Spannungen aus.
 Um die Frequenzabhängigkeit der Phase und Amplitude von $U_C$ herauszufinden eignet sich der Ansatz
-\begin{equation*}\label{eq:U_C_phi}
+\begin{equation}\label{eq:U_C_phi}
     U_C(t) = A(ω) \cos{\left(ωt +  φ\{ω\}\right)}
-\end{equation*}
-
+\end{equation}
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{img/kirchhoff.png}
-    \caption{Beispielhafte Schaltskizze eines RC-Schwingkreises.}
+    \includegraphics[width=0.5\textwidth]{img/kirchhoff.png}
+    \caption{Beispielhafte Schaltskizze eines RC-Schwingkreises.\cite{V353}}
     \label{fig:Kirchhoff}
 \end{figure}
-
+\newpage
 Aus einer Schaltung wie in \autoref{fig:Kirchhoff} lässt sich mithilfe des zweiten Kirchhoffschen Gesetzes folgender Ausdruck für die Gesamtspannung herleiten
 \begin{equation}\label{eq:Uges}
     U(t) = U_R(t) + U_C(t),
@@ -108,36 +106,38 @@ Zusammen mit den Gleichungen \eqref{eq:U_C_phi}, \eqref{eq:KirchhoffAusformulier
 \end{equation}
 Die Gleichung \eqref{eq:keinPlan} muss für jedes t gelten.\\
 Für $ωt = \frac{π}{2}$ gilt dann
-\begin{equation*}
-    0 = -ωRC\sin{\left(\frac{π}{2} + φ\right)} + \cos{\left(\frac{π}{2} + φ\right)}
-\end{equation*}
-daraus folgt wegen $\sin{\left(φ + \frac{π}{2}\right)} = \cos{φ}$ und $\cos{\left(φ + \frac{π}{2}\right)} = -\sin{φ}$
+%\begin{equation*}
+%    0 = -ωRC\sin{\left(\frac{π}{2} + φ\right)} + \cos{\left(\frac{π}{2} + φ\right)}
+%\end{equation*}
+%daraus folgt wegen $\sin{\left(φ + \frac{π}{2}\right)} = \cos{φ}$ und $\cos{\left(φ + \frac{π}{2}\right)} = -\sin{φ}$
 \begin{equation}\label{eq:phi}
     \frac{\sin{φ}}{\cos{φ}} = \tan{φ (ω)} = -ωRC \quad \text{oder} \quad φ(ω) = \arctan{\left(-ωRC\right)}.
 \end{equation}
 Für hohe Frequenzen geht $φ$ asymptotisch gegen $\frac{π}{2}$, für niedrige Frequenzen gegen $0$.\\
 Bei $ω = \frac{1}{RC}$ ist $φ = \frac{π}{4}.$
 Weiter folgt aus \eqref{eq:keinPlan} mit $ωt + φ = \frac{π}{2}$ die Gleichung
-\begin{equation*}
-    U_0\cos{\left(\frac{π}{2} - φ\right)} = -AωRC
-\end{equation*}
-beziehungsweise 
+%\begin{equation*}
+%    U_0\cos{\left(\frac{π}{2} - φ\right)} = -AωRC
+%\end{equation*}
+%beziehungsweise 
 \begin{equation}\label{eq:A}
     A(ω) = -\frac{\sin{φ}}{ωRC}U_0.
 \end{equation}
-Aus Gleichung \eqref{eq:phi} kann mit der Identität $\sin{φ}^2 + \cos{φ}^2 = 1$ die Beziehung
-\begin{equation*}
-    \sin{φ} = \frac{ωRC}{\sqrt{1 + ω^2R^2C^2}}
-\end{equation*}
-hergeleitet werden. Eingesetzt in \eqref{eq:A} folgt die Gleichung
+Aus Gleichung \eqref{eq:phi} kann %mit der Identität $\sin{φ}^2 + \cos{φ}^2 = 1$ die Beziehung
+%\begin{equation*}
+%    \sin{φ} = \frac{ωRC}{\sqrt{1 + ω^2R^2C^2}}
+%\end{equation*}
+%hergeleitet werden. Eingesetzt in \eqref{eq:A} folgt die Gleichung
 \begin{equation}\label{eq:A2}
-    A(ω) = \frac{U_0}{\sqrt{1 + ω^2R^2C^2}}.
+    A(ω) = \frac{U_0}{\sqrt{1 + ω^2R^2C^2}}
 \end{equation}
+hergeleitet werden.
 Aus \eqref{eq:A2} lässt sich erkennen, dass die Amplitude $A(ω)$ für $ω\to 0$ gegen $U_0$ und für $ω\to \infty$ gegen $0$ geht.
 Bei einer Kreisfrequenz von $\frac{1}{RC}$ ist $A = \frac{U_0}{\sqrt{2}}.$
 \newpage
+\subsection{RC-Kreis als Integrator}
 Zeitlich veränderliche Spannungen die wie in \autoref{fig:Kirchhoff} an einem Kondensator anliegen, können unter bestimmten Voraussetzungen durch einen RC-Kreis integriert werden.
-Ist die Frequenz $ω>>\frac{1}{RC}$, so ist die Spannung $U_C$ proportional zum Integral über die Zeit von $U(t)$.
+%Ist die Frequenz $ω>>\frac{1}{RC}$, so ist die Spannung $U_C$ proportional zum Integral über die Zeit von $U(t)$.
 %Mit der Gleichung \eqref{eq:Uges} ergibt sich für
 %\begin{equation*}
 %    U(t) = I(t) R + U_C(t).
@@ -156,3 +156,4 @@ oder als
 \begin{equation*}
     U_C(t) = \frac{1}{RC} \int_{0}^{t} U(\tau)\symup{d}\tau.
 \end{equation*}
+Die Spannung $U_C(t)$ ist also proportional zum Integral über die Zeit von $U(t)$.
