@@ -1,45 +1,49 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+Der Reference Output des Funktionsgenerators kann die Spannungsamplitude verändern. Der Oscillator Output liefert
+eine konstante Spannung von $\SI{369}{\milli\V}$.\\
+
 \begin{table}
     \centering
     \input{content/Tabelle1.tex}
+    \caption{In der Tabelle sind die gemessenen Werte für die verschiedenen Phasen $\phi$, sowie die integrierten Spannungen mit und ohne Noise aufgelistet.}
 \end{table}
 In den Abbildungen 5 bis 9 sind Screenshots von der Anzeige des Oszilloskops für die verschiedenen Phasen $\phi$ dargestellt. In Abbildung 10 ist
 die Anzeige bei Phase $\phi = 0$, jedoch mit aktiviertem Noise, dargestellt. Durch den Rauschgenerator ist das Signal nicht mehr sinusförmig. Ein Signal wäre nicht mehr verwendbar in diesem Zustand.\\
 \begin{figure}
     \begin{minipage}[b]{.45\linewidth} % [b] => Ausrichtung an \caption
        \includegraphics[width=\linewidth]{bilder/MAP003.png}
-       \caption{$\phi = 0\,\unit{°}$}
+       \caption{$\phi = 0\,\unit{°}$.}
     \end{minipage}
     \hspace{0.1\linewidth}% Abstand zwischen Bilder
     \begin{minipage}[b]{.45\linewidth} % [b] => Ausrichtung an \caption
        \includegraphics[width=\linewidth]{bilder/MAP004.png}
-       \caption{$\phi = 30\,\unit{°}$}
+       \caption{$\phi = 30\,\unit{°}$.}
     \end{minipage}
 \end{figure}
 
 \begin{figure}
     \begin{minipage}[b]{.45\linewidth} % [b] => Ausrichtung an \caption
        \includegraphics[width=\linewidth]{bilder/MAP005.png}
-       \caption{$\phi = 60\,\unit{°}$}
+       \caption{$\phi = 60\,\unit{°}$.}
     \end{minipage}
     \hspace{0.1\linewidth}% Abstand zwischen Bilder
     \begin{minipage}[b]{.45\linewidth} % [b] => Ausrichtung an \caption
        \includegraphics[width=\linewidth]{bilder/MAP006.png}
-       \caption{$\phi = 90\,\unit{°}$}
+       \caption{$\phi = 90\,\unit{°}$.}
     \end{minipage}
 \end{figure}
 
 \begin{figure}[h]
     \begin{minipage}[b]{.45\linewidth} % [b] => Ausrichtung an \caption
        \includegraphics[width=\linewidth]{bilder/MAP007.png}
-       \caption{$\phi = 120\,\unit{°}$}
+       \caption{$\phi = 120\,\unit{°}$.}
     \end{minipage}
     \hspace{0.1\linewidth}% Abstand zwischen Bilder
     \begin{minipage}[b]{.45\linewidth} % [b] => Ausrichtung an \caption
        \includegraphics[width=\linewidth]{bilder/MAP011.png}
-       \caption{$\phi = 0\,\unit{°}$ mit Noise}
+       \caption{$\phi = 0\,\unit{°}$ mit Noise.}
     \end{minipage}
 \end{figure}
 
@@ -47,13 +51,13 @@ die Anzeige bei Phase $\phi = 0$, jedoch mit aktiviertem Noise, dargestellt. Dur
 \begin{figure}[H]
     \begin{minipage}[b]{.49\linewidth} % [b] => Ausrichtung an \caption
        \includegraphics[width=\linewidth]{build/U_out.pdf}
-       \caption{$U_{out}$ ohne Noise}
+       \caption{$U_{out}$ ohne Noise.}
        \label{fig:FitU}
     \end{minipage}
     \hspace{0.02\linewidth}% Abstand zwischen Bilder
     \begin{minipage}[b]{.49\linewidth} % [b] => Ausrichtung an \caption
        \includegraphics[width=\linewidth]{build/U_outnoise.pdf}
-       \caption{$U_{out}$ mit Noise}
+       \caption{$U_{out}$ mit Noise.}
        \label{fig:FitU_noise}
     \end{minipage}
 \end{figure}
@@ -73,10 +77,12 @@ Für den Fit in der Abbildung \ref{fig:FitU_noise} wurde die selbe Funktion verw
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{build/diode1.pdf}
-    \caption{$U$ in Abhängigkeit des Abstands $r$}
+    \caption{$U$ in Abhängigkeit des Abstands $r.$}
+    \label{fig:FitU_r}
 \end{figure}
+\\
 Die Spannung ist antiproportional zum Abstand. Selbst bei einem großen Abstand ist das Signal der LED noch vom Hintergrundrauschen unterscheidbar.
-Für den Fit wurde die Funktion 
+Für den Fit in \autoref{fig:FitU_r} wurde die Funktion 
 \begin{equation*}
    U_{out}(\phi) = \frac{a}{r^b} + c
 \end{equation*}

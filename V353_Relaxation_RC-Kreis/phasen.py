@@ -20,7 +20,7 @@ plt.plot(v, phi,'rx', label='Gemessen')
 plt.xscale('log')
 
 plt.xlabel(r'$f\,$[Hz]')
-plt.ylabel(r'$(\phi\,$[rad]')
+plt.ylabel(r'$\phi\,$[rad]')
 plt.legend()
 #plt.show()
 plt.savefig('build/phasen.pdf')
