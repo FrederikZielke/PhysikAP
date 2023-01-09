@@ -57,7 +57,7 @@ Durch eine lineare Ausgleichsrechnung wird die Funktion
 \begin{equation*}
     f(x) = ax + b
 \end{equation*}
-an die Messwerte gefittet. Mit der Python Bibliothek SciPy \cite{scipy} ergibt sich für die Koeffizienten $a = \SI{-0.351(0.004)}{\frac{1}{s}}$ und $b = -0.04 \pm 0.02$.
+an die Messwerte gefittet. Mit der Python Bibliothek SciPy \cite{scipy} ergibt sich für die Koeffizienten $a = \SI{-0.351(0.004)}{\frac{1}{ms}}$ und $b = -0.04 \pm 0.02$.
 Mit dem Zusammenhang 
 \begin{equation*}
     \ln{\frac{U_C}{U_0}} = - \frac{t}{RC}
@@ -153,4 +153,34 @@ Anschaulich lässt sich die Kondensatorspannung $U_C$ in Abhängigkeit der Phase
     \caption{Kondensatorspannung $U_C$ in Abhängigkeit der Phasenverschiebung $\phi$}
     \label{fig:phase_graph2}
 \end{figure} 
+\newpage
+\subsection{RC-Glied als Integrator}
+Wie in \autoref{sec:Messung} beschrieben, muss die Frequenz $f$ genügend groß gewählt werden. Da sich bei $f = \SI{792}{Hz}$ klare Bilder gezeigt haben, wurde diese 
+Frequenz gewählt. 
+In Abbildung \autoref{fig:integrator} abgebildet, wird die Spannung integriert. Die Sinusspannung wird zu einer Cosinusspannung aufintegriert, eine Sägezahn- zu einer 
+sinusförmigen Spannung und eine Rechteckspannung zu einer Sägezahnspannung.
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[height=3.3cm]{img/sinus.jpg}
+        \caption{Sinus- und \\ Cosinusspannung}
+        \label{fig:sinus}
+    \end{subfigure}
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[height=3.3cm]{img/saegezahn.jpg}
+        \caption{Sägezahn- und \\ Sinusspannung}
+        \label{fig:saegezahn}
+    \end{subfigure}
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[height=3.3cm]{img/rechteck.jpg}
+        \caption{Rechteck- und \\ Sägezahnspannung}
+        \label{fig:rechteck}
+    \end{subfigure}
+    \caption{Fotos der Integratorschaltung für eine Generatorfrequenz von $\SI{792}{\hertz}$ und verschiedenen Generatorspannungen}
+    \label{fig:integrator}
+\end{figure}
 \newpage
