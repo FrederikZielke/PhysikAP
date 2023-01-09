@@ -30,7 +30,7 @@ after row=\bottomrule}
 \newpage
 
 \subsection{Temperaturverfläufe}
-In der \autoref{abb2} sind die Temperaturen $T_1$ und $T_2$ gegen die Zeit aufgetragen.
+In \autoref{abb2} sind die Temperaturen $T_1$ und $T_2$ gegen die Zeit aufgetragen.
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\textwidth]{build/temperaturplots.pdf}
@@ -39,7 +39,7 @@ In der \autoref{abb2} sind die Temperaturen $T_1$ und $T_2$ gegen die Zeit aufge
 \end{figure}
 
 \subsection{Ausgleichsgerade}
-Die Ausgleichsrechnung wurde mit der Funktion $T(t) = A t^2 + B t + C$ approximiert. Mit Curvefit und Fehlerrechnung 
+Die Ausgleichsrechnung wurde mit der Funktion $T(t) = A t^2 + B t + C$ approximiert. Mit Curvefit \cite{scipy} und Fehlerrechnung \cite{uncertainties}
 wurden die Parameter A, B und C berechnet.\\
 Für $T_1$ ergeben sich
 \begin{align*}%C muss bei beiden korrigiert
@@ -108,13 +108,13 @@ berechnen. Mit $m_1 = 3\,\unit{kg}$, $c_w = 4200 \,\unit{\frac{J}{kg \cdot K}}$ 
     1140 & 6.765  & {$1.44 \pm 0.18$} & 5.325\\
     \bottomrule
 \end{tabular}
-\caption{Güteziffer}
+\caption{Ideale und reale Güteziffer für vier Zeiten und deren Abweichung}
 \end{table}
 
 
 
 \subsection{Verdampfungswärme L}
-Um die Verdampfungswärme $L$ zu bestimmen wird der $ln(p_b)$ gegen $1/T_1$ aufgetragen (siehe V203 \cite{V203}). Aus der Steigung der Ausgleichsgeraden ergibt sich
+Um die Verdampfungswärme $L$ zu bestimmen wird $ln(p_b)$ gegen $1/T_1$ aufgetragen (siehe V203 \cite{V203}). Aus der Steigung der Ausgleichsgeraden ergibt sich
 \begin{equation}
   m = -\frac{L}{R} \;\Leftrightarrow\; L = -m \cdot R\, ,
 \end{equation}
@@ -135,7 +135,7 @@ Durch die Berechnung mit der linearen Regression mit $f(T) = m \cdot T + b$ ergi
 
 \subsection{Massendurchsatz}
 Für den Massendurchsatz ergeben sich nach \eqref{eqn:massendurchsatz} mit $m_2 = 3\,\unit{kg}$, $c_w = 4200 \, \unit{\frac{J}{kg \cdot K}}$, \\
-$m_kc_k = 750 \, \unit{\frac{J}{K}}$:
+$m_kc_k = 750 \, \unit{\frac{J}{K}}$ die Werte in \autoref{huhu}.
 \begin{table}[H]
   \centering
   \begin{tabular}{
@@ -143,16 +143,17 @@ $m_kc_k = 750 \, \unit{\frac{J}{K}}$:
     S[table-format=2.3]
   }
   \toprule
-  {$\frac{\Delta m}{\Delta t}(1)$} & {$-2.30 \pm 0.25 \, \unit{\frac{kg}{s}}$} \\
+  {$\frac{\Delta m}{\Delta t}(1)$} & {$-2.30 \pm 0.25 \, \unit{\frac{g}{s}}$} \\
   \addlinespace
-  {$\frac{\Delta m}{\Delta t}(2)$} & {$-1.88 \pm 0.31 \, \unit{\frac{kg}{s}}$} \\
+  {$\frac{\Delta m}{\Delta t}(2)$} & {$-1.88 \pm 0.31 \, \unit{\frac{g}{s}}$} \\
   \addlinespace
-  {$\frac{\Delta m}{\Delta t}(3)$} & {$-1.50 \pm 0.40 \, \unit{\frac{kg}{s}}$} \\
+  {$\frac{\Delta m}{\Delta t}(3)$} & {$-1.50 \pm 0.40 \, \unit{\frac{g}{s}}$} \\
   \addlinespace
-  {$\frac{\Delta m}{\Delta t}(4)$} & {$-1.00 \pm 0.50 \, \unit{\frac{kg}{s}}$} \\
+  {$\frac{\Delta m}{\Delta t}(4)$} & {$-1.00 \pm 0.50 \, \unit{\frac{g}{s}}$} \\
   \bottomrule
   \end{tabular}
   \caption{Massendurchsatz für vier Zeiten.}
+  \label{huhu}
 \end{table}
 
 \subsection{Mechanische Kompressorleistung}
