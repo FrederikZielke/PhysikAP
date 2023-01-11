@@ -1,7 +1,137 @@
 \section{Zielsetzung}
 \label{sec:Zielsetzung}
 
+Im Versuch V354 soll die Dämpfung eines RLC-Serienschwingkreises ermittelt werden. 
+Außerdem soll die Frequenzabhängigkeit der Kondensatorspannung, sowie die Phasenverschiebung zwischen Kondensator- und Erregerspannung bestimmt werden.
+
 \section{Theorie}
 \label{sec:Theorie}
 
-\cite{sample}
+\subsection{Gedämpfte Schwingung}
+\begin{equation*}
+    U_R(t) + U_C(t) + U_L(t) = 0
+\end{equation*}
+\begin{equation*}
+    U_R(t) = RI(t)
+\end{equation*}
+\begin{equation*}
+    U_C(t) = \frac{Q(t)}{C}
+\end{equation*}
+\begin{equation*}
+    U_L(t) = L\frac{\symup{d}I(t)}{dt}
+\end{equation*}
+\begin{equation*}
+    L\frac{\symup{d}I(t)}{dt} + RI(t) + \frac{Q(t)}{C} = 0
+\end{equation*}
+\begin{equation*}
+    I = \frac{\symup{d}Q}{dt}
+\end{equation*}
+\begin{equation*}
+    \frac{\symup{d}^2I}{dt^2} + \frac{R}{L}\frac{\symup{d}I}{dt} + \frac{1}{LC}I = 0
+\end{equation*}
+\begin{equation*}
+    I(t) = A\symup{e}^{i\tilde{ω}t}
+\end{equation*}
+mit $i = \sqrt{-1}$ und $\tilde{ω}, A$ komplexe Zahlen.
+\begin{equation*}
+    \left(-\tilde{ω}^2 + \frac{iR}{L}\tilde{ω} + \frac{1}{LC}\right)A\symup{e}^{i\tilde{ω}t}
+\end{equation*}
+\begin{equation*}
+    -\tilde{ω}^2 + \frac{iR}{L}\tilde{ω} - \frac{1}{LC} = 0
+\end{equation*}
+\begin{equation*}
+    \tilde{ω}_{1,2} = \frac{iR}{2L} \pm \sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}
+\end{equation*}
+\begin{equation*}
+    I(t) = A_1\symup{e}^{i\tilde{ω}_1t} + A_2\symup{e}^{i\tilde{ω}_2t}
+\end{equation*}
+($A_1, A_2$ komplexe Zahlen)
+\begin{equation*}
+    2πμ \coloneqq \frac{R}{2L} \quad \text{und} \quad 2πν \coloneqq \sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}
+\end{equation*}
+\begin{equation*}
+    I(t) = \symup{e}^{-2πμt}\left(A_1\symup{e}^{2πiνt} + A_2\symup{e}^{-2πiνt}\right).
+\end{equation*}
+1. Fall:\\ $\frac{1}{LC} > \frac{R^2}{4L^2}$, d.h. $ν$ reell
+Damit $I(t)$ reell wird, muss $A_1 = \overline{A}_2$ sein.
+Diese Voraussetzung wird durch den Ansatz
+\begin{equation*}
+    A_1 = \frac{1}{2}A_0\symup{e}^{iη} \quad \text{und} \quad A_2 = \frac{1}{2}A_0\symup{e}^{-iη}
+\end{equation*} mit $A_0$ und $η$ reell.\\
+\begin{equation*}
+    I(t) = A_0\symup{e}^{-2πμt}\cos{\left(2πνt + η\right)}.
+\end{equation*}
+\begin{equation*}
+    T = \frac{1}{ν} = \frac{2π}{\sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}}
+\end{equation*}
+\begin{equation*}
+    T_0 = \frac{2π}{ω_0} = 2π\sqrt{LC}
+\end{equation*}
+\begin{equation}\label{eq:TexMex}
+    T_{\text{ex}} \coloneqq \frac{1}{2πμ} = \frac{2L}{R}
+\end{equation}
+2. Fall: $\frac{1}{LC} < \frac{R^2}{4L^2}$, d.h. $ν$ komplex
+\begin{equation*}
+    I(t) \approx \text{oder lieber} \sim ? \symup{e}^{-(\frac{R}{2L} - \sqrt{\frac{R^2}{4L^2}})t}
+\end{equation*}
+Spezialfall:\\ $\frac{1}{LC} = \frac{R_{\text{ap}}^2}{4L^2},$ d.h. $ν = 0$
+\begin{equation*}
+    I(t) = A\symup{e}^{-\frac{R}{2L}t} = A\symup{e}^{-\frac{t}{\sqrt{LC}}}
+\end{equation*}
+\\
+\subsection{Erzwungene Schwingung}
+\begin{equation*}
+    U(t) = U_0\symup{e}^{iωt}.
+\end{equation*}
+\begin{equation*}
+    L\frac{\symup{d}I(t)}{dt} + RI(t) + \frac{Q(t)}{C} = U_0\symup{e}^{iωt}
+\end{equation*}
+\begin{equation*}
+    LC\frac{\symup{d}^2U_C}{\symup{d}t^2} + RC\frac{\symup{d}U_C}{\symup{d}t} + U_C = U_0\symup{e}^{iωt}
+\end{equation*}
+\begin{equation*}
+    U_C = \frac{Q(t)}{C}
+\end{equation*}
+\begin{equation*}
+    U_C(ω, t) = U(ω) \symup{e}^{iωt}
+\end{equation*} mit $U(ω)$ komplex.\\
+\begin{equation*}
+    -LCω^2U + iωRCU + U = U_0
+\end{equation*}
+\begin{equation*}
+    U = \frac{U_0}{1 - LCω^2 + iωRC} = \frac{U_0\left(1 - LCω^2 + iωRC\right)}{\left(1 - LCω^2\right)^2 + ω^2R^2C^2}.
+\end{equation*}
+\begin{equation*}
+    \left\lvert U\right\rvert = \sqrt{\symfrak{Re}^2(U) + \symfrak{Im}^2(U)} = U_0 \sqrt{\frac{\left(1 - LCω^2\right)^2 + ω^2R^2C^2}{\left(\left(1 - LCω^2\right)^2 + ω^2R^2C^2\right)^2}}
+\end{equation*}
+\begin{equation*}
+    \tan{φ(ω)} = \frac{\symfrak{Im}(U)}{\symfrak{Re}(U)} = \frac{-ωRC}{1 - LCω^2}
+\end{equation*}
+\begin{equation*}
+    φ(ω) = \arctan{\left(\frac{-ωRC}{1 - LCω^2}\right)}
+\end{equation*}
+\begin{equation*}
+    U_C(ω) = \frac{U_0}{\sqrt{\left(1 - LCω^2\right)^2 + ω^2R^2C^2}}
+\end{equation*}
+\begin{equation*}
+    ω_{\text{res}} = \sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}
+\end{equation*}
+Schwache Dämpfung:\\ $\frac{R^2}{2L^2} << \frac{1}{LC}$
+\begin{equation*}
+    U_{C,\text{max}} = \frac{U_0}{ω_0RC} = \frac{U_0}{R}\sqrt{\frac{L}{C}}.
+\end{equation*}
+\begin{equation*}
+    \frac{U_0}{\sqrt{2}} \frac{1}{ω_0RC} = \frac{U_0}{C\sqrt{ω_{\pm}^2R^2 + \left(ω_{\pm}^2L - \frac{1}{C}\right)^2}}.
+\end{equation*}
+\begin{equation*}
+    ω_+ - ω_- \approx \frac{R}{L}.
+\end{equation*}
+\begin{equation*}
+    q = \frac{ω_0}{ω_+ - ω_-}.
+\end{equation*}
+Starke Dämpfung:\\ $\frac{R^2}{2L^2} >> \frac{1}{LC}$
+$ω_0^2 = \frac{1}{LC}$
+\begin{equation*}
+    ω_{1,2} = \pm \frac{R}{2L} + \sqrt{\frac{R^2}{4L^2} + \frac{1}{LC}}
+\end{equation*}
+$ω_1 - ω_2 = \frac{R}{L}$
