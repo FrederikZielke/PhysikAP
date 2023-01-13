@@ -8,27 +8,33 @@ Außerdem soll die Frequenzabhängigkeit der Kondensatorspannung, sowie die Phas
 \label{sec:Theorie}
 
 \subsection{Gedämpfte Schwingung}
+\label{sec:Gedaempfte_Schwingung}
+
+Ein RCL-Schwingkreis besteht aus zwei Energiespeichern, einem Kondensator und einer Spule, und einem Widerstand. 
+Das schwingende Verhalten des Stromflusses und der Spannung entsteht durch die beiden Speicher. Durch den Ohmschen Widerstand
+ist der Schwingkreis gedämpft. Die Dämpfung wird durch den Widerstand bestimmt. Ein ungedämpfter Schwingkreis 
+ist nur theoretisch möglich, da die Verbindungskabel und die Spule selbst einen Widerstand aufweisen.
+Durch den Widerstand wird Energie irreversibel in Wärme umgewandelt. Bei einmaliger Anregung geht die Amplitude der Schwingung
+mit der Zeit gegen Null.
+Nach dem zweiten Kirchhoffschnen Gesetz setzt sich die Gesamtspannung im Kreis zu
 \begin{equation*}
     U_R(t) + U_C(t) + U_L(t) = 0
 \end{equation*}
+zusammen. 
+Die einzelnen Spannungen lassen sich als
 \begin{equation*}
-    U_R(t) = RI(t)
+    U_R(t) = RI(t) \quad \text{und} \quad U_C(t) = \frac{Q(t)}{C}  \quad \text{und} \quad U_L(t) = L\frac{\symup{d}I(t)}{dt}
 \end{equation*}
+ausdrücken. 
+Durch einsezten der Spannungen in die Gesamtspannung ergibt sich 
 \begin{equation*}
-    U_C(t) = \frac{Q(t)}{C}
+    L\frac{\symup{d}I(t)}{dt} + RI(t) + \frac{Q(t)}{C} = 0.
 \end{equation*}
+Abgeleitet nach $t$ ergibt sich mit $I = \frac{\symup{d}Q}{dt}$ die Gleichung
 \begin{equation*}
-    U_L(t) = L\frac{\symup{d}I(t)}{dt}
+    \frac{\symup{d}^2I}{dt^2} + \frac{R}{L}\frac{\symup{d}I}{dt} + \frac{1}{LC}I = 0.
 \end{equation*}
-\begin{equation*}
-    L\frac{\symup{d}I(t)}{dt} + RI(t) + \frac{Q(t)}{C} = 0
-\end{equation*}
-\begin{equation*}
-    I = \frac{\symup{d}Q}{dt}
-\end{equation*}
-\begin{equation*}
-    \frac{\symup{d}^2I}{dt^2} + \frac{R}{L}\frac{\symup{d}I}{dt} + \frac{1}{LC}I = 0
-\end{equation*}
+
 \begin{equation*}
     I(t) = A\symup{e}^{i\tilde{ω}t}
 \end{equation*}
