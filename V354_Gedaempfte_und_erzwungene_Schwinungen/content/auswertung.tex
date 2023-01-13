@@ -1,13 +1,84 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-
-Aufgabenteil b:\\
-Aperiodischer Grenzfall bei $R = \SI{4.56}{\kilo\ohm}$
-
-Vorgegebene Werte:
+Die in \autoref{sec:Auswertung} verwendeten Werte für die Kapazität $C$, Induktivität $L$ und Widerstand $R$ sind:
 \begin{align*}
   L &= \SI{16.87(0.05)}{\micro\henry} \\
   R_1 &= \SI{67.2(0.1)}{\ohm}\\
   R_2 &= \SI{682(0.5)}{\ohm}\\
-  C &= \SI{2.060(0.003)}{\nano\farad}
+  C &= \SI{2.060(0.003)}{\nano\farad}.
 \end{align*}
+Die in \autoref{sec:Auswertung} gezeigten Grafiken und Ausgleichsrechnungen sind mithilfe der Python-Bibliotheken Matplotlib \cite{matplotlib}, Scipy \cite{scipy} und Numpy \cite{numpy}
+erstellt worden.
+\subsection{Abklingverhalten des RLC-Kreises}
+\label{sec:Abklingverhalten}
+\begin{table}[H]
+  \begin{minipage}{0.48\linewidth}
+    \centering
+    \caption{\\Zeit $t$ und zugehörige\\ Kondensatorspannung $U_C$ \\der oberen Einhüllenden.}
+    \begin{tabular}{c|c}
+      \toprule
+      {$U_C\left[\unit{\s}\right]$} & {$t\left[\unit{\s}\right]$}\\
+      \midrule
+      1.50 & 0.0 \\
+      1.30 & 0.4 \\
+      1.20 & 0.8 \\ 
+      0.90 & 1.2 \\
+      0.80 & 1.6 \\
+      0.70 & 2.0 \\
+      0.60 & 2.4 \\
+      0.50 & 2.8 \\
+      0.45 & 3.2 \\
+      0.40 & 3.6 \\
+      \bottomrule
+    \end{tabular}
+    \vspace{5pt}
+    \label{tab:obere}
+  \end{minipage}
+  \begin{minipage}{0.48\linewidth}
+    \centering
+    \caption{\\Zeit $t$ und zugehörige\\ Kondensatorspannung $U_C$ \\der unteren Einhüllenden.}
+    \begin{tabular}{c|c}
+      \toprule
+      {$U_C\left[\unit{\s}\right]$} & {$t\left[\unit{\s}\right]$}\\
+      \midrule
+      -1.40 & 0.2 \\
+      -1.20 & 0.6 \\
+      -1.00 & 1.0 \\
+      -0.85 & 1.4 \\
+      -0.70 & 1.8 \\
+      -0.60 & 2.2 \\
+      -0.55 & 2.6 \\
+      -0.50 & 3.0 \\
+      -0.40 & 3.4 \\
+      -0.35 & 3.8 \\
+      \bottomrule
+    \end{tabular}
+    \vspace{5pt}
+    \label{tab:untere}
+  \end{minipage}
+\end{table}
+
+Da die Spannung $U_C$ proportional zum Strom $I_C$ ist, ist die Form der Einhüllenden nach \autoref{eq:einh} gegeben:
+\begin{equation}
+  A = A_0 \exp(-2 \pi \mu t).
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+Aufgabenteil b:\\
+Aperiodischer Grenzfall bei $R = \SI{4.56}{\kilo\ohm}$
