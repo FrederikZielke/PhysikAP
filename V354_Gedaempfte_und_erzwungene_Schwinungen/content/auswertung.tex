@@ -109,10 +109,170 @@ Damit ergibt sich eine Abweichung von
   \Delta_R = |\frac{R_{ap}}{R_{real}} - 1| = 24.97\%.
 \end{equation*}
 
+\subsection{Kondensatorspannung in Abhängigkeit der Frequenz}
+\begin{table}[H]
+  \caption{Frequenz $f$ des Signals, abgelesene Kondensatorspannung $U_C$, zeitlicher Abstand der Nulldurchgänge $a$ und Intervalllänge $b$.}
+  \label{tab:mess2}
+  \begin{minipage}{0.48\linewidth}
+    \centering
+    \begin{tabular}{
+      S[table-format=2.2]
+      S[table-format=2.2]
+      S[table-format=1.2]
+      c
+    }
+      \toprule
+      {$f\left[\unit{kHz}\right]$} & {$U_C\left[\unit{V}\right]$} & {$a\left[\unit{ms}\right]$} & {$b\left[\unit{ms}\right]$}\\
+      \midrule
+      05.00 & 05.0 & 0.00 & 0.75 \\
+      10.00 & 06.0 & 0.02 & 0.40 \\
+      12.50 & 06.5 & 0.02 & - \\    
+      15.00 & 07.0 & 0.02 & 0.26 \\
+      17.50 & 08.0 & 0.02 & - \\
+      19.00 & 09.5 & 0.02 & - \\
+      20.00 & 10.4 & 0.03 & 0.19 \\
+      20.50 & 11.0 & 0.03 & - \\
+      21.00 & 11.5 & 0.03 & - \\
+      21.50 & 12.0 & 0.04 & - \\
+      22.00 & 13.0 & 0.04 & 0.175 \\
+      22.25 & 13.4 & 0.04 & - \\
+      22.50 & 13.9 & 0.04 & - \\
+      22.75 & 14.0 & 0.04 & - \\
+      22.90 & 14.5 & 0.04 & - \\
+      23.00 & 14.7 & 0.04 & 0.17 \\
+      23.10 & 14.9 & 0.04 & - \\
+      23.20 & 15.0 & 0.04 & - \\
+      23.30 & 15.2 & 0.04 & - \\
+      23.40 & 15.3 & 0.04 & - \\
+      23.60 & 15.8 & 0.04 & - \\
+      23.80 & 16.0 & 0.05 & - \\
+      24.00 & 16.2 & 0.05 & - \\
+      24.20 & 16.8 & 0.05 & 0.16 \\
+      24.40 & 17.0 & 0.05 & - \\
+      24.60 & 17.4 & 0.05 & - \\
+      24.80 & 17.5 & 0.06 & - \\
+      25.00 & 17.9 & 0.06 & 0.15 \\
+      25.20 & 18.0 & 0.06 & - \\
+      25.40 & 18.1 & 0.06 & - \\
+      25.60 & 18.2 & 0.06 & 0.15 \\
+      25.80 & 18.3 & 0.06 & - \\
+      26.00 & 18.2 & 0.07 & - \\
+      26.20 & 18.2 & 0.07 & - \\
+      26.40 & 18.1 & 0.08 & - \\
+      26.60 & 18.0 & 0.08 & 0.14 \\
+      \bottomrule
+    \end{tabular}
+    \vspace{5pt}
+  \end{minipage}
+  \begin{minipage}{0.48\linewidth}
+    \centering
+    \begin{tabular}{
+      S[table-format=2.2]
+      S[table-format=2.2]
+      S[table-format=1.2]
+      c
+    }
+      \toprule
+      {$f\left[\unit{kHz}\right]$} & {$U_C\left[\unit{V}\right]$} & {$a\left[\unit{ms}\right]$} & {$b\left[\unit{ms}\right]$}\\
+      \midrule
+      27.00 & 17.4 & 0.08 & - \\
+      27.20 & 17.1 & 0.08 & - \\
+      27.40 & 16.7 & 0.08 & - \\
+      27.60 & 16.3 & 0.08 & - \\
+      27.80 & 16.0 & 0.09 & - \\
+      28.00 & 15.5 & 0.09 & - \\
+      28.20 & 15.1 & 0.09 & - \\
+      28.40 & 14.8 & 0.09 & - \\
+      28.60 & 14.1 & 0.10 & - \\
+      28.80 & 14.0 & 0.10 & - \\
+      29.00 & 13.5 & 0.10 & - \\
+      29.20 & 13.0 & 0.10 & - \\
+      29.40 & 12.6 & 0.10 & - \\
+      29.60 & 12.1 & 0.10 & - \\
+      29.80 & 11.9 & 0.10 & - \\
+      30.00 & 11.5 & 0.10 & 0.13 \\
+      30.30 & 11.0 & 0.10 & - \\
+      30.60 & 10.4 & 0.10 & - \\
+      31.00 & 09.9 & 0.10 & - \\
+      31.50 & 09.2 & 0.10 & - \\
+      32.00 & 08.5 & 0.10 & - \\
+      32.50 & 08.0 & 0.10 & - \\
+      33.00 & 07.5 & 0.10 & - \\
+      33.50 & 07.0 & 0.10 & - \\
+      34.00 & 06.5 & 0.10 & - \\
+      34.50 & 06.1 & 0.10 & - \\
+      35.00 & 06.0 & 0.10 & 0.13 \\
+      36.00 & 05.0 & 0.10 & - \\
+      38.00 & 04.4 & 0.10 & - \\
+      40.00 & 03.2 & 0.10 & - \\
+      45.00 & 02.1 & 0.08 & - \\
+      50.00 & 01.5 & 0.08 & - \\
+      55.00 & 01.1 & 0.08 & - \\
+      60.00 & 00.9 & 0.06 & - \\
+      65.00 & 00.6 & 0.06 & - \\
+      70.00 & 00.4 & 0.06 & - \\
+      \bottomrule
+    \end{tabular}
+    \vspace{5pt}
+  \end{minipage}
+\end{table}
+Wird das Amplitudenverhältnis $\frac{U_C}{U_0}$ gegen die Frequenz $f$ aufgetragen, so entsteht der Graph in \autoref{fig:res}.
+Um die Breite der Resonanzkurve $f_2 - f_1$ und die Resonanzüberhöhung $q$ zu bestimmen, wird der Bereich um die Resonanzfrequenz $f_{res}$ in \autoref{fig:res} linear dargestellt.
+Der Abstand des kritischen Werts $\frac{1}{\sqrt{2}}\frac{U_C}{U_0}$ bis zum Maximum der Spannung $U_{max} = \SI{18.3}{V}$ ist die Resonanzüberhöhung.
+Die Breite der Messwerte über diesem kritischen Wert wird auch Breite der Resonanzkurve genannt. 
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{build/5c.pdf}
+  \caption{Amplitudenverhältnis $\frac{U_C}{U_0}$ in Abhängigkeit der Frequenz $f$.}
+  \label{fig:res}
+\end{figure}
+Aus \autoref{fig:res} lässt sich somit
+\begin{align*}
+  q &= \SI{9.67}{V}, \\
+  f_1 &= \SI{22.01}{kHz}, \\
+  \text{und } f_2 &= \SI{29.22}{kHz}
+\end{align*}
+bestimmen. Für die Breite der Resonanzkurve folgt somit
+\begin{equation*}
+  \Delta_f = f_2 - f_1 = \SI{7.20}{kHz}.
+\end{equation*}
+\newpage
+Die theoretischen Werte für $f_{1, theorie}$ und $f_{2, theorie}$ folgen aus \autoref{eq:w12} mit $R_2$ und $f = \frac{\omega}{2\pi}$:
+\begin{align*}
+  f_1 = \SI{23.97(0.04)}{kHz},
+  f_2 = \SI{30.41(0.05)}{kHz}.
+\end{align*}
+Daraus folgt für die theoretische Breite $\Delta_{theorie} = \SI{6.434(0.020)}{kHz}$.
+Aus \autoref{tab:mess2} lässt sich die Resonanzfrequenz ablesen. Diese beträgt
+\begin{equation*}
+  f_{res} = \SI{25.8}{kHz}.
+\end{equation*}
+Der theoretische Wert berechnet sich nach \autoref{eq:wres} mit $R_eff$ zu 
+\begin{equation*}
+  f_{theorie} = \sqrt{\frac{1}{LC} - \frac{R^2}{2L^2}} \cdot \frac{1}{2\pi} = \SI{27.00(0.04)}{kHz}.
+\end{equation*}
+Die Abweichung von der Theorie beträgt somit 
+\begin{equation*}
+  \Delta_{res} = |\frac{f_{res}}{f_{theorie}} - 1| = 0.04\%.
+\end{equation*}
 
-
-
-
+Mit 
+\begin{equation*}
+  \phi = 2 \cdot \pi \cdot \frac{a}{b}
+\end{equation*}
+lässt sich die Phasenverschiebung zwischen der Kondensator- und Erregerspannung berechnen.
+Wird $\phi$ gegen die Frequenz $f$ aufgetragen, so entsteht der Graph in \autoref{fig:phase1}.
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{build/5d.pdf}
+  \caption{Phasenverschiebung $\phi$ in Abhängigkeit der Frequenz $f$.}
+  \label{fig:phase1}
+\end{figure}
+Der Bereich um die Resonanzfrequenz $f_{res}$ ist in \autoref{fig:phase2} linear dargestellt. Die Resonanzfrequenz befindet sich an der senkrechten
+mittleren Linie, $f_1$ an der senkrechten linken Linie und $f_2$ an der senkrechten rechten Linie.
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{build/5d2.pdf}
+  \caption{Phasenverschiebung $\phi$ in Abhängigkeit der Frequenz $f$ und lineare Darstellung im Bereich der Resonanzfrequenz.}
+  \label{fig:phase2}
+\end{figure}
 
 
 
@@ -121,5 +281,3 @@ Damit ergibt sich eine Abweichung von
 
 
 \newpage
-Aufgabenteil b:\\
-Aperiodischer Grenzfall bei $R = \SI{4.56}{\kilo\ohm}$

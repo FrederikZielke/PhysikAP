@@ -17,4 +17,5 @@ plt.axvline(x = 22.01, color='black', linestyle='--', label = r'Resonanzfrequenz
 plt.axvline(x = 29.215 , color='black', linestyle='--')
 #plt.xscale('log')
 
-plt.show()
+#plt.show()
+plt.savefig('build/5d2.pdf')

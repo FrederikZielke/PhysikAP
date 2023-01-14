@@ -13,4 +13,5 @@ theta = np.arange(0 , 2 * np.pi+np.pi/2, step=(np.pi / 2))
 plt.yticks(theta, ['0', 'π/2', 'π', '3π/2', '2π'])
 #plt.xscale('log')
 
-plt.show()
+#plt.show()
+plt.savefig('build/5d.pdf')

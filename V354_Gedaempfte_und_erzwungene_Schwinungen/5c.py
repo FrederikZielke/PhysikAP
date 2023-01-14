@@ -28,7 +28,13 @@ print("kritischer Wert: ", 1/np.sqrt(2)*U_max/U0)
 print("Resonanzüberhöhung: ", U_max - U_krit)
 print("Breite: ", wplus - wminus)
 
-
+f1 = R2/(2*L) + unp.sqrt(R2**2/(4*L**2) + 1/(L*C)) 
+f2 = -R2/(2*L) + unp.sqrt(R2**2/(4*L**2) + 1/(L*C)) 
+f1 = f1/(2*np.pi) * 0.001
+f2 = f2/(2*np.pi) * 0.001
+print("f1: ", f1)
+print("f2: ", f2)
+print("Breite Theorie: ", f1-f2)
 #t = np.linspace(np.min(f),np.max(f),1000)
 #params, pcov = curve_fit(g, f, U_C/U0, p0=(10, 0))
 #uncertainties = unp.sqrt(np.diag(pcov))
@@ -46,5 +52,5 @@ plt.legend()
 #plt.xlim(f[0]-0.1, f[-1]+1)
 plt.xscale('log')
 
-plt.show()
+#plt.show()
 plt.savefig('build/5c.pdf')
