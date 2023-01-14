@@ -31,35 +31,41 @@ Durch einsezten der Spannungen in die Gesamtspannung ergibt sich
     L\frac{\symup{d}I(t)}{dt} + RI(t) + \frac{Q(t)}{C} = 0.
 \end{equation*}
 Abgeleitet nach $t$ ergibt sich mit $I = \frac{\symup{d}Q}{dt}$ die Gleichung
-\begin{equation*}
+\begin{equation}\label{eq:DGL1}
     \frac{\symup{d}^2I}{dt^2} + \frac{R}{L}\frac{\symup{d}I}{dt} + \frac{1}{LC}I = 0.
-\end{equation*}
-
-\begin{equation*}
+\end{equation}
+Mit dem Ansatz
+\begin{equation}\label{eq:e-ansatz}
     I(t) = A\symup{e}^{i\tilde{ω}t}
-\end{equation*}
-mit $i = \sqrt{-1}$ und $\tilde{ω}, A$ komplexe Zahlen.
+\end{equation}
+, mit $i = \sqrt{-1}$ und $\tilde{ω}, A$ komplexe Zahlen,
+lässt sich die Differentialgleichung schreiben als
 \begin{equation*}
-    \left(-\tilde{ω}^2 + \frac{iR}{L}\tilde{ω} + \frac{1}{LC}\right)A\symup{e}^{i\tilde{ω}t}
+    \left(-\tilde{ω}^2 + \frac{iR}{L}\tilde{ω} + \frac{1}{LC}\right)A\symup{e}^{i\tilde{ω}t}.
 \end{equation*}
+Nun mit \autoref{eq:e-ansatz} die charakteristische Gleichung aufstellen
 \begin{equation*}
-    -\tilde{ω}^2 + \frac{iR}{L}\tilde{ω} - \frac{1}{LC} = 0
+    -\tilde{ω}^2 + \frac{iR}{L}\tilde{ω} - \frac{1}{LC} = 0.
 \end{equation*}
+Durch anwenden der PQ-Formel ergibt sich für die Konstante $\tilde{ω}$
 \begin{equation*}
-    \tilde{ω}_{1,2} = \frac{iR}{2L} \pm \sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}
+    \tilde{ω}_{1,2} = \frac{iR}{2L} \pm \sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}.
 \end{equation*}
+Die allgemeine Lösung der Differentialgleichung \ref{eq:DGL1} ist
 \begin{equation*}
     I(t) = A_1\symup{e}^{i\tilde{ω}_1t} + A_2\symup{e}^{i\tilde{ω}_2t}
 \end{equation*}
-($A_1, A_2$ komplexe Zahlen)
-\begin{equation}
+($A_1, A_2$ komplexe Zahlen).\\
+Zur weiteren Rechnung werden die beiden Abkürzungen
+\begin{equation*}
     2πμ \coloneqq \frac{R}{2L} \quad \text{und} \quad 2πν \coloneqq \sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}
-    \label{eq:reff}
-\end{equation}
-\begin{equation}
+\end{equation*} verwendet.\\
+Die allgemeine Lösung lautet dann
+\begin{equation*}
     I(t) = \symup{e}^{-2πμt}\left(A_1\symup{e}^{2πiνt} + A_2\symup{e}^{-2πiνt}\right).
-    \label{eq:einh}
-\end{equation}
+\end{equation*}
+Je nach Eigenschaften der einzelnen Bauteile kann das oszillatorische Verhalten des RCL-Kreises unterschiedlich sein.\\
+Es wird unterschieden ob $ν$ reell oder komplex ist.\\
 1. Fall:\\ $\frac{1}{LC} > \frac{R^2}{4L^2}$, d.h. $ν$ reell
 Damit $I(t)$ reell wird, muss $A_1 = \overline{A}_2$ sein.
 Diese Voraussetzung wird durch den Ansatz
