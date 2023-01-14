@@ -56,14 +56,14 @@ Die allgemeine Lösung der Differentialgleichung \ref{eq:DGL1} ist
     I(t) = A_1\symup{e}^{i\tilde{ω}_1t} + A_2\symup{e}^{i\tilde{ω}_2t}
 \end{equation*}
 ($A_1, A_2$ komplexe Zahlen).\\
-Zur weiteren Rechnung werden die beiden Abkürzungen
-\begin{equation*}
+Zur weiteren Rechnung werden die beiden Definitionen
+\begin{equation}\label{eq:reff}
     2πμ \coloneqq \frac{R}{2L} \quad \text{und} \quad 2πν \coloneqq \sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}
-\end{equation*} verwendet.\\
+\end{equation} verwendet.\\
 Die allgemeine Lösung lautet dann
-\begin{equation*}
+\begin{equation}\label{eq:einh}
     I(t) = \symup{e}^{-2πμt}\left(A_1\symup{e}^{2πiνt} + A_2\symup{e}^{-2πiνt}\right).
-\end{equation*}
+\end{equation}
 Je nach Eigenschaften der einzelnen Bauteile kann das oszillatorische Verhalten des RCL-Kreises unterschiedlich sein.\\
 Es wird unterschieden ob $ν$ reell oder komplex ist.\\
 1. Fall:\\ $\frac{1}{LC} > \frac{R^2}{4L^2}$, d.h. $ν$ reell
@@ -72,30 +72,41 @@ Diese Voraussetzung wird durch den Ansatz
 \begin{equation*}
     A_1 = \frac{1}{2}A_0\symup{e}^{iη} \quad \text{und} \quad A_2 = \frac{1}{2}A_0\symup{e}^{-iη}
 \end{equation*} mit $A_0$ und $η$ reell.\\
+Durch anwendung der Eulerschen Formel für Cosinus lässt sich der Ausdruck umformen zu
 \begin{equation*}
     I(t) = A_0\symup{e}^{-2πμt}\cos{\left(2πνt + η\right)}.
 \end{equation*}
-\begin{equation*}
+Die Funktion ist rein oszillatorisch und die Amplitude nimmt mit steigendem $t$ exponentiell ab. 
+Die Schwinungsdauer kann mit
+\begin{equation*}\label{eq:Schwinungsdauer}
     T = \frac{1}{ν} = \frac{2π}{\sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}}
 \end{equation*}
+berechnet werden. Wird $\frac{R^2}{4L^2} << \frac{1}{LC},$ so nähert sich $T$ dem Wert
 \begin{equation*}
-    T_0 = \frac{2π}{ω_0} = 2π\sqrt{LC}
+    T_0 = \frac{2π}{ω_0} = 2π\sqrt{LC}.
 \end{equation*}
+Damit sich die Amplitude auf den e-ten Teil ihrer ursprünglichen Größe absenkt, muss die Zeit
 \begin{equation}\label{eq:TexMex}
     T_{\text{ex}} \coloneqq \frac{1}{2πμ} = \frac{2L}{R}
 \end{equation}
-2. Fall: $\frac{1}{LC} < \frac{R^2}{4L^2}$, d.h. $ν$ komplex
+vergangen sein. Die Geschwindigkeit der Amplitudenabnahme ist durh $2πμ = \frac{R}{2L}$ charakterisiert.\\
+\\
+2. Fall:\\ $\frac{1}{LC} < \frac{R^2}{4L^2}, \quad$ d.h. $ν$ komplex
+Die \autoref{eq:einh} wird durch die Voraussetzung vollständig reell. Die Gleichung hat keinen oszillatorische Anteil mehr.
+Dies wird aperiodische Dämpfung genannt. Je nach Wahl der Konstanten $A_1 \text{und} A_2$ kann $I(t)$ direkt monoton gegen Null 
+gehen oder zuerst ncoh einen Extremwert erreichen. Der Strom hat maximal einen Nulldurchlauf und es gilt
 \begin{equation*}
-    I(t) \approx \text{oder lieber} \sim ? \symup{e}^{-(\frac{R}{2L} - \sqrt{\frac{R^2}{4L^2}})t}
+    I(t) \sim \symup{e}^{-(\frac{R}{2L} - \sqrt{\frac{R^2}{4L^2}})t}.
 \end{equation*}
-Spezialfall: 
-\begin{equation}
-    \frac{1}{LC} = \frac{R_{\text{ap}}^2}{4L^2} \text{ d.h.}  ν = 0
-    \label{eq:r_ap}
+Besonders interessant ist der Spezialfall 
+\begin{equation}\label{eq:r_ap}
+    \frac{1}{LC} = \frac{R_{\text{ap}}^2}{4L^2} \quad \text{d.h.} \:\: ν = 0,
 \end{equation}
+denn dann wird
 \begin{equation*}
     I(t) = A\symup{e}^{-\frac{R}{2L}t} = A\symup{e}^{-\frac{t}{\sqrt{LC}}}
 \end{equation*}
+Dieser fall ist der aperiodische Grenzfall. Es geht $I(t)$ schnellstmöglich gegen Null ohne Überschingung.\\
 \\
 \subsection{Erzwungene Schwingung}
 \begin{equation*}
