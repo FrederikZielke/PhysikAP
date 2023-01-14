@@ -2,7 +2,7 @@
 \label{sec:Auswertung}
 Die in \autoref{sec:Auswertung} verwendeten Werte für die Kapazität $C$, Induktivität $L$ und Widerstand $R$ sind:
 \begin{align*}
-  L &= \SI{16.87(0.05)}{\micro\henry} \\
+  L &= \SI{16.87(0.05)}{\milli\henry} \\
   R_1 &= \SI{67.2(0.1)}{\ohm}\\
   R_2 &= \SI{682(0.5)}{\ohm}\\
   C &= \SI{2.060(0.003)}{\nano\farad}.
@@ -59,14 +59,55 @@ erstellt worden.
 \end{table}
 
 Da die Spannung $U_C$ proportional zum Strom $I_C$ ist, ist die Form der Einhüllenden nach \autoref{eq:einh} gegeben:
-\begin{equation}
+\begin{equation*}
   A = A_0 \exp(-2 \pi \mu t).
-\end{equation}
+\end{equation*}
+Durch die Ausgleichsrechnung ergeben sich für die Fitparameter
+\begin{align}
+  A_0 &= \SI{1.52(0.02)}{V} \\
+  \text{und } \mu &= \SI{385.55(14.34)}{\frac{1}{s}}.
+  \label{eq:fit1}
+\end{align}
+Die Messwerte $t$ und $U_C$ sind mit der Ausgleichsfunktion für die oszillierende Spannung in \autoref{fig:einh} dargestellt. Ebenfalls ist dort die Einhüllende
+geplottet.
+Für die Ausgleichsfunktion der oszillierenden Spannung wurde die Fitfunktion
+\begin{equation*}
+  F(t) = U_0 \cdot \sin(bt+c) \exp(-ta)
+\end{equation*}
+verwendet. Dabei ist $\sin(bt+c)$ der Schwingungsanteil und $\exp(-ta)$ die Einhüllende. 
+Die Ausgleichsrechnung ergibt die Parameter
+\begin{align*}
+  a &= \SI{3.87e02}{\frac{1}{s}},\\
+  b &= \SI{-1.57e04}{\frac{1}{s}},\\
+  \text{und } c &= \SI{1.57}.
+\end{align*}
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{build/abklingverhalten.pdf}
+  \caption{Abklingkurve des RLC-Kreises.}
+  \label{fig:einh}
+\end{figure}
+Mit den Werten aus \autoref{eq:fit1} lässt sich nun $R_{eff}$ und $T_{ex}$ berechnen. Mit \autoref{eq:TexMex} und \autoref{eq:reff} folgt mit 
+$\mu = \SI{385.55(14.34)}{\frac{1}{s}}$ und $L = \SI{16.87(0.05)}{\milli\henry}$:
+\begin{align*}
+  T_{ex} &= 1/(2\pi\mu)                      = \SI{0.000413(0.000015)}{s}\\
+  \text{und } R_{eff} &= 2 \cdot \mu \cdot L \; = \SI{13.0(0.5)}{\ohm}.\\
+\end{align*}
+Die Abweichung vom verwendeten Widerstand $R1$ beträgt also $\SI{52.4}{\ohm}$.
 
-
-
-
-
+\subsection{Widerstand aperiodischer Grenzfall}
+Aus \autoref{eq:r_ap} lässt sich ein theoretischer Wert für den Widerstand $R_{ap}$ berechnen, bei dem der aperiodische Grenzfall eintritt.
+Dieser ergibt sich zu
+\begin{equation*}
+  R_{ap} = \sqrt{\frac{4L}{C}} = \SI{5723(9)}{\ohm}.
+\end{equation*}
+Der gemessene reale Widerstand, bei dem der aperiodische Grenzfall eingetreten ist, beträgt jedoch
+\begin{equation*}
+  R_{real} = \SI{4580}{\ohm}.
+\end{equation*}
+Damit ergibt sich eine Abweichung von
+\begin{equation*}
+  \Delta_R = |\frac{R_{ap}}{R_{real}} - 1| = 24.97\%.
+\end{equation*}
 
 
 

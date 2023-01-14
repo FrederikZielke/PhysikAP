@@ -52,9 +52,10 @@ mit $i = \sqrt{-1}$ und $\tilde{ω}, A$ komplexe Zahlen.
     I(t) = A_1\symup{e}^{i\tilde{ω}_1t} + A_2\symup{e}^{i\tilde{ω}_2t}
 \end{equation*}
 ($A_1, A_2$ komplexe Zahlen)
-\begin{equation*}
+\begin{equation}
     2πμ \coloneqq \frac{R}{2L} \quad \text{und} \quad 2πν \coloneqq \sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}
-\end{equation*}
+    \label{eq:reff}
+\end{equation}
 \begin{equation}
     I(t) = \symup{e}^{-2πμt}\left(A_1\symup{e}^{2πiνt} + A_2\symup{e}^{-2πiνt}\right).
     \label{eq:einh}
@@ -81,7 +82,11 @@ Diese Voraussetzung wird durch den Ansatz
 \begin{equation*}
     I(t) \approx \text{oder lieber} \sim ? \symup{e}^{-(\frac{R}{2L} - \sqrt{\frac{R^2}{4L^2}})t}
 \end{equation*}
-Spezialfall:\\ $\frac{1}{LC} = \frac{R_{\text{ap}}^2}{4L^2},$ d.h. $ν = 0$
+Spezialfall: 
+\begin{equation}
+    \frac{1}{LC} = \frac{R_{\text{ap}}^2}{4L^2} \text{ d.h.}  ν = 0
+    \label{eq:r_ap}
+\end{equation}
 \begin{equation*}
     I(t) = A\symup{e}^{-\frac{R}{2L}t} = A\symup{e}^{-\frac{t}{\sqrt{LC}}}
 \end{equation*}
