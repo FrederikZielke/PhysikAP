@@ -109,58 +109,85 @@ denn dann wird
 Dieser fall ist der aperiodische Grenzfall. Es geht $I(t)$ schnellstmöglich gegen Null ohne Überschingung.\\
 \\
 \subsection{Erzwungene Schwingung}
+Wird ein Schwingkreis mit einer Wechselspannung
 \begin{equation*}
-    U(t) = U_0\symup{e}^{iωt}.
+    U(t) = U_0\symup{e}^{iωt}
 \end{equation*}
-\begin{equation*}
-    L\frac{\symup{d}I(t)}{dt} + RI(t) + \frac{Q(t)}{C} = U_0\symup{e}^{iωt}
-\end{equation*}
-\begin{equation*}
+betrieben, nimmt die Differentialgleichung \eqref{eq:DGL1} die Form
+%\begin{equation*}
+%    L\frac{\symup{d}I(t)}{dt} + RI(t) + \frac{Q(t)}{C} = U_0\symup{e}^{iωt}
+%\end{equation*} 
+\begin{equation}\label{eq:DGL2}
     LC\frac{\symup{d}^2U_C}{\symup{d}t^2} + RC\frac{\symup{d}U_C}{\symup{d}t} + U_C = U_0\symup{e}^{iωt}
-\end{equation*}
-\begin{equation*}
-    U_C = \frac{Q(t)}{C}
-\end{equation*}
-\begin{equation*}
+\end{equation}
+an.\\
+%\begin{equation*}
+%    U_C = \frac{Q(t)}{C}
+%\end{equation*}
+Abhängig von der Kreisfrequenz $ω$ kann zwischen der Amplitude $A$ der Kondensatorspannung und der Erregerspannung $U(t)$ ein Phasenunterschied $φ$ bestehen.\\
+Durch einstzen des Ansatzes
+\begin{equation}\label{eq:U_C_omega}
     U_C(ω, t) = U(ω) \symup{e}^{iωt}
-\end{equation*} mit $U(ω)$ komplex.\\
+\end{equation} mit $U(ω)$ komplex, lässt sich die Differentialgleichung \eqref{eq:DGL2} in die Form
 \begin{equation*}
     -LCω^2U + iωRCU + U = U_0
-\end{equation*}
-\begin{equation*}
+\end{equation*} überführen. Nach $U$ aufgelöst ergibt sich 
+\begin{equation}\label{eq:U_abs}
     U = \frac{U_0}{1 - LCω^2 + iωRC} = \frac{U_0\left(1 - LCω^2 + iωRC\right)}{\left(1 - LCω^2\right)^2 + ω^2R^2C^2}.
-\end{equation*}
-\begin{equation*}
-    \left\lvert U\right\rvert = \sqrt{\symfrak{Re}^2(U) + \symfrak{Im}^2(U)} = U_0 \sqrt{\frac{\left(1 - LCω^2\right)^2 + ω^2R^2C^2}{\left(\left(1 - LCω^2\right)^2 + ω^2R^2C^2\right)^2}}
-\end{equation*}
-\begin{equation*}
-    \tan{φ(ω)} = \frac{\symfrak{Im}(U)}{\symfrak{Re}(U)} = \frac{-ωRC}{1 - LCω^2}
-\end{equation*}
-\begin{equation*}
+\end{equation}\\
+%\begin{equation*}
+%    \left\lvert U\right\rvert = \sqrt{\symfrak{Re}^2(U) + \symfrak{Im}^2(U)} = U_0 \sqrt{\frac{\left(1 - LCω^2\right)^2 + ω^2R^2C^2}{\left(\left(1 - LCω^2\right)^2 + ω^2R^2C^2\right)^2}}
+%\end{equation*}
+%\begin{equation*}
+%    \tan{φ(ω)} = \frac{\symfrak{Im}(U)}{\symfrak{Re}(U)} = \frac{-ωRC}{1 - LCω^2}
+%\end{equation*}
+Über das Verhältnis $\frac{\symfrak{Im}(U)}{\symfrak{Re}(U)}$ lässt sich die Phase 
+\begin{equation}\label{eq:phi}
     φ(ω) = \arctan{\left(\frac{-ωRC}{1 - LCω^2}\right)}
-\end{equation*}
-\begin{equation*}
-    U_C(ω) = \frac{U_0}{\sqrt{\left(1 - LCω^2\right)^2 + ω^2R^2C^2}}
-\end{equation*}
-\begin{equation}\label{eq:wres}
-    ω_{\text{res}} = \sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}
+\end{equation} berechnen.\\
+Nach der Gleichung \eqref{eq:U_C_omega} ist $U_C = |A|.$ Mit \autoref{eq:U_abs} ergibt sich für die Kondensatorspannung
+\begin{equation}\label{eq:leckomio}
+    U_C(ω) = \frac{U_0}{\sqrt{\left(1 - LCω^2\right)^2 + ω^2R^2C^2}}.
 \end{equation}
-Schwache Dämpfung:\\ $\frac{R^2}{2L^2} << \frac{1}{LC}$
+Die Abhängigkeit der Kondensatorspannung $U_C$ zur Frequenz $ω$ lässt sich mit eine Resonanzkurve darstellen.
+Aus der Gleichung \eqref{eq:leckomio} lässt sich erkennen, dass für $ω \longrightarrow 0$ die Kondensatorspannung $U_C$ gegen die Erregeramplitude $U_0$ strebt.
+Für $ω \longrightarrow \infty$ geht $U_C$ gegen $0.$\\
+Die Resonanzfrequenz $ω_0$ ist die Frequenz, bei der $U_C$ maximal wird. Die Kondensatorspannung kann dabei größer als $U_0$ sein.
+Bei genauer Rechnung ergibt sich für die Resonanzfrequenz
+\begin{equation}\label{eq:wres}
+    ω_{\text{res}} = \sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}.
+\end{equation}\\
+Besonders bedeutend ist dabei der Fall der Schwache Dämpfung $\frac{R^2}{2L^2} << \frac{1}{LC}.$\\
+Unter dieser Voraussetzung ist $U_C$ um den Faktor $\frac{1}{ω_0RC}$ größer als $U_0.$ Der Faktor heißt auch als Resonanzüberhöhung oder Güte $q$ des Schwingkreises.\\
 \begin{equation*}
     U_{C,\text{max}} = \frac{U_0}{ω_0RC} = \frac{U_0}{R}\sqrt{\frac{L}{C}}.
 \end{equation*}
+Geht $R \longrightarrow 0$ so kann $U_{C,\text{max}} \longrightarrow \infty.$ Dies wird als Resonanzkatastrophe bezeichnet.\\
+Die Schärfe der Resonanz ist die Breite der Resonanzkurve. Sie wird charakterisiert durch die Frequenzen $ω_+$ und $ω_-$.
+Die beiden Frequenzen können mit der Gleichung
 \begin{equation*}
     \frac{U_0}{\sqrt{2}} \frac{1}{ω_0RC} = \frac{U_0}{C\sqrt{ω_{\pm}^2R^2 + \left(ω_{\pm}^2L - \frac{1}{C}\right)^2}}.
 \end{equation*}
-\begin{equation*}
+berechnet werden.\\
+Mit $\frac{R^2}{L^2} << ω_0^2$ ist die Breite der Resonanzkurve gegeben mit
+\begin{equation}\label{eq:gute}
     ω_+ - ω_- \approx \frac{R}{L}.
-\end{equation*}
+\end{equation}
+Es lässt sich folgende Beziehung zwischen der Breite und der Güte der Resonanzkurve aufstellen
 \begin{equation*}
     q = \frac{ω_0}{ω_+ - ω_-}.
-\end{equation*}
-Starke Dämpfung:\\ $\frac{R^2}{2L^2} >> \frac{1}{LC}$
-$ω_0^2 = \frac{1}{LC}$
+\end{equation*}\\
+\\
+Im Falle einer Starken Dämpfung $\frac{R^2}{2L^2} >> \frac{1}{LC}$ ist die Resonanzüberhöhung nicht mehr existent.
+Mit zunehmender Frequenz geht $U_C$ von $U_0$ aus monoton gegen $0.$\\
+\\
+Die Phase $φ$ wird wie in \eqref{eq:phi} berechnet. Bei einer Frequenz von $ω_0^2 = \frac{1}{LC}$ ist $φ = -\frac{\pi}{2}.$\\
+Für die Frequenzen $ω_1$ und $ω_2$ für die $φ$ die Werte $\frac{\pi}{4}$ und $\frac{3\pi}{4}$ annimmt, gilt
 \begin{equation}\label{eq:w12}
     ω_{1,2} = \pm \frac{R}{2L} + \sqrt{\frac{R^2}{4L^2} + \frac{1}{LC}}
 \end{equation}
-$ω_1 - ω_2 = \frac{R}{L}$
+woraus sich
+\begin{equation*}
+    ω_1 - ω_2 = \frac{R}{L}
+\end{equation*}
+ergibt. Durch Vergleich mit \eqref{eq:gute} wird erkennbar, dass bei Schwacher Dämpfung $ω_1 - ω_2$ zu $ω_+ - ω_-$ wird.
