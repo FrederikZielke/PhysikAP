@@ -17,15 +17,19 @@ R = 13
 wplus = 29.215
 wminus = 22.01
 U_krit = 1/np.sqrt(2)*U_max/U0
+w_0 = unp.sqrt(1/(L*C))
+q = 1/(w_0*R2*C)
+b = R/L
 
 def g(x, a, b):
     return 1
 
-w_res = unp.sqrt(1/(L*C) - (R**2)/(2*L**2)) * 0.001 / (2*np.pi)
+w_res = unp.sqrt(1/(L*C) - (R2**2)/(2*L**2)) * 0.001 / (2*np.pi)
 print("Resonanzfrequenz Theorie: ", w_res)
 print("Resonanzfrequenz Exp: ", 25.80)
 print("kritischer Wert: ", 1/np.sqrt(2)*U_max/U0)
-print("Resonanzüberhöhung: ", U_max - U_krit)
+print("Resonanzüberhöhung: ", U_max/U0 - U_krit)
+print("Resonanzüberhöhung Theorie: ", q)
 print("Breite: ", wplus - wminus)
 
 f1 = R2/(2*L) + unp.sqrt(R2**2/(4*L**2) + 1/(L*C)) 
@@ -52,5 +56,5 @@ plt.legend()
 #plt.xlim(f[0]-0.1, f[-1]+1)
 plt.xscale('log')
 
-#plt.show()
+plt.show()
 plt.savefig('build/5c.pdf')

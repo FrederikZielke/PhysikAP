@@ -1,2 +1,33 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+Beim Abklingverhalten des gedämpften Schwingkreises ergibt sich die Dämpfung (\autoref{eq:fit1}) 
+$\mu = \SI{385.55(14.34)}{\frac{1}{s}}$. Diese erscheint etwas klein und dieser Verdacht
+bestätigt sich auch bei der Berechnung des effektiven Widerstands, da dieser kleiner mit
+$\SI{13.0(0.5)}{\ohm}$ ist als der geschaltete Widerstand $R_1 = \SI{67.2}{\ohm}$.
+Der effektive Widerstand sollte größer sein als der geschaltete, da sich zu diesem noch
+Innenwiderstände addieren (z.B. Generatorinnenwiderstand). Die Abweichung lässt sich nur mit
+systematischen Fehlern begründen. Eventuell war das Fine-Tuning nicht konstant eingestellt
+oder das Messintervall wurde zu groß gewählt, wodurch der Abfall der E-Funktion zu flach ist.
+\\
+\\
+Die Abweichung des Widerstands $R_{ap}$ von dem theoretischen Widerstand beim aperiodischen
+Grenzfall beträgt 24.97\%. Diese Abweichung lässt sich teils auf den Generatorinnenwiderstand
+zurückführen. Ebenfalls war der eingestellte Widerstand weder fein justierbar noch genau ablesbar, 
+wodurch Messfehler entstehen.
+\\
+\\
+Die experimentellen Ergebnisse für die Resonanzüberhöhung $q$, die Breite der Resonanzkurve 
+$\Delta_f$, die Resonanzfrequenz $f_{res}$, sowie $f_1$ und $f_2$ liegen alle im Toleranzbereich
+der theoretisch errechneten Werte \autoref{sec:ap}.
+\\
+\\
+Die Phasenverschiebung bei $f_{res}$ von $\frac{\pi}{2}$ kann nicht aus dem Diagramm entnommen werden.
+Generell muss die Phasenverschiebung um den Faktor 2 geteilt werden, damit die erwarteten 
+Ergebnisse herauskommen. In diesem Fall könnte eine falsche Einstellung am Oszilloskop
+die Erklärung für die Abweichung um einen konstanten Faktor sein.
+Der um den Faktor $\frac{1}{2}$ bereinigte Graph ist in \autoref{fig:troll} dargestellt.
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{build/abklingverhalten.pdf}
+    \caption{Phasenverschiebung $\frac{1}{2}\phi$ in Abhängigkeit der Frequenz $f$ und lineare Darstellung im Bereich der Resonanzfrequenz.}
+    \label{fig:troll}
+  \end{figure}
