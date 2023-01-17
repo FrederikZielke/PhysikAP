@@ -56,5 +56,5 @@ plt.legend()
 #plt.xlim(f[0]-0.1, f[-1]+1)
 plt.xscale('log')
 
-plt.show()
+#plt.show()
 plt.savefig('build/5c.pdf')

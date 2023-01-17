@@ -10,12 +10,12 @@ Außerdem soll die Frequenzabhängigkeit der Kondensatorspannung, sowie die Phas
 \subsection{Gedämpfte Schwingung}
 \label{sec:Gedaempfte_Schwingung}
 
-Ein RCL-Schwingkreis besteht aus zwei Energiespeichern, einem Kondensator und einer Spule, und einem Widerstand. 
+Ein RCL-Schwingkreis besteht aus einem Widerstand und zwei Energiespeichern, einem Kondensator und einer Spule.
 Das schwingende Verhalten des Stromflusses und der Spannung entsteht durch die beiden Speicher. Durch den Ohmschen Widerstand
-ist der Schwingkreis gedämpft. Die Dämpfung wird durch den Widerstand bestimmt. Ein ungedämpfter Schwingkreis 
+ist der Schwingkreis gedämpft. Die Dämpfung wird durch die Größe des Widerstandes bestimmt. Ein ungedämpfter Schwingkreis 
 ist nur theoretisch möglich, da die Verbindungskabel und die Spule selbst einen Widerstand aufweisen.
 Durch den Widerstand wird Energie irreversibel in Wärme umgewandelt. Bei einmaliger Anregung geht die Amplitude der Schwingung
-mit der Zeit gegen Null.
+mit der Zeit gegen Null.\\
 Nach dem zweiten Kirchhoffschnen Gesetz setzt sich die Gesamtspannung im Kreis zu
 \begin{equation*}
     U_R(t) + U_C(t) + U_L(t) = 0
@@ -38,7 +38,7 @@ Mit dem Ansatz
 \begin{equation}\label{eq:e-ansatz}
     I(t) = A\symup{e}^{i\tilde{ω}t}
 \end{equation}
-, mit $i = \sqrt{-1}$ und $\tilde{ω}, A$ komplexe Zahlen,
+mit $i = \sqrt{-1}$ und $\tilde{ω}, A$ komplexe Zahlen,
 lässt sich die Differentialgleichung schreiben als
 \begin{equation*}
     \left(-\tilde{ω}^2 + \frac{iR}{L}\tilde{ω} + \frac{1}{LC}\right)A\symup{e}^{i\tilde{ω}t}.
@@ -66,12 +66,13 @@ Die allgemeine Lösung lautet dann
 \end{equation}
 Je nach Eigenschaften der einzelnen Bauteile kann das oszillatorische Verhalten des RCL-Kreises unterschiedlich sein.\\
 Es wird unterschieden ob $ν$ reell oder komplex ist.\\
-1. Fall:\\ $\frac{1}{LC} > \frac{R^2}{4L^2}$, d.h. $ν$ reell
+\\
+1. Fall:\\ $\quad \frac{1}{LC} > \frac{R^2}{4L^2}$, d.h. $ν$ reell.\\
 Damit $I(t)$ reell wird, muss $A_1 = \overline{A}_2$ sein.
 Diese Voraussetzung wird durch den Ansatz
 \begin{equation*}
     A_1 = \frac{1}{2}A_0\symup{e}^{iη} \quad \text{und} \quad A_2 = \frac{1}{2}A_0\symup{e}^{-iη}
-\end{equation*} mit $A_0$ und $η$ reell.\\
+\end{equation*}erfüllt mit $A_0$ und $η$ reell.\\
 Durch anwendung der Eulerschen Formel für Cosinus lässt sich der Ausdruck umformen zu
 \begin{equation*}
     I(t) = A_0\symup{e}^{-2πμt}\cos{\left(2πνt + η\right)}.
@@ -91,10 +92,10 @@ Damit sich die Amplitude auf den e-ten Teil ihrer ursprünglichen Größe absenk
 \end{equation}
 vergangen sein. Die Geschwindigkeit der Amplitudenabnahme ist durh $2πμ = \frac{R}{2L}$ charakterisiert.\\
 \\
-2. Fall:\\ $\frac{1}{LC} < \frac{R^2}{4L^2}, \quad$ d.h. $ν$ komplex
+2. Fall:\\ $\frac{1}{LC} < \frac{R^2}{4L^2}, \quad$ d.h. $ν$ komplex.\\
 Die \autoref{eq:einh} wird durch die Voraussetzung vollständig reell. Die Gleichung hat keinen oszillatorische Anteil mehr.
-Dies wird aperiodische Dämpfung genannt. Je nach Wahl der Konstanten $A_1 \text{und} A_2$ kann $I(t)$ direkt monoton gegen Null 
-gehen oder zuerst ncoh einen Extremwert erreichen. Der Strom hat maximal einen Nulldurchlauf und es gilt
+Dies wird aperiodische Dämpfung genannt. Je nach Wahl der Konstanten $A_1$ und $A_2$ kann $I(t)$ direkt monoton gegen Null 
+gehen oder zuerst noch einen Extremwert erreichen. Der Strom hat maximal einen Nulldurchlauf und es gilt
 \begin{equation*}
     I(t) \sim \symup{e}^{-(\frac{R}{2L} - \sqrt{\frac{R^2}{4L^2}})t}.
 \end{equation*}
@@ -106,7 +107,7 @@ denn dann wird
 \begin{equation*}
     I(t) = A\symup{e}^{-\frac{R}{2L}t} = A\symup{e}^{-\frac{t}{\sqrt{LC}}}
 \end{equation*}
-Dieser fall ist der aperiodische Grenzfall. Es geht $I(t)$ schnellstmöglich gegen Null ohne Überschingung.\\
+Dieser fall ist der aperiodische Grenzfall. Der Strom $I(t)$ geht schnellstmöglich gegen Null ohne Überschingung.\\
 \\
 \subsection{Erzwungene Schwingung}
 Wird ein Schwingkreis mit einer Wechselspannung
@@ -151,14 +152,15 @@ Nach der Gleichung \eqref{eq:U_C_omega} ist $U_C = |A|.$ Mit \autoref{eq:U_abs} 
 \end{equation}
 Die Abhängigkeit der Kondensatorspannung $U_C$ zur Frequenz $ω$ lässt sich mit eine Resonanzkurve darstellen.
 Aus der Gleichung \eqref{eq:leckomio} lässt sich erkennen, dass für $ω \longrightarrow 0$ die Kondensatorspannung $U_C$ gegen die Erregeramplitude $U_0$ strebt.
-Für $ω \longrightarrow \infty$ geht $U_C$ gegen $0.$\\
+Für $ω \longrightarrow \infty$ geht $U_C$ gegen $0.$
 Die Resonanzfrequenz $ω_0$ ist die Frequenz, bei der $U_C$ maximal wird. Die Kondensatorspannung kann dabei größer als $U_0$ sein.
 Bei genauer Rechnung ergibt sich für die Resonanzfrequenz
 \begin{equation}\label{eq:wres}
     ω_{\text{res}} = \sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}.
 \end{equation}\\
 Besonders bedeutend ist dabei der Fall der Schwache Dämpfung $\frac{R^2}{2L^2} << \frac{1}{LC}.$\\
-Unter dieser Voraussetzung ist $U_C$ um den Faktor $\frac{1}{ω_0RC}$ größer als $U_0.$ Der Faktor heißt auch als Resonanzüberhöhung oder Güte $q$ des Schwingkreises.\\
+Unter dieser Voraussetzung ist $U_C$ um den Faktor $\frac{1}{ω_0RC}$ größer als $U_0.$ Der Faktor heißt auch als Resonanzüberhöhung oder Güte $q$ des Schwingkreises.
+Die maximale Kondensatorspannung $U_{C,\text{max}}$ ist dann
 \begin{equation*}
     U_{C,\text{max}} = \frac{U_0}{ω_0RC} = \frac{U_0}{R}\sqrt{\frac{L}{C}}.
 \end{equation*}
@@ -186,7 +188,7 @@ Dabei ist $\omega_0$ die Eigenfrequenz und lässt sich beim RLC-Schwingkreis mit
 Im Falle einer Starken Dämpfung $\frac{R^2}{2L^2} >> \frac{1}{LC}$ ist die Resonanzüberhöhung nicht mehr existent.
 Mit zunehmender Frequenz geht $U_C$ von $U_0$ aus monoton gegen $0.$\\
 \\
-Die Phase $φ$ wird wie in \eqref{eq:phi} berechnet. Bei einer Frequenz von $ω_0^2 = \frac{1}{LC}$ ist $φ = -\frac{\pi}{2}.$\\
+Die Phase $φ$ wird wie in \eqref{eq:phi} berechnet. Bei einer Frequenz von $ω_0^2 = \frac{1}{LC}$ ist $φ = -\frac{\pi}{2}.$
 Für die Frequenzen $ω_1$ und $ω_2$ für die $φ$ die Werte $\frac{\pi}{4}$ und $\frac{3\pi}{4}$ annimmt, gilt
 \begin{equation}\label{eq:w12}
     ω_{1,2} = \pm \frac{R}{2L} + \sqrt{\frac{R^2}{4L^2} + \frac{1}{LC}}
@@ -196,3 +198,4 @@ woraus sich
     ω_1 - ω_2 = \frac{R}{L}
 \end{equation*}
 ergibt. Durch Vergleich mit \eqref{eq:gute} wird erkennbar, dass bei Schwacher Dämpfung $ω_1 - ω_2$ zu $ω_+ - ω_-$ wird.
+\newpage
