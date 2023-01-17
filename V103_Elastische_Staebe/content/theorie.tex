@@ -34,12 +34,75 @@ Die angreifende Kraft erzeugt  ein Drehmoment, wodurch die unteren Körperschich
 In der Mitte tritt daher auch eine neutrale Faser auf, der keine Längenänderung widerfährt.
 Als Folge der Verbiegung treten der Kraft entgegengesetzte Normalspannungen auf, d.h. der Stab biegt sich so lange bis sich ein Gleichgewicht zwischen dem
 gewichtsbedingten und dem spannungsbedingten Drehmoment einstellt. Dann gilt:
-\begin{equation}
+\begin{equation*}
     M_F = M_{\sigma}.
-\end{equation}
+\end{equation*}
 $M_{\sigma}$ ist dabei das im inneren auftretende Drehmoment, das sich mithilfe \autoref{fig:msigma} herleiten lässt. Da die Zugspannungen oberhalb der neutralen
 Faser und die Druckspannungen unterhalb der neutralen Faser entgegengesetzt, aber betraglich gleich sind, lässt sich das wirkende Drehmoment mit
-\begin{equation}
-    M_{\sigma} = \int{Q} y\sigma(y) dq
+\begin{equation*}
+    M_{\sigma} = \int_{Q} y\sigma(y) dq
+\end{equation*}
+berechnen.\\
+\begin{minipage}[4cm]{0.5\textwidth}
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{img/abb3.jpg}
+    \caption{Berechnung des inneren \\Drehmoments $M_{\sigma}$.}
+    \label{fig:msigma}
+\end{figure}
+\vspace{10pt}
+\end{minipage}
+\begin{minipage}[4cm]{0.5\textwidth}
+    Das durch die angreifende Kraft erzeugte Drehmoment, greift mit dem Hebelarm $L-x$ an Q an. Für das äußere Drehmoment ergibt sich also
+        \begin{equation*}
+            M_F = F \cdot (L-x).
+        \end{equation*}
+        Die Gleichgewichtslage der Drehmomente ist also 
+        \begin{equation*}
+            \int_{Q} y\sigma(y) dq = F \cdot (L-x).
+        \end{equation*}
+        \vspace{10pt}
+\end{minipage}
+Nach \autoref{eq:hook} ergibt sich für ein kurzes Stabstück $\Delta x$ im Abstand $y$ von der neutralen Faser
+\begin{equation*}
+    \sigma (y) = E \cdot \frac{\delta x}{\Delta x},
+\end{equation*}
+wobei $\delta x$ die Längenänderung der Faser ist. Mit geometrischen Überlegungen folgt
+\begin{equation}\label{eq:lol}
+    E \cdot \frac{d^2 D}{d x^2} I = F \cdot (L-x),
 \end{equation}
-berechnen.
+dabei ist I das Flächenträgheitsmoment, welches sich mit 
+\begin{equation*}
+    I =  \int_{Q} y^2 dA
+\end{equation*}
+berechnen lässt. Dabei ist das Integral ein Flächenintegral über die Querschnittsfläche des Stabes.
+Durch zweimalige Integration von \autoref{eq:lol} ergibt sich die Gleichung für die Auslenkung:
+\begin{equation*}
+    D(x) = \frac{F}{2 \cdot E \cdot I} \biggl(Lx^2 - \frac{x^3}{3}\biggr).
+\end{equation*}
+\\
+\\
+\begin{minipage}[4cm]{0.45\textwidth}
+    \begin{figure}[H]
+        \includegraphics[width=\linewidth]{img/abb4.jpg}
+        \caption{Beidseitige Einhängung \\des Stabes.}
+        \label{fig:beidseitig}
+    \end{figure}
+    \vspace{10pt}
+    \end{minipage}
+    \begin{minipage}[4cm]{0.55\textwidth}
+        Spannt man den Stab auf beiden Seiten ein (\autoref{fig:beidseitig}), so greift die Kraft $F/2$ an der Querschnittsfläche $Q$ an.
+        Es gilt daher
+        \begin{equation*}
+            M_F = 
+            \begin{cases}
+                -\frac{F}{2}x, & 0 \leq x \leq L/2 \\
+                \\
+                -\frac{F}{2}(L-x) & L/2 \leq x \leq L.
+            \end{cases}
+        \end{equation*}
+        Setzt man dies in \autoref{eq:lol} ein, lässt sich ein Ausdruck für die Auslenkung finden:
+        \begin{equation*}
+            D(x) = \frac{F}{48 \cdot E \cdot I} \biggl(4x^3 - 12Lx^2 + 9L^2x - L^3\biggr).
+        \end{equation*}
+        \vspace{10pt}
+    \end{minipage}
