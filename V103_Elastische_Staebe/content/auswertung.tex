@@ -18,15 +18,18 @@ erstellt worden.
 \subsection{Flächenträgheitsmoment}
 
 Mit Gleichung \eqref{eq:flaeche_traegheit} lässt sich das Flächenträgheitsmoment eines Stabes berechnen.
+Es wird für die Berechnung des Elastizistätsmoduls benötigt.\\
 \begin{align*}
     I_{eckig} &=  \int_{-\frac{d}{2}}^{\frac{d}{2}}\int_{-\frac{d}{2}}^{\frac{d}{2}} y^2 dydz\\
     \Leftrightarrow I_{eckig} &= \frac{d^4}{12} = \SI{8.33(0.17)e-10}{\quartic\meter} \:\text{und}\\
+    &\\
     I_{rund} &=  \int_{0}^{2π}\int_{0}^{R} y^2 dydz\\
     \Leftrightarrow I_{rund} &= \frac{\pi R^4}{4} = \SI{4.91(0.10)e-10}{\quartic\meter}
 \end{align*}
 
 \newpage
 \subsection{Einseitige Einspannung}
+\label{sec:Einseitige_Einspannung}
 \begin{table}
     \begin{minipage}{0.48\linewidth}
         \centering
@@ -97,20 +100,186 @@ Mit Gleichung \eqref{eq:flaeche_traegheit} lässt sich das Flächenträgheitsmom
             49& 306.0\\
             \bottomrule
         \end{tabular}
-    \end{minipage}\newpage
+    \end{minipage}
+\end{table}
+\newpage
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[height=5.3cm]{build/rund_einseitig.pdf}
         \caption{Messwerte aus \autoref{tab:Einseitige_Einspannung_rund} mit linearer Regression.}
+        \label{fig:rund_einseitig}
     \end{subfigure}
-    \begin{subfigure}
-        \includegraphics[width=\linewidth]{build/eckig_einseitig.pdf}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[height=5.3cm]{build/eckig_einseitig.pdf}
         \caption{Messwerte aus \autoref{tab:Einseitige_Einspannung_eckig} mit linearer Regression.}
+        \label{fig:eckig_einseitig}
     \end{subfigure}
+%    \caption{linreg bei einseitiger Einspannung}%das muss noch schöner geschrieben werden
+    \label{fig:einseitig}
 \end{figure}
 
-Für den runden Stab ergeben sich  die Koeffizienten $a = \SI{4887.544(63.457)}{\per\meter\squared}$ und $b = \SI{10.839(2.872)}{\per\meter\squared}$.
-Daraus folgend ergibt sich für den Elastizitätsmodul $E = .$
+Für den runden Stab ergeben sich  die Koeffizienten $a = \SI{4.887544(0.063457)e-3}{\per\meter\squared}$ und $b = \SI{1.0839(0.2872)e-5}{\meter}$.
+In den Vorfaktor der Gleichung \eqref{eq:ausgleich} eingesetzt und nach $E$ aufgelöst,
+ergibt sich mit $F = m \cdot g$ der Elastizitätsmodul $E = \SI{1.123(0.027)e12}{\pascal}.$\\
+\\
+Für den eckigen Stab ergeben sich die Koeffizienten $a = \SI{3.500933(0.019402)e-3}{\per\meter\squared}$ und $b = \SI{0.1047(0.0878)e-5}{\meter}$.
+Daraus folgt der Elastizitätsmodul $E = \SI{9.24(0.19)e11}{\pascal}.$
 
 
 \newpage
 \subsection{Beidseitige Einspannung}
-\subsubsection*{Runder Stab}
-\subsubsection*{Eckiger Stab}
+\begin{table}
+    \begin{minipage}{0.48\linewidth}
+        \centering
+        \caption{Messwerte für den runden \\Stab bei beidseitiger Einspannung.\cite{V103}}
+        \label{tab:Beidseitige_Einspannung_rund}
+        \begin{tabular}[h!]{|c|c|}
+            \toprule
+            {$x\left[\unit{\centi\meter}\right]$} & {$D\left[\unit{\micro\meter}\right]$}\\
+            \midrule
+            3& 1.0\\
+            5& 4.0\\
+            7& 4.5\\
+            9& 6.5\\
+            11& 9.5\\
+            13& 13.5\\
+            15& 18.0\\
+            17& 22.0\\
+            19& 24.0\\
+            21& 26.0\\
+            23& 29.0\\
+            25& 30.0\\
+            \hline
+            27& 34.0\\
+            29& 33.0\\
+            31& 32.0\\
+            33& 32.0\\
+            35& 32.0\\
+            37& 32.0\\
+            39& 29.0\\
+            41& 27.0\\
+            43& 25.0\\
+            45& 22.0\\
+            47& 19.0\\
+            49& 11.0\\
+            51& 7.0\\
+            53& 3.0\\
+            \bottomrule
+        \end{tabular}
+    \end{minipage}
+    \begin{minipage}{0.48\linewidth}
+        \centering
+        \caption{Messwerte für den eckigen \\Stab bei beidseitiger Einspannung.\cite{V103}}
+        \label{tab:Beidseitige_Einspannung_eckig}
+        \begin{tabular}[h!]{|c|c|}
+            \toprule
+            {$x\left[\unit{\centi\meter}\right]$} & {$D\left[\unit{\micro\meter}\right]$}\\
+            \midrule
+            3& 0.0\\
+            5& 0.5\\
+            7& 2.0\\
+            9& 5.0\\
+            11& 6.0\\
+            13& 8.5\\
+            15& 9.0\\
+            17& 12.0\\
+            19& 13.5\\
+            21& 15.0\\
+            23& 17.5\\
+            25& 19.0\\
+            \hline
+            30& 19.0\\
+            32& 18.0\\
+            34& 18.5\\
+            36& 18.0\\
+            38& 17.0\\
+            40& 15.0\\
+            42& 15.0\\
+            44& 13.0\\
+            46& 10.0\\
+            48& 7.5\\
+            50& 4.0\\
+            52& 2.5\\
+            \bottomrule
+        \end{tabular}
+    \end{minipage}
+\end{table}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[height=5.3cm]{build/beidseitig_e1.pdf}
+%        \caption{Messwerte zwischen Einspannung und Gewicht aus \autoref{tab:Beidseitige_Einspannung_eckig} mit linearer Regression.}
+        \label{fig:eckig_beidseitig1}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[height=5.3cm]{build/beidseitig_e2.pdf}
+%        \caption{Messwerte zwischen Stabende und Gewicht aus \autoref{tab:Beidseitige_Einspannung_eckig} mit linearer Regression.}
+        \label{fig:eckig_beidseitig2}
+    \end{subfigure}
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[height=5.3cm]{build/beidseitig_r1.pdf}
+%        \caption{Messwerte zwischen Gewicht und Einspannung aus \autoref{tab:Beidseitige_Einspannung_erund} mit linearer Regression.}
+        \label{fig:rund_beidseitig1}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[height=5.3cm]{build/beidseitig_r2.pdf}
+%        \caption{Messwerte zwischen Stabende und Einspannung aus \autoref{tab:Beidseitige_Einspannung_rund} mit linearer Regression.}
+        \label{fig:rund_beidseitig2}
+    \end{subfigure}
+    \caption{Messwerte für die beidseitige Einspannung der Stäbe aus \autoref{tab:Beidseitige_Einspannung_rund} und \autoref{tab:Beidseitige_Einspannung_eckig} mit linearer Regression.}
+    \label{fig:beidseitig}
+\end{figure}
+
+%Für die Koeffizienten der linearen Regressionen des Graphen aus \autoref{fig:eckig_beidseitig1}, wurden die Werte $a = \SI{1.47243(0.10064)e4}{\per\meter\squared}$ und $b = \SI{5.906(1.1)e6}{\meter}$ ermittelt.
+Bei beidseitiger Befestigung der Stäbe wird unterschieden ob Links- oder Rechtsseitig des Gewichtes gemessen wird.
+Die Messwerte wurden deshalb in mehrere Graphen aufgeteilt. Linksseitig wird $D(x)$ mit der Formel %\eqref{hier linksseitige formel einfügen}
+berechnet und Rechtsseitig mit der Formel %\eqref{hier rechtsseitige formel einfügen}
+berechnet. Die jeweiligen Koeffizienten aus der linearen Regression sind in \autoref{tab:beidseitig_koeffizienten} aufgelistet.
+\begin{table}
+    \centering
+    \caption{Koeffizienten der linearen Regressionen der Graphen aus \autoref{fig:beidseitig}.}
+    \label{tab:beidseitig_koeffizienten}
+%    \sisetup{table-format=2.1}
+    \begin{tabular}{c|c c|}
+        \toprule
+        & \multicolumn{2}{c}{eckig}\\
+        \cmidrule(lr){2-3}
+        & $a \:[\unit{\per\meter\squared}]$ & $b \:[\unit{\meter}]$\\% & $a \:[\unit{\per\meter\squared}]$ & $b \:[\unit{\meter}]$ \\
+        \midrule
+        links & $(1.47243 \pm 0.10064)\times 10^{-4}$ & $(-5.906 \pm 1.100)\times 10^{-6}$\\% 
+        rechts & $(1.22664 \pm 0.07610)\times 10^{-4}$ & $(1.794 \pm 0.780)\times 10^{-6}$\\% 
+        \midrule
+        &\multicolumn{2}{c}{rund}\\ 
+        \cmidrule(lr){2-3}
+        links & $(2.37413 \pm 0.16041)\times 10^{-4}$ & $(-8.367 \pm 1.754)\times 10^{-6}$ \\
+        rechts & $(2.37413 \pm 0.16041)\times 10^{-4}$ & $(5.054 \pm 1.422)\times 10^{-6}$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}\\
+\\
+Die zugehörigen Elastizistätsmodul $E$ werden wie in \autoref{sec:Einseitige_Einspannung} berechnet. Der Vorfaktor der Gleichungen %\eqref{} bzw \eqref{}
+wird jeweils nach $E$ umgestellt. Die Kraft $F = m \cdot g$ wird eingesetzt, sowie die entsprechenden Koeffizienten $a$ aus \autoref{tab:beidseitig_koeffizienten}.\\
+\\
+\begin{table}
+    \centering
+    \caption{Elastizitätsmodul $E$ für die beidseitige Einspannung der Stäbe.}
+    \label{tab:beidseitig_E}
+    \begin{tabular}{c|c c|}
+        \toprule
+        & $E_{\text{eckig}}\:[\unit{\giga\pascal}]$ & $E_{\text{rund}}\:[\unit{\giga\pascal}]$\\
+        \cmidrule(lr){2-3}
+        links & $(1.75 \pm 0.12)\times 10^3$ & $(1.840 \pm 0.13)\times 10^3$\\
+        rechts & $(2.10 \pm 0.14)\times 10^3$ & $(2.190 \pm 0.15)\times 10^3$\\
+        \bottomrule
+    \end{tabular}
+\end{table}
+%Denk dran die Graphen nochmal zu updaten das D(x) in μm ist und nicht in m
