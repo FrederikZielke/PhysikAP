@@ -4,13 +4,113 @@
 %Flächenträgheitsmoment berechnen für D(x)
 %Einseitige Einspannung: 
 %Beidseitige Einspannung:
+\DeclareSIPower\quartic\tothefourth{4}
 Die Maße der Stäbe sind
+\begin{align*}
+    d_{eckig} =& \SI{1(0.005)}{\centi\meter} \quad& d_{rund} =& \SI{1(0.005)}{\centi\meter}\\
+    l_{eckig} =& \SI{60(0.1)}{\centi\meter} \quad& l_{rund} =& \SI{59.1(0.1)}{\centi\meter}\\
+    m_{eckig} =& \SI{502.5(0.1)}{\gram} \quad& m_{rund} =& \SI{390.1(0.1)}{\gram}
+\end{align*}
 
+Die in \autoref{sec:Auswertung} gezeigten Grafiken und Ausgleichsrechnungen sind mithilfe der Python-Bibliotheken Matplotlib \cite{matplotlib}, Scipy \cite{scipy} und Numpy \cite{numpy}
+erstellt worden.
 
 \subsection{Flächenträgheitsmoment}
 
-Mit Gleichung \eqref{eq:flaeche_traegheit} lässt sich das Flächenträgheitsmoment der beiden Stäbe berechnen.
+Mit Gleichung \eqref{eq:flaeche_traegheit} lässt sich das Flächenträgheitsmoment eines Stabes berechnen.
 \begin{align*}
-    I_{e} &=  \int_{-\frac{a}{2}}^{\frac{a}{2}}\int_{-\frac{a}{2}}^{\frac{a}{2}} y^2 dydz\\
-    \Leftrightarrow I_{e} &= \frac{a^4}{12} = 
+    I_{eckig} &=  \int_{-\frac{d}{2}}^{\frac{d}{2}}\int_{-\frac{d}{2}}^{\frac{d}{2}} y^2 dydz\\
+    \Leftrightarrow I_{eckig} &= \frac{d^4}{12} = \SI{8.33(0.17)e-10}{\quartic\meter} \:\text{und}\\
+    I_{rund} &=  \int_{0}^{2π}\int_{0}^{R} y^2 dydz\\
+    \Leftrightarrow I_{rund} &= \frac{\pi R^4}{4} = \SI{4.91(0.10)e-10}{\quartic\meter}
 \end{align*}
+
+\newpage
+\subsection{Einseitige Einspannung}
+\begin{table}
+    \begin{minipage}{0.48\linewidth}
+        \centering
+        \caption{Messwerte für den runden \\Stab bei einseitiger Einspannung.\cite{V103}}
+        \label{tab:Einseitige_Einspannung_rund}
+        \begin{tabular}[h!]{|c|c|}
+            \toprule
+            {$x\left[\unit{\centi\meter}\right]$} & {$D\left[\unit{\micro\meter}\right]$}\\
+            \midrule
+            3& 3.0\\
+            5& 8.0\\
+            7& 16.0\\
+            9& 25.0\\
+            11& 36.0\\
+            13& 49.0\\
+            15& 63.0\\
+            17& 79.0\\
+            19& 97.0\\
+            21& 112.0\\
+            23& 135.5\\
+            25& 152.0\\
+            27& 178.5\\
+            29& 197.0\\
+            31& 222.5\\
+            33& 243.0\\
+            35& 280.0\\
+            37& 301.0\\
+            39& 316.5\\
+            41& 335.0\\
+            43& 364.0\\
+            45& 381.0\\
+            47& 406.0\\
+            49& 433.5\\
+            \bottomrule
+        \end{tabular}
+    \end{minipage}
+    \begin{minipage}{0.48\linewidth}
+        \centering
+        \caption{Messwerte für den eckigen \\Stab bei einseitiger Einspannung.\cite{V103}}
+        \label{tab:Einseitige_Einspannung_eckig}
+        \begin{tabular}[h!]{|c|c|}
+            \toprule
+            {$x\left[\unit{\centi\meter}\right]$} & {$D\left[\unit{\micro\meter}\right]$}\\
+            \midrule
+            3& 1.5\\
+            5& 4.5\\
+            7& 10.0\\
+            9& 15.0\\
+            11& 22.5\\
+            13& 31.0\\
+            15& 39.0\\
+            17& 49.5\\
+            19& 62.0\\
+            21& 74.0\\
+            23& 86.0\\
+            25& 97.0\\
+            27& 114.5\\
+            29& 127.0\\
+            31& 145.0\\
+            33& 164.0\\
+            35& 182.0\\
+            37& 199.0\\
+            39& 219.0\\
+            41& 243.0\\
+            43& 256.0\\
+            45& 272.0\\
+            47& 295.0\\
+            49& 306.0\\
+            \bottomrule
+        \end{tabular}
+    \end{minipage}\newpage
+        \caption{Messwerte aus \autoref{tab:Einseitige_Einspannung_rund} mit linearer Regression.}
+    \end{subfigure}
+    \begin{subfigure}
+        \includegraphics[width=\linewidth]{build/eckig_einseitig.pdf}
+        \caption{Messwerte aus \autoref{tab:Einseitige_Einspannung_eckig} mit linearer Regression.}
+    \end{subfigure}
+\end{figure}
+
+Für den runden Stab ergeben sich  die Koeffizienten $a = \SI{4887.544(63.457)}{\per\meter\squared}$ und $b = \SI{10.839(2.872)}{\per\meter\squared}$.
+Daraus folgend ergibt sich für den Elastizitätsmodul $E = .$
+
+
+\newpage
+\subsection{Beidseitige Einspannung}
+\subsubsection*{Runder Stab}
+\subsubsection*{Eckiger Stab}

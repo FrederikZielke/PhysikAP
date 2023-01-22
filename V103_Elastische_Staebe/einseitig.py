@@ -28,6 +28,8 @@ for name, value, error in zip('ab', params, errors):
 m_eckig = ufloat(params[0], errors[0])
 b_eckig = ufloat(params[1], errors[1])
 
+
+
 plt.plot(x_plot, params[0] * x_plot + params[1], label = 'Ausgleichsgerade')
 plt.plot(a, D, 'rx', label = 'Messwerte')
 plt.xlabel(r'$L\cdot x^2 - \frac{x^3}{3}\:[\mathrm{m}^3]$')
@@ -39,13 +41,13 @@ plt.savefig('build/eckig_einseitig.pdf')
 plt.show()
 plt.clf()
 
-x, D = np.genfromtxt('content/rund_einseitig.csv', unpack=True, delimiter=',')
-x = x/100
-a = g(x, L)
+x2, D2 = np.genfromtxt('content/rund_einseitig.csv', unpack=True, delimiter=',')
+x2 = x2/100
+a2 = g(x2, L)
 
-x_plot = np.linspace(np.min(a), np.max(a), 1000)
+x_plot = np.linspace(np.min(a2), np.max(a2), 1000)
 
-params, covariance_matrix = np.polyfit(a, D, deg=1, cov=True)
+params, covariance_matrix = np.polyfit(a2, D2, deg=1, cov=True)
 errors = np.sqrt(np.diag(covariance_matrix))
 
 print('Koeffizienten und Fehler der Ausgleichsgerade des runden Stabs:')
@@ -55,7 +57,7 @@ m_rund = ufloat(params[0], errors[0])
 b_rund = ufloat(params[1], errors[1])
 
 plt.plot(x_plot, params[0] * x_plot + params[1], label = 'Ausgleichsgerade')
-plt.plot(a, D, 'rx', label = 'Messwerte')
+plt.plot(a2, D2, 'rx', label = 'Messwerte')
 plt.xlabel(r'$L\cdot x^2 - \frac{x^3}{3}\:[\mathrm{m}^3]$')
 plt.ylabel(r'$D\:[\mathrm{μm}]$')
 plt.title('Runder Stab')
@@ -64,3 +66,5 @@ plt.legend(loc = 'best')
 plt.savefig('build/rund_einseitig.pdf')
 plt.show()
 plt.clf()
+
+#Berechnung Elastiizitätsmodul
