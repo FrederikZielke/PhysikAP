@@ -15,7 +15,7 @@ def f(x,a,b):
 x = x/100
 L = 0.535#das könnte stuss sein aber haut ca hin
 a = g(x, L)
-D = D*10**(-6)
+#D = D*10**(-6)
 
 x_plot = np.linspace(np.min(a), np.max(a), 1000)
 
@@ -44,7 +44,7 @@ plt.clf()
 x2, D2 = np.genfromtxt('content/rund_einseitig.csv', unpack=True, delimiter=',')
 x2 = x2/100
 a2 = g(x2, L)
-D2 *= 10**(-6)
+#D2 *= 10**(-6)
 
 x_plot = np.linspace(np.min(a2), np.max(a2), 1000)
 
