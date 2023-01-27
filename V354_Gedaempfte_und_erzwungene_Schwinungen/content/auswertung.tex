@@ -92,6 +92,10 @@ $\mu = \SI{385.55(14.34)}{\frac{1}{s}}$ und $L = \SI{16.87(0.05)}{\milli\henry}$
   T_{ex} &= 1/(2\pi\mu)                      = \SI{0.000413(0.000015)}{s}\\
   \text{und } R_{eff} &= 2 \cdot \mu \cdot L \; = \SI{13.0(0.5)}{\ohm}.\\
 \end{align*}
+Ein theoretischer Wert für die Abklingzeit ergibt sich mit 
+\begin{equation*}
+  T_{theorie} = \frac{2L}{R_1} = \SI{0.000502(0.000002)}{s}.
+\end{equation*}
 Die Abweichung vom verwendeten Widerstand $R_1$ beträgt also $\SI{52.4}{\ohm}$.
 
 \subsection{Widerstand aperiodischer Grenzfall}\label{sec:ap}
@@ -106,10 +110,11 @@ Der gemessene reale Widerstand, bei dem der aperiodische Grenzfall eingetreten i
 \end{equation*}
 Damit ergibt sich eine Abweichung von
 \begin{equation*}
-  \Delta_R = |\frac{R_{ap}}{R_{real}} - 1| = 24.97\%.
+  \Delta_R = |\frac{R_{real}}{R_{ap}} - 1| = 19.97\%.
 \end{equation*}
 
 \subsection{Kondensatorspannung in Abhängigkeit der Frequenz}
+In \autoref{tab:mess2} befinden sich die Messwerte.
 \begin{table}[H]
   \caption{Frequenz $f$ des Signals, abgelesene Kondensatorspannung $U_C$, zeitlicher Abstand der Nulldurchgänge $a$ und Intervalllänge $b$.}
   \label{tab:mess2}
@@ -216,7 +221,7 @@ Damit ergibt sich eine Abweichung von
     \vspace{5pt}
   \end{minipage}
 \end{table}
-Wird das Amplitudenverhältnis $\frac{U_C}{U_0}$ gegen die Frequenz $f$ aufgetragen, so entsteht der Graph in \autoref{fig:res}.
+Wird das Amplitudenverhältnis $\frac{U_C}{U_0}$ gegen die Frequenz $f$ aufgetragen, so entsteht der Graph in \autoref{fig:res}. Dabei beträgt $U_0 = \SI{1.5}{V}$.
 Um die Breite der Resonanzkurve $f_2 - f_1$ und die Resonanzüberhöhung $q$ zu bestimmen, wird der Bereich um die Resonanzfrequenz $f_{res}$ in \autoref{fig:res} linear dargestellt.
 Der Abstand des kritischen Werts $\frac{1}{\sqrt{2}}\frac{U_C}{U_0}$ bis zum Maximum der Spannung $U_{max} = \SI{18.3}{V}$ ist die Resonanzüberhöhung.
 Die Breite der Messwerte über diesem kritischen Wert wird auch Breite der Resonanzkurve genannt. 
@@ -227,14 +232,14 @@ Die Breite der Messwerte über diesem kritischen Wert wird auch Breite der Reson
 \end{figure}
 Aus \autoref{fig:res} lässt sich somit
 \begin{align*}
-  q_{exp} &= \SI{3.57}{V}, \\
+  q_{exp} &= \frac{18.3}{1.5}, \\
   f_1 &= \SI{22.01}{kHz}, \\
   \text{und } f_2 &= \SI{29.22}{kHz}
 \end{align*}
 Mit \autoref{eq:lol} folgt als theoretischer Wert für die Güte
-\begin{equation}
-  q_{theo} = \SI{4.196(0.008)}{V}.
-\end{equation}
+\begin{equation*}
+  q_{theo} = \SI{4.196(0.008)}.
+\end{equation*}
 bestimmen. Für die Breite der Resonanzkurve folgt somit
 \begin{equation*}
   \Delta_f = f_2 - f_1 = \SI{7.20}{kHz}.
@@ -256,7 +261,7 @@ Der theoretische Wert berechnet sich nach \autoref{eq:wres} mit $R_2$ zu
 \end{equation*}
 Die Abweichung von der Theorie beträgt somit 
 \begin{equation*}
-  \Delta_{res} = |\frac{f_{res}}{f_{theorie}} - 1| = 0.04\%.
+  \Delta_{res} = |\frac{f_{theorie}}{f_{res}} - 1| = 3.1\%.
 \end{equation*}
 
 Mit 

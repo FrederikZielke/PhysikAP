@@ -8,7 +8,7 @@ Das Ziel des Versuches ist es, das Elastizistätsmodul unterschiedlicher Metalls
 Kräfte, die auf die Oberfläche eines Objekts einwirken, verursachen Form- und Volumenänderungen. Diese Kräfte werden üblicherweise auf eine Flächeneinheit bezogen und die resultierende physikalische Größe wird als Spannung bezeichnet. 
 Die Komponente senkrecht zu ihrer Oberfläche heißt Normalspannung $\sigma$.
 Die flächenparallele Komponente ist dagegen die Tangential- oder Schubspannung. 
-Ist die Formänderung, die durch die relative Änderung ΔL/L (siehe \autoref{fig:hook}) hervorgerufen wird, klein, so kann mithilfe des Hookeschen Gesetzes eine lineare Beziehung zwischen
+Ist die Formänderung, die durch die relative Änderung ΔL/L hervorgerufen wird, klein, so kann mithilfe des Hookeschen Gesetzes eine lineare Beziehung zwischen
 der Änderung ΔL/L und der angelegten Spannung $\sigma$ hergestellt werden:
 \begin{equation}\label{eq:hook}
     \sigma = E \cdot \frac{\Delta L}{L}.
@@ -74,7 +74,16 @@ dabei ist I das Flächenträgheitsmoment, welches sich mit
 \begin{equation}\label{eq:flaeche_traegheit}
     I =  \int_{Q} y^2 dA
 \end{equation}
-berechnen lässt. Dabei ist das Integral ein Flächenintegral über die Querschnittsfläche des Stabes.
+berechnen lässt.
+Für einen rechteckigen Querschnitt ergibt sich 
+\begin{equation*}
+    I_{eckig} =  \int_{-\frac{d}{2}}^{\frac{d}{2}}\int_{-\frac{d}{2}}^{\frac{d}{2}} y^2 dydz
+\end{equation*}
+und für einen runden Querschnitt
+\begin{equation*}
+    I_{rund} =  \int_{0}^{2π}\int_{0}^{R} r^3 sin(\phi)^2 drd\phi.
+\end{equation*}
+Dabei ist das Integral ein Flächenintegral über die Querschnittsfläche des Stabes.
 Durch zweimalige Integration von \autoref{eq:lol} ergibt sich die Gleichung für die Auslenkung:
 \begin{equation}\label{eq:ausgleich}
     D(x) = \frac{F}{2 \cdot E \cdot I} \biggl(Lx^2 - \frac{x^3}{3}\biggr).
@@ -90,7 +99,7 @@ Durch zweimalige Integration von \autoref{eq:lol} ergibt sich die Gleichung für
     \vspace{10pt}
     \end{minipage}
     \begin{minipage}[4cm]{0.55\textwidth}
-        Spannt man den Stab auf beiden Seiten ein (\autoref{fig:beidseitig}), so greift die Kraft $F/2$ an der Querschnittsfläche $Q$ an.
+        Wird der Stab wie in \autoref{fig:beidseitig} beidseitig eingespannt, so greift die Kraft $F/2$ an der Querschnittsfläche $Q$ an.
         Es gilt daher
         \begin{equation*}
             M_F = 
@@ -100,18 +109,16 @@ Durch zweimalige Integration von \autoref{eq:lol} ergibt sich die Gleichung für
                 -\frac{F}{2}(L-x) & L/2 \leq x \leq L.
             \end{cases}
         \end{equation*}
-        Setzt man dies in \autoref{eq:lol} ein, lässt sich ein Ausdruck für die Auslenkung finden:
-        \begin{equation}\label{eq:auslenkung}
+        \vspace{10pt}
+    \end{minipage}
+    Wird dies in \autoref{eq:lol} eingesetzt, lässt sich ein Ausdruck für die Auslenkung finden:
+        \begin{equation}
             D(x) = 
             \begin{cases}
                 \frac{F}{48 \cdot E \cdot I} \biggl(-4x^3 + 3L^2x\biggr) & 0 \leq x \leq L/2 \\
                 \\
                 \frac{F}{48 \cdot E \cdot I} \biggl(4x^3 - 12Lx^2 + 9L^2x - L^3\biggr) & L/2 \leq x \leq L.
             \end{cases}
+            \label{eq:auslenkung}
         \end{equation}
-        \vspace{10pt}
-    \end{minipage}
     \newpage
-    %Hier die Formeln für das Flächenträgheitsmoment
-    %I_{eckig} &=  \int_{-\frac{d}{2}}^{\frac{d}{2}}\int_{-\frac{d}{2}}^{\frac{d}{2}} y^2 dydz
-    %I_{rund} &=  \int_{0}^{2π}\int_{0}^{R} y^2 dydz

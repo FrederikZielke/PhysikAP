@@ -8,10 +8,13 @@ U_C, f, a, b = np.genfromtxt('content/FrequenzMitb.txt', unpack=True)
 
 phi = a/b * np.pi * 2
 
-plt.plot(f, phi, "bx")
+plt.plot(f, phi, "bx", label = "Messwerte")
 theta = np.arange(0 , 2 * np.pi+np.pi/2, step=(np.pi / 2))
 plt.yticks(theta, ['0', 'π/2', 'π', '3π/2', '2π'])
 #plt.xscale('log')
+plt.xlabel(r'$f\,$[Hz]')
+plt.ylabel(r'$\phi$')
+plt.legend()
 
 #plt.show()
 plt.savefig('build/5d.pdf')

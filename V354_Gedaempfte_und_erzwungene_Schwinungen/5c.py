@@ -20,6 +20,7 @@ U_krit = 1/np.sqrt(2)*U_max/U0
 w_0 = unp.sqrt(1/(L*C))
 q = 1/(w_0*R2*C)
 b = R/L
+T_ex = 2*L/R1
 
 def g(x, a, b):
     return 1
@@ -31,6 +32,7 @@ print("kritischer Wert: ", 1/np.sqrt(2)*U_max/U0)
 print("Resonanzüberhöhung: ", U_max/U0 - U_krit)
 print("Resonanzüberhöhung Theorie: ", q)
 print("Breite: ", wplus - wminus)
+print("junge fuck man: ", T_ex)
 
 f1 = R2/(2*L) + unp.sqrt(R2**2/(4*L**2) + 1/(L*C)) 
 f2 = -R2/(2*L) + unp.sqrt(R2**2/(4*L**2) + 1/(L*C)) 
@@ -51,7 +53,7 @@ plt.axvline(x= 22.01, color='black', linestyle='--')
 plt.axvline(x= 29.215, color='black', linestyle='--')
 plt.plot(f, U_C/U0, 'bx', label = 'Messwerte')
 plt.xlabel(r'$f\,$[Hz]')
-plt.ylabel(r'$\frac{U_C}{U_0}\,$[V]')
+plt.ylabel(r'$\frac{U_C}{U_0}\,$')
 plt.legend()
 #plt.xlim(f[0]-0.1, f[-1]+1)
 plt.xscale('log')
