@@ -106,6 +106,8 @@ plt.ylabel(r'$D\:[\mathrm{μm}]$')
 plt.legend(loc="best")
 plt.title('Runder Stab zwischen Einspannung und Gewicht.')
 plt.grid()
+#plt.xlim(np.min(x_plot_r1), np.max(x_plot_r1))
+#plt.ylim(np.min(params_r1[0] * x_plot_r1 + params_r1[1]), np.max(Dr1))
 #plt.show()
 
 plt.savefig('build/beidseitig_r1.pdf')

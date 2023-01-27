@@ -17,6 +17,11 @@ L = 0.535#das könnte stuss sein aber haut ca hin
 a = g(x, L)
 #D = D*10**(-6)
 
+x2, D2 = np.genfromtxt('content/rund_einseitig.csv', unpack=True, delimiter=',')
+x2 = x2/100
+a2 = g(x2, L)
+#D2 *= 10**(-6)
+
 x_plot = np.linspace(np.min(a), np.max(a), 1000)
 
 params, covariance_matrix = np.polyfit(a, D, deg=1, cov=True)
@@ -40,11 +45,6 @@ plt.legend(loc = 'best')
 plt.savefig('build/eckig_einseitig.pdf')
 plt.show()
 plt.clf()
-
-x2, D2 = np.genfromtxt('content/rund_einseitig.csv', unpack=True, delimiter=',')
-x2 = x2/100
-a2 = g(x2, L)
-#D2 *= 10**(-6)
 
 x_plot = np.linspace(np.min(a2), np.max(a2), 1000)
 
