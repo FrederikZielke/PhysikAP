@@ -1,26 +1,45 @@
 \section{Diskussion}
 \label{sec:Diskussion}
 
+\begin{table}
+    \centering
+    \caption{Elastizitätsmodule $E$ für alle Einspannungskonstellationen.}
+    \label{tab:Einspannungskonstellationen}
+    \begin{tabular}{|c|c c|}
+        \toprule
+        & $E_{\text{eckig}}\:[\unit{\giga\pascal}]$ & $E_{\text{rund}}\:[\unit{\giga\pascal}]$\\
+        \cmidrule(lr){2-3}
+        einseitig & $(0.924 \pm 0.019)\times 10^3$ & $(1.123 \pm 0.027)\times 10^3$\\
+        \midrule
+        links & $(1.75 \pm 0.12)\times 10^3$ & $(1.84 \pm 0.13)\times 10^3$\\
+        rechts & $(2.10 \pm 0.14)\times 10^3$ & $(2.19 \pm 0.15)\times 10^3$\\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
 Um die Ergebnisse zu bewerten wird ermittelt aus welchem Metall die Stäbe bestehen. Durch einsetzen des Volumens sowie der in \autoref{sec:Auswertung}
 aufgenommenen Gewichte der Stäbe ergibt sich mit $ρ = \frac{m}{V}$ die Dichte. Die Dichte des eckigen Stabes beträgt $\SI{8.37(0.08)e3}{\gram\per\centi\meter\cubed}$, die 
 des runden Stabs beträgt $\SI{8.40(0.09)e3}{\gram\per\centi\meter\cubed}.$ Daraus wird geschlossen, dass es sich bei den Stäben um Messing handelt. 
 Aus der Literatur\cite{chemie.de} geht für Messing ein Wert von $\SIrange{78}{123}{\giga\pascal}$ hervor.
-Zu diesem Theoriewert ergeben sich folgende Abweichungen bei einseitiger Einspannung
+
+Die Abweichungen werden mit der Formel
 \begin{equation*}
-    ΔE_{\text{eckig}} = 86.69\% \quad ; \quad ΔE_{\text{rund}} = 89.04\%
+    ΔE = \left\lvert \frac{E_{\text{experiment}}}{E_{\text{theorie}}} - 1 \right\rvert 
+\end{equation*} berechnet.
+Zum Theoriewert $\SI{123}{\giga\pascal}$
+
+\begin{equation*}
+    ΔE_{\text{eckig}} = 651.2\% \quad ; \quad ΔE_{\text{rund}} = 813\%
 \end{equation*} 
 und bei beidseitiger Einspannung
 \begin{align*}
-    ΔE_{\text{eckig, linksseitig}} &= 92.97\% \quad ; &\quad ΔE_{\text{eckig, rechtsseitig}} &= 94.14\% \\
-    ΔE_{\text{rund, linksseitig}} &= 93.31\% \quad ; &\quad ΔE_{\text{rund, rechtsseitig}} &= 94.38\%.
+    ΔE_{\text{eckig, linksseitig}} &= 1322\% \quad ; &\quad ΔE_{\text{eckig, rechtsseitig}} &= 1607\% \\
+    ΔE_{\text{rund, linksseitig}} &= 1396\% \quad ; &\quad ΔE_{\text{rund, rechtsseitig}} &= 1680\%.
 \end{align*}
-Die Abweichungen wurden mit der Formel
-\begin{equation*}
-    ΔE = \frac{E_{\text{theorie}}}{E_{\text{experiment}}} - 1
-\end{equation*} berechnet.
-Die experimentell ermittelten Werte weichen um etwa eine Größenordnung von den theoretischen Werten ab.\\
+Die Abweichung der experimentell ermittelten Werten ist konsistent größer bei beidseitiger Einspannung.\\
 %Eine mögliche Fehlerquelle ist die Befestigung des Stabes. Es konnte nicht gewährleistet werden, dass sich der Stab bei beidseitiger Einspannung an den Enden nicht 
 %mehr bewegt.\\
+\\
 Alle ermittelten Elastizistätsmodule liegen in einer Größenordnung. Die Abweichungen zur Theorie sind also 
 wahrscheinlich auf Systematische Fehler zurückzuführen.\\
-\\
+\newpage
