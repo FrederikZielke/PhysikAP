@@ -2,7 +2,7 @@
 \label{sec:Zielsetzung}
 
 Im Versuch 602 soll die Bragg Bedingung experimentell gezeigt werden, das Emissionsspektrum einer Kupfer-Röntgenröhre untersucht werden
-und die Abschirmungskonstante $σ_k$ verschiedener Materialien bestimmt werden.
+und die Abschirmkonstante $σ_k$ verschiedener Materialien bestimmt werden.
 
 \section{Theorie}
 \label{sec:Theorie}
@@ -30,9 +30,50 @@ Die Bindungsenergie eines Elektrons auf der n-ten Schale $E_n$ lässt sich berec
 \begin{equation*}\label{eq:Bindungsenergie}
     E_n = -R_\infty z_{\text{eff}}^2 \cdot \frac{1}{n^2}.
 \end{equation*}
+In der Gleichung ist $R_\infty$ die Rydbergenergie, $z_{\text{eff}}$ die effektive Kernladung und $n$ die Schale.
+Die effektive Kernladung setzt sich zusammen aus der Kernladung $z$ und der Abschirmkonstante $σ$.
+Die Abschirmkonstante ist experimentell bestimmbar und für jedes Elektron verschieden.
+Elektronen auf äußeren Schalen haben leicht unterschiedliche Bindungsenergien, weshalb für höhere Schalen
+mehrere charakteristische Linien eng beieinander liegen, diese Linien werden als Freinstruktur bezeichnet. Mit dem verwendeten Versuchsaufbau können diese Linien nicht aufgelöst werden.
+\\
+
+\subsection{Absorption}
+\label{sec:Absorption}
+
+Die vorherrschenden Prozesse bei Absorption im Bereich unter $\SI{1}{\mega\eV}$ sind der Comptoneffekt und
+der Photoeffekt. Mit steigender Enerie sinkt der Absorptionskoeffizient.
+
+Die Absorptionskante liegt quasi identisch zur Elektronbindungsenergie. Die jeweiligen Energien werden nach
+ihrer Lage den verschiedenen Schalen zugeordnet und heißen Absorptionskanten.
+Unter Beachtung der Freinstruktur kann die Bindungsenergie eines Elektrons mit der Sommerfeldschen Feinstrukturformel
+ausgerechnet werden
+\begin{equation*}\label{eq:Bindungsenergie_Sommerfeld}
+    E_{n,j} = -R_\infty \left(z_{\text{eff},1}^2 \cdot \frac{1}{n^2} + α^2z_{\text{eff},2}^4 \cdot \frac{1}{n^3}\left(\frac{1}{j + \frac{1}{2}} - \frac{3}{4n}\right)\right).
+\end{equation*}
+Hier ist $α$ die Sommerfeldsche Feinstrukturkonstante, n die Hauptquantenzahl und j der Drehimpuls des Elektrons.
+Die Abschirmkonstante $σ_{K,\text{abs}}$ lässt sich für die K-Schale bestimmen mit
+\begin{equation*}\label{eq:Abschirmkonstante_K}
+    σ_K = Z - \sqrt{\frac{E_K}{R_\infty} - \frac{α^2Z^4}{4}}.
+\end{equation*}
+Durch Vereinfachung, indem die Energiedifferenz zwischen zwei L-Kanten genommen wird, kann die Abschirmkonstante
+$σ_L$ berechnet werden mit
+\begin{equation*}\label{eq:Abschirmkonstante_L}
+    σ_L = Z \cdot \left(\frac{4}{α}\sqrt{\frac{ΔE_L}{R_\infty}} - \frac{5ΔE_L}{R_{\infty}}\right)^{\frac{1}{2}}\left(1 + \frac{19}{32}α^2\frac{ΔE_L}{R_{\infty}}\right)^{\frac{1}{2}}.
+\end{equation*}
+
+\subsection{Bragg Reflexion}
+\label{sec:Bragg_Reflexion}
+Mit der Bragg'schen Reflexion lässt sich die Wellenlänge $λ$ der Röntgenstrahlung analysiert werden.
+Hierzu wird der Röntgenstrahl auf ein dreidimensionales Gitter gerichtet. Die Photonen werden am Kristall 
+gebeugt und interferieren miteinander. Nur im sogenannten Glanzwinkel $\Theta$ kommt es zu konstruktiver Interferenz.
+Die Bragg'sche Bedingung stellt einen Zusammenhang zwischen der Wellenlänge $λ$, dem Glanzwinkel $\Theta$ und der Gitterkonstante $d$ her.
+\begin{equation}\label{eq:Bragg_Bedingung}
+    2 d \sin(\Theta) = n λ
+\end{equation}
 
 
-
+% eq:Bragg_Bedingung
+% eq:Photonenenergie mit λ eingesetzt
 
 %Aus der Bragg Bedingung ergibt sich mit 
 %\begin{equation}
