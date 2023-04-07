@@ -20,7 +20,11 @@ Die minimale Wellenlänge kommt bei der vollständigen Bremsung des Elektrons zu
 
 Durch die auftreffenden Elektronen kann es dazu kommen, dass Elektronen der Anode auf eine höhere Schale 
 gehoben werden. Die entstandene Lücke wird durch einen Elektronenübergang von einer höheren Schale gefüllt.
-Die dabei frei werdende Energie wird in Form von Röntgenstrahlung abgegeben. Da die Schalen diskrete Energieniveaus besitzen,
+Die dabei frei werdende Energie wird in Form von Röntgenstrahlung abgegeben. Die Energie eines Photons wird beschrieben mit
+\begin{equation}\label{eq:Energie_Photon}
+    E_{\text{Photon}} = \frac{h\cdot c}{\lambda}.
+\end{equation}
+Da die Schalen diskrete Energieniveaus besitzen,
 ist die Energiedifferenz $h \cdot ν = E_m - E_n$ immer gleich groß. Wegen der festen Quantisierung der Energie,
 ist das charakteristische Spektrum in scharfe Linien aufgeteilt.
 Die Linien werden beispielsweise $K_α$ oder $L_β$ bezeichnet. Der Buchstabe bezieht sich auf die 
@@ -36,6 +40,13 @@ Die Abschirmkonstante ist experimentell bestimmbar und für jedes Elektron versc
 Elektronen auf äußeren Schalen haben leicht unterschiedliche Bindungsenergien, weshalb für höhere Schalen
 mehrere charakteristische Linien eng beieinander liegen. Diese Linien werden als Feinstruktur bezeichnet. Mit dem verwendeten Versuchsaufbau können diese Linien nicht aufgelöst werden.\\
 \\
+%Spektrales Auflösungsvermögen
+Die Auflösung eines Spektrums ist die Fähigkeit, zwei nahe beieinander liegende Linien zu unterscheiden. 
+Das Auflösungsvermögen wird berechnet mit
+\begin{equation}\label{eq:Spektrales_Auflösungsvermögen}
+    U = \frac{λ}{Δλ},
+\end{equation}
+wobei $λ$ die Wellenlänge des Peaks ist und $Δλ$ die Halbwertsbreite des Peaks.\\
 
 \subsection{Absorption}
 \label{sec:Absorption}
@@ -60,6 +71,13 @@ $σ_L$ berechnet werden mit
 \begin{equation*}\label{eq:Abschirmkonstante_L}
     σ_L = Z \cdot \left(\frac{4}{α}\sqrt{\frac{ΔE_L}{R_\infty}} - \frac{5ΔE_L}{R_{\infty}}\right)^{\frac{1}{2}}\left(1 + \frac{19}{32}α^2\frac{ΔE_L}{R_{\infty}}\right)^{\frac{1}{2}}.
 \end{equation*}
+Durch Vernachlässigung des Drehimpulsbeitrages, können die Abschirmkonstanten von Kupfer vereinfacht werden zu
+\begin{align}
+    σ_1 &= z - \sqrt{\frac{E_{K,\text{Abs}}}{R_\infty}}\\
+    σ_2 &= z - m \cdot \sqrt{\frac{1}{n^2} \cdot \frac{E_{K,\text{Abs}}}{R_\infty} - \frac{E_{K,α}}{R_\infty}}\\
+    σ_3 &= z - l \cdot \sqrt{\frac{1}{n^2} \cdot \frac{E_{K,\text{Abs}}}{R_\infty} - \frac{E_{K,β}}{R_\infty}} \\
+\end{align}
+mit $z = 29$, $n = 1$, $m = 2$, $l = 3$ und $E_{K,\text{Abs}} = \text{hier Wert einfügen}$.
 
 \subsection{Bragg Reflexion}
 \label{sec:Bragg_Reflexion}
