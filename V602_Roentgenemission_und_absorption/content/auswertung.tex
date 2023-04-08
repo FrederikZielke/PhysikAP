@@ -41,7 +41,7 @@ ablesen.
   \caption{Detailspektrum der $K_{\alpha}-$ und $K_{\beta}-$Linie.}
   \label{fig:detail}
 \end{figure}
-Mit \autoref{} und \autoref{} ergibt sich für die frei werdende Energie
+Mit \autoref{eq:lambda_min} und \autoref{eq:Energie_Photon} ergibt sich für die frei werdende Energie
 \begin{align*}
   E_{\alpha} &= \SI{8044}{eV} \\
   \text{und }E_{\beta} &= \SI{8915}{eV}.
@@ -51,12 +51,12 @@ Die Halbwertsbreiten sind in \autoref{fig:detail} ablesbar und betragen umgerech
   H_{\alpha} &= \SI{169}{eV} \\
   \text{und }H_{\beta} &= \SI{191}{eV}.
 \end{align*}
-Damit ergeben sich die Auflösungsvermögen nach \autoref{}
+Damit ergeben sich die Auflösungsvermögen nach \autoref{eq:Spektrales_Aufloesungsvermoegen}
 \begin{align*}
   A_{\alpha} &= 47.46 \\
   \text{und }A_{\beta} &= 46.72.
 \end{align*}
-Mit \autoref{eq_sig} lassen sich die Abschirmkonstanten zu
+Mit \autoref{eq:sig} lassen sich die Abschirmkonstanten zu
 \begin{align*}
   σ_1 &= 3.3\\
   σ_2 &= 12.5\\
@@ -65,3 +65,78 @@ Mit \autoref{eq_sig} lassen sich die Abschirmkonstanten zu
 Dabei wurde die Absorptionsenergie $E_{abs} = \SI{8.9789}{keV}$ aus entsprechender Literatur entnommen \cite{E_abs}.
 
 \subsection{Untersuchung des Absorptionsspektrums}
+In \autoref{fig:k-kanten} sind die Ausschläge des Geiger-Müller-Zählrohrs bei Verwendung verschiedener Absorber-Materialien dargestellt. 
+Die eingezeichneten K-Kanten sind näherungsweise auf die Mitte der Kante gelegt. Mit \autoref{eq:lambda_min}, \autoref{eq:Energie_Photon} 
+und \autoref{eq:sig} folgt
+\begin{table}\label{tab:1}
+  \centering
+  \begin{tabular}{c c c c c}
+      \toprule
+      {} & {$Z$} & {$E_{K}\left[\unit{keV}\right]$} & {$\Theta_{K}\left[\unit{°}\right]$} & {$\sigma_{K}$}\\
+      \midrule
+      Zn & 30 & 8.978  & 20.05 & 4.3 \\
+      Br & 35 & 13.480 & 13.2 & 3.5 \\
+      Sr & 38 & 16.060 & 11.05 & 3.6 \\
+      Zr & 40 & 17.727 & 10 & 3.9 \\
+      \bottomrule
+  \end{tabular}
+  \caption{Ergebnisse für Energie und Abschirmkonstante.}
+\end{table}
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.49\textwidth}
+      \centering
+      \includegraphics[width=\textwidth, height=10cm]{build/zink.pdf}
+      \caption[]
+      {{\small Zink-Absorber.}}    
+      \label{fig:zn}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.49\textwidth}  
+      \centering 
+      \includegraphics[width=\textwidth, height=10cm]{build/brom.pdf}
+      \caption[]
+      {{\small Brom-Absorber.}}    
+      \label{fig:br}
+  \end{subfigure}
+  \vskip\baselineskip
+  \begin{subfigure}[b]{0.49\textwidth}   
+      \centering 
+      \includegraphics[width=\textwidth, height=10cm]{build/strontium.pdf}
+      \caption[]
+      {{\small Strontium-Absorber.}}    
+      \label{fig:sr}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.49\textwidth}   
+      \centering 
+      \includegraphics[width=\textwidth, height=10cm]{build/zirkonium.pdf}
+      \caption[]
+      {{\small Zirkonium-Absorber}}    
+      \label{fig:zr}
+  \end{subfigure}
+  \caption[ The average and standard deviation of critical parameters ]
+  {\small K-Kanten verschiedener Absorber.} 
+  \label{fig:k-kanten}
+\end{figure}
+
+\subsection{Bestimmung der Rydbergenergie}
+Nach Moseley ist die Absorptionsenergie $E_K$ proportional zum Quadrat der Ordnungszahl $Z$. Mit diesem Zusammenhang ist es möglich die 
+Rydbergenergie $R_{\infty}$ durch eine Ausgleichgerade der Form 
+\begin{equation*}
+  \sqrt{E} = a \cdot Z + b
+\end{equation*}
+zu bestimmen. Mit den Ordnungszahlen und den zuvor berechneten Energien aus \autoref{tab:1} ergeben sich durch eine Ausgleichsrechnung mit der Python 
+Funktion curve fit \cite{scipy}
+\begin{align*}
+  a &= \SI{3.86(0.17)}{\sqrt{eV}}\\
+  \text{und } b &= \SI{-20.32(6.13)}{\sqrt{eV}}.
+\end{align*}
+Mit $R_{\infty} = a^{2}$ folgt für die Rydbergenergie
+\begin{equation*}
+  R_{\infty} = \SI{14.9(0.03)}{eV}.
+\end{equation*}
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{build/rydberg.pdf}
+  \caption{Ergebnisse aus \autoref{tab:1} und Ausgleichgerade.}
+\end{figure}
