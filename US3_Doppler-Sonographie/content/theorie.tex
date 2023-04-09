@@ -1,0 +1,54 @@
+\section{Zielsetzung}
+\label{sec:Zielsetzung}
+
+Mithilfe eines Ultraschall Doppler-Generators im Pulsbetrieb sollen das Stromungsprofil und die Fliessgeschwindigkeit
+in Abhängigkeit des Dopplerwinkels und der Strömungsgeschwindigkeit ermittelt werden.
+
+\section{Theorie}
+\label{sec:Theorie}
+
+In einem Frequenzbereich von ca. $\SI{20}{\kilo\Hz}$ bis $\SI{1}{\giga\Hz}$ wird von Ultraschall gesprochen.
+%Ich werde hier mal die erzeugung vom Ultraschall reinpacken obwohl es in der Anleitung erst viel später kommt
+%Ultraschall kann auf unterschiedliche Weise erzeugt werden.
+Im Experiment wird Ultraschall durch den reziproken piezo-elektrischen Effekt erzeugt. 
+Durch ein elektrisches Wechselfeld schwingt ein piezoelektrischer Kristall und sendet Ultraschallwellen aus.
+Die Schwingungsstärke des Kristalls ist am größten, wenn die Frequenz des Wechselfelds seiner Eigenfrequenz entspricht. 
+Dann kann er sehr hohe Schallenergien erzeugen. Der Piezokristall kann auch als Schallempfänger dienen, 
+indem er durch Schallwellen in Schwingung versetzt wird. Quarze sind die verbreitetsten piezoelektrischen Kristalle, 
+weil ihre physikalischen Eigenschaften konstant sind. Ihr piezoelektrischer Effekt ist aber eher schwach.
+Die verwendete Sonde besitzt einen Ultraschallempfenger und Sender.
+Der Doppler-Effekt beschreibt die Zu- oder Abnahme der Frequenz einer Schallwelle, wenn sich die Schalquelle und 
+der Beobachter relativ zueinander bewegen. 
+%Ich bin mir nicht sicher welche von beiden Formeln wir tatsächlich brauchen aber ich schreibe erstmal beide auf
+%man kann ja dann noch entscheiden welche wir verwenden
+Entfernt die Quelle sich vom Boeobachter, so sinkt die Frequenz $ν_{gr}$, nähert Sie sich, so steigt die Frequenz $ν_{kl}$.
+\begin{equation}\label{eq:Doppler1}
+    ν_{kl/gr} = \frac{ν_0}{1 \mp \frac{v}{c}}.%eigenlich muss das hier mit sicherheit in einen richtigen Satz eingegliedert werden aber who cares
+\end{equation}
+Bewegt sich nur der Beobachter und die Quelle ruht, so ergibt sich die Formel
+\begin{equation}\label{eq:Doppler2}
+    ν_{h/n} = ν_0 \left(1 \pm \frac{v}{c}\right)
+\end{equation}
+für die Frequenzänderung.\\
+
+Der Doppler-Effekt kann genutzt werden, um die Geschwindigkeit von bewegten Objekten zu bestimmen.
+Dadurch können beispielsweise Blutströme in Gefäßen oder die Bewegung von Flüssigkeiten in Rohren gemessen werden.
+%was fuer ein seltsamer Satz aber naja
+Die Frequenzverschiebung wird beschrieben durch
+\begin{equation*}
+    Δν - ν_0 \frac{v}{c} \left(\cos{α} + \cos{β}\right).
+\end{equation*}
+Bei dem im Aufbau verwendeten Impuls-Echo-Verfahren ist $α = β$, wodurch sich die Formel zu 
+\begin{equation}\label{eq:Frequenzverschiebung}
+    Δν = 2\, ν_0 \frac{v}{c} \cos{α}
+\end{equation}
+vereinfacht.\\
+%Das muss bestimmt auch in die Theorie aber kp wo
+Das Doppler-Prisma wird verwendet um die Ultraschallsonde direkt an die Rohre anzulegen.
+Es besitzt drei Einstellflächen, die es ermöglichen in Reproduzierbaren Dopplerwinkeln zu arbeiten.
+In jedem der Winkel ist der Abstand zwuschen der Ultraschallsonde under strömenden Flüssigkeit gleich groß.
+Mit 
+\begin{equation}\label{eq:Dopplerwinkel}
+    α = 90° - \arcsin{sin{Θ}\frac{c_L}{cP}}
+\end{equation}
+kann der Dopplerwinkel berechnet werden, wobei $Θ$ der Prismawinkel, $c_L$ die Schallgeschwindigkeit in der Dopplerflüssigkeit und $c_P$ die Schallgeschwindigkeit im Prisma ist.
