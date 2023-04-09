@@ -1,7 +1,7 @@
 \section{Zielsetzung}
 \label{sec:Zielsetzung}
 
-Mithilfe eines Ultraschall Doppler-Generators im Pulsbetrieb sollen das Stromungsprofil und die Fließgeschwindigkeit
+Mithilfe eines Ultraschall Doppler-Generators im Pulsbetrieb sollen das Stromungsprofil und die Fliessgeschwindigkeit
 in Abhängigkeit des Dopplerwinkels und der Strömungsgeschwindigkeit ermittelt werden.
 
 \section{Theorie}
@@ -43,3 +43,12 @@ Bei dem im Aufbau verwendeten Impuls-Echo-Verfahren ist $α = β$, wodurch sich 
     Δν = 2\, ν_0 \frac{v}{c} \cos{α}
 \end{equation}
 vereinfacht.\\
+%Das muss bestimmt auch in die Theorie aber kp wo
+Das Doppler-Prisma wird verwendet um die Ultraschallsonde direkt an die Rohre anzulegen.
+Es besitzt drei Einstellflächen, die es ermöglichen in Reproduzierbaren Dopplerwinkeln zu arbeiten.
+In jedem der Winkel ist der Abstand zwuschen der Ultraschallsonde under strömenden Flüssigkeit gleich groß.
+Mit 
+\begin{equation}\label{eq:Dopplerwinkel}
+    α = 90° - \arcsin{sin{Θ}\frac{c_L}{cP}}
+\end{equation}
+kann der Dopplerwinkel berechnet werden, wobei $Θ$ der Prismawinkel, $c_L$ die Schallgeschwindigkeit in der Dopplerflüssigkeit und $c_P$ die Schallgeschwindigkeit im Prisma ist.
