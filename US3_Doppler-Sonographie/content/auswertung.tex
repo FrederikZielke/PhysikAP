@@ -1,2 +1,105 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+Die in \autoref{sec:Auswertung} gezeigten Grafiken und Ausgleichsrechnungen sind mithilfe der Python-Bibliotheken Matplotlib \cite{matplotlib}, Scipy \cite{scipy} und Numpy \cite{numpy}
+erstellt worden.
+\subsection{Bestimmung der Strömungsgeschwindigkeit}
+Die aufgenommen Ergebnisse der ersten Messreihe werden mit \autoref{eq:f_ver} 
+in die Frequenzverschiebung umgerechnet und sind in \autoref{tab:deltaf} aufgelistet.
+\begin{table}[H]
+    \centering
+    \caption{Frequenzverschiebung bei verschiedenen Prisma-Winkeln und steigender Umdrehungszahl der Pumpe.}
+    \begin{tabular}{c c c c}
+        \toprule
+        {rpm} & {$\Delta f_{15} [\unit{Hz}]$} & {$\Delta f_{30} [\unit{Hz}]$} & {$\Delta f_{45} [\unit{Hz}]$}\\
+        \midrule
+        2020 & 36 & 35 & 51 \\
+        3060 & 73 & 90 & 129\\
+        4380 & 144& 181& 273\\
+        5180 & 280& 375& 414\\
+        8400 & 366& 460& 660\\
+        \bottomrule
+    \end{tabular}
+    \label{tab:deltaf}
+\end{table}
+Mit den zuvor berechneten Dopplerwinkeln aus \autoref{sec:Vorbereitung}, den Frequenzverschiebungen aus \autoref{tab:deltaf}
+, $f_{0} = \SI{2}{MHz}$, $c_{Fl} = \SI{1800}{\frac{m}{s}}$ und \autoref{eq:Frequenzverschiebung} ergeben sich die
+Strömungsgeschwindigkeiten in \autoref{tab:v}.
+\begin{table}[H]
+    \centering
+    \caption{Strömungsgeschwindigkeiten bei verschiedenen Prisma-Winkeln und steigender Umdrehungszahl der Pumpe.}
+    \begin{tabular}{c c c c}
+        \toprule
+        {rpm} & {$v_{15} [\unit{m/s}]$} & {$v_{30} [\unit{m/s}]$} & {$v_{45} [\unit{m/s}]$}\\
+        \midrule
+        2020 & 0.10 & 0.05 & 0.04 \\
+        3060 & 0.20 & 0.12 & 0.1\\
+        4380 & 0.40& 0.24& 0.21\\
+        5180 & 0.77& 0.51& 0.32\\
+        8400 & 1.01& 0.62& 0.51\\
+        \bottomrule
+    \end{tabular}
+    \label{tab:v}
+\end{table}
+Wird die Geschwindigkeit $v_k$ gegen $\frac{\Delta f_k}{cos(\alpha)}$ aufgetragen so entstehen die Plots in \autoref{fig:15}, \autoref{fig:30} und \autoref{fig:45}.
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{build/15.pdf}
+    \caption{Abhängigkeit der Strömungsgeschwindigkeit und dem ersten Dopplerwinkel.}
+    \label{fig:15}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{build/30.pdf}
+    \caption{Abhängigkeit der Strömungsgeschwindigkeit und dem zweiten Dopplerwinkel.}
+    \label{fig:30}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{build/45.pdf}
+    \caption{Abhängigkeit der Strömungsgeschwindigkeit und dem dritten Dopplerwinkel.}
+    \label{fig:45}
+\end{figure}
+
+%Die Frequenzverschiebung berechnet sich hierbei mit 
+%\begin{equation}\label{eq:f_ver}
+%    \Delta f = |f_{max} - f_{mean}|.
+%\end{equation}
+
+\subsection{Bestimmung des Strömungsprofils eines Rohres mit 10mm Durchmesser und einem Prismawinkel von 15°}
+Die Ergebnisse aus der zweiten Messreihe sind in \autoref{tab:s_v_I} aufgelistet. Dabei sind die Messdaten bei 3870rpm mit einer 1 indiziert und die 
+Messdaten bei 6020rpm mit einer 2.
+\begin{table}[H]
+    \centering
+    \caption{Strömungsgeschwindigkeit und Signalintensität bei verschiedenen Messtiefen.}
+    \begin{tabular}{c c c c c}
+        \toprule
+        {$s [\unit{mm}]$} & {$v_{1} [\unit{m/s}]$} & {$I_{1} [\unit{1000V^2/s}]$} & {$v_{2} [\unit{m/s}]$} & {$I_{2} [\unit{1000V^2/s}]$} \\
+        \midrule
+        12   & 22.3 & 200  & 31.8 & 2212\\
+        12.5 & 22.3 & 604  & 35   & 4395\\
+        13   & 22.3 & 1167 & 38.2 & 5892\\
+        13.5 & 23.9 & 1664 & 41.4 & 6543\\
+        14   & 25.5 & 1738 & 50.9 & 5903\\
+        14.5 & 28.7 & 1678 & 57.3 & 3976\\
+        15   & 31.8 & 1409 & 63.7 & 2823\\
+        15.5 & 31.8 & 1012 & 66.9 & 2077\\
+        16   & 31.8 & 756  & 66.9 & 1337\\
+        16.5 & 31.8 & 656  & 63.7 & 987\\
+        17   & 31.8 & 458  & 60.5 & 766\\
+        17.5 & 28.7 & 392  & 54.1 & 613\\
+        18   & 28.7 & 324  & 55.7 & 522\\
+        18.5 & 28.7 & 375  & 54.1 & 729\\
+        19   & 28.7 & 399  & 54.1 & 439\\
+        19.5 & 27.1 & 383  & 54.1 & 361\\
+        \bottomrule
+    \end{tabular}
+    \label{tab:s_v_I}
+\end{table}
+In \autoref{fig:s_gegen_v} ist $s$ gegen die Strömungsgeschwindigkeiten $v_1$ und $v_2$ geplottet. Desweiteren ist in \autoref{fig:s_gegen_I} $s$ gegen $I_1$ und $I_2$ aufgetragen.
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{build/s_gegen_v.pdf}
+    \caption{Abhängigkeit der Strömungsgeschwindigkeit von der Messtiefe.}
+    \label{fig:s_gegen_v}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{build/s_gegen_I.pdf}
+    \caption{Abhängigkeit der Signalintensität von der Messtiefe.}
+    \label{fig:s_gegen_I}
+\end{figure}

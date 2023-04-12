@@ -23,18 +23,18 @@ nice = ["15: ", "30: ", "45: "]
 #Frequenzverschiebung
 for i in range(len(f_mean)):
     fdiff[i] = np.abs(f_mean[i] - f_max[i])
-    #print(nice[i] ,fdiff[i])
+    print(nice[i] ,fdiff[i])
 
 v = [0, 0, 0]
 #Geschwindigkeit 
 for i in range(len(f_mean)):
     v[i] = (fdiff[i] * c_fl)/(2*f_0*np.cos(a[i]))
-    #print(nice[i], v[i])
+    print(nice[i], v[i])
 
 plot_y = [0, 0, 0]
 for i in range(len(v)):
     plot_y[i] = fdiff[i]/np.cos(a[i])
-    #print(nice[i], plot_y[i])
+    print(nice[i], plot_y[i])
 
 plt.plot(v[0], plot_y[0], 'bx', label = 'Messwerte bei 15°')
 plt.xlabel(r'$v \,$[m/s]')

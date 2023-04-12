@@ -1,6 +1,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy as sc
+import os
+import pathlib
+os.environ['MATPLOTLIBRC'] = (pathlib.Path(__file__).absolute().parent.parent.parent / 'default' / 'matplotlibrc').__str__()
+os.environ['TEXINPUTS'] =  (pathlib.Path(__file__).absolute().parent.parent.parent / 'default').__str__() + ':'
 
 #3870rpm
 s1, v1, I1 = np.genfromtxt("content/messung3870.txt", unpack = True)
@@ -27,7 +31,7 @@ plt.clf()
 #Plot s gegen I
 plt.plot(s1, I1, 'bx', label = 'Messwerte bei 3870rpm')
 plt.plot(s2, I2, 'rx', label = 'Messwerte bei 6020rpm')
-plt.ylabel(r'$I \,$[1000V^2/s]')
+plt.ylabel(r'$I \:[1000V^2/s]$')
 plt.xlabel(r'$s$[m]')
 plt.grid()
 plt.legend()
