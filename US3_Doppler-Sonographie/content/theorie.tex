@@ -21,13 +21,13 @@ Der Doppler-Effekt beschreibt die Zu- oder Abnahme der Frequenz einer Schallwell
 der Beobachter relativ zueinander bewegen. 
 %Ich bin mir nicht sicher welche von beiden Formeln wir tatsächlich brauchen aber ich schreibe erstmal beide auf
 %man kann ja dann noch entscheiden welche wir verwenden
-Entfernt die Quelle sich vom Boeobachter, so sinkt die Frequenz $ν_{gr}$, nähert Sie sich, so steigt die Frequenz $ν_{kl}$.
+Entfernt die Quelle sich vom Boeobachter, so sinkt die Frequenz $f_{gr}$, nähert Sie sich, so steigt die Frequenz $f_{kl}$.
 \begin{equation}\label{eq:Doppler1}
-    ν_{kl/gr} = \frac{ν_0}{1 \mp \frac{v}{c}}.%eigenlich muss das hier mit sicherheit in einen richtigen Satz eingegliedert werden aber who cares
+    f_{kl/gr} = \frac{f_0}{1 \mp \frac{v}{c}}.%eigenlich muss das hier mit sicherheit in einen richtigen Satz eingegliedert werden aber who cares
 \end{equation}
 Bewegt sich nur der Beobachter und die Quelle ruht, so ergibt sich die Formel
 \begin{equation}\label{eq:Doppler2}
-    ν_{h/n} = ν_0 \left(1 \pm \frac{v}{c}\right)
+    f_{h/n} = f_0 \left(1 \pm \frac{v}{c}\right)
 \end{equation}
 für die Frequenzänderung.\\
 
@@ -36,11 +36,15 @@ Dadurch können beispielsweise Blutströme in Gefäßen oder die Bewegung von Fl
 %was fuer ein seltsamer Satz aber naja
 Die Frequenzverschiebung wird beschrieben durch
 \begin{equation*}
-    Δν - ν_0 \frac{v}{c} \left(\cos{α} + \cos{β}\right).
+    Δf - f_0 \frac{v}{c} \left(\cos{α} + \cos{β}\right).
 \end{equation*}
+Die Frequenzverschiebung berechnet sich hierbei mit 
+\begin{equation}\label{eq:fver}
+    \Delta f = |f{max} - f_{mean}|.
+\end{equation}
 Bei dem im Aufbau verwendeten Impuls-Echo-Verfahren ist $α = β$, wodurch sich die Formel zu 
 \begin{equation}\label{eq:Frequenzverschiebung}
-    Δν = 2\, ν_0 \frac{v}{c} \cos{α}
+    Δf = 2\, f_0 \frac{v}{c} \cos{α}
 \end{equation}
 vereinfacht.\\
 %Das muss bestimmt auch in die Theorie aber kp wo
