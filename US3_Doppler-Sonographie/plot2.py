@@ -1,10 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy as sc
-import os
-import pathlib
-os.environ['MATPLOTLIBRC'] = (pathlib.Path(__file__).absolute().parent.parent.parent / 'default' / 'matplotlibrc').__str__()
-os.environ['TEXINPUTS'] =  (pathlib.Path(__file__).absolute().parent.parent.parent / 'default').__str__() + ':'
 
 #3870rpm
 s1, v1, I1 = np.genfromtxt("content/messung3870.txt", unpack = True)
