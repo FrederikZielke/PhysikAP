@@ -1,6 +1,8 @@
 \section{Zielsetzung}
 \label{sec:Zielsetzung}
 
+Im Versuch V703 soll die Kennlinie des Zählrohres, die Steigung des Geiger-Müller Plateaus und die Totzeit bestimmt werden.
+
 \section{Theorie}
 \label{sec:Theorie}
 
@@ -24,14 +26,14 @@ Aufgrund der geringen Stärke der Spannungsimpulse, müssen sie mithilfe eines V
 für den angeschlossenen Zähler verstärkt werden.
 \\
 \begin{figure}[h!]
-    \label{fig:gm-charakteristik}
     \centering
     \includegraphics[width=0.5\textwidth]{img/gm-charakteristik.png}
     \caption{Charakteristische Bereiche des Geiger-Müller-Zählrohrs.\cite{V703}}
+    \label{fig:gm-charakteristik}
 \end{figure}
 \\
 Das Detektierverhalten des Geiger-Müller-Zählrohrs ist abhängig von der angeschlossenen Spannung.
-Die Interaktion mit Strahlung lässt sich, wie in \autoref{fig:gm-charakteristik} zu sehen, in mehrere Bereiche aufteilen.
+Die Interaktion mit Strahlung lässt sich, wie in der \autoref{fig:gm-charakteristik} zu sehen, in mehrere Bereiche aufteilen.
 Im ersten Bereich, der Rekombination, verbinden sich Gasionen und Elektronen 
 mehrheitlich bevor sie die Kathode, beziehuungsweise die Anode erreichen. 
 \\
@@ -44,5 +46,67 @@ Es werden nur Ladungen detekiert, die durch die eingehende Strahlung getrennt we
 Im \textbf{Proportionalitätsbereich} werden Ladungspaare auch durch freie Elektronen erzeugt.
 Die große Feldstärke in der Nähe des Drates lößt Townsend-Lawinen aus. Dabei werden örtlich begrenzt hohe Mengen an Elektronen freigesetzt.
 Abhängig von Spannung, Gasart und Gasdruck kommt es zu einer Verstärkung des Strahlungsimpulses.%?????
+$α$-Teilchen erzeugen in diesem Bereich eine deutlich größere Ladung als $β$- und $γ$-Teilchen.
+Dadurch ist es möglich die Strahlungsarten zu unterscheiden.
 \\
 \\
+Im \textbf{Geiger-Müller-Bereich} werden zusätzlich noch Gasatome angeregt.
+Diese emmitieren daraufhin Photonen, welche Photoelektronen freisetzen.
+Auch durch diesen Prozess entstehen Elektronenlawinen.
+Dieser Effekt kann durch die Zugabe von Alkoholgas unterdrückt werden.
+Die Photonen werden durch den Alkohol absorbiert. Im Gegensatz zum Proportionalitätsbereich,
+sind die Townsend-Lawinen nicht mehr lokal begrenzt. Die frei werdenden Elektronen fließen über die Kathode ab.
+Die Gasionen sind träge und sammeln sich um die Anode herum und begrenzen dadurch die Ausbildung weiterer Lawinen.
+Die Größe der entstehenden Impulse ist unabhängig von der Art der einfallenden Strahlung.
+Der Geiger-Müller-Bereich ist der Arbeitsbereich des Zählrohrs. 
+Eine Erhöhung der Spannung führt nur zu einer geringfügigen Steigerung der Detektionsrate.
+In diesem Geiger-Müller Plateau wird in das erste Drittel der Arbeitspunkt gelegt.
+Dieser gibt die Betriebsspannung des Zählrohrs an.\\
+\\
+Steigert man die Spannung weiter, so kommt es zu einer \textbf{Dauerentladung}.
+Die Detektionsrate steigt stark an. Dieser Zustand ist schädlich für die Apparatur.
+\\
+\\
+Weitere Effekte die beachtet werden müssen. Beim auftreffen der Ionen auf die Kathode,
+können weitere Elektronen freigesetzt werden. Diese können zeitlich versetzt weitere Impulse erzeugen.
+Die Wahrscheinlichkeit einer solchen Nachentladung nimmt mit steigendem Verschleiß des Detektors und höherer Spannung zu.
+Das Geiger-Müller Plateau hat deswegen eine Steigung s.
+\begin{equation*}
+    s = \frac{ΔN}{N} \cdot 100\%/\SI{100}{\volt}.
+\end{equation*}
+Die Steigung wird aus der relativen Zählrateänderung bei einer Spannungsdifferenz von $\SI{100}{\volt}$ berechnet.
+Durch die Steigung ist es möglich die Qualtität des Zählrohrs zu bestimmen.\\
+\\
+\\
+\subsection{Totzeit}
+\label{sec:Totzeit}
+
+Haben sich alle freigesetzten Elektronen auf der Anode gesammelt, befinden sich nur noch Gasionen im Zählrohr.
+Durch die ansammlung positiver Ladungen sinkt das E-Feld stark ab und es kann keine weitere Strahlung mehr detektiert werden.
+Dieser Zustand wird Totzeit genannt. So bald die Ladung wieder abgegeben wurde, baut sich das E-Feld wieder auf und das Geiger-Müller-Zählrohr ist wieder betriebsbereit.
+Auf die Totzeit folg die Erholungszeit, in der zwar Strahlung detektiert werden kann, jedoch die Zählrohrspannung noch nicht wieder ihre volle Stärke erreicht hat.
+\\
+Zur Bestimmung der Totzeit kann die Zwei-Quellen-Methode verwendet werden.
+Bei dieser wird davon ausgegangen, dass mit steigender Zählrate die Zählratenverluste durch die Totzeit $τ$ zunimmt.
+Die tatsächliche Zählrate $N_0$ lässt sich mithilfe der gemessenen Zählrate $N$ und der Totzeit $τ$ berechnen.
+\begin{equation*}
+    N_0 = \frac{N}{1-N \cdot τ}.
+\end{equation*}
+Der aus der Totzeit resultierende Zählratenverlust kann berechnet werden mit
+\begin{equation*}
+    N_0 - N = \frac{N^2 \cdot τ}{1 - N \cdot τ}.
+\end{equation*}
+Misst man die Zählrate zweier Quellen zuerst getrennt und dann kombiniert, lässt sich die Totzeit mit
+\begin{equation*}
+    τ = \frac{N_1 + N_2 - N_{12}}{N_{12}^2 - N_1^2 - N_2^2}
+\end{equation*}
+berechnen.
+\\
+\\
+\subsection{Messunsicherheit}
+\label{sec:Messunsicherheit}
+Der relative Fehler einer Größe, die der Poissonverteilung unterliegt, lässt sich mit
+\begin{equation}
+    \frac{\sqrt{N}}{N} = \frac{1}{\sqrt{N}}
+\end{equation}
+berechnen. Hierbei ist $N$ die Anzahl der Ereignisse.
