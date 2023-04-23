@@ -16,15 +16,17 @@ Die Schwingungsstärke des Kristalls ist am größten, wenn die Frequenz des Wec
 Dann kann er sehr hohe Schallenergien erzeugen. Der Piezokristall kann auch als Schallempfänger dienen, 
 indem er durch Schallwellen in Schwingung versetzt wird. Quarze sind die verbreitetsten piezoelektrischen Kristalle, 
 weil ihre physikalischen Eigenschaften konstant sind. Ihr piezoelektrischer Effekt ist aber eher schwach.
-Die verwendete Sonde besitzt einen Ultraschallempfenger und Sender.
-Der Doppler-Effekt beschreibt die Zu- oder Abnahme der Frequenz einer Schallwelle, wenn sich die Schalquelle und 
+Die verwendete Sonde besitzt einen Ultraschallempfänger und Sender.
+Der Doppler-Effekt beschreibt die Zu- oder Abnahme der Frequenz einer Schallwelle, wenn sich die Schallquelle und 
 der Beobachter relativ zueinander bewegen. 
 %Ich bin mir nicht sicher welche von beiden Formeln wir tatsächlich brauchen aber ich schreibe erstmal beide auf
 %man kann ja dann noch entscheiden welche wir verwenden
-Entfernt die Quelle sich vom Boeobachter, so sinkt die Frequenz $f_{gr}$, nähert Sie sich, so steigt die Frequenz $f_{kl}$.
+Entfernt die Quelle sich vom Beobachter, so sinkt die Frequenz $f$ relativ zu einer ruhenden Quelle.
+Nähert die Quelle sich, so steigt die Frequenz $f$ relativ zu einer ruhenden Quelle.
 \begin{equation}\label{eq:Doppler1}
-    f_{kl/gr} = \frac{f_0}{1 \mp \frac{v}{c}}.%eigenlich muss das hier mit sicherheit in einen richtigen Satz eingegliedert werden aber who cares
+    f = \frac{f_0}{1 \mp \frac{v}{c}}%eigenlich muss das hier mit sicherheit in einen richtigen Satz eingegliedert werden aber who cares
 \end{equation}
+mit der Ausgangsfrequenz $f_0$ der Quelle, der Geschwindigkeit $v$ der Quelle und der Schallgeschwindigkeit $c$.\\
 Bewegt sich nur der Beobachter und die Quelle ruht, so ergibt sich die Formel
 \begin{equation}\label{eq:Doppler2}
     f_{h/n} = f_0 \left(1 \pm \frac{v}{c}\right)
@@ -37,16 +39,18 @@ Dadurch können beispielsweise Blutströme in Gefäßen oder die Bewegung von Fl
 Die Frequenzverschiebung wird beschrieben durch
 \begin{equation*}
     Δf - f_0 \frac{v}{c} \left(\cos{α} + \cos{β}\right).
-\end{equation*}
+\end{equation*}%hier noch etwas zu alpha und beta schreiben
+Hierbei beschreibt $α$ den Winkel zwischen dem bewegten Objekt und dem Ultraschallsender und $β$ den Winkel zwischen dem Objekt 
+und dem Ultraschallempfänger.\\
 Die Frequenzverschiebung berechnet sich hierbei mit 
 \begin{equation}\label{eq:fver}
-    \Delta f = |f{max} - f_{mean}|.
+    \Delta f = |f_{max} - f_{mean}|.
 \end{equation}
-Bei dem im Aufbau verwendeten Impuls-Echo-Verfahren ist $α = β$, wodurch sich die Formel zu 
+Bei dem im Aufbau verwendeten Impuls-Echo-Verfahren ist $α = β$, da sich Empfänger und Sender in der gleichen Sonde befinden. Dadurch vereinfacht sich die Formel zu 
 \begin{equation}\label{eq:Frequenzverschiebung}
-    Δf = 2\, f_0 \frac{v}{c} \cos{α}
+    Δf = 2\, f_0 \frac{v}{c} \cos{α}.
 \end{equation}
-vereinfacht.\\
+\\
 %Das muss bestimmt auch in die Theorie aber kp wo
 Das Doppler-Prisma wird verwendet um die Ultraschallsonde direkt an die Rohre anzulegen.
 Es besitzt drei Einstellflächen, die es ermöglichen in Reproduzierbaren Dopplerwinkeln zu arbeiten.
