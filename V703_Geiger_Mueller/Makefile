@@ -1,14 +1,15 @@
 all: build/V703.pdf
 
 # hier Python-Skripte:
-build/plot.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
-	# so that matplotlib can find the tex header when running
-	# LaTeX in the tmp directory
-	# and set the matplotlibrc
-	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot.py
+#build/kennlinie.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
+#	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot.py
+#
+#build/strom.pdf: plot2.py ../matplotlibrc ../header-matplotlib.tex | build
+#	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot2.py
+#hier weitere Abhängigkeiten für build/V000.pdf deklarieren:
+build/V703.pdf: build/strom.pdf build/kennlinie.pdf
 
-# hier weitere Abhängigkeiten für build/V703.pdf deklarieren:
-build/V703.pdf: build/plot.pdf
+
 
 build/V703.pdf: FORCE | build
 	# to find header and bib files in the main directory

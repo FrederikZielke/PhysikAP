@@ -20,16 +20,21 @@ x = np.linspace(300, 750, 1000)
 plt.plot(x, (a*x+b), color = 'black', label = 'Ausgleichsgerade')
 plt.legend(loc='best')
 plt.xlabel(r'$U\,$[V]')
-plt.ylabel(r'$N\,$/$\,\frac{Imp}{s}$')
+plt.ylabel(r'$N\,$/$\,\frac{Imp}{60s}$')
 plt.savefig('build/kennlinie.pdf')
 #plt.show()
-
+#print(a1, b1)
 #Bestimmung der Totzeit
 
 N_1 = ufloat(93859, np.sqrt(93859))
 N_2 = ufloat(147003, np.sqrt(147003))
 N_12 = ufloat(223808, np.sqrt(223808))
+N_1 = N_1/120
+N_2 = N_2/120
+N_12 = N_12/120
 
 T = (N_1 + N_2 - N_12)/((N_12)**2 - (N_1)**2 - (N_2)**2)
+
+print(N_1, N_2, N_12, T)
 
 
