@@ -1,21 +1,35 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from uncertainties import ufloat
+from uncertainties import unumpy as unp
+from scipy.stats import linregress
 
-x = np.linspace(0, 10, 1000)
-y = x ** np.sin(x)
+U, I, N = np.genfromtxt('content/messung1.csv', unpack = True, delimiter = ',')
 
-plt.subplot(1, 2, 1)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \mathbin{/} \unit{\ohm}$')
-plt.ylabel(r'$y \mathbin{/} \unit{\micro\joule}$')
+N_err = unp.sqrt(N)
+
+plt.errorbar(x = U, y = N, yerr = N_err, fmt = 'x', ecolor='red', color = 'blue', markersize = 5, elinewidth = 1, label = 'Messwerte mit Fehler')
+
+lin = linregress(U[3:-3], N[3:-3])
+a1 = ufloat(lin.slope, lin.stderr)
+b1 = ufloat(lin.intercept, lin.intercept_stderr)
+a = lin.slope
+b = lin.intercept
+
+x = np.linspace(300, 750, 1000)
+plt.plot(x, (a*x+b), color = 'black', label = 'Ausgleichsgerade')
 plt.legend(loc='best')
+plt.xlabel(r'$U\,$[V]')
+plt.ylabel(r'$N\,$/$\,\frac{Imp}{s}$')
+plt.savefig('build/kennlinie.pdf')
+#plt.show()
 
-plt.subplot(1, 2, 2)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \mathbin{/} \unit{\ohm}$')
-plt.ylabel(r'$y \mathbin{/} \unit{\micro\joule}$')
-plt.legend(loc='best')
+#Bestimmung der Totzeit
 
-# in matplotlibrc leider (noch) nicht möglich
-plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
-plt.savefig('build/plot.pdf')
+N_1 = ufloat(93859, np.sqrt(93859))
+N_2 = ufloat(147003, np.sqrt(147003))
+N_12 = ufloat(223808, np.sqrt(223808))
+
+T = (N_1 + N_2 - N_12)/((N_12)**2 - (N_1)**2 - (N_2)**2)
+
+
