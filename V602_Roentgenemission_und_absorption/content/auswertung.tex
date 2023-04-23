@@ -17,11 +17,11 @@ eingestellt.
 \end{figure}
 Das Maximum der Kurve lässt sich aus \autoref{fig:braggbedingung} bei
 \begin{equation*}
-  \Theta_{max} = \SI{14.05}{°}
+  \Theta_{max} = \SI{14.05(0.05)}{°}
 \end{equation*}
 ablesen und beträgt
 \begin{equation*}
-  R_{max} = \SI{203}{Imp/s}.
+  R_{max} = \SI{203(1)}{Imp/s}.
 \end{equation*}
 
 \subsection{Das Emissionsspektrum einer Cu-Röntgenröhre}
@@ -33,8 +33,8 @@ ablesen und beträgt
 
 In \autoref{fig:spektrum} ist der Bremsberg gekennzeichnet. Die K-Linien lassen sich in \autoref{fig:detail} bei 
 \begin{align*}
-  \Theta_{\beta} &= \SI{20.2}{°} \\
-  \text{und }\Theta_{\alpha} &= \SI{22.5}{°}
+  \Theta_{\beta} &= \SI{20.2(0.1)}{°} \\
+  \text{und }\Theta_{\alpha} &= \SI{22.5(0.1)}{°}
 \end{align*}
 ablesen.
 \begin{figure}[H]
@@ -44,24 +44,31 @@ ablesen.
 \end{figure}
 Mit \autoref{eq:lambda_min} und \autoref{eq:Energie_Photon} ergibt sich für die frei werdende Energie
 \begin{align*}
-  E_{\alpha} &= \SI{8044}{eV} \\
-  \text{und }E_{\beta} &= \SI{8915}{eV}.
+  E_{\alpha} &= \SI{8044(34)}{eV} \\
+  \text{und }E_{\beta} &= \SI{8915(40)}{eV}.
 \end{align*}
-Die Halbwertsbreiten sind in \autoref{fig:detail} ablesbar und betragen umgerechnet in Energien
+Die Halbwertsbreiten sind in \autoref{fig:detail} ablesbar (siehe \autoref{eq:detail}) und betragen umgerechnet in Energien
 \begin{align*}
   H_{\alpha} &= \SI{169}{eV} \\
   \text{und }H_{\beta} &= \SI{191}{eV}.
 \end{align*}
+\begin{align}\label{eq:detail}
+  \beta_1 &= \SI{20.4(0.1)}{°}\\
+  \beta_2 &= \SI{19.9(0.1)}{°}\\
+  \alpha_1 &= \SI{22.7(0.1)}{°}\\
+  \alpha_2 &= \SI{22.2(0.1)}{°}.
+\end{align}
+
 Damit ergeben sich die Auflösungsvermögen nach \autoref{eq:Spektrales_Aufloesungsvermoegen}
 \begin{align*}
-  A_{\alpha} &= 47.46 \\
-  \text{und }A_{\beta} &= 46.72.
+  A_{\alpha} &= \SI{42(13)}{}\\
+  \text{und }A_{\beta} &= \SI{53(15)}{}.
 \end{align*}
 Mit \autoref{eq:sig} lassen sich die Abschirmkonstanten bestimmen
 \begin{align*}
-  σ_1 &= 3.3\\
-  σ_2 &= 12.5\\
-  σ_3 &= 22.1.\\
+  \sigma_1 &= 3.3\\
+  \sigma_2 &= \SI{12.42(0.30)}{}\\
+  \sigma_3 &= \SI{22.5(2.2)}{}.
 \end{align*}
 Dabei wurde die Absorptionsenergie $E_{abs} = \SI{8.9789}{keV}$ aus entsprechender Literatur entnommen \cite{E_abs}.
 
@@ -75,15 +82,16 @@ und \autoref{eq:sig} folgt
       \toprule
       {} & {$Z$} & {$E_{K}\left[\unit{keV}\right]$} & {$\Theta_{K}\left[\unit{°}\right]$} & {$\sigma_{K}$}\\
       \midrule
-      Zn & 30 & 8.978  & 20.05 & 4.3 \\
-      Br & 35 & 13.480 & 13.2 & 3.5 \\
-      Sr & 38 & 16.060 & 11.05 & 3.6 \\
-      Zr & 40 & 17.727 & 10 & 3.9 \\
+      Zn & 30 & $\SI{8.98(0.04)}{}$  & $\SI{20.1(0.1)}{}$ & $\SI{4.31(0.06)}{}$ \\
+      Br & 35 & $\SI{13.48(0.10)}{}$ & $\SI{13.2(0.1)}{}$ & $\SI{3.52(0.12)}{}$ \\
+      Sr & 38 & $\SI{16.06(0.14)}{}$ & $\SI{11.1(0.1)}{}$ & $\SI{3.64(0.15)}{}$ \\
+      Zr & 40 & $\SI{17.73(0.18)}{}$ & $\SI{10.0(0.1)}{}$ & $\SI{3.90(0.18)}{}$ \\
       \bottomrule
-      \label{tab:1}
   \end{tabular}
   \caption{Ergebnisse für Energie und Abschirmkonstante.}
+  \label{tab:1}
 \end{table}
+
 \begin{figure}[H]
   \centering
   \begin{subfigure}[b]{0.49\textwidth}
