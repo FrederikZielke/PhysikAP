@@ -1,11 +1,11 @@
 all: build/V703.pdf
 
 # hier Python-Skripte:
-#build/kennlinie.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
-#	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot.py
-#
-#build/strom.pdf: plot2.py ../matplotlibrc ../header-matplotlib.tex | build
-#	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot2.py
+build/kennlinie.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot.py
+
+build/strom.pdf: plot2.py ../matplotlibrc ../header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot2.py
 #hier weitere Abhängigkeiten für build/V000.pdf deklarieren:
 build/V703.pdf: build/strom.pdf build/kennlinie.pdf
 
