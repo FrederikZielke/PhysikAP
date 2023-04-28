@@ -7,6 +7,9 @@
 \subsection{Grundlagen}
 \label{sec:Grundlagen}
 
+% Licht wird durch angeregte Atome ausgestrahlt
+Hier muss noch ergänzt werden
+
 % Licht als E(M)-Welle
 Das Verhalten von Licht kann gut durch eine Betrachtung als elektromagnetische Wellen
 dargestellt werden. Diese Wellen lassen sich durch die Maxwellgleichungen beschreiben.
@@ -16,9 +19,41 @@ dargestellt werden. Diese Wellen lassen sich durch die Maxwellgleichungen beschr
     \text{Dritte } & \text{Maxwellgleichung:} & \text{Vierte } & \text{Maxwellgleichung:} \\
     \vec{\nabla} \times \vec{E} &= - \frac{\partial \vec{B}}{\partial t}   &  \vec{\nabla} \times \vec{B} &= \mu_0 \epsilon_0 \frac{\partial \vec{E}}{\partial t}
 \end{align*}
+Hierbei steht $E$ für die elektrische Feldstärke, $ε_0$ für die elektrische Feldkonstante,
+$B$ für die magnetische Flussdichte und $μ_0$ für die magnetische Feldkonstante.
+Im weiteren Verlauf wird nur das E-Feld betrachtet.
+Die Orts- und Zeitabhängigkeit des Feldes einer ebenen Welle lässt sich ausrücken durch
+\begin{equation*}
+    \vec{E}\left(x,t\right) = \vec{E}_0 \cos\left( k x - ω t - δ\right)\, ,
+\end{equation*}
+mit $\vec{E}_0$ als gerichtete Amplitude, $k$ als Wellenzahl, $x$ als Ortskoordinate, $ω$ als Wellenzahl, $t$ als Zeit und $δ$ als Phasenverschiebung.
 % lin Superposition
+Bei den Maxwellgleichungen handelt es sich um lineare Differentialgleichungen.
+Aufgrund dieser Linearität lassen sich einzelne Lichtwellen auch linear Superpositionieren.
+Die Feldstärke an einem bestimmten Raumpunkt ist gleich der Summe der einzelnen Wellen.
+\begin{equation*}
+    \vec{E} = \vec{E}_1 + \vec{E}_2 + \vec{E}_3 + ...
+\end{equation*}
 % -> Messung des E-Felds durch Lichtintensität I
-% Licht wird durch angeregte Atome ausgestrahlt
+Das E-Feld selbst lässt sich nicht direkt messen.
+Um also das E-Feld zu messen, nimmt man den "Umweg" über die Lichtintensität $I$.
+Diese ist proportional zum Betragsquadrat des E-Feldes $I = \text{const} |\vec{E}|^2$.
+Die Intensität $I_{\text{ges}}$ an einem Ort $x$ auf den zwei Quellen strahlen,
+ergibt sich zu 
+\begin{equation*}
+    I_{\text{ges}} = \frac{\text{const}}{t_2 - t_1} \int_{t_1}^{t_2} \left( \vec{E}_1 + \vec{E}_2 \right)^2 \left(x,t\right) \text{d}t\, .
+\end{equation*}
+Durch ausrechnen gelangt man zu dem Term
+\begin{equation*}
+    I_{\text{ges}} = 2\text{const}\vec{E}_0^2\left(1 + \cos{δ_2-δ_1}\right).
+\end{equation*}
+Die Intensität setzt sich also aus der Summe der Einzelintensitäten zusammen,
+sowie einem \textbf{Interferenzterm}
+\begin{equation*}
+    2\text{const}\vec{E}_0^2\cos{δ_2-δ_1}\, .
+\end{equation*}
+Dieser Interferenzterm ist abhängig von der Phasenverschiebung $δ$ und erzeugt eine Abweichung von bis zu $\pm 2\text{const}\vec{E}_0^2.$ 
+Der Interferenzterm verschwindet wenn die Differenz der beiden Einzelintensitäten gleich $(2n + 1)π$ mit $n \in \mathbb{N}_0$ ist.
 
 \subsection{Interferenz}
 \label{sec:Interferenz}
