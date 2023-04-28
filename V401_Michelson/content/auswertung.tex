@@ -1,12 +1,45 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
+\subsection{Bestimmung der Wellenlänge eines Lasers}
+\begin{table}[H]
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+  \caption{Gezählte Maxima bei vorwärts und rückwärts drehendem Motor.}
+  \begin{tabular}{c c}
+      \toprule
+      vor & zurück\\
+      \midrule
+      2403 & 2730\\
+      2533 & 2720\\
+      2434 & 2689\\
+      2435 & 2693\\
+      2453 & 2987\\
+      \bottomrule
+  \end{tabular}
+  \label{tab:wellenleange}
+\end{table}
+Die Messdaten bei Verschiebung des Spiegels sind in \autoref{tab:wellenleange} aufgeführt. Da deutliche Unterschiede bei der Zählung der 
+Maxima je nach Drehrichtung des Motors aufgetreten sind, wurde hier zwischen vor und zurück unterschieden. Der Motor bewegt sich um 
+$\Delta_{motor} = \SI{5(0.1)}{mm}$. Durch die Hebelübersetzung von 1:5.046 bewegt sich der Spiegel also absolut um $\Delta s = \SI{9.91(0.2)}{mm}$.
+\\
+\\
+Aus den Werten in \autoref{tab:wellenleange} wird jeweils ein Mittelwert $\overline{vor}$ bzw. $\overline{zurueck}$ gebildet. Ein dabei auftretender Fehler wird aufgrund von 
+systematischen Fehlern (z.B. wenn der Motor nicht rechtzeitig gestoppt wird oder bei Erschütterungen der Messapperatur) auf $vor_{err} = \pm 100$ und $zurueck_{err} = \pm 50$ festgelegt.
+So ergibt sich 
+\begin{align*}
+  \overline{v} &= \SI{2763.8(100)}{}\\
+  \text{und } \overline{z}\, &= \SI{2451.6(50)}{}.
+\end{align*}
+Der Fehler des Motors wird auf $motor_{err} = \pm 0.1 \unit{mm}$ festgelegt. Einerseits ist dies mit einem verzögerten Ausschalten des Motors sowie einem nicht
+ganz sauberen laufenden Motors zu begründen.
+\\
+\\
+Mithilfe dieser Werte kann dann nach \autoref{eq:} die Wellenlänge des Lasers bestimmt werden. Auch hier wird aufgrund deutlicher Abweichungen je nach Drehrichtung
+ein $\lambda_{v}$ und $\lambda_{z}$ angegeben.
+Es ergibt sich 
+\begin{align*}
+  \lambda_{v} &= \SI{717(14)}{nm}\\
+  \text{und } \lambda_{z} &= \SI{808(16)}{nm}.
+\end{align*}
 
-
-Siehe \autoref{fig:plot}!
+\subsection{}
