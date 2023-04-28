@@ -50,18 +50,17 @@ o_mean = o_mean/len(o)
 delta_p = ufloat(600, 20)*133.322
 p_0 = 101325
 T_0 = 273.15
-T = 293.15
+T = ufloat(293.15, 1)
 b = 50 * 10**3
 lam = 680 * 10**(-9)
 
-in_mean = ufloat(i_mean, 2)
-out_mean = ufloat(o_mean, 4)
+in_mean = ufloat(i_mean, 3)
+out_mean = ufloat(o_mean, 3)
+mean = (in_mean + out_mean)/2
 
-delta_n_i = (in_mean*lam*T*p_0)/(2*b*T_0*delta_p)
-n_i = delta_n_i + 1
-delta_n_o = (out_mean*lam*T*p_0)/(2*b*T_0*delta_p)
-n_o = delta_n_o + 1
-print(n_i, n_o)
+delta_n = (mean*lam*T*p_0)/(2*b*T_0*delta_p)
+n = delta_n + 1
+print(n)
 print(r_mean, v_mean)
 
 

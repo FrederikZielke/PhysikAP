@@ -1,5 +1,7 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+Die in \autoref{sec:Auswertung} gezeigten Grafiken und Rechnungen sind mithilfe der Python-Bibliotheken Matplotlib \cite{matplotlib}, Scipy \cite{scipy} und Numpy \cite{numpy}
+erstellt worden.
 
 \subsection{Bestimmung der Wellenlänge eines Lasers}
 \begin{table}[H]
@@ -42,4 +44,41 @@ Es ergibt sich
   \text{und } \lambda_{z} &= \SI{808(16)}{nm}.
 \end{align*}
 
-\subsection{}
+\subsection{Bestimmung des Brechungsindexes von Luft}
+Die Anzahl der Maxima beim reinpumpen und rauslassen der Luft sind in \autoref{tab:Brechungsindex} aufgelistet.
+\begin{table}[H]
+  \centering
+  \caption{Gezählte Maxima beim Rein- und Rauslassen der Luft.}
+  \begin{tabular}{c c}
+      \toprule
+      $Z_{rein}$ & $Z_{raus}$\\
+      \midrule
+      15 & 48\\
+      13 & 43\\
+      11 & 42\\
+      11 & 44\\
+      13 & 47\\
+      \bottomrule
+  \end{tabular}
+  \label{tab:wellenleange}
+\end{table}
+Hierbei ist wichtig zu erwähnen, dass der Zähler nicht nach dem reinlassen der Luft zurückgesetzt wurde, d.h. die Anzahl der gezählten Maxima beim Herauslassen der Luft
+ergeben sich mit
+\begin{equation*}
+  Z_{raus} = Z_{raus} - Z_{rein}.
+\end{equation*}
+Da beim Rein- bzw. Rauslassen der Luft nicht immer ein $\Delta p = \SI{600}{mmHg}$ gewährt worden konnte, wird ein Fehler von $\pm \SI{20}{mmHg}$ festgelegt, d.h. es gilt 
+$\Delta p = \SI{600(20)}{mmHg}$.
+Da kein konstantes $\Delta p$ bei jeder Messung erreicht werden konnte, muss auch ein Fehler für die Anzahl der Maxima abgeschätzt werden. Aufgrund der Schwankungen
+wird ein Fehler von $\pm 3$ angesetzt.
+Aus den Messwerten von $Z_{raus}$ und $Z_{rein}$ wird ein Mittelwert $\overline{Z}$ gebildet. Der Brechungsindex von Luft ergibt sich dann zu
+\begin{equation*}
+  n = 1 + \Delta n = \SI{1.000000000207(0.000000000021)}{}.
+\end{equation*}
+Das $\Delta n$ wird dabei nach \autoref{eq:} wie folgt berechnet:
+\begin{equation*}
+  \Delta n = \frac{\overline{Z}\lambda \cdot T \cdot p_0}{2b \cdot T_0 \cdot \Delta p}.
+\end{equation*}
+Dabei ist $\overline{Z}$ die gemittelte Anzahl der gezählten Maxima, $\lambda = \SI{680}{nm}$ die Wellenlänge des Lasers, $T = \SI{293.15(1)}{K}$ die Raumtemperatur,
+$p_0 = \SI{101325}{Pa}$ \cite{p_normal} der Normaldruck, $b = \SI{50}{mm}$ die Schichtdicke der Messzelle, $T_0 = \SI{273.15}{K}$ die Normaltemperatur und $\Delta p = \SI{600}{mmHg}$
+die durch die Pumpe hervorgerufene Druckänderung.
