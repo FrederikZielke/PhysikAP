@@ -30,7 +30,7 @@ v_miterr = ufloat(v_mean, 50)
 lambda_r = (2*delta_s1)/r_mean
 lambda_v = (2*delta_s1)/v_mean
 
-print(lambda_r, lambda_v)
+#print(lambda_r, lambda_v)
 #Bestimmung des Brechungsindize
 
 i, o = np.genfromtxt('content/messung_brechungsindex.csv', unpack = True, delimiter = ',')
@@ -51,7 +51,7 @@ delta_p = ufloat(600, 20)*133.322
 p_0 = 101325
 T_0 = 273.15
 T = ufloat(293.15, 1)
-b = 50 * 10**3
+b = 50 * 10**(-3)
 lam = 680 * 10**(-9)
 
 in_mean = ufloat(i_mean, 3)
@@ -60,7 +60,7 @@ mean = (in_mean + out_mean)/2
 
 delta_n = (mean*lam*T*p_0)/(2*b*T_0*delta_p)
 n = delta_n + 1
-print(n)
-print(r_mean, v_mean)
+#print(n)
+#print(r_mean, v_mean)
 
 
