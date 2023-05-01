@@ -1,6 +1,9 @@
 \section{Zielsetzung}
 \label{sec:Zielsetzung}
 
+Im Versuch V401 wird die Funktionsweise eines Michelson-Interferometers untersucht. 
+Dazu wird die Weglänge und der Brechungsindex verändert.
+
 \section{Theorie}
 \label{sec:Theorie}
 
@@ -30,47 +33,47 @@ mit $\vec{E}_0$ als gerichtete Amplitude, $k$ als Wellenzahl, $x$ als Ortskoordi
 % lin Superposition
 Bei den Maxwellgleichungen handelt es sich um lineare Differentialgleichungen.
 Aufgrund dieser Linearität lassen sich einzelne Lichtwellen auch linear Superpositionieren.
-Die Feldstärke an einem bestimmten Raumpunkt ist gleich der Summe der einzelnen Wellen.
+Die Feldstärke an einem bestimmten Raumpunkt ist gleich der Summe der einzelnen Wellen
 \begin{equation*}
     \vec{E} = \vec{E}_1 + \vec{E}_2 + \vec{E}_3 + ...
 \end{equation*}
 % -> Messung des E-Felds durch Lichtintensität I
 Das E-Feld selbst lässt sich nicht direkt messen.
-Um also das E-Feld zu messen, nimmt man den "Umweg" über die Lichtintensität $I$.
-Diese ist proportional zum Betragsquadrat des E-Feldes $I = \text{const} |\vec{E}|^2$.
+Um also das E-Feld zu messen, nimmt man den Umweg über die Lichtintensität $I$.
+Diese ist proportional zum Betragsquadrat des E-Feldes $I \propto |\vec{E}|^2$.
 Die Intensität $I_{\text{ges}}$ an einem Ort $x$ auf den zwei Quellen strahlen,
 ergibt sich zu 
 \begin{equation*}
     I_{\text{ges}} = \frac{\text{const}}{t_2 - t_1} \int_{t_1}^{t_2} \left( \vec{E}_1 + \vec{E}_2 \right)^2 \left(x,t\right) \text{d}t\, .
 \end{equation*}
-Durch ausrechnen gelangt man zu dem Term
+Durch ausrechnen gelangt man zum Term
 \begin{equation}\label{eq:Intensitaet}
-    I_{\text{ges}} = 2\text{const}\vec{E}_0^2\left(1 + \cos{(δ_2-δ_1)}\right).
+    I_{\text{ges}} = 2\,\text{const}\vec{E}_0^2\left(1 + \cos{(δ_2-δ_1)}\right).
 \end{equation}
 Die Intensität setzt sich also aus der Summe der Einzelintensitäten zusammen,
-sowie einem \textbf{Interferenzterm}
+sowie einem Interferenzterm
 \begin{equation*}
-    2\text{const}\vec{E}_0^2\cos{(δ_2-δ_1)}\, .
+    2\,\text{const}\vec{E}_0^2\cos{(δ_2-δ_1)}\, .
 \end{equation*}
-Dieser Interferenzterm ist abhängig von der Phasenverschiebung $δ$ und erzeugt eine Abweichung von bis zu $\pm 2\text{const}\vec{E}_0^2.$ 
+Dieser Interferenzterm ist abhängig von der Phasenverschiebung $δ$ und erzeugt eine Abweichung von bis zu $\pm 2\,\text{const}\vec{E}_0^2.$ 
 Der Interferenzterm verschwindet wenn die Differenz der beiden Einzelintensitäten gleich $(2n + 1)π$ mit $n \in \mathbb{N}_0$ ist.
 
 \subsection{Interferenz}
 \label{sec:Interferenz}
 
 Licht wird durch angeregte Atome ausgestrahlt. 
-Kehren angeregt Elektronen in ihren Grundzustand zurück, wird Licht emmitiert.
+Kehren die angeregten Elektronen der Atome in ihren Grundzustand zurück, wird Licht emmitiert.
 Die ausgesandten Wellenzüge haben eine endliche Länge.
 Die Wellenlänge und Phasenverschiebung sind dabei statistisch verteilt.
 Darum können diese Quellen nicht unverändert zur Erzeugung von Interferenzeffekten verwendet werden.
-Nicht interferenzfähiges Lich wird \textbf{inkohärent} genannt.
+Nicht interferenzfähiges Lich wird inkohärent genannt.
 Kohärentes Licht zeichnet sich durch eine feste Wellenzahl $k,$ Frequenz $ω$ und Phasenverschiebung $δ$ in \autoref{eq:ebeneWelle} aus.
 Im Michelson-Interferometer wird ein LASER verwendet.
 Dieser erzeugt kohärentes Licht.
 %Meinst du wir sollten noch genauer drauf eingehen was ein Laser ist?
-
 Um einen Gangunterschied bei kohährentem Licht zu erzeugen, kann der Strahl gespalten werden.
-Beträgt der Wegunterschied an einem Punkt P zwischen den beiden erzeugten Strahlen
+Treffen sich die Strahlen an einem Punkt P wieder zusammen, kann es zu Interferenz kommen.
+Beträgt der Wegunterschied zwischen den beiden erzeugten Strahlen
 \begin{equation*}
     Δ = \left(2n + 1\right)\frac{λ}{2}\, , n \in \mathbb{N}_0\, ,
 \end{equation*}
@@ -100,7 +103,7 @@ Somit ergibt sich die Gleichung
     g\left(ω\right) = \int_{-\infty}^{\infty}\text{d}t\, E\left(t\right) \exp{\left(iωt\right)}\,
     = 2 E_0 \frac{\sin{(ω - ω_0)}\frac{τ}{2}}{ω - ω_0}
 \end{equation*}
-mit τ als Zeitdauer der Emmision.
+mit $τ$ als Zeitdauer der Emmision.
 Die Intensität $G(ω)$ ist proportional zum Betragsquadrat von $g(ω)$.
 Aus der Breite der Intensitätsfunktion $G(ω)$ lässt sich die Wellenlängenverteilung des emmitierten Lichts berechnen mit
 \begin{equation*}
@@ -131,13 +134,20 @@ An diesem Punkt P können dann Interferenzeffekte beobachtet werden.
 Sind die zurückgelegten Strecken genau gleich weit, beträgt der Gangunterschied $λ/2$
 und es kommt zu destruktiver Interferenz in P.
 Verschiebt man einen der Spiegel um $d$ nach hinten oder vorne, kommt es zu einem Wegunterschied
-$Δw = 2 \cdot d.$ Das daraus resultierende Oszillieren der Intensität $I(d)$\ref*{eq:Intensitaet}
+$Δw = 2 \cdot d.$ Das daraus resultierende Oszillieren der Intensität $I(d)$\eqref{eq:Intensitaet}
 ist proportional zu $λ/2.$ Mithilfe Gleichung 
 \begin{equation*}
     Δd = z \cdot \frac{λ}{2}
 \end{equation*}
 lässt sich aus der Anzahl der Intensitätsmaxima $z$ und der Wellenlänge $λ$, die Verschiebung $Δd$ berechnen.
 %jetzt noch die Gleichung fuer Δn und dann sollte das so passen
+Läuft ein Teilbündel durch ein Medium der Länge $b$ mit verändertem Brechungsindex $n$, kommt es zu einer Phasenverschiebung.
+Wird der Brechungsindex um $Δn$ verändert, lässt sich diese Veränderung mit 
+\begin{equation*}
+    b \cdot Δn = z \cdot \frac{λ}{2}
+\end{equation*}
+berechnen. So lange $λ$ sehr viel kleiner als $b$ ist, können $Δn$ der Größenordnung $10^{-5}$ gemessen werden.
+
 
 %Messung optischer Größen mit Interferenz
 %   ->grundlegende Funktionsweise erklären
