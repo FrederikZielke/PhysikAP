@@ -44,13 +44,13 @@ ergibt sich zu
     I_{\text{ges}} = \frac{\text{const}}{t_2 - t_1} \int_{t_1}^{t_2} \left( \vec{E}_1 + \vec{E}_2 \right)^2 \left(x,t\right) \text{d}t\, .
 \end{equation*}
 Durch ausrechnen gelangt man zu dem Term
-\begin{equation*}
-    I_{\text{ges}} = 2\text{const}\vec{E}_0^2\left(1 + \cos{δ_2-δ_1}\right).
-\end{equation*}
+\begin{equation}\label{eq:Intensitaet}
+    I_{\text{ges}} = 2\text{const}\vec{E}_0^2\left(1 + \cos{(δ_2-δ_1)}\right).
+\end{equation}
 Die Intensität setzt sich also aus der Summe der Einzelintensitäten zusammen,
 sowie einem \textbf{Interferenzterm}
 \begin{equation*}
-    2\text{const}\vec{E}_0^2\cos{δ_2-δ_1}\, .
+    2\text{const}\vec{E}_0^2\cos{(δ_2-δ_1)}\, .
 \end{equation*}
 Dieser Interferenzterm ist abhängig von der Phasenverschiebung $δ$ und erzeugt eine Abweichung von bis zu $\pm 2\text{const}\vec{E}_0^2.$ 
 Der Interferenzterm verschwindet wenn die Differenz der beiden Einzelintensitäten gleich $(2n + 1)π$ mit $n \in \mathbb{N}_0$ ist.
@@ -89,14 +89,55 @@ Dabei ist $N$ die Anzahl der Intensitätsmaxima die in P zu sehen sind.
 %       -> endliche länge der Wellenzüge
 %       -> Kohärenzlänge, Kohärenzzeit
 %   ->wie kann interferenz erzeugt werden?
+\subsubsection{Fouriersches Theorem} %Ich bin mir unsicher ob wir das überhaupt brauchen
+\label{sec:Fouriersches Theorem}
 
-\subsection{Polarisation}
+Das Fouriersche Theorem besagt, dass ein Wellenzug nicht monochromatisch sein kann, wenn er eine endliche Länge hat.
+Der Wellenzug muss ein Frequenz- und Wellenlängenspektrum besitzen.
+Mit Hilfe einer Fouriertransformation kann aus der Feldstärke eines Wellenzuges das Frequenzspektrum berechnet werden.
+Somit ergibt sich die Gleichung
+\begin{equation*}
+    g\left(ω\right) = \int_{-\infty}^{\infty}\text{d}t\, E\left(t\right) \exp{\left(iωt\right)}\,
+    = 2 E_0 \frac{\sin{(ω - ω_0)}\frac{τ}{2}}{ω - ω_0}
+\end{equation*}
+mit τ als Zeitdauer der Emmision.
+Die Intensität $G(ω)$ ist proportional zum Betragsquadrat von $g(ω)$.
+Aus der Breite der Intensitätsfunktion $G(ω)$ lässt sich die Wellenlängenverteilung des emmitierten Lichts berechnen mit
+\begin{equation*}
+    Δλ = \frac{λ_0^2}{l}\, .
+\end{equation*}
+
+\subsubsection{Polarisation}
 \label{sec:Polarisation}
 
+Linear polarisierte Lichtstrahlen, welche senkrecht zueinander polarisiert sind, 
+interferieren nicht miteinander. Die Intensitäten addieren sich.
 %Polarisation
 
 \subsection{Michelson-Interferometer}
 \label{sec:Michelson-Interferometer}
+
+%muss nochmal hübscher geschrieben werden
+Interferometer werden verwendet optische Größen mithilfe von Interferenzeffekten zu Messen.
+Dazu wird ein Laserstrahl in zwei Teilbündel aufgespalten. 
+Dies geschieht mit einem semipermeablen Spiegel. 
+Da die beiden Strahlen das Medium des Spiegels nicht gleich oft durchlaufen, wird
+ein Strahl durch eine Kompensationsplatte geleitet. Beide Strahlen legen so die gleiche Distanz zurück.
+Eines der beiden Teilbündel wird verändert, in dem es etwa durch ein Medium mit verändertem Brechungsindex $n$
+geleitet wird. Alternativ kann auch die Weglänge die der Strahl zurücklegen muss verändert werden.
+Beide Bündel werden je an einem Spiegel wieder senkrecht auf den semipermeablen Spiegel zurück geleitet.
+Ein Teil beider Strahlen läuft nun parallel und trifft auf einen Lichtdetektor.
+An diesem Punkt P können dann Interferenzeffekte beobachtet werden.
+Sind die zurückgelegten Strecken genau gleich weit, beträgt der Gangunterschied $λ/2$
+und es kommt zu destruktiver Interferenz in P.
+Verschiebt man einen der Spiegel um $d$ nach hinten oder vorne, kommt es zu einem Wegunterschied
+$Δw = 2 \cdot d.$ Das daraus resultierende Oszillieren der Intensität $I(d)$\ref*{eq:Intensitaet}
+ist proportional zu $λ/2.$ Mithilfe Gleichung 
+\begin{equation*}
+    Δd = z \cdot \frac{λ}{2}
+\end{equation*}
+lässt sich aus der Anzahl der Intensitätsmaxima $z$ und der Wellenlänge $λ$, die Verschiebung $Δd$ berechnen.
+%jetzt noch die Gleichung fuer Δn und dann sollte das so passen
 
 %Messung optischer Größen mit Interferenz
 %   ->grundlegende Funktionsweise erklären
