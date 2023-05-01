@@ -8,7 +8,7 @@
 \label{sec:Grundlagen}
 
 % Licht wird durch angeregte Atome ausgestrahlt
-Hier muss noch ergänzt werden
+
 
 % Licht als E(M)-Welle
 Das Verhalten von Licht kann gut durch eine Betrachtung als elektromagnetische Wellen
@@ -23,9 +23,9 @@ Hierbei steht $E$ für die elektrische Feldstärke, $ε_0$ für die elektrische 
 $B$ für die magnetische Flussdichte und $μ_0$ für die magnetische Feldkonstante.
 Im weiteren Verlauf wird nur das E-Feld betrachtet.
 Die Orts- und Zeitabhängigkeit des Feldes einer ebenen Welle lässt sich ausrücken durch
-\begin{equation*}
+\begin{equation}\label{eq:ebeneWelle}
     \vec{E}\left(x,t\right) = \vec{E}_0 \cos\left( k x - ω t - δ\right)\, ,
-\end{equation*}
+\end{equation}
 mit $\vec{E}_0$ als gerichtete Amplitude, $k$ als Wellenzahl, $x$ als Ortskoordinate, $ω$ als Wellenzahl, $t$ als Zeit und $δ$ als Phasenverschiebung.
 % lin Superposition
 Bei den Maxwellgleichungen handelt es sich um lineare Differentialgleichungen.
@@ -58,6 +58,31 @@ Der Interferenzterm verschwindet wenn die Differenz der beiden Einzelintensität
 \subsection{Interferenz}
 \label{sec:Interferenz}
 
+Licht wird durch angeregte Atome ausgestrahlt. 
+Kehren angeregt Elektronen in ihren Grundzustand zurück, wird Licht emmitiert.
+Die ausgesandten Wellenzüge haben eine endliche Länge.
+Die Wellenlänge und Phasenverschiebung sind dabei statistisch verteilt.
+Darum können diese Quellen nicht unverändert zur Erzeugung von Interferenzeffekten verwendet werden.
+Nicht interferenzfähiges Lich wird \textbf{inkohärent} genannt.
+Kohärentes Licht zeichnet sich durch eine feste Wellenzahl $k,$ Frequenz $ω$ und Phasenverschiebung $δ$ in \autoref{eq:ebeneWelle} aus.
+Im Michelson-Interferometer wird ein LASER verwendet.
+Dieser erzeugt kohärentes Licht.
+%Meinst du wir sollten noch genauer drauf eingehen was ein Laser ist?
+
+Um einen Gangunterschied bei kohährentem Licht zu erzeugen, kann der Strahl gespalten werden.
+Beträgt der Wegunterschied an einem Punkt P zwischen den beiden erzeugten Strahlen
+\begin{equation*}
+    Δ = \left(2n + 1\right)\frac{λ}{2}\, , n \in \mathbb{N}_0\, ,
+\end{equation*}
+kommt es zu destruktiver Interferenz. Die beiden Strahlen löschen sich aus.
+Wichtig ist, dass die Strahlen in einer endlichen Zeit $τ$ ausgesannt werden.
+Außerdem darf der Wegunterschied der beiden wieder zusammen geführten Strahlen nicht zu groß sein.
+Dadurch ist die Phasenbeziehung zueinander noch intakt.
+Diese Eigenschaft heißt Kohärenzlänge und wird berechnet mit
+\begin{equation*}
+    l = N λ\, .
+\end{equation*}
+Dabei ist $N$ die Anzahl der Intensitätsmaxima die in P zu sehen sind.
 %Welches Licht ist (nicht) interferenzfähig?
 %   -> Kohärenz, kohärentes Licht(-> \vec(E) = E cos(kx -  ωt + δ))
 %       -> Laser
