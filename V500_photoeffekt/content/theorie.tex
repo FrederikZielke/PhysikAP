@@ -34,11 +34,65 @@ Dabei ist $E_Ph$ die Photonenenergie, $h$ das Plank'sche Wirkungsquantum und $f$
 Beim Photoeffekt wird diese Energie beim Auftreffen auf das Kathodenmaterial auf die Elektronen übertragen. Ist die Energie des Photons groß genug, um die 
 Austrittsarbeit $A_k$ zu leisten, verlässt das Elektron die Platte. Die Austrittsarbeit $A_k$ ist dabei materialspezifisch. Die überschüssige $E_{Ph}$ erhält dann das 
 herausgelöste Elektron als kinetische Energie $E_{kin}$. Folglich gilt
-\begin{equation*}
+\begin{equation}\label{eq:energie_e}
     hf = E_{kin} + A_k.
-\end{equation*}
+\end{equation}
 Daraus lässt sich auch direkt ein Schluss auf die Grenzfrequenz ziehen. Gilt nämlich
 \begin{equation*}
     f < \frac{A_k}{h}
 \end{equation*}
 so kann der Photoeffekt nicht mehr auftreten.
+
+\subsection{Konkrete Realisierung des Photoeffekts}
+In der genutzten Apperatur zur Untersuchung des Photoeffekts wird ein vakuumierter Glaskolben als Photozelle genutzt. Der Aufbau ist in \autoref{fig:photozelle} skizziert.
+Wie aus der Abbildung hervorgeht wird auf der Innenseite des Kolbens eine Metallschicht aufgedampft, die dann als Photokathode dient. Ein um die Photokathode laufender Draht
+ist die Anode.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/photozelle.png}
+    \caption{Aufbau der genutzten Photozelle \cite{V500}.}
+    \label{fig:photozelle}
+\end{figure}
+
+An die Photozelle wird über den Kathodenanschluss ein externes elektrisches Feld angelegt. Weiterhin werden also die Elektronen durch monochromatisches Licht aus der Oberfläche gelöst, jedoch werden sie jetzt, je nach Orientierung des Feldes,
+beschleunigt oder abgebremst. 
+Ist ein Gegenfeld angelegt, so lässt sich ein Rückschluss auf die Energie der Elektronen ziehen, denn nun können nur noch Elektronen zur Anode gelangen, deren Energie größer
+als $e_0 U$ ist. Zusätzlich wird der Strom gemessen, der von der Kathode zur Anode fließt.
+Dieser Strom hört spätestens auf zu fließen wenn 
+\begin{equation}\label{eq:ekin}
+    e_0 U_g = \frac{m_0 v_{max}^2}{2} 
+\end{equation}
+gilt. Dabei ist $e_0$ die Elementarladung, $U_g$ die Gegenspannung, $m_0$ die Ruhemasse des Elektrons und $v_{max}$ die Geschwindigkeit der schnellsten Elektronen.
+Aus der Gegenspannung ist nun die kinetische Energie der Elektronen bestimmbar. Mit \autoref{eq:energie_e} und \autoref{eq:ekin} gilt nun also
+\begin{equation}\label{eq:Elektron_max}
+    E_{Ph} = hf = E_{kin} + A_k = e_0 U + A_k.
+\end{equation}
+Dieser Weg der Bestimmung der Elektronenenergie wird Gegenfeldmethode genannt.
+
+\subsection{Bremsspannung und der daraus resultierende Stromverlauf}
+\autoref{eq:Elektron_max} tätigt aber nur eine Aussage über die Elektronen maximaler Energie und den daraus resultierenden 
+Strom. In der Realität sinkt der Strom bereits, wenn nicht mehr alle Elektronen von der Kathode zur Anode kommen, d.h. der Strom wird nicht schlagartig $I_{Ph} = 0$ sondern
+sinkt mit steigender Gegenspannung ab. Die Strom-Spannungskurve hat in etwa die Form wie in \autoref{fig:bremsspannung}. Ebenfalls ist in \autoref{fig:bremsspannung} zu sehen, dass, wie bereits erläutert, der Strom bei $U = U_g$ nicht mehr messbar ist.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/bremsspannung.png}
+    \caption{Photostrom $I_{Ph}$ in Abhängigkeit der Bremsspannung $U$ \cite{V500}.}
+    \label{fig:bremsspannung}
+\end{figure}
+
+\subsection{Aussagen über die Elektronenenergie und auftretende Probleme}
+Die Fermi-Dirac-Statistik tätigt eine Aussage über die Energieverteilung in Festkörpern. Da hier jedoch nicht gewährleistet werden kann, dass alle Elektronen die
+flächenmäßig kleine Anode erreichen, ist die Fermi-Dirac-Statistik nur bedingt gültig. Nützlich ist aber, dass sich die Spannung quadratisch zum Photostrom verhält:
+\begin{equation*}
+    I_{Ph} \sim U^2.
+\end{equation*}
+Es gibt noch einen weiteren Grund, aus dem die Elektronen die Anode nicht erreichen könnten. Denn wenn Anode und Kathode über ein Messgerät elektrisch verbunden sind, 
+gleichen sich die Fermi-Niveaus der beiden Materialen auf die gleiche Höhe an. Dies hat zur Folge, dass wenn das Anondenmaterial eine hohe Austrittsarbeit $A_A$
+besitzt, sodass $hf < A_A$ gilt, auch kein Photostrom auftreten kann selbst wenn $hf > A_k$ ist, da die Elektronen dann nicht energetisch genug sind, um die Potentialdifferenz
+zu überwinden. Das Problem lässt sich lösen indem ein beschleunigendes Potential $U_b$ angelegt wird, sodass
+\begin{equation*}
+    hf + e_0 U_b \geq A_A
+\end{equation*}
+gilt.
