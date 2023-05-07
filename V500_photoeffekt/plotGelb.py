@@ -14,9 +14,8 @@ for i in range(I_gelb.size):
     if I_gelb[i] > 0:
         if start == 0:
             start = i 
-    if I_gelb[i] > 0.9:
-        stop = i + 2
-        print(I_gelb[i])
+    if I_gelb[i] > 0.7:
+        stop = i 
         break
 
 lin_gelb = linregress(U_gelb[start:stop], I_gelb[start:stop])
@@ -39,5 +38,6 @@ plt.grid(which='major', linestyle='-', linewidth='0.5', color='black')
 
 plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
 
-#plt.show()
 plt.savefig('build/plotGelb.pdf')
+plt.show()
+plt.clf()

@@ -35,7 +35,7 @@ plt.plot(x_lila, (a_lila*x_lila+b_lila), color = 'black', label = r'Ausgleichsge
 #plt.plot(x_plot_lila, params[0]*x_plot_lila + params[1], 'k-', label='Lineare Regression')
 plt.xlabel(r'$U \:/\: [V]$')
 plt.ylabel(r'$\sqrt{I} \:/\: [\sqrt{nA}]$')
-plt.title('Lilanes Licht')
+plt.title('Violettes Licht')
 plt.legend(loc='best')
 plt.minorticks_on()
 plt.grid(which='minor', linestyle=':', linewidth='0.5', color='black')
