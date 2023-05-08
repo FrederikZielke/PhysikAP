@@ -24,14 +24,14 @@ f_rot = 2.99792458e8/lambda_rot
 #f_rot = f_rot * 10**(-12)
 
 lin2 = linregress([f_lila[0], f_gelb[0],f_gruen,f_rot],[U_g[0],U_g[1],U_g[2],U_g[3]])
-lin = linregress([f_lila[0], f_gruen],[U_g[0],U_g[2]])
+lin = linregress([f_gelb[0], f_lila[0]],[U_g[1],U_g[0]])
 a = ufloat(lin.slope, lin.stderr)
 b = ufloat(lin.intercept, lin.intercept_stderr)
 x = np.linspace(f_lila[0], f_rot)
 aReal = ufloat(lin2.slope, lin2.stderr)
 bReal = ufloat(lin2.intercept, lin2.intercept_stderr)
 
-#plt.plot(x, a.n*x + b.n, 'k-', label = r'Ausgleichsgerade')
+plt.plot(x, a.n*x + b.n, 'k-', label = r'Ausgleichsgerade selektiert')
 plt.plot(x, aReal.n*x + bReal.n, 'b-', label = r'Ausgleichsgerade') #mit allen Messwerten
 
 
