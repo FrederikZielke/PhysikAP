@@ -1,25 +1,19 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-%\begin{figure}
-%  \centering
-%  \includegraphics{plot.pdf}
-%  \caption{Plot.}
-%  \label{fig:plot}
-%\end{figure}
-%
-%
-%Siehe \autoref{fig:plot}!
+Die in \autoref{sec:Auswertung} gezeigten Grafiken und Rechnungen sind mithilfe der Python-Bibliotheken Matplotlib \cite{matplotlib}, Scipy \cite{scipy} und Numpy \cite{numpy}
+erstellt worden.
 
 \subsection{Bestimmung der Grenzspannung}
+\label{sec:auswertung_grenzspannung}
 
 Um die Grenzspannung $U_G$ zu ermitteln wird die Spannung $U$ gegen die Quadratwurzel des Photostroms $I$ aufgetragen. 
 Durch die linearen Abschnitte wird eine Ausgleichsgerade gezogen.
 Der Schnittpunkt der Geraden mit der x-Achse entspricht der Grenzspannung $U_G$.
-Mit der Ausgleichsgerade $I = a \cdot U + b$, lässt sich die Grenzspannung berechnen mit
-\begin{equation*}
+Mit der Ausgleichsgerade $y \,=\, m \cdot x \,+\, b$, lässt sich die Grenzspannung berechnen mit
+\begin{equation}\label{eq:ug}
   U_G = - \frac{b}{a}.
-\end{equation*}
+\end{equation}
 \\
 \\
 \begin{table}[H]
@@ -84,7 +78,14 @@ Mit der Ausgleichsgerade $I = a \cdot U + b$, lässt sich die Grenzspannung bere
   \label{tab:lila}
 \end{table}
 
-\begin{table}
+\begin{figure}
+  \centering
+  \includegraphics{build/plotLila.pdf}
+  \caption{Plot der Messwerte aus \autoref{tab:lila} und Ausgleichsgerade.}
+  \label{fig:plot_lila}
+\end{figure}
+
+\begin{table}[H]
   \centering
   \caption{Brems- und Beschleunigungsspannung $U$ und Photostrom $I$ bei grünem Licht.}
   \begin{tabular}{|c|c|}
@@ -140,7 +141,14 @@ Mit der Ausgleichsgerade $I = a \cdot U + b$, lässt sich die Grenzspannung bere
   \label{tab:gruen}
 \end{table}
 
-\begin{table}
+\begin{figure}[H]
+  \centering
+  \includegraphics{build/plotGruen.pdf}
+  \caption{Plot der Messwerte aus \autoref{tab:gruen} und Ausgleichsgerade.}
+  \label{fig:plot_gruen}
+\end{figure}
+
+\begin{table}[H]
   \centering
   \caption{Brems- und Beschleunigungsspannung $U$ und Photostrom $I$ bei gelbem Licht.}
   \begin{tabular}{|c|c|}
@@ -188,7 +196,14 @@ Mit der Ausgleichsgerade $I = a \cdot U + b$, lässt sich die Grenzspannung bere
   \label{tab:gelb}
 \end{table}
 
-\begin{table}
+\begin{figure}[H]
+  \centering
+  \includegraphics{build/plotGelb.pdf}
+  \caption{Plot der Messwerte aus \autoref{tab:gelb} und Ausgleichsgerade.}
+  \label{fig:plot_gelb}
+\end{figure}
+
+\begin{table}[H]
   \centering
   \caption{Brems- und Beschleunigungsspannung $U$ und Photostrom $I$ bei rotem Licht.}
   \begin{tabular}{|c|c|}
@@ -235,3 +250,91 @@ Mit der Ausgleichsgerade $I = a \cdot U + b$, lässt sich die Grenzspannung bere
   \end{tabular}
   \label{tab:rot}
 \end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{build/plotRot.pdf}
+  \caption{Plot der Messwerte aus \autoref{tab:rot} und Ausgleichsgerade.}
+  \label{fig:plot_rot}
+\end{figure}
+
+Mit \autoref{eq:ug} lassen sich die Grenzspannungen berechnen. Die Ergebnisse sind in \autoref{tab:ug} aufgelistet.
+\begin{table}
+  \centering
+  \begin{tabular}{|c|c|c|c|c|}
+    \toprule
+    Lichtfarbe & $λ$[nm] & $m[\frac{\sqrt{\text{nA}}}{\text{V}}]$ & $b[\sqrt{\text{nA}}]$ & $U_G$[V]\\
+    \midrule
+    Violett & $405$ & $1.021\pm 0.023$ & $1.117\pm 0.017$ & $-1.094$\\
+    Grün & $546$ & $1.45\pm 0.04$ & $0.885\pm 0.017$ & $-0.610$\\
+    Gelb & $578$ & $0.334\pm 0.009$ & $0.465\pm 0.007$ & $-1.396$\\
+    Rot & $623$ & $0.178\pm 0.012$ & $0.124\pm 0.005$ & $-0.695$\\
+    \bottomrule
+  \end{tabular}
+  \caption{Grenzspannungen $U_G$, Fitparameter $m$ und $b$ für die verschiedenen Lichtfarben.}
+  \label{tab:ug}
+\end{table}
+
+\newpage
+
+\subsection{Bestimmung des Verhältnisses $\frac{h}{e_0}$}
+
+\begin{figure}
+  \centering
+  \includegraphics{build/frequenz.pdf}
+  \caption{Plot der Grenzspannungen $U_G$ gegen die Frequenz $f$ des Lichts.}
+  \label{fig:frequenz}
+\end{figure}
+
+Zur Bestimmung des Verhältnisses $\frac{h}{e_0}$ wird die in \autoref{sec:auswertung_grenzspannung} ermittelte Grenzspannung $U_G$
+gegen die Frequenz $f$ des Lichts aufgetragen. 
+Der Zusammenhang von Frequenz und Grenzspannung wird mit \autoref{eq:Elektron_max} beschrieben.
+Die Frequenzen werden entsprechend den Wellenlängen der in \autoref{tab:ug} aufgelisteten
+Lichtfarben und Grenzspannungen gewählt. Die Steigung der Ausgleichsgeraden ist gleich dem Verhältnis $\frac{h}{e_0}$.
+Die negative Austrittsarbeit $A_k$ des Kathodenmaterial geteilt durch $e_0$ ist gleich dem Ordinatenabschnitt.
+\begin{align}
+  h &= (-0.8\pm 2.2) \cdot 10^{-15} \si{eVs} \\
+  A_k &= (0.5\pm 1.3) \si{\eV}
+\end{align}
+%Hier noch A_k und h/e_0 einfügen
+%h/e: (-2.531483029724948+/-0)e-15, A_k: 0.7793278907374918+/-0
+%h/e real: (-0.8+/-2.2)e-15, A_k real: -0.5+/-1.3
+
+\newpage
+
+\subsection{Kurvenverlauf bei 578nm}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{build/plotGelb2.pdf}
+  \caption{Beschleunigungs- bzw. Bremsspannung gegen Photostrom aufgetragen mit Daten aus \autoref{tab:gelb}.}
+  \label{fig:gelb2}
+\end{figure}
+
+Ab einer Beschleunigungsspannung von $\SI{10}{\volt}$ flacht die Steigerung des Photostroms stark ab.
+Dies ist in \autoref{fig:gelb2} zu erkennen. Die Kurve nähert sich einer Sättigung an.
+Der Photostrom ist begrenzt durch die Anzahl der Elektronen, die von Photonen ausgelöst werden.
+Die Anzahl der Photonen hängt wiederum von der Intensität der verwendeten Lampe ab.
+Gehen alle freiwerdenden Elektronen in die Anode über, so ist der Photostrom gesättigt.
+Eine weitere Erhöhung der Beschleunigungsspannung vergrößert den Photostrom nicht mehr.
+\\
+Das Ohmsche Gesetz $I = \frac{U}{R}$ gilt nur für ohmsche Widerstände und ist deshalb nicht verletzt durch das Verhalten des Photostroms.
+\\
+Die Spannung bei der die Sättigung auftritt, ist abhänig von der Intensität des Lichts und der Austrittsarbeiten $A_k$ des Kathodenmaterials
+und $A_A$ des Anodenmaterials.\\
+%Warum wird die Sättigung asymptotisch erreicht?
+Da bei der Freisetzung der Elektronen Streuung auftritt, wird die Sättigung nur asymptotisch erreicht.
+%Wie muss eine Photozelle konstruert werden um bei endlicher Spannung Sättigung zu erreichen?
+Wäre die Kathode vollständig von der Anode umschlossen, würden keine Photoelektronen verloren gehen.
+%Warum fällt der Photostrom schon vor U_G merklich ab?
+Photoelektronen besitzen eine Energieverteilung, die zwischen $0$ und ihrer maximalen kinetischen Energie liegt.
+Ihre Energie ist abhänig davon, welche Energie sie im Festkörper besessen haben.
+Da niederenergetische Elektronen nicht zwangsläufig die Strecke zwischen Kathode und Anode überwinden können,
+sinkt der Photostrom schon vor $U_G$ merklich ab.\\
+%Warum kann ein dem Photostrom entgegengerichteter Strom auftreten?
+Besitzt das Anodenmaterial eine höhere Austrittsarbeit als die Kathode,
+muss eine Beschleunigungsspannung angelegt werden, damit Elektronen die Anode erreichen können.
+Wird die Bremsspannung groß genug gewählt, kann es zu einem negativen Strom kommen.\\
+Ist ein negativer Strom schon bei energiearmem Licht zu beobachten, lässt dies auf einne niedrige Austrittsarbeit der Anode schließen.\\
+%warum kann hier bei relativ kleinen Spannungen Sättigung aftreten? Keine Ahnung, ist mir auch egal
+%Was kann man über die Austrittsarbeit der Anode sagen, wenn mana berücksichtigt, dass der negative Strom bereits bei Einstrahlung energiearmen Lichtes auftritt?

@@ -19,8 +19,11 @@ build/plotGruen.pdf: plotGruen.py ../matplotlibrc ../header-matplotlib.tex | bui
 build/plotRot.pdf: plotRot.py ../matplotlibrc ../header-matplotlib.tex | build
 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plotRot.py
 
+build/frequenz.pdf: frequenz.py ../matplotlibrc ../header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python frequenz.py
+
 # hier weitere Abhängigkeiten für build/V500.pdf deklarieren:
-build/V500.pdf: build/plotLila.pdf build/plotGelb.pdf build/plotGruen.pdf build/plotRot.pdf
+build/V500.pdf: build/plotLila.pdf build/plotGelb.pdf build/plotGruen.pdf build/plotRot.pdf build/frequenz.pdf
 
 build/V500.pdf: FORCE | build
 	# to find header and bib files in the main directory

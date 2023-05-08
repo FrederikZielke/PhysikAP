@@ -6,6 +6,7 @@ from scipy.stats import linregress
 
 U_rot, I_rot = np.genfromtxt('content/messung_rot.csv', unpack = True, delimiter = ',')
 
+#I_rot = I_rot * 10**(-9)
 
 I_rot = np.sqrt(I_rot)
 
@@ -28,6 +29,8 @@ b_rot = lin_rot.intercept
 U_g_rot = -b_rot/a_rot
 x_rot = np.linspace(U_g_rot, U_rot[stop])
 print(f'U_g_rot liegt bei {U_g_rot}V')
+print(f'a1_rot und Fehler: ', a1_rot)
+print(f'b1_rot und Fehler: ', b1_rot)
 
 plt.plot(U_rot, I_rot, 'rx', label = r'Messwerte')
 plt.plot(x_rot, (a_rot*x_rot+b_rot), color = 'black', label = r'Ausgleichsgerade')

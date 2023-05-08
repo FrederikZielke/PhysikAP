@@ -6,6 +6,8 @@ from scipy.stats import linregress
 
 U_lila, I_lila = np.genfromtxt('content/messung_lila.csv', unpack = True, delimiter = ',')
 
+#I_lila = I_lila * 10**(-9)
+
 I_lila = np.sqrt(I_lila)
 
 start = 0
@@ -29,6 +31,8 @@ b_lila = lin_lila.intercept
 U_g_lila = -b_lila/a_lila
 x_lila = np.linspace(U_g_lila, U_lila[stop])
 print(f'U_g_lila liegt bei {U_g_lila}V')
+print(f'a1_lila und fehler: ', a1_lila)
+print(f'b1_lila und fehler: ', b1_lila)
 
 plt.plot(U_lila, I_lila, 'mx', label = r'Messwerte')
 plt.plot(x_lila, (a_lila*x_lila+b_lila), color = 'black', label = r'Ausgleichsgerade')
