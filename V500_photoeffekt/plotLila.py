@@ -28,8 +28,8 @@ a1_lila = ufloat(lin_lila.slope, lin_lila.stderr)
 b1_lila = ufloat(lin_lila.intercept, lin_lila.intercept_stderr)
 a_lila = lin_lila.slope
 b_lila = lin_lila.intercept
-U_g_lila = -b_lila/a_lila
-x_lila = np.linspace(U_g_lila, U_lila[stop])
+U_g_lila = -b1_lila/a1_lila
+x_lila = np.linspace(U_g_lila.n, U_lila[stop])
 print(f'U_g_lila liegt bei {U_g_lila}V')
 print(f'a1_lila und fehler: ', a1_lila)
 print(f'b1_lila und fehler: ', b1_lila)

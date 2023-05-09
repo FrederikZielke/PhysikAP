@@ -26,8 +26,8 @@ a1_rot = ufloat(lin_rot.slope, lin_rot.stderr)
 b1_rot = ufloat(lin_rot.intercept, lin_rot.intercept_stderr)
 a_rot = lin_rot.slope
 b_rot = lin_rot.intercept
-U_g_rot = -b_rot/a_rot
-x_rot = np.linspace(U_g_rot, U_rot[stop])
+U_g_rot = -b1_rot/a1_rot
+x_rot = np.linspace(U_g_rot.n, U_rot[stop])
 print(f'U_g_rot liegt bei {U_g_rot}V')
 print(f'a1_rot und Fehler: ', a1_rot)
 print(f'b1_rot und Fehler: ', b1_rot)

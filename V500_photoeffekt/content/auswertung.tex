@@ -12,7 +12,7 @@ Durch die linearen Abschnitte wird eine Ausgleichsgerade gezogen.
 Der Schnittpunkt der Geraden mit der x-Achse entspricht der Grenzspannung $U_G$.
 Mit der Ausgleichsgerade $y \,=\, m \cdot x \,+\, b$, lässt sich die Grenzspannung berechnen mit
 \begin{equation}\label{eq:ug}
-  U_G = - \frac{b}{a}.
+  U_G = - \frac{b}{m}.
 \end{equation}
 \\
 \\
@@ -21,7 +21,7 @@ Mit der Ausgleichsgerade $y \,=\, m \cdot x \,+\, b$, lässt sich die Grenzspann
   \caption{Brems- und Beschleunigungsspannung $U$ und Photostrom $I$ bei violettem Licht.}
   \begin{tabular}{|c|c|}
     \toprule
-    $U \,/\, [\si{\volt}]$ & $I \,/\, [\si{\nano\ampere}]$\\
+    $U \,/\, \si{\volt}$ & $I \,/\, \si{\nano\ampere}$\\
     \midrule
     -1.99 & 0\\
     -1.90 & 0\\
@@ -49,7 +49,7 @@ Mit der Ausgleichsgerade $y \,=\, m \cdot x \,+\, b$, lässt sich die Grenzspann
   \end{tabular}
   \begin{tabular}{|c|c|}
     \toprule
-    $U \,/\, [\si{\volt}]$ & $I \,/\, [\si{\nano\ampere}]$\\
+    $U \,/\, \si{\volt}$ & $I \,/\, \si{\nano\ampere}$\\
     \midrule
     -0.25 & 0.620\\
     -0.20 & 0.670\\
@@ -90,7 +90,7 @@ Mit der Ausgleichsgerade $y \,=\, m \cdot x \,+\, b$, lässt sich die Grenzspann
   \caption{Brems- und Beschleunigungsspannung $U$ und Photostrom $I$ bei grünem Licht.}
   \begin{tabular}{|c|c|}
     \toprule
-    $U \,/\, [\si{\volt}]$ & $I \,/\, [\si{\nano\ampere}]$\\
+    $U \,/\, \si{\volt}$ & $I \,/\, \si{\nano\ampere}$\\
     \midrule
     -1.99 & 0\\
     -1.90 & 0\\
@@ -115,7 +115,7 @@ Mit der Ausgleichsgerade $y \,=\, m \cdot x \,+\, b$, lässt sich die Grenzspann
   \end{tabular}
   \begin{tabular}{|c|c|}
     \toprule
-    $U \,/\, [\si{\volt}]$ & $I \,/\, [\si{\nano\ampere}]$\\
+    $U \,/\, \si{\volt}$ & $I \,/\, \si{\nano\ampere}$\\
     \midrule
     -0.10 & 0.400\\
     -0.05 & 0.440\\
@@ -153,7 +153,7 @@ Mit der Ausgleichsgerade $y \,=\, m \cdot x \,+\, b$, lässt sich die Grenzspann
   \caption{Brems- und Beschleunigungsspannung $U$ und Photostrom $I$ bei gelbem Licht.}
   \begin{tabular}{|c|c|}
     \toprule
-    $U \,/\, [\si{\volt}]$ & $I \,/\, [\si{\nano\ampere}]$\\
+    $U \,/\, \si{\volt}$ & $I \,/\, \si{\nano\ampere}$\\
     \midrule
     -19.00 & 0\\
     -5.00 & 0\\
@@ -174,7 +174,7 @@ Mit der Ausgleichsgerade $y \,=\, m \cdot x \,+\, b$, lässt sich die Grenzspann
   \end{tabular}
   \begin{tabular}{|c|c|}
     \toprule
-    $U \,/\, [\si{\volt}]$ & $I \,/\, [\si{\nano\ampere}]$\\
+    $U \,/\, \si{\volt}$ & $I \,/\, \si{\nano\ampere}$\\
     \midrule
     6.00 & 1.40\\
     7.00 & 1.55\\
@@ -208,7 +208,7 @@ Mit der Ausgleichsgerade $y \,=\, m \cdot x \,+\, b$, lässt sich die Grenzspann
   \caption{Brems- und Beschleunigungsspannung $U$ und Photostrom $I$ bei rotem Licht.}
   \begin{tabular}{|c|c|}
     \toprule
-    $U \,/\, [\si{\volt}]$ & $I \,/\, [\si{\nano\ampere}]$\\
+    $U \,/\, \si{\volt}$ & $I \,/\, \si{\nano\ampere}$\\
     \midrule
     -1.99 & 0\\
     -1.00 & 0\\
@@ -229,7 +229,7 @@ Mit der Ausgleichsgerade $y \,=\, m \cdot x \,+\, b$, lässt sich die Grenzspann
   \end{tabular}
   \begin{tabular}{|c|c|}
     \toprule
-    $U \,/\, [\si{\volt}]$ & $I \,/\, [\si{\nano\ampere}]$\\
+    $U \,/\, \si{\volt}$ & $I \,/\, \si{\nano\ampere}$\\
     \midrule
     0.10 & 0.018\\
     0.20 & 0.022\\
@@ -263,17 +263,18 @@ Mit \autoref{eq:ug} lassen sich die Grenzspannungen berechnen. Die Ergebnisse si
   \centering
   \begin{tabular}{|c|c|c|c|c|}
     \toprule
-    Lichtfarbe & $λ$[nm] & $m[\frac{\sqrt{\text{nA}}}{\text{V}}]$ & $b[\sqrt{\text{nA}}]$ & $U_G$[V]\\
+    Lichtfarbe & $λ$nm & $m\frac{\sqrt{\text{nA}}}{\text{V}}$ & $b\sqrt{\text{nA}}$ & $U_G$V\\
     \midrule
-    Violett & $405$ & $1.021\pm 0.023$ & $1.117\pm 0.017$ & $-1.094$\\
-    Grün & $546$ & $1.45\pm 0.04$ & $0.885\pm 0.017$ & $-0.610$\\
-    Gelb & $578$ & $0.334\pm 0.009$ & $0.465\pm 0.007$ & $-1.396$\\
-    Rot & $623$ & $0.178\pm 0.012$ & $0.124\pm 0.005$ & $-0.695$\\
+    Violett & $405$ & $1.021\pm 0.023$ & $1.117\pm 0.017$ & $-1.095\pm 0.029$\\
+    Grün & $546$ & $1.45\pm 0.04$ & $0.885\pm 0.017$ & $-0.611\pm 0.019$\\
+    Gelb & $578$ & $0.8\pm 0.8$ & $0.23\pm 0.23$ & $-0.3\pm 0.4V$\\
+    Rot & $623$ & $0.178\pm 0.012$ & $0.124\pm 0.005$ & $-0.7\pm 0.05$\\
     \bottomrule
   \end{tabular}
   \caption{Grenzspannungen $U_G$, Fitparameter $m$ und $b$ für die verschiedenen Lichtfarben.}
   \label{tab:ug}
 \end{table}
+  
 
 \newpage
 
@@ -293,16 +294,17 @@ Die Frequenzen werden entsprechend den Wellenlängen der in \autoref{tab:ug} auf
 Lichtfarben und Grenzspannungen gewählt. Die Steigung der Ausgleichsgeraden ist gleich dem Verhältnis $\frac{h}{e_0}$.
 Die negative Austrittsarbeit $A_k$ des Kathodenmaterial geteilt durch $e_0$ ist gleich dem Ordinatenabschnitt.
 \begin{align}
-  h &= (-0.8\pm 2.2) \cdot 10^{-15} \si{eVs} \\
-  A_k &= (0.5\pm 1.3) \si{\eV}
+  |h| &= (2.3\pm 1.2) \cdot 10^{-15} \si{eVs} \\
+  A_k &= (0.6\pm 0.7) \si{\eV}
 \end{align}
-Wählt man die augenscheinlich physikalisch sinnvollen Werte für die Ausgleichsgerade ergibt sich die schwarze Ausgleichsgerade in \autoref{fig:frequenz}.
-Für diese Gerade ergeben sich die Werte:
+
+%Wählt man die augenscheinlich physikalisch sinnvollen Werte für die Ausgleichsgerade ergibt sich die schwarze Ausgleichsgerade in \autoref{fig:frequenz}.
+%Für diese Gerade ergeben sich die Werte:
 %h/e: (1.3625572631204357+/-0)e-15, A_k: -2.1031509017147485+/-0
-\begin{align}
-  h &= (1.353) \cdot 10^{-15} \si{eVs} \\
-  A_k &= (-2.1) \si{\eV}
-\end{align}
+%\begin{align}
+%  h &= (1.353) \cdot 10^{-15} \si{eVs} \\
+%  A_k &= (-2.1) \si{\eV}
+%\end{align}
 %Hier noch A_k und h/e_0 einfügen
 %h/e: (-2.531483029724948+/-0)e-15, A_k: 0.7793278907374918+/-0
 %h/e real: (-0.8+/-2.2)e-15, A_k real: -0.5+/-1.3

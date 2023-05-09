@@ -5,7 +5,7 @@ from uncertainties import ufloat
 from scipy.stats import linregress
 
 #Reihenfolge: lila, gelb, gruen, rot
-U_g = np.array([-1.094547466957642, -1.3964305019281946, -0.6106345998605471, -0.6930460614610847])
+U_g = np.array([-1.094547466957642, -0.3, -0.6106345998605471, -0.6930460614610847])
 lambda_lila = np.array([405,434,435,436,492])
 lambda_gelb = np.array([578,579])
 lambda_gruen = 546*10**(-9)
@@ -24,14 +24,14 @@ f_rot = 2.99792458e8/lambda_rot
 #f_rot = f_rot * 10**(-12)
 
 lin2 = linregress([f_lila[0], f_gelb[0],f_gruen,f_rot],[U_g[0],U_g[1],U_g[2],U_g[3]])
-lin = linregress([f_gelb[0], f_lila[0]],[U_g[1],U_g[0]])
+lin = linregress([f_gruen, f_rot , f_lila[0]],[U_g[2],U_g[3],U_g[0]])
 a = ufloat(lin.slope, lin.stderr)
 b = ufloat(lin.intercept, lin.intercept_stderr)
 x = np.linspace(f_lila[0], f_rot)
 aReal = ufloat(lin2.slope, lin2.stderr)
 bReal = ufloat(lin2.intercept, lin2.intercept_stderr)
 
-plt.plot(x, a.n*x + b.n, 'k-', label = r'Ausgleichsgerade selektiert')
+#plt.plot(x, a.n*x + b.n, 'k-', label = r'Ausgleichsgerade selektiert')
 plt.plot(x, aReal.n*x + bReal.n, 'b-', label = r'Ausgleichsgerade') #mit allen Messwerten
 
 

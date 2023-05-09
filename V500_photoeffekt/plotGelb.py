@@ -23,9 +23,9 @@ stop = 0
 for i in range(I_gelb.size):
     if I_gelb[i] > 0:
         if start == 0:
-            start = i 
+            start = i - 1
     if I_gelb[i] > 0.7:
-        stop = i 
+        stop = i
         break
 
 lin_gelb = linregress(U_gelb[start:stop], I_gelb[start:stop])
@@ -33,8 +33,8 @@ a1_gelb = ufloat(lin_gelb.slope, lin_gelb.stderr)
 b1_gelb = ufloat(lin_gelb.intercept, lin_gelb.intercept_stderr)
 a_gelb = lin_gelb.slope
 b_gelb = lin_gelb.intercept
-U_g_gelb = -b_gelb/a_gelb
-x_gelb = np.linspace(U_g_gelb, U_gelb[stop])
+U_g_gelb = -b1_gelb/a1_gelb
+x_gelb = np.linspace(U_g_gelb.n, U_gelb[stop])
 print(f'U_g_gelb liegt bei {U_g_gelb}V')
 print(f'a1_gelb und fehler: ', a1_gelb)
 print(f'b1_gelb und fehler: ', b1_gelb)

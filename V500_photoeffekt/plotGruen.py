@@ -28,8 +28,8 @@ a1_gruen = ufloat(lin_gruen.slope, lin_gruen.stderr)
 b1_gruen = ufloat(lin_gruen.intercept, lin_gruen.intercept_stderr)
 a_gruen = lin_gruen.slope
 b_gruen = lin_gruen.intercept
-U_g_gruen = -b_gruen/a_gruen
-x_gruen = np.linspace(U_g_gruen, U_gruen[stop])
+U_g_gruen = -b1_gruen/a1_gruen
+x_gruen = np.linspace(U_g_gruen.n, U_gruen[stop])
 print(f'U_g_gruen liegt bei {U_g_gruen}V')
 print(f'a1_gruen und fehler: ', a1_gruen)
 print(f'b1_gruen und fehler: ', b1_gruen)
