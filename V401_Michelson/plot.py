@@ -11,7 +11,6 @@ motor = ufloat(5, 0.1) * 10**(-3)
 
 delta_s1 = motor/5.046 #Teil 1 Übersetzung 1:5.046
 delta_s2 = motor/5.017 #Teil 2 Übersetzung 1:5.017
-
 #Mittelwert rückwärts
 r_mean = 0
 for i in range(len(r)):
@@ -60,7 +59,7 @@ mean = (in_mean + out_mean)/2
 
 delta_n = (mean*lam*T*p_0)/(2*b*T_0*delta_p)
 n = delta_n + 1
-#print(n)
+print(n)
 #print(r_mean, v_mean)
 
 

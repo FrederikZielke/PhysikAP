@@ -22,7 +22,7 @@ erstellt worden.
 \end{table}
 Die Messdaten bei Verschiebung des Spiegels sind in \autoref{tab:wellenleange} aufgeführt. Da deutliche Unterschiede bei der Zählung der 
 Maxima je nach Drehrichtung des Motors aufgetreten sind, wurde hier zwischen vor und zurück unterschieden. Der Motor bewegt sich um 
-$\Delta_{motor} = \SI{5(0.1)}{mm}$. Durch die Hebelübersetzung von 1:5.046 bewegt sich der Spiegel also absolut um $\Delta s = \SI{9.91(0.2)}{mm}$.
+$\Delta_{motor} = \SI{5(0.1)}{mm}$. Durch die Hebelübersetzung von 1:5.046 bewegt sich der Spiegel also absolut um $\Delta s = \SI{0.991(0.020)}{mm}$.
 \\
 \\
 Aus den Werten in \autoref{tab:wellenleange} wird jeweils ein Mittelwert $\overline{vor}$ bzw. $\overline{zurueck}$ gebildet. Ein dabei auftretender Fehler wird aufgrund von 
@@ -33,7 +33,7 @@ So ergibt sich
   \text{und } \overline{z}\, &= \SI{2451.6(50)}{}.
 \end{align*}
 Der Fehler des Motors wird auf $motor_{err} = \pm 0.1 \unit{mm}$ festgelegt. Einerseits ist dies mit einem verzögerten Ausschalten des Motors sowie einem nicht
-ganz sauberen laufenden Motors zu begründen.
+ganz sauberen laufenden Motors und dem Standardfehler der Mikrometerschraube zu begründen.
 \\
 \\
 Mithilfe dieser Werte kann dann nach \autoref{eq:lambda} die Wellenlänge des Lasers bestimmt werden. Auch hier wird aufgrund deutlicher Abweichungen je nach Drehrichtung
@@ -60,7 +60,7 @@ Die Anzahl der Maxima beim reinpumpen und rauslassen der Luft sind in \autoref{t
       13 & 47\\
       \bottomrule
   \end{tabular}
-  \label{tab:wellenleange}
+  \label{tab:Brechungsindex}
 \end{table}
 Hierbei ist wichtig zu erwähnen, dass der Zähler nicht nach dem reinlassen der Luft zurückgesetzt wurde, d.h. die Anzahl der gezählten Maxima beim Herauslassen der Luft
 ergeben sich mit
@@ -71,7 +71,7 @@ Da beim Rein- bzw. Rauslassen der Luft nicht immer ein $\Delta p = \SI{600}{mmHg
 $\Delta p = \SI{600(20)}{mmHg}$.
 Da kein konstantes $\Delta p$ bei jeder Messung erreicht werden konnte, muss auch ein Fehler für die Anzahl der Maxima abgeschätzt werden. Aufgrund der Schwankungen
 wird ein Fehler von $\pm 3$ angesetzt.
-Aus den Messwerten von $Z_{raus}$ und $Z_{rein}$ wird ein Mittelwert $\overline{Z}$ gebildet. Der Brechungsindex von Luft ergibt sich dann zu
+Aus den Messwerten von $Z_{raus}$ und $Z_{rein}$ wird ein Mittelwert $\overline{Z} = \SI{22.4(2.1)}{}$ gebildet. Der Brechungsindex von Luft ergibt sich dann zu
 \begin{equation*}
   n = 1 + \Delta n = \SI{1.000207(0.000021)}{}.
 \end{equation*}
@@ -80,5 +80,5 @@ Das $\Delta n$ wird dabei nach \autoref{eq:delta_n} wie folgt berechnet:
   \Delta n = \frac{\overline{Z}\lambda \cdot T \cdot p_0}{2b \cdot T_0 \cdot \Delta p}.
 \end{equation*}
 Dabei ist $\overline{Z}$ die gemittelte Anzahl der gezählten Maxima, $\lambda = \SI{680}{nm}$ die Wellenlänge des Lasers, $T = \SI{293.15(1)}{K}$ die Raumtemperatur,
-$p_0 = \SI{101325}{Pa}$ \cite{p_normal} der Normaldruck, $b = \SI{50}{mm}$ die Schichtdicke der Messzelle, $T_0 = \SI{273.15}{K}$ die Normaltemperatur und $\Delta p = \SI{600}{mmHg}$
+$p_0 = \SI{101325}{Pa}$ \cite{p_normal} der Normaldruck, $b = \SI{50}{mm}$ die Schichtdicke der Messzelle, $T_0 = \SI{273.15}{K}$ die Normaltemperatur und $\Delta p = \SI{8.00(0.27)e+04}{Pa}$
 die durch die Pumpe hervorgerufene Druckänderung.
