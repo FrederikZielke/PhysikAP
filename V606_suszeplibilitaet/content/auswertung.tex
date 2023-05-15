@@ -1,12 +1,280 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+Die in \autoref{sec:Auswertung} gezeigten Grafiken und Rechnungen sind mithilfe der Python-Bibliotheken Matplotlib \cite{matplotlib}, Scipy \cite{scipy} und Numpy \cite{numpy}
+erstellt worden.
 
-\begin{figure}
+\subsection{Bestimmung der Filterkurve des Selektivverstärkers}
+Die Messwerte des ersten Versuchteils sind in \autoref{tab:guete} aufgelistet.
+
+\begin{table}[H]
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \caption{Messwerte Frequenz $f$ und Ausgangspannung $U_A$.}
+  \begin{tabular}{c c}
+      \toprule
+      {$f\,$[Hz]} & {$U_A\,$[V]}\\
+      \midrule
+      21780 & 4.3 $\pm 0.05$ \\
+      21800 & 4.5 $\pm 0.05$\\
+      21820 & 4.6 $\pm 0.05$\\
+      21850 & 4.6 $\pm 0.05$\\
+      21880 & 4.55$\pm 0.05$ \\
+      21900 & 4.35$\pm 0.05$ \\
+      21950 & 3.95$\pm 0.05$ \\
+      22000 & 3.5 $\pm 0.05$\\
+      22050 & 3.1 $\pm 0.05$\\
+      22100 & 2.7 $\pm 0.05$\\
+      22150 & 2.35$\pm 0.05$ \\
+      22200 & 2.1 $\pm 0.05$\\
+      22250 & 1.9 $\pm 0.05$\\
+      22300 & 1.7 $\pm 0.05$\\
+      22350 & 1.55$\pm 0.05$ \\
+      22400 & 1.4 $\pm 0.05$\\
+      22450 & 1.3 $\pm 0.05$\\
+      22500 & 1.2 $\pm 0.05$\\
+      22600 & 1.05$\pm 0.05$ \\
+      22700 & 0.9 $\pm 0.05$\\
+      22800 & 0.8 $\pm 0.05$\\
+      22900 & 0.75$\pm 0.05$ \\
+      23000 & 0.7 $\pm 0.05$\\
+      24000 & 0.35$\pm 0.05$ \\
+      25000 & 0.25$\pm 0.05$ \\
+      27000 & 0.15$\pm 0.05$ \\
+      21750 & 4.0 $\pm 0.05$\\
+      21720 & 3.65$\pm 0.05$ \\
+      21700 & 3.4 $\pm 0.05$\\
+      21650 & 2.9 $\pm 0.05$\\
+      21600 & 2.5 $\pm 0.05$\\
+      21550 & 2.2 $\pm 0.05$\\
+      21500 & 1.95$\pm 0.05$ \\
+      21450 & 1.7 $\pm 0.05$\\
+      21400 & 1.55$\pm 0.05$ \\
+      21300 & 1.2 $\pm 0.05$\\
+      21200 & 1.1 $\pm 0.05$\\
+      21100 & 1.0 $\pm 0.05$\\
+      21000 & 0.85$\pm 0.05$ \\
+      20800 & 0.75$\pm 0.05$ \\
+      20000 & 0.4 $\pm 0.05$\\
+      19000 & 0.2 $\pm 0.05$\\
+      17000 & 0.1 $\pm 0.05$\\
+      \bottomrule
+  \end{tabular}
+  \label{tab:guete}
+\end{table}
+
+Um die Güte des Selektivverstärker zu bestimmen werden die Messwerte $f$ gegen das Spannungsverhältnis $\frac{U_A}{U_E}$ aufgetragen. $U_A$ ist die 
+Ausgangspannung und $U_E = \SI{1}{V}$ die Eingangsspannung. Da beim Ablesen der Spannung $U_A$ eine analoge Anzeige verwendet wurde, wird ein Ablesefehler von $\pm 0.05\,\unit{V}$ festgelegt.
+Die Güte wird nach \autoref{eq:guete} berechnet. 
+Die benötigten Werte $f_0$, $f_{-}$ und $f_{+}$ werden dabei aus \autoref{fig:guetekurve} entnommen. Da im Bereich um $\frac{1}{\sqrt(2)}U_{max}$ nicht genug Messwerte
+aufgenommen wurden, wird der Bereich durch Hilfsgeraden linear dargestellt.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{build/guetekurve.pdf}
+  \caption{Messwerte zur Bestimmung der Filterkurve und Güte des Selektivverstärkers.}
+  \label{fig:guetekurve}
 \end{figure}
 
+Ablesen ergibt:
+\begin{align*}
+  f_0 &= \SI{21850(1)}{}\\
+  f_{-} &= \SI{21685(1)}{},\\
+  \text{und }f_{+} &= 21850.
+\end{align*}
+Der Fehler beim Ablesen für $f_{-}$ und $f_{+}$ wird auf $\pm 1$ festgelegt.
+Damit ergibt sich nach \autoref{eq:guete} eine Güte von
+\begin{equation*}
+  Q_{exp} = \SI{63.15(0.26)}{}.
+\end{equation*}
 
-Siehe \autoref{fig:plot}!
+\subsection{Bestimmung der Suszeptibilität}
+\subsubsection{Effektiver Querschnitt der Proben}
+Die untersuchten Proben bestehen in diesem Experiment aus staubförmigem Material. Da sich das Pulver nicht beliebig verdichten lässt, muss berücksichtigt werden, dass die Dichte geringer als bei einem Einkristall.
+Berücksichtigt wird dies, indem der reale Querschnitt $Q_{real}$, den die Probe hätte, wenn sie aus einem Einkristall bestünde, in der Berechnung der Suszeptibilität verwendet wird.
+Dieser berechnet sich aus der Masse $m$, der Länge $l$ und der Dichte $\rho$ der Probe mit
+\begin{equation*}
+  Q_{real} = \frac{m}{L\rho}.
+\end{equation*}
+Die Daten der Proben und der daraus resultierende Querschnitt $Q_{real}$ sind in \autoref{tab:proben} aufgelistet. Aufgrund der Waage wird ein Fehler von $\pm 0.01\,\unit{g}$ bei den Massen angenommen. 
+Da die Länge $l$ der Proben mit einem Maßband, auf dem nur Messstriche in $\SI{0.1}{cm}$ Intervallen angegeben waren, abgemessen wurde, wird ein Fehler von $\pm \SI{0.1}{cm}$ abgeschätzt.
+\begin{table}[H]
+  \centering
+  \caption{Daten der Proben und Querschnitt $Q_{real}$.}
+  \begin{tabular}{c c c c c}
+      \toprule
+      {Material} & {$m /\symup{g}$} & {$l/\symup{cm}$} & {$\rho/\symup{\frac{g}{cm^3}}$} & {$Q/\symup{cm^2}$} \\
+      \midrule
+      $\symup{Dy_2O_3}$ & $\SI{14.38(0.01)}{}$ & $\SI{16.3(0.1)}{}$ & $7.80$ & $\SI{0.1131(0.0007)}{}$\\
+      $\symup{Nd_2O_3}$ & $\SI{18.48(0.01)}{}$ & $\SI{14.5(0.1)}{}$ & $7.24$ & $\SI{0.1760(0.0012)}{}$\\
+      $\symup{Gd_2O_3}$ & $\SI{14.08(0.01)}{}$ & $\SI{17.3(0.1)}{}$ & $7.40$ & $\SI{0.1100(0.0006)}{}$\\
+      \bottomrule
+  \end{tabular}
+  \label{tab:proben}
+\end{table}
+\subsubsection{Grundlagen zur theoretischen Bestimmung der Suszeptibilität}
+Die Suszeptibilität lässt sich aus dem Bahndrehimpuls $L$, der Spinquantenzahl $S$ und der Gesamtdrehimpulsquantenzahl $J$ ableiten. Für die Berechnung ist es wichtig, die 
+Anzahl der 4f-Elektronen in der jeweiligen Atomhülle zu kennen. Das Madelung-Schema \cite{madelung} beschreibt wie die Orbitale mit Elektronen aufgefüllt werden. Im Normalfall gilt folgende
+Besetzungsreihenfolge:
+\begin{equation*}
+  1s ⇒ 2s ⇒ 2p ⇒ 3s ⇒ 3p ⇒ 4s ⇒ 3d ⇒ 4p ⇒ 5s ⇒ 4d ⇒ 5p ⇒ 6s ⇒ 4f ⇒ 5d ⇒ 6p ⇒ ...
+\end{equation*}
+Da es sich bei den zu untersuchenden Proben um Lanthanoide handelt, besetzt zuerst ein Elektron ein Orbital der 5d-Unterschale, bevor 4f aufgefüllt wird. Die daraus
+folgenden Grundelektronenkonfigurationen sind in \autoref{tab:grund} dargestellt.
+\begin{table}[H]
+  \centering
+  \caption{Grundelektronenkonfigurationen der Stoffe Nd \cite{nd}, Gd \cite{gd} und Dy \cite{dy}.}
+  \begin{tabular}{c c}
+      \toprule
+      {Material} & {Elektronenkonfiguration} \\
+      \midrule
+      $\symup{Dy}$ & $\symup{4f^7\,5d^1\,6s^2}$\\
+      $\symup{Nd}$ & $\symup{4f^4\,6s^2}$\\
+      $\symup{Gd}$ & $\symup{4f^{10}\,6s^2}$\\
+      \bottomrule
+  \end{tabular}
+  \label{tab:grund}
+\end{table}
+Die Darstellung der Elektronenkonfiguration gibt immer das letzte voll besetzte Orbital an und in der Potenz, wieviele Elektronen sich im jeweiligen Orbital befinden.
+Da in diesem Versuch aber Ion-Verbindungen untersucht werden, d.h. $\symup{Dy^{3+}}$, $\symup{Nd^{3+}}$ und $\symup{Gd^{3+}}$, müssen 3 Elektronen von der ursprünglichen
+Konfiguration abgezogen werden. Dies geschieht nach der Befüllungsreihenfolge, außer wenn sich durch das abziehen der Elektronen von einem anderen Orbital ein günstiger
+stabiler Zustand, d.h. ein halbvolles oder volles Orbital, einstellen kann.
+Damit ergeben sich die Konfiguration in \autoref{tab:ion}.
+\begin{table}[H]
+  \centering
+  \caption{Elektronenkonfigurationen der Ion-Verbindungen $\symup{Dy^{3+}}$, $\symup{Nd^{3+}}$ und $\symup{Gd^{3+}}$.}
+  \begin{tabular}{c c}
+      \toprule
+      {Material} & {Elektronenkonfiguration} \\
+      \midrule
+      $\symup{Dy^{3+}}$ & $\symup{4f^7}$\\
+      $\symup{Nd^{3+}}$ & $\symup{4f^3}$\\
+      $\symup{Gd^{3+}}$ & $\symup{4f^9}$\\
+      \bottomrule
+  \end{tabular}
+  \label{tab:ion}
+\end{table}
+\subsubsection{Berechnung des Gesamtdrehimpulses von Dysprosiumoxid}
+Dysprosiumoxid hat neun Elektronen im 4f Orbital. Nach den Hundschen Regeln und dem Pauli-Prinzip folgt, dass sieben der neun Elektronen einen Spin von $\frac{1}{2}$ und zwei 
+einen Spin von $-\frac{1}{2}$ annehmen. Der Gesamtspin ist somit
+\begin{equation*}
+  \textbf{S} = -\frac{1}{2} \cdot 2 + \frac{1}{2} \cdot 7 = 2.5.
+\end{equation*}
+Da Dysprosiumoxid ein f-Orbital hat sind die Zustände $l \in {-3, ..., 3}$ möglich. Die sieben Elektronen mit positiv orientiertem Spin schöpfen alle Zustände für $l$ bereits aus
+und haben somit keinen Beitrag am Bahndrehimpuls. Nach der zweiten Hundschen Regel nehmen die Elektronen mit negativ orientiertem Spin dann die maximalen Zustände an.
+Somit gilt für den Bahndrehimpuls
+\begin{equation*}
+  \textbf{L} = 3 + 2 = 5.
+\end{equation*}
+Weil das 4f-Orbital mehr als zur Hälfte gefüllt ist, gilt nach der dritten Hundschen Regel
+\begin{equation*}
+  \textbf{J} = \textbf{L} + \textbf{S} = 7.5.
+\end{equation*}
+\subsubsection{Berechnung des Gesamtdrehimpulses von Neodymoxid}
+Neodymoxid hat drei Elektronen im 4f Orbital. Der maximale Gesamtspin beträgt somit
+\begin{equation*}
+  \textbf{S} = \frac{1}{2} \cdot 3 = 1.5.
+\end{equation*}
+Für den Bahndrehimpuls folgt aus der zweiten Hundschen Regel
+\begin{equation*}
+  \textbf{L} = 3 + 2 + 1 + 0 = 6.
+\end{equation*}
+Da das 4f-Orbital weniger als zur Hälfte gefüllt ist, folgt aus der dritten Hundschen Regel
+\begin{equation*}
+  \textbf{J} = \textbf{L} - \textbf{S} = 6 - 1.5 = 4.5.
+\end{equation*}
+\subsubsection{Berechnung des Gesamtdrehimpulses von Gadoliniumoxid}
+Gadoliniumoxid hat sieben Elektronen im 4f Orbital. Der maximale Gesamtspin beträgt somit
+\begin{equation*}
+  \textbf{S} = \frac{1}{2} \cdot 7 = 3.5.
+\end{equation*}
+Für den Bahndrehimpuls folgt dann aus der zweiten Hundschen Regel
+\begin{equation*}
+  \textbf{L} = 0.
+\end{equation*}
+Für den Gesamtdrehimpuls folgt
+\begin{equation*}
+  \textbf{J} = \textbf{S} = 3.5.
+\end{equation*}
+\subsubsection{Berechnung der Suszeptibilität}\label{sec:sus}
+Aus den berechneten Spin-, Bahndrehimpuls- und Gesamtdrehimpulszahlen lässt sich nun der Landé-Faktor nach \autoref{eq:lande} bestimmen. Die Zahl der Momente pro
+Volumeneinheit $N$ berechnet sich mit
+\begin{equation*}
+  N = 2\cdot\frac{N_A\rho}{m_{mol}}.
+\end{equation*}
+Der Vorfaktor kommt durch das doppelte Vorkommen der jeweiligen Lanthanoid-Atome in den Lanthanoidoxiden zustande. Die Raumtemperatur $T$ wird auf $\SI{293.15(1)}{K}$ geschätzt.
+Mit $\mu_0 = \SI{1.38e-23}{}$, $k_B = \SI{1.26e-6}{}$ und $\mu_B = \SI{9.27e-24}{}$ ergeben sich die Suszeptibilitäten in \autoref{tab:theo}.
+\begin{table}[H]
+  \centering
+  \caption{Landé-Faktor $g_j$, molare Masse $m_{mol}$, $N$ und Suszeptibilität $\chi$.}
+  \begin{tabular}{c c c c c}
+      \toprule
+      {Ion-Verbindung} & {$m_{mol}/\symup{\frac{g}{mol}}$} & {$N/\symup{\frac{10^28}{m^3}}$} & {$g_j$} & {$\chi$} \\
+      \midrule
+      $\symup{Dy_2O_3}$ & $\SI{373.00}{}$ & $\SI{2.5186}{}$ & $1.333$ & $\SI{0.02541(0.00008)}{}$\\
+      $\symup{Nd_2O_3}$ & $\SI{336.48}{}$ & $\SI{2.5916}{}$ & $0.727$ & $\SI{0.00301(0.00001)}{}$\\
+      $\symup{Gd_2O_3}$ & $\SI{362.50}{}$ & $\SI{2.4586}{}$ & $2.000$ & $\SI{0.01378(0.00005)}{}$\\
+      \bottomrule
+  \end{tabular}
+  \label{tab:theo}
+\end{table}
+Die molaren Massen von Dysprosiumoxid \cite{mol_dy}, Neodymoxid \cite{mol_nd} und Gadoliniumoxid \cite{mol_gd} wurden dabei aus entsprechender Quelle entnommen.
+\subsubsection{Bestimmung der Suszeptibilität mit der Brückenschaltung}
+\begin{table}[H]
+  \centering
+  \caption{Messwerte von $\symup{Dy_20_3}$ und die Differenz $\Delta R$.}
+  \begin{tabular}{c c c}
+      \toprule
+      {$R_0/\symup{\Omega}$} & {$R_{Probe}/\symup{\Omega}$} & {$\Delta_{R}/\symup{\Omega}$} \\
+      \midrule
+      $\SI{2.60(0.05)}{}$ & $\SI{0.98(0.05)}{}$ & $\SI{1.63(0.07)}{}$ \\
+      $\SI{2.42(0.05)}{}$ & $\SI{0.91(0.05)}{}$ & $\SI{1.51(0.07)}{}$ \\
+      $\SI{2.53(0.05)}{}$ & $\SI{0.98(0.05)}{}$ & $\SI{1.56(0.07)}{}$ \\
+      \bottomrule
+  \end{tabular}
+  \label{tab:R_dy}
+\end{table}
+\begin{table}[H]
+  \centering
+  \caption{Messwerte von $\symup{Nd_20_3}$ und die Differenz $\Delta R$.}
+  \begin{tabular}{c c c}
+      \toprule
+      {$R_0/\symup{\Omega}$} & {$R_{Probe}/\symup{\Omega}$} & {$\Delta_{R}/\symup{\Omega}$} \\
+      \midrule
+      $\SI{2.60(0.05)}{}$ & $\SI{2.32(0.05)}{}$ & $\SI{0.28(0.07)}{}$ \\
+      $\SI{2.52(0.05)}{}$ & $\SI{2.35(0.05)}{}$ & $\SI{0.16(0.07)}{}$ \\
+      $\SI{2.43(0.05)}{}$ & $\SI{2.38(0.05)}{}$ & $\SI{0.05(0.07)}{}$ \\
+      \bottomrule
+  \end{tabular}
+  \label{tab:R_nd}
+\end{table}
+\begin{table}[H]
+  \centering
+  \caption{Messwerte von $\symup{Gd_20_3}$ und die Differenz $\Delta R$.}
+  \begin{tabular}{c c c}
+      \toprule
+      {$R_0/\symup{\Omega}$} & {$R_{Probe}/\symup{\Omega}$} & {$\Delta_{R}/\symup{\Omega}$} \\
+      \midrule
+      $\SI{2.51(0.05)}{}$ & $\SI{1.74(0.05)}{}$ & $\SI{0.77(0.07)}{}$ \\
+      $\SI{2.42(0.05)}{}$ & $\SI{1.75(0.05)}{}$ & $\SI{0.67(0.07)}{}$ \\
+      $\SI{2.54(0.05)}{}$ & $\SI{1.73(0.05)}{}$ & $\SI{0.81(0.07)}{}$ \\
+      \bottomrule
+  \end{tabular}
+  \label{tab:R_gd}
+\end{table}
+Aus den Messwerten wird jeweils die Differenz $\Delta_R$ gebildet und anschließend gemittelt. Da die Spannung nicht immer genau über den Widerstand minimiert werden konnte,
+wird ein Fehler von $\pm \SI{0.05}{\Omega}$ angesetzt.
+Mit dem Widerstand $R_3 = \SI{998}{\Omega}$, den Widerstandsdifferenzen $\Delta_R$, der Spulenquerschnittsfläche $F = \SI{0.886}{cm^2}$ und $Q_{real}$ folgen mit 
+\autoref{eq:q_real} die Suszeptibilitäten in \autoref{tab:sus}.
+\begin{table}[H]
+  \centering
+  \caption{Gemittelte Widerstandsdifferenz $\overline{\Delta_R}$, Querschnitt $Q_{real}$ und Suszeptibilität $\chi$.}
+  \begin{tabular}{c c c c}
+      \toprule
+      {Ion-Verbindung} & {$\overline{\Delta_R}$} & {$Q_{real}/\symup{cm^2}$} & {$\chi$} \\
+      \midrule
+      $\symup{Dy_2O_3}$ & $\SI{1.56(0.04)}{}$ & $\SI{0.1131(0.0007)}{}$ & $\SI{0.0240(0.0006)}{}$\\
+      $\symup{Nd_2O_3}$ & $\SI{0.17(0.04)}{}$ & $\SI{0.1760(0.0012)}{}$ & $\SI{0.0016(0.0004)}{}$\\
+      $\symup{Gd_2O_3}$ & $\SI{0.75(0.04)}{}$ & $\SI{0.1100(0.0006)}{}$ & $\SI{0.0119(0.0006)}{}$\\
+      \bottomrule
+  \end{tabular}
+  \label{tab:sus}
+\end{table}

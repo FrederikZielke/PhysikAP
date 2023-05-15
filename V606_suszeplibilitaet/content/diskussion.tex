@@ -1,2 +1,34 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+Die Abweichungen der berechneten Größen von der Theorie werden nach 
+\begin{equation}\label{1}
+    \Delta = |\frac{exp - theo}{theo} \cdot 100|
+\end{equation}
+berechnet.
+\subsection{Güte des Selektivverstärkers}
+Am Selektivverstärker wurde eine Güte von $Q = 20$ eingestellt. Die durch die Durchlasskurve bestimmte Güte $Q_{exp} = \SI{63.15(0.26)}{}$ ist somit deutlich höher.
+Das führt dazu, dass die Störspannungen besser rausgefiltert werden können und somit die weiteren Messergebnisse genauer sind.
+
+\subsection{Suszeptibilität}
+In \autoref{sec:sus} wurde eine theoretische Vorhersage für die jeweiligen Suszeptibilitäten berechnet. Diese Werte werden nun genutzt, um die Genauigkeit des 
+Experiments zu untersuchen. Mit \autoref{1} ergeben sich die prozentualen Abweichungen.
+\begin{table}[H]
+    \centering
+    \caption{$\chi_{theorie}$, $\chi_{exp}$ und prozentuale Abweichung.}
+    \begin{tabular}{c c c c}
+        \toprule
+        {Ion-Verbindung} & {$\chi_{theorie}$} & {$\chi_{exp}$} & {$\Delta/\%$} \\
+        \midrule
+        $\symup{Dy_2O_3}$ & $\SI{0.02540(0.00009)}{}$ & $\SI{0.0240(0.0006)}{}$ & 5.5\\
+        $\symup{Nd_2O_3}$ & $\SI{0.00302(0.00001)}{}$ & $\SI{0.0016(0.0004)}{}$ & 47.0\\
+        $\symup{Gd_2O_3}$ & $\SI{0.01379(0.00004)}{}$ & $\SI{0.0119(0.0006)}{}$ & 15.9\\
+        \bottomrule
+    \end{tabular}
+    \label{tab:dis}
+\end{table}
+Die Abweichungen von Dysprosiumoxid und Gadoliniumoxid fallen mit $\SI{5.5}{\%}$ und $\SI{15.9}{\%}$ moderat aus. Bei Neodymoxid fällt die Abweichung mit $\SI{47.0}{\%}$
+größer aus. 
+Für die ersten beiden genannten lassen sich die Abweichungen noch mit Störspannungen und kleinen Ungenauigkeiten beim Abgleichen der Brückenschaltung zurückführen.
+Bei Neodymoxid sind dies zwar auch Gründe, aber diese erklären nicht die größere Abweichung. Auffällig ist, dass bei Neodymoxid die Widerstandsdifferenz deutlich kleiner als
+bei den anderen beiden Oxiden war. Das bedeutet, dass selbst wenn die absoluten Abweichungen bei allen Oxiden gleich groß sind, die Abweichungen bei Neodymoxid relativ 
+mehr Einfluss auf das Ergebnis haben. Generell lässt sich dieser Fakt vermuten, da die Oxide mit größerem $\Delta_R$ auch genauer werden.
