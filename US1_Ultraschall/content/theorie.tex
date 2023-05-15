@@ -1,0 +1,42 @@
+\section{Zielsetzung}
+\label{sec:Zielsetzung}
+
+\section{Theorie}
+\label{sec:Theorie}
+Der für Menschen hörbare Frequenzbereich liegt zwischen 16-20000Hz. Der Bereich unterhalb des hörbaren Bereichs heißt Infraschall. Ultraschall ist der Bereich von 
+$\SI{20}{kHz}$ bis $\SI{1}{GHz}$. Oberhalb von $\SI{1}{GHz}$ spricht man von Hyperschall. Ultraschall findet in der Medizin und Werkstoffprüftechnik Anwendung. So kann jener
+genutzt werden, um Auskunft über die zu untersuchende Probe zu gewinnen ohne diese zu zerstören.\\
+Mathematisch lässt sich Schall als eine longitudinale Welle beschreiben, die sich aufgrund von Druckänderungen durch ein Medium bewegt. Die Beschreibung hat dann die Form
+\begin{equation*}
+    p(x, t) = p_0 + v_0 Z cos(\omega t - kx).
+\end{equation*}
+Dabei entspricht $Z = c_M \rho_M$ der akustischen Impedanz. Die Größen $c_M$ und $\rho_M$ sind die Schallgeschwindigkeit und Dichte im Ausbreitungsmedium. Beide sind also
+stoffspezifisch.
+In Gasen und Flüssigkeiten ist Schall immer eine Longitudinalwelle. Die Schallgeschwindigkeit hängt da von der Dichte $\rho$ und der Kompressibilität $\kappa$ ab. Es gilt:
+\begin{equation*}
+    c_{Flüssigkeit} = \sqrt{\frac{1}{\kappa \rho}}.
+\end{equation*}
+In Festkörpern sind aufgrund von Schubspannungen neben Longitudinalwellen auch Transversalwellen möglich. Hier bestimmt das Elastizitätsmodul $E$ die Schallgeschwindigkeit
+im Festkörpern, sodass
+\begin{equation*}
+    c_{Festkörper} = \sqrt{\frac{E}{\rho}}
+\end{equation*}
+gilt.
+Die Schallgeschwindigkeit der Longitudinalwelle und Transversalwelle kann dabei unterschiedlich groß sein, da Schallgeschwindigkeiten in Festkörpern richtungsabhängig sind.
+Durch Absorption nimmt die Intensität der Schallwelle ab. Die Intensität wird dabei mit der Strecke $x$ im Medium skaliert:
+\begin{equation*}
+    I(x) = I_0 exp(-\alpha x).
+\end{equation*}
+Dabei ist $I_0$ die anfängliche Intensität und $\alpha$ der Absorptionskoeffizient des Mediums. Bei der Verwendung von Ultraschall nimmt die Amplitude stark durch das 
+Durchlaufen von Luft ab. Deshalb wird in der Regel ein Kontaktmittel zwischen Sonde und dem zu untersuchenden Objekt genutzt.\\
+\\
+Die Ausbreitung von Schall ist ähnlich der einer elektromagnetischen Welle. Bei Grenzflächen zwischen zwei Medien kommt es zur Reflexion und Transmission. Die Welle spaltet 
+sich also in einen reflektierten und transmitierten Teil auf. Die Intensität der reflektierten Welle lässt sich mit dem Reflexionskoeffizienten
+\begin{equation*}
+    R = (\frac{Z_1 - Z_2}{Z_1 + Z_2})^2
+\end{equation*}
+beschreiben. $Z_1$ und $Z_2$ sind die akustischen Impedanzen des Mediums vor und nach der Grenzfläche. Mit 
+\begin{equation*}
+    T + R = 1 \Leftrightarrow T = 1 - R
+\end{equation*}
+lässt sich die transmitierte Intensität berechnen.
