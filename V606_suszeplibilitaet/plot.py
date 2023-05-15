@@ -5,25 +5,25 @@ from uncertainties import ufloat
 from uncertainties import unumpy as unp
 from scipy import constants as sc
 
-#f, U = np.genfromtxt("content/guetekurve.csv", delimiter = ",", unpack = True)
-#U_E = 1
-#U_A = U
-#def fit1(x):
-#    return 1/100*x - 1068/5
-#x1 = np.linspace(21600, 21800, 100)
-#plt.plot(x1, fit1(x1), color = 'red')
-#def fit2(x):
-#    return -1/125*x + 359/2
-#x2 = np.linspace(21890, 22135, 100)
-#plt.plot(x1, fit1(x1), color = 'red', label = "Hilfsgeraden")
-#plt.plot(x2, fit2(x2), color = 'red')
-#plt.hlines(y = 1/np.sqrt(2)*4.6, xmin = 21850-2000, xmax = 21850+2000, color = 'black', linestyles = 'dotted', label = r"$\frac{1}{\sqrt{2}}U_{max}$")
-#plt.plot(f, U_A/U_E, 'bx', label = 'Gütekurve')
-#plt.ylabel(r'$\frac{U_A}{U_E}$')
-#plt.xlabel(r'$f\,$[Hz]')
-#plt.legend(loc = 'best')
-#plt.savefig('build/guetekurve.pdf')
-#plt.show()
+f, U = np.genfromtxt("content/guetekurve.csv", delimiter = ",", unpack = True)
+U_E = 1
+U_A = U
+def fit1(x):
+    return 1/100*x - 1068/5
+x1 = np.linspace(21600, 21800, 100)
+plt.plot(x1, fit1(x1), color = 'red')
+def fit2(x):
+    return -1/125*x + 359/2
+x2 = np.linspace(21890, 22135, 100)
+plt.plot(x1, fit1(x1), color = 'red', label = "Hilfsgeraden")
+plt.plot(x2, fit2(x2), color = 'red')
+plt.hlines(y = 1/np.sqrt(2)*4.6, xmin = 21850-2000, xmax = 21850+2000, color = 'black', linestyles = 'dotted', label = r"$\frac{1}{\sqrt{2}}U_{max}$")
+plt.plot(f, U_A/U_E, 'bx', label = 'Gütekurve')
+plt.ylabel(r'$\frac{U_A}{U_E}$')
+plt.xlabel(r'$f\,$[Hz]')
+plt.legend(loc = 'best')
+plt.savefig('build/guetekurve.pdf')
+plt.show()
 
 f1 = ufloat(21685, 1)
 f2 = ufloat(22031, 1)
