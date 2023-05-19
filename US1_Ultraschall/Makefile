@@ -1,14 +1,14 @@
 all: build/US1.pdf
 
 # hier Python-Skripte:
-build/plot.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
+build/geschwindigkeit.pdf: geschwindigkeit.py ../matplotlibrc ../header-matplotlib.tex | build
 	# so that matplotlib can find the tex header when running
 	# LaTeX in the tmp directory
 	# and set the matplotlibrc
-	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot.py
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python geschwindigkeit.py
 
 # hier weitere Abhängigkeiten für build/US1.pdf deklarieren:
-build/US1.pdf: build/plot.pdf
+build/US1.pdf: build/geschwindigkeit.pdf
 
 build/US1.pdf: FORCE | build
 	# to find header and bib files in the main directory

@@ -1,12 +1,75 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
-  \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+%Hier noch irgendeinen Text einfuegen lol oder auch nicht hahahahahahahaha
+
+\subsection{Vermessung des Acrylblocks mit Schieblehre}
+\label{subsec:Schieblehre}
+
+
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \toprule
+        {Lochnummer} & {Abstand zur Oberseite / [mm]} & {Abstand zur Unterseite / [mm]} & {Durchmesser / [mm]} \\
+        \midrule
+        1 & 59.00 \pm\, 0.04 & 19.10 \pm\, 0.04 & - \\
+        2 & 60.82 \pm\, 0.04 & 17.46 \pm\, 0.04 & - \\
+        3 & 13.08 \pm\, 0.04 & 60.64 \pm\, 0.04 & 5.92 \pm 0.06\\
+        4 & 21.70 \pm\, 0.04 & 53.06 \pm\, 0.04 & 5.00 \pm 0.06\\
+        5 & 30.26 \pm\, 0.04 & 45.46 \pm\, 0.04 & 3.92 \pm 0.06\\
+        6 & 38.66 \pm\, 0.04 & 37.90 \pm\, 0.04 & 3.10 \pm 0.06\\
+        7 & 46.70 \pm\, 0.04 & 29.86 \pm\, 0.04 & 3.10 \pm 0.06\\
+        8 & 54.64 \pm\, 0.04 & 21.86 \pm\, 0.04 & 3.06 \pm 0.06\\
+        9 & 62.70 \pm\, 0.04 & 13.70 \pm\, 0.04 & 3.04 \pm 0.06\\
+        10 & 70.64 \pm\, 0.04 & 05.78 \pm\, 0.04 & 3.10 \pm 0.06\\
+        11 & 15.20 \pm\, 0.04 & 54.24 \pm\, 0.04 & 10.00 \pm 0.06\\
+        \bottomrule
+    \end{tabular}
+    \caption{Ausmessung der Löcher im Acrylblock mit einer Schieblehre.}
+    \label{tab:Schieblehre}
+\end{table}
+
+Zur Bestimmung der Schallgeschwindigkeit %Und weitern Sachen?
+wird der Acrylblock mit einer Schieblehre vermessen. Die Gesamthöhe des Blocks beträgt $h = \SI{79,76}{mm}.$
+Die Messwerte sind in Tabelle \ref{tab:Schieblehre} aufgelistet. 
+Für alle Löcher wird der Abstand zur Ober- und Unterseite des Blocks gemessen.
+Der Durchmesser der Löcher 3 bis 11 wird vermessen.
+Die Durchmesser der Löcher 1 und 2 werden nicht weiter betrachtet, da sie zu klein sind um mit der Schieblehre vermessen zu werden.
+Die Fehler der Messwerte werden mit $\Delta x = \SI{0,04}{mm}$ angenommen, was zwei Nonius-Einheiten entspricht.
+Der Fehler für die Vermessung des Durchmessers wird etwas größer angenommen, da das genaue Ansetzen der Schieblehre nicht immer möglich war.
+
+
+\subsection{Bestimmung der Schallgeschwindigkeit in Acryl}
+\label{sec:Schallgeschwindigkeit}
+
+% Grafik build/AkrylGeschwindigkeit.pdf einfuegen
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{build/AkrylGeschwindigkeit.pdf}
+    \caption{Bestimmung der Schallgeschwindigkeit in Acryl.}
+    \label{fig:AkryllGeschwindigkeit}
 \end{figure}
 
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \toprule
+        {Lochnummer} & {Laufzeit / [µs]} & {Höhe / [mm]} \\
+        \midrule
+        3 & 45.4 & 60.64\\
+        4 & 39.5 & 53.06\\
+        5 & 34.2 & 45.46\\
+        6 & 28.6 & 37.90\\
+        7 & 22.6 & 29.86\\
+        8 & 19.6 & 21.86\\
+        9 & 11.1 & 13.70\\
+        11 & 40.4 & 54.24\\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
-Siehe \autoref{fig:plot}!
+Zur Bestimmung der Schallgeschwindigkeit in Acryl werden die Laufzeiten zu sieben Löchern gemessen und gegen
+die Höhe der Löcher aufgetragen. Die Schallgeschwindigkeit wird dann aus der Steigung der Ausgleichsgeraden bestimmt.
+Die Dicke der Anpassungsschicht entspricht der Verschiebung der Ausgleichsgeraden in der y-Richtung.
+Die Messwerte sind in Tabelle \ref{tab:Schallgeschwindigkeit} aufgelistet.
