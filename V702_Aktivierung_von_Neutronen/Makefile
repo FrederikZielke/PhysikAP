@@ -1,16 +1,16 @@
-all: build/V000.pdf
+all: build/V702.pdf
 
 # hier Python-Skripte:
-build/plot.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
-	# so that matplotlib can find the tex header when running
-	# LaTeX in the tmp directory
-	# and set the matplotlibrc
-	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot.py
+#build/plot.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
+#	# so that matplotlib can find the tex header when running
+#	# LaTeX in the tmp directory
+#	# and set the matplotlibrc
+#	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot.py
 
-# hier weitere Abhängigkeiten für build/V000.pdf deklarieren:
-build/V000.pdf: build/plot.pdf
+# hier weitere Abhängigkeiten für build/V702.pdf deklarieren:
+#build/V702.pdf: build/plot.pdf
 
-build/V000.pdf: FORCE | build
+build/V702.pdf: FORCE | build
 	# to find header and bib files in the main directory
 	TEXINPUTS=..: \
 	BIBINPUTS=..: \
@@ -20,7 +20,7 @@ build/V000.pdf: FORCE | build
 	  --output-directory=build \
 	  --interaction=nonstopmode \
 	  --halt-on-error \
-	V000.tex
+	V702.tex
 
 build:
 	mkdir -p build
