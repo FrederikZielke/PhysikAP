@@ -1,2 +1,44 @@
 \section{Vorbereitungsaufgaben}
 \label{sec:Vorbereitungsaufgaben}
+
+Die Schallgeschwindigkeit ist abhängig vom Material. Die Werte in \autoref{tab:c_schall} sind Literaturwerte, bei $T = \SI{20}{°C}$ und Normaldruck.
+\begin{table}[H]
+    \centering
+    \caption{Schallgeschwindigkeit in verschiedenen Medien.}
+    \begin{tabular}{c c}
+        \toprule
+        {Material} & {$c /\symup{\frac{m}{s}}$}\\
+        \midrule
+        Luft   & $\SI{331.5}{}{}$\cite{acryl}\\
+        Wasser & $\SI{1485}{}$\cite{luftwasser}\\
+        Akryl  & $\SI{2730}{}$\cite{luftwasser}\\
+        \bottomrule
+    \end{tabular}
+    \label{tab:c_schall}
+\end{table}
+
+Da in dem Versuch ein Akrylblock mit verschiedene Sonden untersucht wird, sind die Wellenlängen und Periodendauern der verschiedenen Frequenzen interessant.
+Die Wellenlängen ergeben sich mit
+\begin{equation*}
+    \lambda = \frac{c}{f}
+\end{equation*}
+und die Periodendauern mit 
+\begin{equation*}
+    T = \frac{1}{f}.
+\end{equation*}
+
+Folglich ergeben sich die Werte in \autoref{tab:vor}.
+\begin{table}[H]
+    \centering
+    \caption{Frequenz $f$, Wellenlänge $\lambda$ und Periodendauer $T$.}
+    \begin{tabular}{c c c}
+        \toprule
+        {$f/\symup{MHz}$} & {$\lambda /\symup{m}$} & {$T /\symup{s}$}\\
+        \midrule
+        1 & 0.00273 & $10^{-6}$ \\
+        2 & 0.001365 & $2 \cdot 10^{-6}$\\
+        4 & 0.0006825 & $4 \cdot 10^{-6}$\\
+        \bottomrule
+    \end{tabular}
+    \label{tab:vor}
+\end{table}
