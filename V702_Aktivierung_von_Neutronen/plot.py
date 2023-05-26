@@ -12,4 +12,4 @@ plt.yscale('log')
 
 plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
 plt.show()
-
+plt.savefig('build/plot2.pdf')
