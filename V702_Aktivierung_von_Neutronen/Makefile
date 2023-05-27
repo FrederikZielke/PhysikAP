@@ -1,12 +1,16 @@
 all: build/V702.pdf
 
 # hier Python-Skripte:
-#build/plot.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
+build/plot.pdf: vanadium.py ../matplotlibrc ../header-matplotlib.tex | build
 #	# so that matplotlib can find the tex header when running
 #	# LaTeX in the tmp directory
 #	# and set the matplotlibrc
-#	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot.py
-
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python vanadium.py
+build/plot.pdf: silber.py ../matplotlibrc ../header-matplotlib.tex | build
+#	# so that matplotlib can find the tex header when running
+#	# LaTeX in the tmp directory
+#	# and set the matplotlibrc
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python silber.py
 # hier weitere Abhängigkeiten für build/V702.pdf deklarieren:
 #build/V702.pdf: build/plot.pdf
 
