@@ -1,7 +1,13 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-%Hier noch irgendeinen Text einfuegen lol oder auch nicht hahahahahahahaha
+% Kurzer Text zur Fehlerfortpflanzung nach Gauss
+Alle Fehler werden im Folgenden mit der Gaußschen Fehlerfortpflanzung berechnet.
+Die Formel für abgeleitete Größen ist gegeben durch
+\begin{equation*}
+    \label{eqn:gauss}
+    \Delta f = \sqrt{\sum_{i=1}^N \left( \frac{\partial f}{\partial x_i} \right)^2 \cdot (\Delta x_i)^2}.
+\end{equation*}
 
 \subsection{Vermessung des Acrylblocks mit Schieblehre}
 \label{subsec:Schieblehre}
@@ -32,7 +38,7 @@
 
 Zur Bestimmung der Schallgeschwindigkeit %Und weitern Sachen?
 wird der Acrylblock mit einer Schieblehre vermessen. Die Gesamthöhe des Blocks beträgt $h = \SI{79,76 \pm 0.04}{mm}.$
-Die Messwerte sind in Tabelle \ref{tab:Schieblehre} aufgelistet. 
+Die Messwerte sind in Tabelle \ref{tab:Schieblehre} aufgelistet.
 Für alle Löcher wird der Abstand zur Ober- und Unterseite des Blocks gemessen.
 Der Durchmesser der Löcher 3 bis 11 wird vermessen.
 Die Durchmesser der Löcher 1 und 2 werden nicht weiter betrachtet, da sie zu klein sind um mit der Schieblehre vermessen zu werden.
@@ -80,11 +86,11 @@ So ergibt sich für die Schallgeschwindigkeit in Acryl
 %Steigung:  2824.9278245842556 ± 84.76627810736713
 %y-Achsenabschnitt:  -0.0030310985534149383 ± 0.0013618201193985383
 \begin{equation*}
-    m = c_\text{Acryl} = 2824 ± 84.7 \si{\meter\per\second}
+    m = c_\text{Acryl} = \SI{2824(84.7)}{\meter\per\second}
 \end{equation*}
 und für die Dicke der Anpassungsschicht
 \begin{equation*}
-    b = -0.0030 ± 0.0014 \si{\meter}.
+    b = \SI{-0.0030(0.0014)}{\meter}.
 \end{equation*}
 
 \subsection{Bestimmung der Lage und Größe aller Fehlstellen mit dem Impuls-Echo-Verfahren}
@@ -165,7 +171,7 @@ Zur Untersuchung des Auflösungsvermögens werden die Sonden auf die Löcher 1 u
 Die Messungen sind in den Abbildungen \ref{fig:Aufloesung1Mhz} und \ref{fig:Aufloesung2Mhz} dargestellt.
 Die mit der 1 Mhz Sonde gemessenen Peaks sind nicht zu unterscheiden, da sie sich überlagern.
 Die Peaks der 2 Mhz Sonde sind unterscheidbar. 
-\newpage
+
 
 \subsection{Untersuchung des Acrylblocks mit dem B-Scan}
 \label{sec:BScanAcryl}
