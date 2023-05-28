@@ -18,16 +18,55 @@ aufgelistet.
         {Messung} & {$N_0$}\\
         \midrule
         Vanadium & $\SI{0.2924(0.094)}{\frac{Impulse}{s}}$\\
-        Silber 1 & $\SI{0.2870(0.040)}{\frac{Impulse}{s}}$\\
-        Silber 2 & $\SI{0.2340(0.002)}{\frac{Impulse}{s}}$\\
+        Silber 1 & $\SI{0.8610(0.120)}{\frac{Impulse}{s}}$\\
+        Silber 2 & $\SI{0.0720(0.006)}{\frac{Impulse}{s}}$\\
         \bottomrule
     \end{tabular}
     \label{tab:dis}
 \end{table}
 
-Alle durch die Ausgleichsrechnung bestimmten Werte liegen knapp über dem gemessenen Nulleffekt.
-Ein Grund dafür kann sein, dass die Messungen nicht lange genug durchgeführt worden sind. Generell ist es gegen Ende 
+Alle durch die Ausgleichsrechnung bestimmten Werte liegen über dem gemessenen Nulleffekt.
+Ein Grund dafür kann sein, dass die Messungen nicht lange genug durchgeführt worden sind. Gerade bei dem Zerfall von Silber ist es gegen Ende 
 der Messdaten schwierig den Zerfall und die Hintergrundstrahlung von einander zu unterscheiden, da beide Größen dort 
 in der gleichen Größenordnung liegen.
 
 \subsection{Zerfall von Vanadium}
+Die bestimmte Halbwärtszeit, der Theoriewert \cite{vanadium} und die Abweichung sind in \autoref{tab:van} aufgelistet.
+\begin{table}[H]
+    \centering
+    \caption{Experimentell bestimmte Halbwärtszeit $T_{exp}$, Theoriewert $T_{theo}$ und Abweichung in \%.}
+    \begin{tabular}{c c c}
+        \toprule
+        {$T_{exp}\,/\symup{s}$} & {$T_{theo}\,/\symup{s}$} & {$\Delta\,/\symup{\%}$}\\
+        \midrule
+        $225\pm30$ & 224.58 & 0.19\\
+        \bottomrule
+    \end{tabular}
+    \label{tab:van}
+\end{table}
+Der Verlauf der Messwerte folgt dem erwarteten exponentiellen Abfall. Je geringer jedoch die Strahlung wird, desto mehr schwanken die Messwerte, da Hintergrundstrahlung und
+Strahlung des Zerfalls in einem sehr ähnlichen Bereich liegen. Die Halbwärtszeit liegt im erwarteten Bereich.
+
+\subsection{Zerfall von Silber}
+Die bestimmten Halbwärtszeiten, der Theoriewert für den kurzen \cite{silber_kurz} und für den langen Zerfall \cite{silber_lang} und die Abweichung sind in \autoref{tab:sil} aufgelistet.
+\begin{table}[H]
+    \centering
+    \caption{Experimentell bestimmte Halbwärtszeit $T_{exp}$, Theoriewert $T_{theo}$ und Abweichung in \%.}
+    \begin{tabular}{c c c c}
+        \toprule
+        {Messreihe} & {$T_{exp}\,/\symup{s}$} & {$T_{theo}\,/\symup{s}$} & {$\Delta\,/\symup{\%}$}\\
+        \midrule
+        1, kurz & $\SI{37(4)}{}$ & 24.56 & 50.65\\
+        1, lang & $\SI{110(16)}{}$ & 142.92 & 23.03\\
+        2, kurz & $\SI{33.6(2.7)}{}$ & 24.56 & 36.81\\
+        2, lang & $\SI{124(16)}{}$ & 142.92 & 13.24\\
+        \bottomrule
+    \end{tabular}
+    \label{tab:van}
+\end{table}
+Die experimentell bestimmten Halbwärtszeiten liegen zwar in der richtigen Größenordnung, weichen jedoch alle deutlich von der Theorie ab. Da die Messwerte generell 
+bei geringer Intensität großen Schwankungen unterliegen, sind die aus der Ausgleichsrechnung resultierenden Halbwärtszeiten mit einem großen Fehler behaftet. Trotz des 
+großen Fehlers liegt der Theoriewert bei keinem experimentell besimmten Wert im Fehlerbereich. \\
+Da der Zerfall von instabilen Isotopen ein stochastischer Prozess ist und die Hintergrundstrahlung nicht gut genug vom Signal getrennt werden kann, sind Schwankungen
+zu erwarten gewesen.\\
+Generell ist der Versuch dennoch geeignet, um eine grobe Abschätzung für den Zerfall zu erhalten.
