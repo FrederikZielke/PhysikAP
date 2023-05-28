@@ -65,6 +65,13 @@ Wenn die Energie des Neutrons sehr viel kleiner als $E_{\text{r}}$ ist, gilt fü
 \subsection{Erzeugung langsamer Elektronen}
 \label{subsec:Erzeugung langsamer Elektronen}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/Neutronenquelle.jpg}
+    \caption{Schematische Darstellung der Erzeugung thermischer Neutronen. \cite{V702}}
+    \label{fig:Neutronenquelle}
+\end{figure}
+
 Freie Neutronen sind instabil und müssen deshalb für das Experiment erzeugt werden.
 Dies wird durch Beschuss von $\ce{^{9}Be}$-Kernen mit $\alpha$-Teilchen umgesetzt.
 \begin{equation*}
@@ -72,7 +79,7 @@ Dies wird durch Beschuss von $\ce{^{9}Be}$-Kernen mit $\alpha$-Teilchen umgesetz
 \end{equation*}
 Die frei werdenden Neutronen besitzen eine Energie von bis zu $\SI{13.7}{MeV}.$
 Ihre Energieverteilung ist kontinuierlich.
-Die entstandenen Neutronen diffundieren durch eine Parafinschicht und werden dadurch abgebremst.
+Die entstandenen Neutronen diffundieren, wie in \autoref{fig:Neutronenquelle} zu sehen, durch eine Parafinschicht und werden dadurch abgebremst.
 Sie geben dabei ihre Energie durch elastische Stöße an die Wasserstoffatome im Parafin ab.
 Wasserstoff wird hierbei bevorzugt verwendet, da die bei elastischen Stößen übertragene Energie maximal ist, wenn die Massen der Stoßpartner gleich sind.
 Die übertragene Energie kann berechnet werden mit
@@ -122,10 +129,12 @@ Da $\ln N_0(1 - \textbf{e}^{-\lambda\Delta t})$ konstant ist, kann $\lambda$ dur
 In der Natur vorkommendes Silber besteht zu $\SI{52.3}{\percent}$ aus $\ce{^{107}Ag}$ und zu $\SI{48.7}{\percent}$ aus $\ce{^{109}Ag}$.
 Beide Isotope sind stabil und können durch Neutroneneinfang yu instabilen Isotope überführt werden.
 Der vollständige Prozess im Verlauf des Experiments ist
-\begin{align}
-    \ce{^{107}_{47}Ag} + \ce{^{1}_{0}n} &\rightarrow \ce{^{108}_{47}Ag} \rightarrow \ce{^{108}_{48}Cd} + \beta^- + \bar{\nu}_e \label{eqn:Ag107}\\
-    \ce{^{109}_{47}Ag} + \ce{^{1}_{0}n} &\rightarrow \ce{^{110}_{47}Ag} \rightarrow \ce{^{110}_{48}Cd} + \beta^- + \bar{\nu}_e \label{eqn:Ag109}.
-\end{align}
+\begin{equation*}
+    \ce{^{107}_{47}Ag} + \ce{^{1}_{0}n} \rightarrow \ce{^{108}_{47}Ag} \rightarrow \ce{^{108}_{48}Cd} + \beta^- + \bar{\nu}_e \label{eqn:Ag107}
+\end{equation*}
+\begin{equation*}
+    \ce{^{109}_{47}Ag} + \ce{^{1}_{0}n} \rightarrow \ce{^{110}_{47}Ag} \rightarrow \ce{^{110}_{48}Cd} + \beta^- + \bar{\nu}_e \label{eqn:Ag109}.    
+\end{equation*}
 Problematisch ist hierbei, dass sich die Zerfallskurven der beiden Isotope überlagern. 
 Da sich die Halbwertszeiten der beiden Isotope stark unterscheiden, können die Zerfallskurven voneinander getrennt werden.
 Nach einer hinreichende langen Zeit $t^*$ sind alle kurzlebigeren $\ce{^{110}Ag}$-Kerne zerfallen und es zerfällt nur noch $\ce{^{108}Ag}$.
@@ -145,3 +154,4 @@ Es nimmt jedoch neben den Zerfällen auch Umgebungsstrahlung auf.
 Um die Detektion von Umgebungsstrahlung zu minimieren wird das Zählrohr in eine Bleiabschirmung gesteckt.
 Es ist dennoch nicht vollständig vermeidbar, dass Umgebungsstrahlung detektiert wird.
 Dieser sogenannte Nulleffekt wird vor Beginn der Messung bestimmt und von den Messwerten abgezogen.
+\newpage
