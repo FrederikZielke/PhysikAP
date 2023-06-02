@@ -4,7 +4,7 @@ Die in \autoref{sec:Auswertung} gezeigten Grafiken und Rechnungen sind mithilfe 
 erstellt worden.%Vielleicht noch auskommentieren
 %Fehlerrechnung noch hinzufügen
 
-\subsubsection{Reflexionsgesetz}
+\subsection{Reflexionsgesetz}
 \label{sec:Reflexionsgesetz}
 
 \begin{table}
@@ -80,7 +80,7 @@ Die Abweichung zum Literaturwert $n_{\text{plexi,lit}} = 1.49$ aus \autoref{tab:
   \Delta = |\frac{exp - theo}{theo}|\cdot 100\%
 \end{equation*}
 berechnet und beträgt $1.5\%.$
-Die Lichtgeschwindigkeit $c_{\text{M}}$ in einem Medium wird mit \autoref{eq:c_medium} berechnet.
+Die Lichtgeschwindigkeit $c_{\text{M}}$ in einem Medium wird mit \autoref{eq:c_medium} berechnet.\\
 In Plexiglas beträgt die Lichtgeschwindigkeit $c_{\text{plexi}} = \SI{2.043(0.033)e08}{\frac{m}{s}}$\\
 
 
@@ -96,7 +96,7 @@ In Plexiglas beträgt die Lichtgeschwindigkeit $c_{\text{plexi}} = \SI{2.043(0.0
 
 Die geometrische Herleitung des Strahlenversatzes $s$ ist in \autoref{fig:Strahlenversatz} dargestellt.
 Der Strahlenversatz befindet sich in einem rechtwinkligen Dreieck mit der Hypotenuse $h$ und ist selbst die Gegenkathete des Winkels $\alpha - \beta$.
-Da $h$ nicht bekannt ist wird es úber den Satz des Pythagoras berechnet mit $d$ und $b$ als Katheten.
+Da $h$ nicht bekannt ist wird es über den Satz des Pythagoras berechnet mit $d$ und $b$ als Katheten.
 \begin{equation*}
   h = \sqrt{d^2 + b^2}
 \end{equation*}
@@ -166,7 +166,7 @@ Die Ablenkung des Strahles $\delta$, welche dieser beim Durchqueren des Prismas 
 \end{equation}
 Es gilt die Winkelbeziehung $\beta_1 + \beta_2 = \gamma$. 
 Weiter wird $\beta_1$ mithilfe des Brechungsgesetzes \eqref{eq:Brechungsgesetz} berechnet.
-Der Brechungsindex wird $n = 1.55$ gewählt, als Wert für Kronglas aus \autoref{sec:Brechungsgesetz}.
+Der Brechungsindex wird $n = 1.55$ gewählt, als Wert für Kronglas aus \autoref{sec:Vorbereitungsaufgaben}.
 Die Berechneten $\beta_1, \beta_2$ und $\delta$ sind in \autoref{tab:delta_gruen} und \autoref{tab:delta_rot} aufgelistet. 
 
 \begin{table}
@@ -202,34 +202,111 @@ Die Berechneten $\beta_1, \beta_2$ und $\delta$ sind in \autoref{tab:delta_gruen
   \end{tabular}
   \label{tab:delta_rot}
 \end{table}
+\newpage
 
 \subsection{Beugung am Gitter}
 \label{sec:Beugung}
 
+Die Wellenlänge der beiden Laserstrahlen kann durch \autoref{eq:gitter} berechnet werden.
+Dafür wird der Ablenkwinkel $\phi$ der jeweiligen Beugungsordnung $k$ gemessen.
+Die Messwerte sind in \autoref{tab:gitter} aufgelistet.
+Die berechneten Wellenlängen sind in \autoref{tab:wellenlaenge} aufgelistet.
+
+\begin{table}
+  \centering
+  \caption{Ablenkwinkel $\phi$ der Beugungsordnungen $k$ des grünen und roten Laserstrahls mit Gitterkonstante $d$.}
+  \begin{tabular}{c c c c}
+    \toprule
+    {$k$} & {$\phi_{\text{grün}}\,/\symup{°}$} & {$\phi_{\text{rot}}\,/\symup{°}$} & {$d\,/\symup{\mu m}$}\\
+    \midrule
+    1 & (19\pm 1) & (23\pm 1) & 1.67\\
+    \hline
+    1 & ( 9\pm 1) & (11\pm 1) & \multirow{3}{*}{3.33}\\
+    2 & (19\pm 1) & (23\pm 1) & \\
+    3 & (29\pm 1) & (36\pm 1) & \\
+    \hline
+    1 & ( 3\pm 1) & ( 5\pm 1) & \multirow{10}{*}{10}\\
+    2 & ( 5\pm 1) & ( 8\pm 1) & \\
+    3 & ( 9\pm 1) & (11\pm 1) & \\
+    4 & (13\pm 1) & (15\pm 1) & \\
+    5 & (16\pm 1) & (19\pm 1) & \\
+    6 & (19\pm 1) & (23\pm 1) & \\
+    7 & (22\pm 1) & (27\pm 1) & \\
+    8 & {-} & (31\pm 1) & \\
+    9 & (29\pm 1) & (36\pm 1) & \\
+    10 &(33\pm 1) & {-} & \\
+    \bottomrule
+  \end{tabular}
+  \label{tab:gitter}
+\end{table}
+
+
+
+\begin{table}[H]
+  \centering
+  \caption{Wellenlänge $\lambda$ der beiden Laserstrahlen mit zugehöriger Beugungsordnung $k$.}
+  \resizebox{0.8\textwidth}{!}{
+  \begin{tabular}{c c c}
+      \toprule
+      {$d\,/\symup{\mu m}$} & {$k$} & {$\lambda_{\text{grün}}\,/\symup{m}$} \\
+      \midrule
+      1.67 & 1 & (5.44\pm 0.28)e-07\\
+      \midrule
+      \multirow{3}{*}{3.33} & 1 & (5.2\pm 0.6)e-07\\
+       & 2 & (5.42\pm 0.27)e-07\\
+       & 3 & (5.38\pm 0.17)e-07\\
+      \midrule
+      \multirow{10}{*}{10} & 1 & (5.2\pm 1.7)e-07\\
+       & 2 & (4.4\pm 0.9)e-07\\
+       & 3 & (5.2\pm 0.6)e-07\\
+       & 4 & (5.6\pm 0.4)e-07\\
+       & 5 & (5.51\pm 0.34)e-07\\
+       & 6 & (5.43\pm 0.28)e-07\\
+       & 7 & (5.35\pm 0.23)e-07\\
+       & 9 & (5.39\pm 0.17)e-07\\
+       & 10 & (5.45\pm 0.15)e-07\\
+      \bottomrule
+  \end{tabular}
+  \begin{tabular}{c c c}
+      \toprule
+      {$d\,/\symup{\mu m}$} & {$k$} & {$\lambda_{\text{rot}}\,/\symup{m}$} \\
+      \midrule
+      1.67 & 1 & (6.53\pm 0.27)e-07\\
+      \midrule
+      \multirow{3}{*}{3.33} & 1 & (6.4\pm 0.6)e-07\\
+       & 2 & (6.51\pm 0.27)e-07\\
+       & 3 & (6.52\pm 0.16)e-07\\
+      \midrule
+      \multirow{10}{*}{10} & 1 & (8.7\pm 1.7)e-07\\
+       & 2 & (7.0\pm 0.9)e-07\\
+       & 3 & (6.4\pm 0.6)e-07\\
+       & 4 & (6.5\pm 0.4)e-07\\
+       & 5 & (6.51\pm 0.33)e-07\\
+       & 6 & (6.51\pm 0.27)e-07\\
+       & 7 & (6.49\pm 0.22)e-07\\
+       & 8 & (6.44\pm 0.19)e-07\\
+       & 9 & (6.53\pm 0.16)e-07\\
+      \bottomrule
+  \end{tabular}
+  }
+  \label{tab:wellenlaenge}
+\end{table}
+
+Die Abweichung wird wie in \autoref{sec:Brechungsgesetz} beschrieben berechnet.
+Gemittelt ergibt sich für die Wellenlänge des grünen Laserstrahls
+\begin{equation*}
+  \lambda_{\text{grün}} = (493\pm 16)\,\symup{nm}.
+\end{equation*}
+Der berechnete Wert weicht um $(7.4\pm 3.0)\%$ vom Literaturwert $\lambda_{\text{grün,lit}} = 532\,\symup{nm}$ \cite{V400} ab.\\
+Für die Wellenlänge des roten Laserstrahls ergibt sich
+\begin{equation*}
+  \lambda_{\text{rot}} = (621\pm 16)\,\symup{nm}.
+\end{equation*}
+Die Abweichung zum Literaturwert $\lambda_{\text{rot}} = 635\,\symup{nm}$ beträgt $(2.3\pm 2.5)\%$.\\
 
 
 %Tabellen nebeneinander
-%\begin{table}[H]
-%  \centering
-%  \caption{}
-%  \resizebox{0.4\textwidth}{!}{
-%  \begin{tabular}{S[table-format=3] S[table-format=2(2)]}
-%      \toprule
-%      {$t\,/\symup{s}$} & {$N$} \\
-%      \midrule
-%
-%      \bottomrule
-%  \end{tabular}
-%  \begin{tabular}{S[table-format=3] S[table-format=2(2)]}
-%      \toprule
-%      {$t\,/\symup{s}$} & {$N$} \\
-%      \midrule
-%      
-%      \bottomrule
-%  \end{tabular}
-%  }
-%  \label{tab:}
-%\end{table}
+
 %Plots und Bilder
 %\begin{figure}[H]
 %  \includegraphics[width=\linewidth]{plots/.pdf}

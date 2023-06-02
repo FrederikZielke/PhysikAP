@@ -65,3 +65,5 @@ for i in range(len(alpha)):
 
 #for i in range(len(alpha)):
 #    print(f'{(strahlenversatz(alpha_rad[i], beta_rad_calc[i], d))}')
+
+print(f'Abweichung des Reflexionsgesetzes liegt zwischen {0.5/30*100} % und {0.5/70*100} %')
