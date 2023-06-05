@@ -82,6 +82,10 @@ print('k:    d:       phi:       lambda:')
 #    for j in range(0,2):
 #        if k[j] != 0:
 #            print(f'{k[j]} & {d[i]} & {phi_gruen_rad[j]} & {d[i] * unp.sin(phi_gruen_rad[j]) / k[j]}')
+#d=[600,300,100]
+#for gitterkonstante in d:
+#    mask = d_nutzlos == gitterkonstante
+#    k[mask]
 for i in range(0,2):
     if k[i] != 0:
         print(f'{k[i]} & {d[0]} & {unp.degrees(phi_gruen_rad[i])} & {d[0] * unp.sin(phi_gruen_rad[i]) / k[i]}')
@@ -112,6 +116,9 @@ for i in range(len(lambda_gruen)):
     if lambda_gruen[i] != 0:
         mittelwert += lambda_gruen[i]
         count += 1
+mask = unp.nominal_values(lambda_gruen) != 0
+np.mean(unp.nominal_values(lambda_gruen[mask]))
+np.std(unp.nominal_values(lambda_gruen[mask]))
 print(f'count: {count}')
 mittelwert = mittelwert / 14
 # convert to nanometer
