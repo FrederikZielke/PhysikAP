@@ -1,0 +1,75 @@
+\section{Zielsetzung}
+\label{sec:Zielsetzung}
+Der Versuch beschäftigt sich mit der Reichweite von $\alpha$-Strahlung in Luft. 
+\section{Theorie}
+\label{sec:Theorie}
+$\alpha$-Strahlung besteht aus Heliumkernen, die aus zwei Protonen und zwei Neutronen bestehen. Sie entstehen bei der Kernumwandlung von schweren Elementen. 
+Die $\alpha$-Strahlung ist positiv geladen und besitzt eine hohe kinetische Energie. Die Reichweite von $\alpha$-Strahlung in Luft ist abhängig von der Energie der Strahlung. 
+Die Energie der Strahlung nimmt mit der Reichweite ab. Die $\alpha$-Strahlung wechselwirkt mit Materie durch die elastische Streuung an den Hüllenelektronen, 
+durch die inelastische Streuung an den Hüllenelektronen und durch die direkte Wechselwirkung mit dem Kern. 
+Die elastische Streuung an den Hüllenelektronen ist nur bei kleinen Energien von Bedeutung. Die inelastische Streuung an den Hüllenelektronen ist bei mittleren Energien von Bedeutung. 
+Die direkte Wechselwirkung mit dem Kern ist bei hohen Energien von Bedeutung. \\
+Beim Durchlaufen von Materie gibt die $\alpha$-Strahlung ihre Energie durch Ionisation und Anregung ab. Die Energieverluste durch Ionisation und Anregung sind proportional zur Energie.
+Die Energieverluste durch Ionisation und Anregung sind bei kleinen Energien dominant. Bei hohen Energien sind die Energieverluste durch Ionisation und Anregung vernachlässigbar und die
+Bethe-Bloch-Gleichung beschreibt den Energieverlust der $\alpha$-Strahlung. Die Bethe-Bloch-Gleichung ist gegeben durch
+\begin{equation}
+    -\frac{\symup{d}E_\alpha}{\symup{d}x} = \frac{z^2e^4}{4\pi\epsilon_0m_e}\frac{nZ}{v^2}\ln{\frac{2m_ev^2}{I}}.
+    \label{eqn:bethebloch}
+\end{equation}
+Dabei ist $z$ die Ladung der $\alpha$-Teilchen, $e$ die Elementarladung, $m_e$ die Elektronenmasse, $n$ die Teilchendichte, $Z$ die Ordnungszahl des Targetgases, $v$ die Geschwindigkeit der $\alpha$-Teilchen und $I$ die Ionisierungsenergie des Targetgases.
+\subsection{Herleitung der Bethe-Bloch-Gleichung}
+$\alpha$-Strahlung besteht aus Heliumkernen, also schweren geladenen Teilchen. Die $\alpha$-Teilchen wechselwirken mit den Hüllenelektronen des Targetgases. 
+Der beim Vorbeifliegen der $\alpha$-Teilchen an den Hüllenelektronen übertragene Impuls ist
+\begin{align*}
+    \Delta p &= \int_{-\infty}^{\infty}F\symup{d}t\\
+             &= \frac{1}{v}\int_{-\infty}^{\infty}F_{\perp}\symup{d}x\\
+             &= \frac{e}{v}\int_{-\infty}^{\infty}E_{\perp}\symup{d}x.\\
+\end{align*}
+Dabei ist $F$ die Coulomb-Kraft zwischen dem $\alpha$-Teilchen und dem Hüllenelektron, $v$ die Geschwindigkeit des $\alpha$-Teilchens, $F_{\perp}$ die Kraftkomponente senkrecht zur Bewegungsrichtung des $\alpha$-Teilchens, $E_{\perp}$ die elektrische Feldstärke senkrecht zur Bewegungsrichtung des $\alpha$-Teilchens und $e$ die Elementarladung.
+Dieser Zusammenhang beruht auf der Annahme, dass die kinetische Energie des Teilchens groß gegenüber der Bindungsenergie des Elektrons ist und die Teilchenbahn als
+gerade angenommen werden kann. \\
+Mit dem Gauss'schen Integralsatz folgt
+\begin{equation*}
+    2\pi b \cdot \int_{-\infty}^{\infty}E_{\perp}\symup{d}x = \frac{Q}{\epsilon_0} = \frac{ze}{\epsilon_0}.
+\end{equation*}
+Damit gilt für den Impulsübertrag
+\begin{equation*}
+    \Delta p = \frac{2\pi ze^{2}}{\epsilon_0vb}.
+\end{equation*}
+Die Wechselwirkung der $\alpha$-Teilchen mit allen Elektronen entlang der Teilchenbahn führt zu einer Änderung der Energie pro Wegstrecke $\symup{d}x$ von
+\begin{equation*}
+    \symup{d}E = -(\int_{b_{min}}^{b_{max}}\frac{\Delta p^2}{2m_e}n_e \cdot 2\pi b \symup{d}b)\symup{d}x.
+\end{equation*}
+Es wird also über alle Stoßparameter $b$ integriert. Die Grenzen hängen vom Verhältnis der Teilchenenergie zur Bindungsenergie ab. Dabei ist $n_e = \frac{z\rho}{Au}$ die Elektronendichte. $A$ ist die Massenzahl des Targetgases, $u$ die Atomare Masseneinheit und $\rho$ die Dichte des Targetgases. \\
+Somit ergibt sich der Energieverlust zu 
+\begin{equation*}
+    \frac{\symup{d}E}{\symup{d}x} = -\frac{4\pi z^2e^4n_e}{m_e\epsilon_0^2v^2}\ln{\frac{b_{max}}{b_{min}}}.
+\end{equation*}
+Die Formel hier ist vereinfacht und gilt nur für den Fall $\frac{v}{c} << 1$, also kleine kinetische Energien.
+Jedoch ist die Formel auch nur für hinreichend große Energien gültig, wenn diese hoch genug sind, dass die Teilchen keine Hüllenelektronen anregen,
+denn dann treten Ladungsaustauschsprozesse statt.
+
+\subsection{Reichweite eines Teilchens}
+Die Reichweite eines Teilchens ist die Strecke, die das Teilchen in einem Medium zurücklegt, bis es seine gesamte Energie abgegeben hat bzw. gebremst wurde.
+Die mittlere Reichweite ergibt sich aus der Energie der $\alpha$-Teilchen $E_{\alpha}$ und dem mittleren Energieverlust. Die mittlere Reichweite ist gegeben durch
+\begin{equation}
+    R_m = -\int_0^{E_{\alpha}}\frac{\symup{d}E}{\symup{d}E/\symup{d}x}.
+    \label{eqn:reichweite}
+\end{equation}
+Da bei niedrigeren Energien die Energieverluste durch Ionisation und Anregung nicht mehr durch die Bethe-Bloch-Gleichung beschrieben werden können, wird die Reichweite
+durch die empirische bestimmte Bragg-Kurve beschrieben. Bei konstanter Temperatur und konstantem Volumen ist die Reichweite proportional zum Druck $p$ des Targetgases.
+Deshalb kann die Reichweite durch eine Absorptionsmessung bestimmt werden, bei der der Druck $p$ variiert wird. Die Reichweite ist dann
+\begin{equation*}
+    R_m = R_m(p=0)\frac{p}{p_0}.
+\end{equation*}
+Dabei ist $p_0$ der Normaldruck und $R_m(p=0)$ die Reichweite bei $p=0$.
+
+\subsection{Funktionsweise eines Halbleiter-Sperrschichtzählers}
+\label{sec:sperrschicht}
+Der Halbleiter-Sperrschichtzähler besteht aus einem p- und einem n-dotierten Halbleiter, die aneinander grenzen. Die p- und n-Schicht werden durch eine Sperrschicht getrennt.
+Die Sperrschicht wird durch eine äußere Spannung vergrößert und ist im wesentlichen eine ladungsfrei Zone.
+Dringt $\alpha$-Strahlung in die Sperrschicht ein, so entstehen durch inelastische Stöße der Heliumkerne mit den "freien" Hüllenelektronen Elektron-Loch-Paare. Die Elektronen und Löcher werden durch das elektrische Feld der Sperrschicht getrennt und wandern zu den Elektroden.
+Dadurch entsteht ein Stromimpuls, der gemessen werden kann. Die Energie der $\alpha$-Teilchen kann durch die Höhe des Stromimpulses bestimmt werden.
+Der Halbleiter-Sperrschichtzähler hat einige Vorteile gegenüber einer Ionisationskammer. Durch die höhere Dichte des Halbleitermaterials, werden die $\alpha$-Teilchen stärker abgebremst und die Reichweite ist kleiner.
+Dadurch kann die Energie der $\alpha$-Teilchen genauer bestimmt werden. Außerdem ist die Ansprechzeit des Halbleiter-Sperrschichtzählers kleiner als die einer Ionisationskammer, weil die Elektronen und Löcher durch das elektrische Feld schneller getrennt werden. Zusätzlich
+ist die notwendige Energie zur Erzeugung eines Elektron-Loch-Paares geringer als die Energie, die zur Ionisation eines Gases benötigt wird. Es können also auch Teilchen mit geringerer Energie gemessen werden. \\
