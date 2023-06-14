@@ -3,22 +3,42 @@ import numpy as np
 from scipy.optimize import curve_fit
 from uncertainties import ufloat
 
-x = np.genfromtxt('content/silber1.csv', delimiter = ',', unpack = True)
+p, N, nr = np.genfromtxt('content/messung1.csv', delimiter = ',', unpack = True)
 
-#Fit
-def f(x):
-    return x
-t = np.linspace(0, 100, 100)
-data, covariance_matrix = curve_fit(f, )
-uncertainties = np.sqrt(np.diag(covariance_matrix))
-plt.plot(t, f(t, *data), linewidth = 1.5, label = '', linestyle = '--', color = '#0096FF')
+p0 = 1013.25 # mbar
+x0 = 5.5e-2 # m
+# p in effektive länge umrechnen
+x = x0 * p / p0
 
-plt.plot(t, x, 'r.', mfc = 'red', mec = 'black', mew = 0.5, label = 'Messdaten')
-plt.xlabel(r'$t\,/$s')
-plt.ylabel(r'$ln(N-N_0)$')
 
-plt.legend(loc='best')
-plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
-plt.savefig('plots/.pdf')
-#plt.show()
-#plt.clf()
+# create 3 subplots. 3 rows, 1 column. plot (p, N) in the first subplot and (p, nr) in the second subplot an N in a histogram in the third subplot
+fig, ax = plt.subplots(2, 1, figsize = (10, 10))
+ax[0].plot(x, N, 'kx', label = 'Messwerte')
+ax[0].set_xlabel(r'$x \,/\, \mathrm{m}$')
+ax[0].set_ylabel(r'$N$')
+ax[0].legend(loc = 'best')
+ax[0].grid()
+
+ax[1].plot(x, nr, 'kx', label = 'Messwerte')
+ax[1].set_xlabel(r'$x \,/\, \mathrm{m}$')
+ax[1].set_ylabel(r'$N_\mathrm{R}$')
+ax[1].legend(loc = 'best')
+ax[1].grid()
+
+
+
+fig.tight_layout()
+fig.savefig('build/plot1.pdf')
+
+plt.clf()
+
+N = np.genfromtxt('content/statistik.csv', delimiter = ',', unpack = True)
+
+fig, ax = plt.subplots(1, 1, figsize = (10, 10))
+ax.hist(N, bins = 10, label = 'Messwerte')
+ax.set_xlabel(r'$N$')
+ax.set_ylabel(r'$\mathrm{Häufigkeit}$')
+ax.legend(loc = 'best')
+
+fig.tight_layout()
+fig.savefig('build/hist.pdf')
