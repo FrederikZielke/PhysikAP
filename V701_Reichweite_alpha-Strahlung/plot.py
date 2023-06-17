@@ -18,7 +18,7 @@ for i in dateien:
     x = x0 * p / p0
     N = N / 120
     # create a linear regression for 200 < N < 13000
-
+    
     # create a mask for the values in N that are in the range 200 < N < 13000
     if i == 1:
         mask = (N > 1) & (N < 105)
@@ -33,43 +33,85 @@ for i in dateien:
     m = ufloat(params[0], errors[0])
     b = ufloat(params[1], errors[1])
     y = ufloat(max(N[mask]/2),0)
+    R_m = (y - b)/m
 
+    R_m *= 1e3
     # print the slope and the intercept of the linear regression
-    print(f'Ausgleichsgerade {i}:')
+    print(f'Ausgleichsgerade für die mittlere Reichweite {i}:')
     print(f'm = {m}')
     print(f'b = {b}')
-    print(f'mittlere Reichweite {(y - b)/m}m:')
+    print(f'mittlere Reichweite {R_m}mm:')
+    print(f'Energie der mittleren Reichweite = {(R_m/3.1) ** (2/3)}')
     # create a linspace for the linear regression
     x_lin = np.linspace(min(x[mask]), max(x[mask]), 1000)
 
+    # Energie berechnen
+    E = np.zeros(len(nr))
+    E[0] = 4
+    for j in range(1, len(nr)):
+        E[j] = (nr[j]/nr[0]) * E[0]
+
+    if i == 1:
+        mask = (x > 0.001) & (x < 0.025)
+    else:
+        mask = (E > 0.5)
+
+    # create a linear regression for x and E
+    params, covariance = np.polyfit(x[mask], E[mask], deg = 1, cov = True)
+    errors = np.sqrt(np.diag(covariance))
+
+    # calculate the slope and the intercept of the linear regression
+    m_e = ufloat(params[0], errors[0])
+    b_e = ufloat(params[1], errors[1])
+
+    # print the slope and the intercept of the linear regression
+    print(f'Ausgleichsgerade der Energie {i}:')
+    print(f'm = {m_e}')
+    print(f'b = {b_e}')
+    # R_m = 3.1*E_alpha ** (3/2) <=> E_alpha = (R_m/3.1) ** (2/3)
+    # Das mit der Energie ist glaube ich nicht richtig
+    R_m *= 1e-3
+    print(f'E R_m mit Lin Reg = {m_e * R_m + b_e} MeV')
+
+    # create a linspace for the linear regression
+    x_lin_Energie = np.linspace(min(x[mask]), max(x[mask]), 1000)
+
     # create 3 subplots. 3 rows, 1 column. plot (p, N) in the first subplot and (p, nr) in the second subplot an N in a histogram in the third subplot
-    fig, ax = plt.subplots(2, 1, figsize = (10, 10))
-    ax[0].plot(x, N, 'kx', label = 'Messwerte')
-    ax[0].plot(x_lin, m.n * x_lin + b.n, 'r-', label = 'Lineare Regression')
-    ax[0].axhline(y.n, color = 'b', linestyle = '-.')
-    ax[0].set_xlabel(r'Effektive Reichweite $x \,/\, \mathrm{m}$')
-    ax[0].set_ylabel(r'$N \,/\, \mathrm{s}^{-1}$')
-    ax[0].legend(loc = 'best')
-    ax[0].grid()
+    #fig, ax = plt.subplots(2, 1, figsize = (10, 10))
+    plt.plot(x, N, 'kx', label = 'Messwerte')
+    plt.plot(x_lin, m.n * x_lin + b.n, 'r-', label = 'Lineare Regression')
+    plt.axhline(y.n, color = 'b', linestyle = '-.')
+    plt.xlabel(r'Effektive Reichweite $x \,/\, \mathrm{m}$')
+    plt.ylabel(r'$N \,/\, \mathrm{s}^{-1}$')
+    plt.legend(loc = 'best')
+    plt.grid()
 
-    ax[1].plot(x, nr, 'kx', label = 'Messwerte')
-    ax[1].set_xlabel(r'$x \,/\, \mathrm{m}$')
-    ax[1].set_ylabel(r'$N_\mathrm{R}$')
-    ax[1].legend(loc = 'best')
-    ax[1].grid()
+    plt.tight_layout()
+    plt.savefig(f'build/plot{i}.pdf')
+    plt.clf()
 
+    plt.plot(x, E, 'kx', label = 'Messwerte')
+    plt.plot(x_lin_Energie, m_e.n * x_lin_Energie + b_e.n, 'r-', label = 'Lineare Regression')
+    plt.xlabel(r'$x \,/\, \mathrm{m}$')
+    plt.ylabel(r'Energie $E \,/\, \mathrm{MeV}$')
+    plt.legend(loc = 'best')
+    plt.grid()
 
+    plt.tight_layout()
+    plt.savefig(f'build/plot{i}_Energie.pdf')
+    plt.clf()
 
-    fig.tight_layout()
-    fig.savefig(f'build/plot{i}.pdf')
-
-plt.clf()
 
 N = np.genfromtxt('content/statistik.csv', delimiter = ',', unpack = True)
 N = N/10
 
 # calculate the expectet value of N
 E = np.mean(N)
+
+# calculate the variance of N
+V = np.var(N)
+print(f'Mittelwert: {E}')
+print(f'Varianz: {V}')
 
 x = np.linspace(min(N), max(N), 10000)
 #xp = np.arange(1625, 1925, 1)
@@ -81,8 +123,8 @@ fig, ax = plt.subplots(1, 1, figsize = (10, 10))
 ax.hist(N, bins = 10, label = 'Messwerte', density = True)
 ax.plot(x , gauss, 'k', label = 'Gaußverteilung')
 ax.plot(xp, pois, label = 'Poissonverteilung')
-ax.set_xlabel(r'$N$')
-ax.set_ylabel(r'$\mathrm{Häufigkeit}$')
+ax.set_xlabel(r'$N\,/\,\mathrm{s}^{-1}$')
+ax.set_ylabel(r'relative Häufigkeit')
 ax.legend(loc = 'best')
 
 fig.tight_layout()

@@ -1,34 +1,219 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 Die in \autoref{sec:Auswertung} gezeigten Grafiken und Rechnungen sind mithilfe der Python-Bibliotheken Matplotlib \cite{matplotlib}, Scipy \cite{scipy} und Numpy \cite{numpy}
-erstellt worden.
+erstellt worden. Die Fehlerrechnung wird mithilfe von Uncertainties \cite{uncertainties} durchgeführt.
 
-\subsubsection{}
-%Tabellen nebeneinander
-\begin{table}[H]
+\subsection{Ermittlung der mittleren effektiven Reichweite}
+\label{sec:reichweite}
+
+Die erste Messung wird mit einem Abstand von $x_0 = \SI{5.5}{cm}$ zwischen Alphastrahler und Detektor durchgeführt.
+Die Messwerte sind in \autoref{tab:reichweite1} aufgeführten und in \autoref{fig:reichweite1} graphisch dargestellt.
+Die effektive Reichweite von $\alpha$-Strahlung wird mit \autoref{eq:reichweite2} aus dem Drcuk $p$ und dem Abstand $x_0$ bestimmt. 
+\begin{table}
   \centering
-  \caption{}
-  \resizebox{0.4\textwidth}{!}{
-  \begin{tabular}{S[table-format=3] S[table-format=2(2)]}
-      \toprule
-      {$t\,/\symup{s}$} & {$N$} \\
-      \midrule
+  \caption{Messwerte zur Bestimmung der mittleren Reichweite mit einem Abstand von $\SI{5.5}{cm}$.
+  Angegeben sind der Druck $p$, die gemessenen Impulse $N$ und die zugehörigen Kanalnummern mit den meisten Impulsen.}
+  \begin{tabular}{|c c c|}
+    \toprule
+    {$p\,/\symup{mbar}$} & {$N$} & {Chanel nr. max} \\
+    \midrule
+    0 & 15729 & 699\\
+    50 & 15396 & 700\\
+    100 & 15104 & 655\\
+    150 & 14515 & 623\\
+    200 & 14321 & 540\\
+    250 & 13452 & 495\\
+    300 & 12539 & 440\\
+    350 & 9862 & 382\\
+    400 & 3643 & 220\\
+    450 & 224 & 335\\
+    500 & 0 & 0\\
+    \bottomrule
+  \end{tabular}
+  \label{tab:reichweite1}
+\end{table}\\
 
-      \bottomrule
-  \end{tabular}
-  \begin{tabular}{S[table-format=3] S[table-format=2(2)]}
-      \toprule
-      {$t\,/\symup{s}$} & {$N$} \\
-      \midrule
-      
-      \bottomrule
-  \end{tabular}
-  }
-  \label{tab:}
-\end{table}
-%Plots und Bilder
+Die mittlere effektive Reichweite $R_m$ wird durch eine lineare Ausgleichsrechnung ermittelt.
+In die Ausgleichsgerade gehen nur die Messwerte nach dem anfänglichen Plateau ein.
+So entspricht $R_m$ dem Schnittpunkt der Ausgleichsgerade mit einer zur $x$-Achse parallelen Geraden, 
+die auf halber Höhe des Plateaus liegt. An diesem Punkt treffen noch die Hälfte der $\alpha$-Teilchen auf den Detektor.\\
+
 \begin{figure}[H]
-  \includegraphics[width=\linewidth]{plots/.pdf}
-  \caption{}
-  \label{fig:}
+  \centering
+  \includegraphics{build/plot1.pdf}
+  \caption{Treffer pro Sekunde gegen die effektive Länge aufgetragen mit linearer Regression und Plateauhalbierenden.}
+  \label{fig:reichweite1}
 \end{figure}
+
+Die Steigung und der y-Achsenabschnitt der Ausgleichsgerade sind
+\begin{align*}
+  m &= \SI{-1.33(0.14)e04}{\per\meter\per\second} \\
+  b &= \SI{325(29)}{\per\second}.\\
+\end{align*}
+Die mittlere effektive Reichweite ist der $x$-Achsenabschnitt des Schnittpunktes der Ausgleichsgeraden mit der Plateauhalbierenden
+\begin{equation*}
+  R_{m,1} = \SI{0.0205(0.0031)}{\meter}.
+\end{equation*}
+
+Die Messung wird mit einem Abstand von $x_0 = \SI{4.5}{cm}$ wiederholt.
+Die Messwerte sind in \autoref{tab:reichweite2} aufgeführt und in \autoref{fig:reichweite2} graphisch dargestellt.
+Die Auswertung erfolgt analog zur ersten Messung.
+\begin{table}
+  \centering
+  \caption{Messwerte zur Bestimmung der mittleren effektiven Reichweite mit einem Abstand von $\SI{4.5}{cm}$.}
+  \begin{tabular}{|c c c|}
+    \toprule
+    {$p\,/\symup{mbar}$} & {$N$} & {Chanel nr. max} \\
+    \midrule
+    0 & 22090 & 720\\
+    50 & 21788 & 687\\
+    100 & 21427 & 630\\
+    150 & 20792 & 604\\
+    200 & 20063 & 556\\
+    250 & 19549 & 520\\
+    300 & 18888 & 478\\
+    350 & 17508 & 463\\
+    400 & 14566 & 398\\
+    450 & 9412 & 344\\
+    500 & 1309 & 324\\
+    550 & 73 & 326\\
+    600 & 0 & 0\\
+    \bottomrule
+  \end{tabular}
+  \label{tab:reichweite2}
+\end{table}\\
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{build/plot2.pdf}
+  \caption{Treffer pro Sekunde gegen die effektive Länge aufgetragen mit linearer Regression und Plateauhalbierenden.}
+  \label{fig:reichweite2}
+\end{figure}
+
+Die Steigung und der y-Achsenabschnitt der Ausgleichsgerade sind
+\begin{align*}
+  m &= \SI{-1.48(0.18)e04}{\per\meter\per\second} \\
+  b &= \SI{4.3(0.4)e02}{\per\second}.\\
+\end{align*}
+Die mittlere effektive Reichweite ergibt sich zu
+\begin{equation*}
+  R_{m,2} = \SI{0.024(0.004)}{\meter}.
+\end{equation*}
+
+Mit der Beziehung \eqref{eq:HierEinfügenLennart} lässt sich die Energie der mittleren Reichweite bestimmen.
+Unter der Annahme, dass die Energie der $\alpha$-Teilchen $E_\alpha \leq \SI{2.5}{MeV}$ beträgt, ergibt sich für $R_{m,1}$
+\begin{equation*}
+  E_{\alpha,1}\left(R_{m,1}\right) = \SI{3.5(0.4)}{MeV}.
+\end{equation*}
+Für $R_{m,2}$ ergibt sich
+\begin{equation*}
+  E_{\alpha,2}\left(R_{m,2}\right) = \SI{3.9(0.4)}{MeV}.
+\end{equation*}
+Die berechneten Energien erfüllen die Bedingung $E_\alpha \leq \SI{2.5}{MeV}$ nicht.
+
+\subsection{Energieverlust}
+\label{sec:energieverlust}
+
+Zur Bestimmung des Energieverlustes von $\alpha$-Teilchen in Luft wird die Energie der Teilchen in Abhängigkeit von der effektiven Länge aufgetragen.
+Aus der Anleitung ist bekannt, dass bei einem Druck von ca. $\SI{0}{mbar}$ der Energiepeak bei $\SI{4}{MeV}$ liegt.
+Per Dreisatz wird die Energie der Teilchen bei den anderen Drücken bestimmt. 
+Die Energiepeaks entsprechen den Channeln in \autoref{tab:reichweite1} und \autoref{tab:reichweite2}.
+Um nun den Energieverlust zu bestimmen wird eine Ausgleichsgerade durch die Messwerte gelegt.
+Die Steigung der Ausgleichsgerade entspricht dem Energieverlust.
+Die Messwerte und die Ausgleichsgerade sind in \autoref{fig:energieverlust1} und \autoref{fig:energieverlust2} dargestellt.
+
+\begin{figure}% doppelfigure mit beiden plots nebeneinander
+  \centering
+  \begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\textwidth]{build/plot1_Energie.pdf}
+    \caption{Messreihe mit Abstand $x_0 = \SI{5.5}{cm}$}
+    \label{fig:energieverlust1}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\textwidth]{build/plot2_Energie.pdf}
+    \caption{Messreihe mit Abstand $x_0 = \SI{4.5}{cm}$}
+    \label{fig:energieverlust2}
+  \end{subfigure}
+  \caption{Energie der $\alpha$-Teilchen in Abhängigkeit von der effektiven Länge mit linearer Regression.}
+  \label{fig:energieverlust}
+\end{figure}
+
+Die Steigung und der Ordinatenabschnitt der Ausgleichsgeraden der ersten Messung ist
+\begin{align}\label{alg:energieverlust1}
+  m_1 &= \SI{-118(13)}{MeV/m} = \frac{\symup{d}E_1}{\symup{d}x}\\
+  b_1 &= \SI{4.39(0.2)}{MeV}.
+\end{align}
+Die Steigung und der Ordinatenabschnitt der Ausgleichsgeraden der zweiten Messung ist
+\begin{align}\label{alg:energieverlust2}
+  m_2 &= \SI{-78.4(2.7)}{MeV/m} = \frac{\symup{d}E_2}{\symup{d}x}\\
+  b_2 &= \SI{3.97(0.05)}{MeV}.
+\end{align}
+
+% Im Zweifelsfall entfernen
+Mit der Regressionsgerade lässt sich die Energie in \autoref{sec:reichweite} bestimmten mittleren effektiven Reichweite bestimmen.
+Mit den Parametern aus \autoref{alg:energieverlust1} ergibt sich für $R_{m,1}$ eine Energie von
+\begin{equation*}
+  E_1\left(R_{m,1}\right) = \SI{2.0(0.5)}{MeV}.
+\end{equation*}
+Mit \autoref{alg:energieverlust2} ergibt sich für $R_{m,2}$ eine Energie von
+\begin{equation*}
+  E_2\left(R_{m,2}\right) = \SI{2.06(0.33)}{MeV}.
+\end{equation*}
+
+\subsection{Statistik des radioaktiven Zerfalls}
+\label{sec:statistik}
+
+\begin{table}
+  \centering
+  \caption{hier caption einfuegen}
+  \begin{tabular}{|c|c|c|}
+    \toprule
+    \multicolumn{3}{|c|}{Impulse pro 10 Sekunden}\\
+    \midrule
+    226 & 273 & 267 \\
+    \bottomrule
+  \end{tabular}
+  \label{tab:statistik}
+\end{table}
+
+% Histogram einfügen, Mittelwert und Varianz angeben, auf Vergleich mit Gauß und Poisson eingehen
+% auf die Bins und Delta N eingehen?? 
+Bei einem Abstand von $x_0 = \SI{4.5}{cm}$, einem Druck von $p \approx \SI{0}{mbar}$ und einer Messzeit von $t = \SI{10}{s}$ werden die Zerfälle pro Sekunde gemessen.
+Die Messwerte sind in \autoref{tab:statistik} aufgeführt.
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{build/hist.pdf}
+  \caption{Histogramm der Zerfälle pro Sekunde.}
+  \label{fig:hist}
+\end{figure}
+
+
+%Tabellen nebeneinander
+%\begin{table}[H]
+%  \centering
+%  \caption{}
+%  \resizebox{0.4\textwidth}{!}{
+%  \begin{tabular}{S[table-format=3] S[table-format=2(2)]}
+%      \toprule
+%      {$t\,/\symup{s}$} & {$N$} \\
+%      \midrule
+%
+%      \bottomrule
+%  \end{tabular}
+%  \begin{tabular}{S[table-format=3] S[table-format=2(2)]}
+%      \toprule
+%      {$t\,/\symup{s}$} & {$N$} \\
+%      \midrule
+%      
+%      \bottomrule
+%  \end{tabular}
+%  }
+%  \label{tab:}
+%\end{table}
+%Plots und Bilder
+%\begin{figure}[H]
+%  \includegraphics[width=\linewidth]{plots/.pdf}
+%  \caption{}
+%  \label{fig:}
+%\end{figure}
