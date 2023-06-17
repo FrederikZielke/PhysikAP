@@ -1,28 +1,38 @@
 \section{Diskussion}
 \label{sec:Diskussion}
 %Brauchen wir das Überhaupt?
-Im Folgenden werden die prozentualen Abweichungen mit 
-\begin{equation}\label{eq:1}
-    \Delta = |\frac{exp - theo}{theo}|\cdot 100\%
-\end{equation}
-berechnet.
+%Im Folgenden werden die prozentualen Abweichungen mit 
+%\begin{equation}\label{eq:1}
+%    \Delta = |\frac{exp - theo}{theo}|\cdot 100\%
+%\end{equation}
+%berechnet.
 
-%Tabelle
-%\begin{table}[H]
-%    \centering
-%    \caption{Experimentell bestimmte Halbwärtszeit $T_{exp}$, Theoriewert $T_{theo}$ und Abweichung in \%.}
-%    \begin{tabular}{c c c}
-%        \toprule
-%        {$T_{exp}\,/\symup{s}$} & {$T_{theo}\,/\symup{s}$} & {$\Delta\,/\symup{\%}$}\\
-%        \midrule
-%        
-%        \bottomrule
-%    \end{tabular}
-%    \label{tab:Diskussion}
-%\end{table}
 
 % gewisse Unsicherheit bei Druckangabe, da skala nur in 20mb Schritten und Messabstände in 50mb Schritten
-
+Die im ersten und zweiten Auswertungsteil verwendete Größe der effektiven Reichweite $x$ ist
+abhängig vom gemessenen Druck $p$. Da die Skala des verwendeten Manometers nur in $\SI{20}{\milli\bar}$-Schritten
+beschriftet ist, die Messabstände aber in $\SI{50}{\milli\bar}$-Schritten erfolgten, ist die Angabe des Drucks
+mit einem Ablesefehler behaftet. \\
+\\
+% ?R_m möglicherweise nicht ganz richtig, da linearität der Impulsabnahme nur näherungsweise gegeben ist?
+Die mittlere effektive Reichweite $R_m$ wurde durch eine lineare Ausgleichsrechnung bestimmt. 
+Da es sich aber eigentich nur um einen näherungsweisen linearen Zusammenhang handelt, ist die Bestimmung von $R_m$ mit einer gewissen Unsicherheit behaftet.\\
+% Unterschied der effektiven Reichweiten:
+Die effektiven Reichweiten unterscheiden sich um $\SI{3.5}{mm}$.
+Dieser Unterschied ist auf die unterschiedlichen Ausgleichsgeraden zurückzuführen.
+Mit mehr Messwerten wäre eine genauere Bestimmung möglich gewesen.\\
 % Die für die mittlere Reichweite bestimmten Energien stehen im Widerspruch zueinander
-
+% War das mit der Ausgleichsgeraden der sinnvollste Weg?
+Die für die mittlere Reichweite bestimmten Energien hätten auch mit $E_\alpha = \left(\frac{R_m}{3.1}\right)^{\frac{2}{3}}$
+berechnet werden können. 
+Die verwendete Methode liefert Ergebnisse ohne Überprüfung des Gültigkeitsbereichs.\\
+% Die Chanel max angaben sind mit steigendem Druck irgendwann nutzlos weil wir einen threshold eingestellt haben
+Das für die Berechnung der Energieverlustes verwendete Channelmaximum verliert zum Ende der Messung an Aussagekraft,
+da die Diskriminatorschwelle des Verstärkers ein Maximum unter dem eingestellten Threshold abschneidet.\\
+% Abweichung des Energieverlustes?
+Aus den abweichenden mittleren Reichweiten $R_m$ folgt auch eine Abweichung des Energieverlustes $\frac{\symup{d}E}{\symup{d}x}$.
+\\
 % warum entspricht der Zerfall keiner Poissonverteilung??
+Die Wahrscheinlichkeitsverteilung der Zerfallsrate im letzten aufgabenteil entspricht nicht der Poissonverteilung.
+Anderen Versuchen und Literatur ist zu entnehmen, dass eigentlich eine Poissonverteilung zu erwarten ist.\\
+Dies könnte an einer zu geringen Anzahl an Messwerten liegen.\\

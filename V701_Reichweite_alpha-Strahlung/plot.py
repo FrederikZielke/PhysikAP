@@ -9,6 +9,7 @@ def P(k, mu):
     return (mu**k * np.exp(-mu)) / np.math.factorial(k)
 
 dateien = [1,2]
+R = np.zeros(len(dateien))
 for i in dateien:
     p, N, nr = np.genfromtxt(f'content/messung{i}.csv', delimiter = ',', unpack = True)#dran denken messung1 wieder zu messung{i} zu ändern
 
@@ -32,8 +33,9 @@ for i in dateien:
     # calculate the slope and the intercept of the linear regression
     m = ufloat(params[0], errors[0])
     b = ufloat(params[1], errors[1])
-    y = ufloat(max(N[mask]/2),0)
+    y = ufloat(max(N/2),0)
     R_m = (y - b)/m
+    R[i-1] = R_m.n
 
     R_m *= 1e3
     # print the slope and the intercept of the linear regression
@@ -80,7 +82,7 @@ for i in dateien:
     #fig, ax = plt.subplots(2, 1, figsize = (10, 10))
     plt.plot(x, N, 'kx', label = 'Messwerte')
     plt.plot(x_lin, m.n * x_lin + b.n, 'r-', label = 'Lineare Regression')
-    plt.axhline(y.n, color = 'b', linestyle = '-.')
+    plt.axhline(y.n, color = 'b', linestyle = '-.', label = 'Plateauhalbierende')
     plt.xlabel(r'Effektive Reichweite $x \,/\, \mathrm{m}$')
     plt.ylabel(r'$N \,/\, \mathrm{s}^{-1}$')
     plt.legend(loc = 'best')
@@ -100,7 +102,7 @@ for i in dateien:
     plt.tight_layout()
     plt.savefig(f'build/plot{i}_Energie.pdf')
     plt.clf()
-
+print(f'Abweichung der mittleren Reichweiten: {np.std(R)}')
 
 N = np.genfromtxt('content/statistik.csv', delimiter = ',', unpack = True)
 N = N/10

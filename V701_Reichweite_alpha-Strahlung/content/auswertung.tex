@@ -8,14 +8,14 @@ erstellt worden. Die Fehlerrechnung wird mithilfe von Uncertainties \cite{uncert
 
 Die erste Messung wird mit einem Abstand von $x_0 = \SI{5.5}{cm}$ zwischen Alphastrahler und Detektor durchgeführt.
 Die Messwerte sind in \autoref{tab:reichweite1} aufgeführten und in \autoref{fig:reichweite1} graphisch dargestellt.
-Die effektive Reichweite von $\alpha$-Strahlung wird mit \autoref{eq:reichweite2} aus dem Drcuk $p$ und dem Abstand $x_0$ bestimmt. 
+Die effektive Reichweite von $\alpha$-Strahlung wird mit \autoref{eq:reichweite2} aus dem Druck $p$ und dem Abstand $x_0$ bestimmt. 
 \begin{table}
   \centering
   \caption{Messwerte zur Bestimmung der mittleren Reichweite mit einem Abstand von $\SI{5.5}{cm}$.
-  Angegeben sind der Druck $p$, die gemessenen Impulse $N$ und die zugehörigen Kanalnummern mit den meisten Impulsen.}
+  Angegeben sind der Druck $p$, die gemessenen Impulse $N$ und die zugehörigen Channelnummer mit den meisten Impulsen.}
   \begin{tabular}{|c c c|}
     \toprule
-    {$p\,/\symup{mbar}$} & {$N$} & {Chanel nr. max} \\
+    {$p\,/\symup{mbar}$} & {$N$} & {Channel nr. max} \\
     \midrule
     0 & 15729 & 699\\
     50 & 15396 & 700\\
@@ -35,7 +35,7 @@ Die effektive Reichweite von $\alpha$-Strahlung wird mit \autoref{eq:reichweite2
 
 Die mittlere effektive Reichweite $R_m$ wird durch eine lineare Ausgleichsrechnung ermittelt.
 In die Ausgleichsgerade gehen nur die Messwerte nach dem anfänglichen Plateau ein.
-So entspricht $R_m$ dem Schnittpunkt der Ausgleichsgerade mit einer zur $x$-Achse parallelen Geraden, 
+Der Schnittpunkt der Ausgleichsgerade mit einer zur $x$-Achse parallelen Geraden entspricht $R_m$, 
 die auf halber Höhe des Plateaus liegt. An diesem Punkt treffen noch die Hälfte der $\alpha$-Teilchen auf den Detektor.\\
 
 \begin{figure}[H]
@@ -52,7 +52,7 @@ Die Steigung und der y-Achsenabschnitt der Ausgleichsgerade sind
 \end{align*}
 Die mittlere effektive Reichweite ist der $x$-Achsenabschnitt des Schnittpunktes der Ausgleichsgeraden mit der Plateauhalbierenden
 \begin{equation*}
-  R_{m,1} = \SI{0.0205(0.0031)}{\meter}.
+  R_{m,1} = \SI{0.0195(0.003)}{\meter}.
 \end{equation*}
 
 Die Messung wird mit einem Abstand von $x_0 = \SI{4.5}{cm}$ wiederholt.
@@ -63,7 +63,7 @@ Die Auswertung erfolgt analog zur ersten Messung.
   \caption{Messwerte zur Bestimmung der mittleren effektiven Reichweite mit einem Abstand von $\SI{4.5}{cm}$.}
   \begin{tabular}{|c c c|}
     \toprule
-    {$p\,/\symup{mbar}$} & {$N$} & {Chanel nr. max} \\
+    {$p\,/\symup{mbar}$} & {$N$} & {Channel nr. max} \\
     \midrule
     0 & 22090 & 720\\
     50 & 21788 & 687\\
@@ -83,13 +83,6 @@ Die Auswertung erfolgt analog zur ersten Messung.
   \label{tab:reichweite2}
 \end{table}\\
 
-\begin{figure}[H]
-  \centering
-  \includegraphics{build/plot2.pdf}
-  \caption{Treffer pro Sekunde gegen die effektive Länge aufgetragen mit linearer Regression und Plateauhalbierenden.}
-  \label{fig:reichweite2}
-\end{figure}
-
 Die Steigung und der y-Achsenabschnitt der Ausgleichsgerade sind
 \begin{align*}
   m &= \SI{-1.48(0.18)e04}{\per\meter\per\second} \\
@@ -97,32 +90,39 @@ Die Steigung und der y-Achsenabschnitt der Ausgleichsgerade sind
 \end{align*}
 Die mittlere effektive Reichweite ergibt sich zu
 \begin{equation*}
-  R_{m,2} = \SI{0.024(0.004)}{\meter}.
+  R_{m,2} = \SI{0.023(0.004)}{\meter}.
 \end{equation*}
 
-Mit der Beziehung \eqref{eq:HierEinfügenLennart} lässt sich die Energie der mittleren Reichweite bestimmen.
-Unter der Annahme, dass die Energie der $\alpha$-Teilchen $E_\alpha \leq \SI{2.5}{MeV}$ beträgt, ergibt sich für $R_{m,1}$
-\begin{equation*}
-  E_{\alpha,1}\left(R_{m,1}\right) = \SI{3.5(0.4)}{MeV}.
-\end{equation*}
-Für $R_{m,2}$ ergibt sich
-\begin{equation*}
-  E_{\alpha,2}\left(R_{m,2}\right) = \SI{3.9(0.4)}{MeV}.
-\end{equation*}
-Die berechneten Energien erfüllen die Bedingung $E_\alpha \leq \SI{2.5}{MeV}$ nicht.
+\begin{figure}[H]
+  \centering
+  \includegraphics{build/plot2.pdf}
+  \caption{Treffer pro Sekunde gegen die effektive Länge aufgetragen mit linearer Regression und Plateauhalbierenden.}
+  \label{fig:reichweite2}
+\end{figure}
+
+%Mit der Beziehung \eqref{eq:HierEinfügenLennart} lässt sich die Energie der mittleren Reichweite bestimmen.
+%Unter der Annahme, dass die Energie der $\alpha$-Teilchen $E_\alpha \leq \SI{2.5}{MeV}$ beträgt, ergibt sich für $R_{m,1}$
+%\begin{equation*}
+%  E_{\alpha,1}\left(R_{m,1}\right) = \SI{3.5(0.4)}{MeV}.
+%\end{equation*}
+%Für $R_{m,2}$ ergibt sich
+%\begin{equation*}
+%  E_{\alpha,2}\left(R_{m,2}\right) = \SI{3.9(0.4)}{MeV}.
+%\end{equation*}
+%Die berechneten Energien erfüllen die Bedingung $E_\alpha \leq \SI{2.5}{MeV}$ nicht.
 
 \subsection{Energieverlust}
 \label{sec:energieverlust}
 
 Zur Bestimmung des Energieverlustes von $\alpha$-Teilchen in Luft wird die Energie der Teilchen in Abhängigkeit von der effektiven Länge aufgetragen.
 Aus der Anleitung ist bekannt, dass bei einem Druck von ca. $\SI{0}{mbar}$ der Energiepeak bei $\SI{4}{MeV}$ liegt.
-Per Dreisatz wird die Energie der Teilchen bei den anderen Drücken bestimmt. 
+Per Dreisatz wird die Energie der Strahlung bei den anderen Drücken bestimmt. 
 Die Energiepeaks entsprechen den Channeln in \autoref{tab:reichweite1} und \autoref{tab:reichweite2}.
 Um nun den Energieverlust zu bestimmen wird eine Ausgleichsgerade durch die Messwerte gelegt.
 Die Steigung der Ausgleichsgerade entspricht dem Energieverlust.
 Die Messwerte und die Ausgleichsgerade sind in \autoref{fig:energieverlust1} und \autoref{fig:energieverlust2} dargestellt.
 
-\begin{figure}% doppelfigure mit beiden plots nebeneinander
+\begin{figure}[H]% doppelfigure mit beiden plots nebeneinander
   \centering
   \begin{subfigure}{0.48\textwidth}
     \includegraphics[width=\textwidth]{build/plot1_Energie.pdf}
@@ -151,29 +151,144 @@ Die Steigung und der Ordinatenabschnitt der Ausgleichsgeraden der zweiten Messun
 \end{align}
 
 % Im Zweifelsfall entfernen
-Mit der Regressionsgerade lässt sich die Energie in \autoref{sec:reichweite} bestimmten mittleren effektiven Reichweite bestimmen.
+Mit der Regressionsgerade lässt sich die Energie in \autoref{sec:reichweite} bestimmten mittleren effektiven Reichweiten bestimmen.
 Mit den Parametern aus \autoref{alg:energieverlust1} ergibt sich für $R_{m,1}$ eine Energie von
 \begin{equation*}
-  E_1\left(R_{m,1}\right) = \SI{2.0(0.5)}{MeV}.
+  E_1\left(R_{m,1}\right) = \SI{2.1(0.5)}{MeV}.
 \end{equation*}
 Mit \autoref{alg:energieverlust2} ergibt sich für $R_{m,2}$ eine Energie von
 \begin{equation*}
-  E_2\left(R_{m,2}\right) = \SI{2.06(0.33)}{MeV}.
+  E_2\left(R_{m,2}\right) = \SI{2.17(0.32)}{MeV}.
 \end{equation*}
 
 \subsection{Statistik des radioaktiven Zerfalls}
 \label{sec:statistik}
 
-\begin{table}
+\begin{table}[H]
   \centering
-  \caption{hier caption einfuegen}
-  \begin{tabular}{|c|c|c|}
+  \caption{Anzahl der gemessenen Impulse im Zeitintervall $\Delta t = \SI{10}{s}$.}
+  %\resizebox{0.3\textwidth}{!}{
+  \begin{tabular}{|c|}
     \toprule
-    \multicolumn{3}{|c|}{Impulse pro 10 Sekunden}\\
+    {N}\\
     \midrule
-    226 & 273 & 267 \\
+    1839\\
+    1800\\
+    1663\\
+    1827\\
+    1726\\
+    1650\\
+    1716\\
+    1719\\
+    1796\\
+    1796\\
+    1902\\
+    1806\\
+    1849\\
+    1866\\
+    1861\\
+    1874\\
+    1724\\
+    1740\\
+    1693\\
+    1640\\
+    1721\\
+    1870\\
+    1738\\
+    1727\\
+    1721\\
+    1735\\
+    1714\\
+    1669\\
+    1814\\
+    1825\\
+    1780\\
+    1794\\
+    1743\\
+    1812\\
     \bottomrule
   \end{tabular}
+  \begin{tabular}{|c|}
+    \toprule
+    {N}\\
+    \midrule
+    1768\\
+    1855\\
+    1694\\
+    1750\\
+    1769\\
+    1762\\
+    1749\\
+    1677\\
+    1726\\
+    1854\\
+    1894\\
+    1794\\
+    1730\\
+    1731\\
+    1791\\
+    1707\\
+    1812\\
+    1764\\
+    1708\\
+    1725\\
+    1869\\
+    1784\\
+    1762\\
+    1785\\
+    1709\\
+    1753\\
+    1791\\
+    1765\\
+    1766\\
+    1854\\
+    1813\\
+    1813\\
+    1847\\
+    1914\\
+    \bottomrule
+  \end{tabular}
+  \begin{tabular}{|c|}
+    \toprule
+    {N}\\
+    \midrule
+    1705\\
+    1680\\
+    1763\\
+    1737\\
+    1707\\
+    1798\\
+    1700\\
+    1671\\
+    1818\\
+    1800\\
+    1790\\
+    1840\\
+    1764\\
+    1765\\
+    1841\\
+    1713\\
+    1756\\
+    1761\\
+    1771\\
+    1770\\
+    1766\\
+    1735\\
+    1658\\
+    1778\\
+    1740\\
+    1749\\
+    1825\\
+    1653\\
+    1844\\
+    1687\\
+    1635\\
+    1733\\
+    {-}\\
+    {-}\\
+    \bottomrule
+  \end{tabular}
+  %}
   \label{tab:statistik}
 \end{table}
 
@@ -188,6 +303,30 @@ Die Messwerte sind in \autoref{tab:statistik} aufgeführt.
   \label{fig:hist}
 \end{figure}
 
+Der Mittelwert %
+%der Messwerte wird mit
+%\begin{equation*}
+%  \bar{N} = \frac{1}{N} \sum_{i=1}^N N_i
+%\end{equation*}
+%berechnet und 
+beträgt
+\begin{equation*}
+  \mu = \SI{176.58}{\frac{1}{\symup{s}}}.
+\end{equation*}
+Die Varianz ist gegeben durch
+\begin{equation*}
+  \sigma = \SI{39.02}{\frac{1}{\symup{s}}}.
+\end{equation*}
+In das Histogram ist eine Gaußverteilung
+\begin{equation*}
+  G(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp{\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)}
+\end{equation*}
+und eine Poissonverteilung
+\begin{equation*}
+  P(x) = \frac{\mu^x}{x!} \exp{\left(-\mu\right)}
+\end{equation*}
+eingezeichnet.
+Um den Mittelpunkt wird die Verteilung besser durch die Gaußverteilung beschrieben, während die Messwerte am Rand durch beide Verteilungen ähnlich gut beschrieben werden.
 
 %Tabellen nebeneinander
 %\begin{table}[H]
